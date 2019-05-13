@@ -1,8 +1,8 @@
 package de.Enigma.Core;
 
-public class Core {
+public class Logger {
 
-	public Core() {
+	public Logger() {
 		// TODO Auto-generated constructor stub
 	}
 
