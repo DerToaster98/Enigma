@@ -1,6 +1,9 @@
 package de.Enigma.UI;
 
+import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -10,17 +13,25 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import java.awt.Font;
-import java.awt.SystemColor;
-import java.awt.Color;
 
 public class GUI {
 
-	private JFrame frmEnigmaV;
-	private JTextField txtFdText;
-	private JTextField txtFdKey;
-	private ButtonGroup buttonGroup;
+	private final JFrame frmEnigmaGUI = new JFrame();
+	private final JTextField txtFdText = new JTextField();
+	private final JTextField txtFdKey = new JTextField();
+	private final JTextArea txtDevelopedBy = new JTextArea();
+	private final JSeparator separator = new JSeparator();
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final JButton btnCancel = new JButton("Cancer");
+	private final JButton btnStart = new JButton("O K");
+	private final JButton btnChooseFile = new JButton("Datei");
+	private final JRadioButton rdbtnDecrypt = new JRadioButton("Entschl\u00FCsseln");
+	private final JRadioButton rdbtnEncrypt = new JRadioButton("Verschl\u00FCsseln");
+	private final JProgressBar progressBar = new JProgressBar();
+	private final JLabel background = new JLabel("");
+	
 
 	/**
 	 * Launch the application.
@@ -30,7 +41,7 @@ public class GUI {
 			public void run() {
 				try {
 					GUI window = new GUI();
-					window.frmEnigmaV.setVisible(true);
+					window.show();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -44,69 +55,118 @@ public class GUI {
 	public GUI() {
 		initialize();
 	}
+	
+	public void show() {
+		frmEnigmaGUI.setVisible(true);
+	}
+	public void hide() {
+		frmEnigmaGUI.setVisible(false);
+	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		buttonGroup = new ButtonGroup();
-		frmEnigmaV = new JFrame();
-		frmEnigmaV.setTitle("Enigma v2");
-		frmEnigmaV.setResizable(false);
-		frmEnigmaV.setBounds(100, 100, 667, 384);
-		frmEnigmaV.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frmEnigmaV.getContentPane().setLayout(null);
-		
-		txtFdText = new JTextField();
+	private void initEdits() {
+		//Text Edit
+		txtFdText.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		txtFdText.setBounds(10, 11, 534, 20);
-		frmEnigmaV.getContentPane().add(txtFdText);
 		txtFdText.setColumns(10);
 		
-		JButton btnChooseFile = new JButton("Datei");
-		btnChooseFile.setBounds(554, 10, 89, 23);
-		frmEnigmaV.getContentPane().add(btnChooseFile);
-		
-		txtFdKey = new JTextField();
+		addComponent(txtFdText);
+		//Key Edit
+		txtFdKey.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		txtFdKey.setBounds(10, 42, 534, 20);
-		frmEnigmaV.getContentPane().add(txtFdKey);
 		txtFdKey.setColumns(10);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(10, 102, 633, 14);
-		frmEnigmaV.getContentPane().add(progressBar);
+		addComponent(txtFdKey);
+	}
+	private void initBackGround() {
+		//"The Line"
+		separator.setBounds(10, 73, 633, 2);
 		
-		JRadioButton rdbtnDecrypt = new JRadioButton("Entschl\u00FCsseln");
+		addComponent(separator);
+		//BackGround image
+		background.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
+		background.setBounds(0, 0, 661, 355);
+		
+		addComponent(background);
+	}
+	private void initButtons() {
+		//File chooser button
+		btnChooseFile.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnChooseFile.setBounds(554, 10, 89, 23);
+		
+		addComponent(btnChooseFile);
+		//Start En/Decryption button
+		btnStart.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnStart.setBounds(455, 311, 89, 23);
+		
+		addComponent(btnStart);
+		//Cancel Button
+		btnCancel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnCancel.setBounds(554, 311, 89, 23);
+		
+		addComponent(btnCancel);
+	}
+	private void initRadioButtons() {
+		//Decrypt RdBtn
 		rdbtnDecrypt.setForeground(SystemColor.textText);
-		rdbtnDecrypt.setFont(new Font("Tahoma", Font.BOLD, 12));
+		rdbtnDecrypt.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		rdbtnDecrypt.setBounds(10, 149, 109, 23);
 		rdbtnDecrypt.setContentAreaFilled(false);
-		buttonGroup.add(rdbtnDecrypt);
-		frmEnigmaV.getContentPane().add(rdbtnDecrypt);
 		
-		JRadioButton rdbtnEncrypt = new JRadioButton("Verschl\u00FCsseln");
+		buttonGroup.add(rdbtnDecrypt);
+		
+		addComponent(rdbtnDecrypt);
+		//Encrypt RdBtn
 		rdbtnEncrypt.setForeground(SystemColor.textText);
-		rdbtnEncrypt.setFont(new Font("Tahoma", Font.BOLD, 12));
+		rdbtnEncrypt.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		rdbtnEncrypt.setContentAreaFilled(false);
 		rdbtnEncrypt.setSelected(true);
 		rdbtnEncrypt.setBounds(10, 123, 109, 23);
+		
 		buttonGroup.add(rdbtnEncrypt);
-		frmEnigmaV.getContentPane().add(rdbtnEncrypt);
 		
-		JButton btnStart = new JButton("O K");
-		btnStart.setBounds(455, 311, 89, 23);
-		frmEnigmaV.getContentPane().add(btnStart);
+		addComponent(rdbtnEncrypt);
+	}
+	private void initTexts() {
+		txtDevelopedBy.setOpaque(false);
+		txtDevelopedBy.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
+		txtDevelopedBy.setEditable(false);
+		txtDevelopedBy.setForeground(SystemColor.text);
+		txtDevelopedBy.setBackground(SystemColor.menu);
+		txtDevelopedBy.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
+		txtDevelopedBy.setBounds(10, 244, 240, 100);
+		txtDevelopedBy.setColumns(10);
 		
-		JButton btnCancel = new JButton("Cancer");
-		btnCancel.setBounds(554, 311, 89, 23);
-		frmEnigmaV.getContentPane().add(btnCancel);
+		addComponent(txtDevelopedBy);
+	}
+	private void initFrame() {
+		//Frame
+		frmEnigmaGUI.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		frmEnigmaGUI.setTitle("Enigma v2");
+		frmEnigmaGUI.setResizable(false);
+		frmEnigmaGUI.setBounds(100, 100, 667, 384);
+		frmEnigmaGUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frmEnigmaGUI.getContentPane().setLayout(null);
+		//Loading bar
+		progressBar.setBounds(10, 102, 633, 14);
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 73, 633, 2);
-		frmEnigmaV.getContentPane().add(separator);
-		
-		JLabel background = new JLabel("");
-		background.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
-		background.setBounds(0, 0, 661, 355);
-		frmEnigmaV.getContentPane().add(background);
+		addComponent(progressBar);
+	}
+	
+	
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	//DONE: Mach des gscheit...
+	private void initialize() {
+		initFrame();
+		initEdits();
+		initButtons();
+		initRadioButtons();
+		initTexts();
+		initBackGround();
+	}
+	
+	private void addComponent(Component component) {
+		frmEnigmaGUI.getContentPane().add(component);
 	}
 }
