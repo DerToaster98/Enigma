@@ -84,7 +84,7 @@ public class GUI {
 		addComponent(separator);
 		//BackGround image
 		background.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
-		background.setBounds(0, 0, 661, 355);
+		background.setBounds(0, 0, 1280, 640);
 		
 		addComponent(background);
 	}
@@ -143,7 +143,7 @@ public class GUI {
 		frmEnigmaGUI.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		frmEnigmaGUI.setTitle("Enigma v2");
 		frmEnigmaGUI.setResizable(false);
-		frmEnigmaGUI.setBounds(100, 100, 667, 384);
+		frmEnigmaGUI.setBounds(100, 100, 1280, 640);
 		frmEnigmaGUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frmEnigmaGUI.getContentPane().setLayout(null);
 		//Loading bar
