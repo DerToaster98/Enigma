@@ -1,9 +1,6 @@
 package de.Enigma.UI;
 
-import java.awt.Component;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
+import java.awt.*;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -18,6 +15,7 @@ import javax.swing.JTextField;
 
 public class GUI {
 
+	private static final String TITLE = "Enigma V2";
 	private final JFrame frmEnigmaGUI = new JFrame();
 	private final JTextField txtFdText = new JTextField();
 	private final JTextField txtFdKey = new JTextField();
@@ -31,6 +29,8 @@ public class GUI {
 	private final JRadioButton rdbtnEncrypt = new JRadioButton("Verschl\u00FCsseln");
 	private final JProgressBar progressBar = new JProgressBar();
 	private final JLabel background = new JLabel("");
+	private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width/12;
+	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/12;
 	
 
 	/**
@@ -141,9 +141,9 @@ public class GUI {
 	private void initFrame() {
 		//Frame
 		frmEnigmaGUI.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		frmEnigmaGUI.setTitle("Enigma v2");
+		frmEnigmaGUI.setTitle(TITLE);
 		frmEnigmaGUI.setResizable(false);
-		frmEnigmaGUI.setBounds(100, 100, 1280, 640);
+		frmEnigmaGUI.setBounds(SCREEN_WIDTH*2, SCREEN_HEIGHT*2, SCREEN_WIDTH*8, SCREEN_HEIGHT*8);
 		frmEnigmaGUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frmEnigmaGUI.getContentPane().setLayout(null);
 		//Loading bar
