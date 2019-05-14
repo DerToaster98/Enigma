@@ -15,22 +15,28 @@ import javax.swing.JTextField;
 
 public class GUI {
 
-	private static final String TITLE = "Enigma V2";
-	private final JFrame frmEnigmaGUI = new JFrame();
-	private final JTextField txtFdText = new JTextField();
-	private final JTextField txtFdKey = new JTextField();
-	private final JTextArea txtDevelopedBy = new JTextArea();
-	private final JSeparator separator = new JSeparator();
-	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private final JButton btnCancel = new JButton("Cancer");
-	private final JButton btnStart = new JButton("O K");
-	private final JButton btnChooseFile = new JButton("Datei");
-	private final JRadioButton rdbtnDecrypt = new JRadioButton("Entschl\u00FCsseln");
-	private final JRadioButton rdbtnEncrypt = new JRadioButton("Verschl\u00FCsseln");
-	private final JProgressBar progressBar = new JProgressBar();
-	private final JLabel background = new JLabel("");
-	private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width/12;
-	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/12;
+	private final String FONT = "Segoe UI Semibold";
+	private final int TEXT_SIZE = 21;
+	private final int COMPONENT_DISTANCE = 20;
+	private final int COMPONENT_HEIGHT = 40;
+	private final JFrame FRM_ENIGMA_GUI = new JFrame();
+	private final JTextField TXT_FD_TEXT = new JTextField();
+	private final JTextField TXT_FD_KEY = new JTextField();
+	private final JTextArea TXT_DEVELOPED_BY = new JTextArea();
+	private final JSeparator SEPARATOR = new JSeparator();
+	private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
+	private final JButton BTN_CANCEL = new JButton("Cancer");
+	private final JButton BTN_START = new JButton("O K");
+	private final JButton BTN_CHOOSE_FILE = new JButton("Datei");
+	private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschl\u00FCsseln");
+	private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschl\u00FCsseln");
+	private final JProgressBar PROGRESSBAR = new JProgressBar();
+	private final JLabel BACKGROUND = new JLabel("");
+	private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width/ 12;
+	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/ 12;
+	private final int WINDOW_WIDTH = SCREEN_WIDTH*8;
+	private final int WINDOW_HEIGHT = SCREEN_HEIGHT*8;
+
 	
 
 	/**
@@ -57,99 +63,101 @@ public class GUI {
 	}
 	
 	public void show() {
-		frmEnigmaGUI.setVisible(true);
+		FRM_ENIGMA_GUI.setVisible(true);
 	}
 	public void hide() {
-		frmEnigmaGUI.setVisible(false);
+		FRM_ENIGMA_GUI.setVisible(false);
 	}
 
 	private void initEdits() {
 		//Text Edit
-		txtFdText.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		txtFdText.setBounds(10, 11, 534, 20);
-		txtFdText.setColumns(10);
+		TXT_FD_TEXT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		TXT_FD_TEXT.setBounds(COMPONENT_DISTANCE, COMPONENT_DISTANCE, WINDOW_WIDTH-350, COMPONENT_HEIGHT);
+		TXT_FD_TEXT.setColumns(10);
 		
-		addComponent(txtFdText);
+		addComponent(TXT_FD_TEXT);
 		//Key Edit
-		txtFdKey.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		txtFdKey.setBounds(10, 42, 534, 20);
-		txtFdKey.setColumns(10);
+		TXT_FD_KEY.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		TXT_FD_KEY.setBounds(COMPONENT_DISTANCE, 80, WINDOW_WIDTH-350, COMPONENT_HEIGHT);
+		TXT_FD_KEY.setColumns(10);
 		
-		addComponent(txtFdKey);
+		addComponent(TXT_FD_KEY);
 	}
 	private void initBackGround() {
 		//"The Line"
-		separator.setBounds(10, 73, 633, 2);
+		SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH-50, 3);
 		
-		addComponent(separator);
+		addComponent(SEPARATOR);
 		//BackGround image
-		background.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
-		background.setBounds(0, 0, 1280, 640);
+		BACKGROUND.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
+		BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 		
-		addComponent(background);
+		addComponent(BACKGROUND);
 	}
 	private void initButtons() {
 		//File chooser button
-		btnChooseFile.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		btnChooseFile.setBounds(554, 10, 89, 23);
+		BTN_CHOOSE_FILE.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		BTN_CHOOSE_FILE.setBounds(WINDOW_WIDTH-300, COMPONENT_DISTANCE, 270, COMPONENT_HEIGHT);
 		
-		addComponent(btnChooseFile);
+		addComponent(BTN_CHOOSE_FILE);
 		//Start En/Decryption button
-		btnStart.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		btnStart.setBounds(455, 311, 89, 23);
+		BTN_START.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		BTN_START.setBounds(WINDOW_WIDTH-300, WINDOW_HEIGHT-110, 270, COMPONENT_HEIGHT);
 		
-		addComponent(btnStart);
+		addComponent(BTN_START);
 		//Cancel Button
-		btnCancel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		btnCancel.setBounds(554, 311, 89, 23);
+		BTN_CANCEL.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		BTN_CANCEL.setBounds(WINDOW_WIDTH-620, WINDOW_HEIGHT-110, 270, COMPONENT_HEIGHT);
 		
-		addComponent(btnCancel);
+		addComponent(BTN_CANCEL);
 	}
 	private void initRadioButtons() {
 		//Decrypt RdBtn
-		rdbtnDecrypt.setForeground(SystemColor.textText);
-		rdbtnDecrypt.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		rdbtnDecrypt.setBounds(10, 149, 109, 23);
-		rdbtnDecrypt.setContentAreaFilled(false);
+		RDBTN_DECRYPT.setForeground(SystemColor.textText);
+		RDBTN_DECRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		RDBTN_DECRYPT.setBounds(COMPONENT_DISTANCE, 140, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
+		RDBTN_DECRYPT.setContentAreaFilled(false);
 		
-		buttonGroup.add(rdbtnDecrypt);
+		BUTTON_GROUP.add(RDBTN_DECRYPT);
 		
-		addComponent(rdbtnDecrypt);
+		addComponent(RDBTN_DECRYPT);
 		//Encrypt RdBtn
-		rdbtnEncrypt.setForeground(SystemColor.textText);
-		rdbtnEncrypt.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		rdbtnEncrypt.setContentAreaFilled(false);
-		rdbtnEncrypt.setSelected(true);
-		rdbtnEncrypt.setBounds(10, 123, 109, 23);
+		RDBTN_ENCRYPT.setForeground(SystemColor.textText);
+		RDBTN_ENCRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		RDBTN_ENCRYPT.setContentAreaFilled(false);
+		RDBTN_ENCRYPT.setSelected(true);
+		RDBTN_ENCRYPT.setBounds(COMPONENT_DISTANCE, 180, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
 		
-		buttonGroup.add(rdbtnEncrypt);
+		BUTTON_GROUP.add(RDBTN_ENCRYPT);
+
 		
-		addComponent(rdbtnEncrypt);
+		addComponent(RDBTN_ENCRYPT);
 	}
 	private void initTexts() {
-		txtDevelopedBy.setOpaque(false);
-		txtDevelopedBy.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
-		txtDevelopedBy.setEditable(false);
-		txtDevelopedBy.setForeground(SystemColor.text);
-		txtDevelopedBy.setBackground(SystemColor.menu);
-		txtDevelopedBy.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
-		txtDevelopedBy.setBounds(10, 244, 240, 100);
-		txtDevelopedBy.setColumns(10);
+		TXT_DEVELOPED_BY.setOpaque(false);
+		TXT_DEVELOPED_BY.setFont(new Font(FONT, Font.BOLD, TEXT_SIZE));
+		TXT_DEVELOPED_BY.setEditable(false);
+		TXT_DEVELOPED_BY.setForeground(Color.BLACK);
+		TXT_DEVELOPED_BY.setBackground(SystemColor.menu);
+		TXT_DEVELOPED_BY.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
+		TXT_DEVELOPED_BY.setBounds(COMPONENT_DISTANCE, WINDOW_HEIGHT-225, 240, 300);
+		TXT_DEVELOPED_BY.setColumns(10);
 		
-		addComponent(txtDevelopedBy);
+		addComponent(TXT_DEVELOPED_BY);
 	}
 	private void initFrame() {
 		//Frame
-		frmEnigmaGUI.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		frmEnigmaGUI.setTitle(TITLE);
-		frmEnigmaGUI.setResizable(false);
-		frmEnigmaGUI.setBounds(SCREEN_WIDTH*2, SCREEN_HEIGHT*2, SCREEN_WIDTH*8, SCREEN_HEIGHT*8);
-		frmEnigmaGUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frmEnigmaGUI.getContentPane().setLayout(null);
+		FRM_ENIGMA_GUI.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		String TITLE = "Enigma V2";
+		FRM_ENIGMA_GUI.setTitle(TITLE);
+		FRM_ENIGMA_GUI.setResizable(false);
+		FRM_ENIGMA_GUI.setBounds(SCREEN_WIDTH*2, SCREEN_HEIGHT*2, WINDOW_WIDTH, WINDOW_HEIGHT);
+		FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 		//Loading bar
-		progressBar.setBounds(10, 102, 633, 14);
+		PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH-50, COMPONENT_HEIGHT-10);
 		
-		addComponent(progressBar);
+		addComponent(PROGRESSBAR);
 	}
 	
 	
@@ -167,6 +175,6 @@ public class GUI {
 	}
 	
 	private void addComponent(Component component) {
-		frmEnigmaGUI.getContentPane().add(component);
+		FRM_ENIGMA_GUI.getContentPane().add(component);
 	}
 }
