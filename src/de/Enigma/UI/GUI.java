@@ -1,17 +1,11 @@
 package de.Enigma.UI;
 
-import java.awt.*;
+import de.Enigma.Core.Main;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JRadioButton;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import java.awt.*;
 
 public class GUI {
 
@@ -36,29 +30,14 @@ public class GUI {
 	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/ 12;
 	private final int WINDOW_WIDTH = SCREEN_WIDTH*8;
 	private final int WINDOW_HEIGHT = SCREEN_HEIGHT*8;
+	private Main main;
 
-	
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI window = new GUI();
-					window.show();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUI() {
+	public GUI(Main m) {
+		main = m;
 		initialize();
 	}
 	
@@ -74,6 +53,22 @@ public class GUI {
 		TXT_FD_TEXT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
 		TXT_FD_TEXT.setBounds(COMPONENT_DISTANCE, COMPONENT_DISTANCE, WINDOW_WIDTH-350, COMPONENT_HEIGHT);
 		TXT_FD_TEXT.setColumns(10);
+		TXT_FD_TEXT.getDocument().addDocumentListener(new DocumentListener() {
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				BTN_START.setEnabled(true);
+			}
+
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				if (TXT_FD_TEXT.getText().equals("")) BTN_START.setEnabled(false);
+			}
+
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+
+			}
+		});
 		
 		addComponent(TXT_FD_TEXT);
 		//Key Edit
@@ -83,10 +78,11 @@ public class GUI {
 		
 		addComponent(TXT_FD_KEY);
 	}
+
 	private void initBackGround() {
 		//"The Line"
 		SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH-50, 3);
-		
+
 		addComponent(SEPARATOR);
 		//BackGround image
 		BACKGROUND.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
@@ -102,36 +98,40 @@ public class GUI {
 		addComponent(BTN_CHOOSE_FILE);
 		//Start En/Decryption button
 		BTN_START.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		BTN_START.setEnabled(false);
 		BTN_START.setBounds(WINDOW_WIDTH-300, WINDOW_HEIGHT-110, 270, COMPONENT_HEIGHT);
+		BTN_START.addActionListener(e -> btnOkClicked());
 		
 		addComponent(BTN_START);
 		//Cancel Button
 		BTN_CANCEL.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
 		BTN_CANCEL.setBounds(WINDOW_WIDTH-620, WINDOW_HEIGHT-110, 270, COMPONENT_HEIGHT);
+		BTN_CANCEL.addActionListener(e -> btnCancelClicked());
 		
 		addComponent(BTN_CANCEL);
 	}
+
 	private void initRadioButtons() {
-		//Decrypt RdBtn
-		RDBTN_DECRYPT.setForeground(SystemColor.textText);
-		RDBTN_DECRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		RDBTN_DECRYPT.setBounds(COMPONENT_DISTANCE, 140, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
-		RDBTN_DECRYPT.setContentAreaFilled(false);
-		
-		BUTTON_GROUP.add(RDBTN_DECRYPT);
-		
-		addComponent(RDBTN_DECRYPT);
 		//Encrypt RdBtn
 		RDBTN_ENCRYPT.setForeground(SystemColor.textText);
 		RDBTN_ENCRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
 		RDBTN_ENCRYPT.setContentAreaFilled(false);
 		RDBTN_ENCRYPT.setSelected(true);
-		RDBTN_ENCRYPT.setBounds(COMPONENT_DISTANCE, 180, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
+		RDBTN_ENCRYPT.setBounds(COMPONENT_DISTANCE, 140, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
 		
 		BUTTON_GROUP.add(RDBTN_ENCRYPT);
 
-		
 		addComponent(RDBTN_ENCRYPT);
+
+		//Decrypt RdBtn
+		RDBTN_DECRYPT.setForeground(SystemColor.textText);
+		RDBTN_DECRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
+		RDBTN_DECRYPT.setBounds(COMPONENT_DISTANCE, 180, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
+		RDBTN_DECRYPT.setContentAreaFilled(false);
+
+		BUTTON_GROUP.add(RDBTN_DECRYPT);
+
+		addComponent(RDBTN_DECRYPT);
 	}
 	private void initTexts() {
 		TXT_DEVELOPED_BY.setOpaque(false);
@@ -140,7 +140,7 @@ public class GUI {
 		TXT_DEVELOPED_BY.setForeground(Color.BLACK);
 		TXT_DEVELOPED_BY.setBackground(SystemColor.menu);
 		TXT_DEVELOPED_BY.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
-		TXT_DEVELOPED_BY.setBounds(COMPONENT_DISTANCE, WINDOW_HEIGHT-225, 240, 300);
+		TXT_DEVELOPED_BY.setBounds(COMPONENT_DISTANCE, WINDOW_HEIGHT-235, 240, 300);
 		TXT_DEVELOPED_BY.setColumns(10);
 		
 		addComponent(TXT_DEVELOPED_BY);
@@ -176,5 +176,20 @@ public class GUI {
 	
 	private void addComponent(Component component) {
 		FRM_ENIGMA_GUI.getContentPane().add(component);
+	}
+
+	private void btnCancelClicked() {
+		System.out.println("BTN_CANCEL Clicked");
+		TXT_FD_TEXT.setText("");
+		TXT_FD_KEY.setText("");
+		RDBTN_ENCRYPT.setSelected(true);
+		RDBTN_DECRYPT.setSelected(false);
+		BTN_START.setEnabled(false);
+		PROGRESSBAR.setIndeterminate(false);
+	}
+
+	private void btnOkClicked(){
+		PROGRESSBAR.setIndeterminate(true);
+		main.btnOkClicked();
 	}
 }
