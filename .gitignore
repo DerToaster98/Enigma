@@ -6,8 +6,9 @@ bin
 .classpath
 .project
 
-#InteeliJ
+#IntelliJ
 out
+*.class
 *.ipr
 *.iws
 *.iml
