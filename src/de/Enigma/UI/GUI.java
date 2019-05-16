@@ -190,6 +190,6 @@ public class GUI {
 
 	private void btnOkClicked(){
 		PROGRESSBAR.setIndeterminate(true);
-		main.btnOkClicked();
+		//main.btnOkClicked();
 	}
 }
