@@ -30,6 +30,7 @@ public class GUI {
 	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/ 12;
 	private final int WINDOW_WIDTH = SCREEN_WIDTH*8;
 	private final int WINDOW_HEIGHT = SCREEN_HEIGHT*8;
+	@SuppressWarnings("unused")
 	private Main main;
 
 
@@ -41,13 +42,16 @@ public class GUI {
 		initialize();
 	}
 	
+	//Zeigt das Fenster
 	public void show() {
 		FRM_ENIGMA_GUI.setVisible(true);
 	}
+	//Verbirgt das Fenster
 	public void hide() {
 		FRM_ENIGMA_GUI.setVisible(false);
 	}
 
+	//Initiiert alle TextFields / Die Eingabefelder
 	private void initEdits() {
 		//Text Edit
 		TXT_FD_TEXT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
@@ -79,6 +83,7 @@ public class GUI {
 		addComponent(TXT_FD_KEY);
 	}
 
+	//Stellt das Hintergrundbild ein
 	private void initBackGround() {
 		//"The Line"
 		SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH-50, 3);
@@ -94,6 +99,7 @@ public class GUI {
 		//File chooser button
 		BTN_CHOOSE_FILE.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
 		BTN_CHOOSE_FILE.setBounds(WINDOW_WIDTH-300, COMPONENT_DISTANCE, 270, COMPONENT_HEIGHT);
+		BTN_CHOOSE_FILE.addActionListener(e -> btnChooseFileClicked());
 		
 		addComponent(BTN_CHOOSE_FILE);
 		//Start En/Decryption button
@@ -111,6 +117,7 @@ public class GUI {
 		addComponent(BTN_CANCEL);
 	}
 
+	//Stellt alle RadioButtons ein
 	private void initRadioButtons() {
 		//Encrypt RdBtn
 		RDBTN_ENCRYPT.setForeground(SystemColor.textText);
@@ -133,6 +140,7 @@ public class GUI {
 
 		addComponent(RDBTN_DECRYPT);
 	}
+	//Erzeugt alle "Labels", bzw. Beschreibungen
 	private void initTexts() {
 		TXT_DEVELOPED_BY.setOpaque(false);
 		TXT_DEVELOPED_BY.setFont(new Font(FONT, Font.BOLD, TEXT_SIZE));
@@ -145,6 +153,7 @@ public class GUI {
 		
 		addComponent(TXT_DEVELOPED_BY);
 	}
+	//Stellt das Fenster ein
 	private void initFrame() {
 		//Frame
 		FRM_ENIGMA_GUI.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
@@ -164,7 +173,7 @@ public class GUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	//DONE: Mach des gscheit...
+	//Baut die GUI zusammen
 	private void initialize() {
 		initFrame();
 		initEdits();
@@ -178,6 +187,7 @@ public class GUI {
 		FRM_ENIGMA_GUI.getContentPane().add(component);
 	}
 
+	//Wird ausgeführt, wenn der Cancel Button gedrückt wird
 	private void btnCancelClicked() {
 		System.out.println("BTN_CANCEL Clicked");
 		TXT_FD_TEXT.setText("");
@@ -188,8 +198,14 @@ public class GUI {
 		PROGRESSBAR.setIndeterminate(false);
 	}
 
+	//Wird ausgeführt, wenn der OK Button gedrückt wird
 	private void btnOkClicked(){
 		PROGRESSBAR.setIndeterminate(true);
 		//main.btnOkClicked();
+	}
+	
+	//Wird ausgeführt, wenn der "Datei" Button gedrückt wird
+	private void btnChooseFileClicked() {
+		System.out.println("File chooser button clicked");
 	}
 }
