@@ -1,4 +1,4 @@
-package de.Enigma.Core;
+package de.Enigma.Util;
 
 public class Util {
 

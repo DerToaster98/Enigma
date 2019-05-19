@@ -1,4 +1,4 @@
-package de.Enigma.Core;
+package de.Enigma.Util;
 
 import java.io.File;
 

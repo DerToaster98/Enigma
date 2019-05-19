@@ -1,7 +1,5 @@
 package de.Enigma.Algorithm;
 
-import de.Enigma.Core.Enums;
-
 public class AlgorithmController {
 
 	private String text;
