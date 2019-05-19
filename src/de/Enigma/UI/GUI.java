@@ -90,7 +90,7 @@ public class GUI {
 
 		addComponent(SEPARATOR);
 		//BackGround image
-		BACKGROUND.setIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")));
+		BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH,WINDOW_HEIGHT,Image.SCALE_SMOOTH)));
 		BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		addComponent(BACKGROUND);
