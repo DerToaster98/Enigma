@@ -19,7 +19,7 @@ public class GUI {
 	private final JTextArea TXT_DEVELOPED_BY = new JTextArea();
 	private final JSeparator SEPARATOR = new JSeparator();
 	private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
-	private final JButton BTN_CANCEL = new JButton("Cancer");
+	private final JButton BTN_CANCEL = new JButton("Cancel");
 	private final JButton BTN_START = new JButton("O K");
 	private final JButton BTN_CHOOSE_FILE = new JButton("Datei");
 	private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschl\u00FCsseln");
@@ -166,6 +166,8 @@ public class GUI {
 		FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 		//Loading bar
 		PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH-50, COMPONENT_HEIGHT-10);
+		PROGRESSBAR.setStringPainted(true);
+		PROGRESSBAR.setString("Verschlüsselung läuft");
 		
 		addComponent(PROGRESSBAR);
 	}
@@ -199,10 +201,10 @@ public class GUI {
 		PROGRESSBAR.setIndeterminate(false);
 	}
 
-	//Wird ausgefü�hrt, wenn der OK Button gedrückt wird
+	//Wird ausgeführt, wenn der OK Button gedrückt wird
 	private void btnOkClicked(){
 		PROGRESSBAR.setIndeterminate(true);
-		//main.btnOkClicked();
+		main.btnOkClicked();
 	}
 	
 	//Wird ausgeführt, wenn der "Datei" Button gedrückt wird
