@@ -187,7 +187,7 @@ public class GUI {
 		FRM_ENIGMA_GUI.getContentPane().add(component);
 	}
 
-	//Wird ausgeführt, wenn der Cancel Button gedrückt wird
+	//Wird ausgefÃ¼hrt, wenn der Cancel Button gedrÃ¼ckt wird
 	private void btnCancelClicked() {
 		System.out.println("BTN_CANCEL Clicked");
 		TXT_FD_TEXT.setText("");
@@ -198,13 +198,13 @@ public class GUI {
 		PROGRESSBAR.setIndeterminate(false);
 	}
 
-	//Wird ausgeführt, wenn der OK Button gedrückt wird
+	//Wird ausgefÃ¼ï¿½hrt, wenn der OK Button gedrÃ¼ckt wird
 	private void btnOkClicked(){
 		PROGRESSBAR.setIndeterminate(true);
 		//main.btnOkClicked();
 	}
 	
-	//Wird ausgeführt, wenn der "Datei" Button gedrückt wird
+	//Wird ausgefÃ¼hrt, wenn der "Datei" Button gedrÃ¼ckt wird
 	private void btnChooseFileClicked() {
 		System.out.println("File chooser button clicked");
 	}
