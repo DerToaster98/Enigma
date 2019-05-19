@@ -8,6 +8,12 @@ public class Algorithm implements Runnable {
 	//XXX= Walzenstellung z.B 07 23 4, 
 	//X1;Y1 = Buchstabe X1 ist im Steckbrett mit Y2 verbunden z.B E;G
 	
+	/*
+	 * Enthält Basis Algorithmus für Ver/Entschlüsselung
+	 * Außerdem ist eine Methode enthalten, welche überprüft, ob ein Schlüssel korrekt ist
+	 * Dies überprüft die "Steckbrett Sektion" des Schlüssels auf Duplikate
+	 */
+	
 	public Algorithm() {
 		// TODO Auto-generated constructor stub
 		
