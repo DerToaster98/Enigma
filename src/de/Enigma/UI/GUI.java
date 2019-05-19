@@ -145,7 +145,8 @@ public class GUI {
 		TXT_DEVELOPED_BY.setOpaque(false);
 		TXT_DEVELOPED_BY.setFont(new Font(FONT, Font.BOLD, TEXT_SIZE));
 		TXT_DEVELOPED_BY.setEditable(false);
-		TXT_DEVELOPED_BY.setForeground(Color.BLACK);
+		TXT_DEVELOPED_BY.setHighlighter(null);
+		TXT_DEVELOPED_BY.setForeground(Color.WHITE);
 		TXT_DEVELOPED_BY.setBackground(SystemColor.menu);
 		TXT_DEVELOPED_BY.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
 		TXT_DEVELOPED_BY.setBounds(COMPONENT_DISTANCE, WINDOW_HEIGHT-235, 240, 300);
