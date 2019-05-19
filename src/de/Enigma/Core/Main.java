@@ -20,4 +20,8 @@ public class Main {
 	public void btnOkClicked(){
 		System.out.println("BTN_OK Clicked");
 	}
+
+	public void btnCancelClicked(){
+
+	}
 }

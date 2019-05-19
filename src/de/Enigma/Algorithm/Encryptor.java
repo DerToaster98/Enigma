@@ -6,4 +6,9 @@ public class Encryptor extends Algorithm {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	protected void createMetaData() {
+
+	}
+
 }

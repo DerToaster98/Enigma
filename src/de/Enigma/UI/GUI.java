@@ -22,8 +22,8 @@ public class GUI {
 	private final JButton BTN_CANCEL = new JButton("Cancel");
 	private final JButton BTN_START = new JButton("O K");
 	private final JButton BTN_CHOOSE_FILE = new JButton("Datei");
-	private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschl\u00FCsseln");
-	private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschl\u00FCsseln");
+	private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschlüsseln");
+	private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschlüsseln");
 	private final JProgressBar PROGRESSBAR = new JProgressBar();
 	private final JLabel BACKGROUND = new JLabel("");
 	private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width/ 12;

@@ -10,4 +10,9 @@ public class Decryptor extends Algorithm {
 		
 	}
 
+	@Override
+	protected void createMetaData() {
+
+	}
+
 }

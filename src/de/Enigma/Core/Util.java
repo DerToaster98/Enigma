@@ -6,4 +6,8 @@ public class Util {
 		// TODO Auto-generated constructor stub
 	}
 
+	public static char[] createCharArray(String message){
+		return null;
+	}
+
 }

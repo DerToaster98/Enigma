@@ -1,6 +1,6 @@
 package de.Enigma.Algorithm;
 
-public class Algorithm implements Runnable {
+public abstract class Algorithm {
 
 	/*Überprüfung ob Schlüssel korrekt ist 
 	 *U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10 max zehn Buchstaben
@@ -29,10 +29,13 @@ public class Algorithm implements Runnable {
 		
 	}
 
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-
+	protected char encrypt(char letter){
+		return ' ';
 	}
 
+	protected boolean checkKey(String key){
+		return false;
+	}
+
+	protected abstract void createMetaData();
 }
