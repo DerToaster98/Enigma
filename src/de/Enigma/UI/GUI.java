@@ -5,6 +5,7 @@ import de.Enigma.Core.Main;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 
 public class GUI {
@@ -14,8 +15,8 @@ public class GUI {
 	private final int COMPONENT_DISTANCE = 20;
 	private final int COMPONENT_HEIGHT = 40;
 	private final JFrame FRM_ENIGMA_GUI = new JFrame();
-	private final JTextField TXT_FD_TEXT = new JTextField();
-	private final JTextField TXT_FD_KEY = new JTextField();
+	private final JTextField TXT_FD_TEXT = new HintTextField("Zu ver- / entschlüsselnden Text eingeben");
+	private final JTextField TXT_FD_KEY = new HintTextField("Schlüssel eingeben");
 	private final JTextArea TXT_DEVELOPED_BY = new JTextArea();
 	private final JSeparator SEPARATOR = new JSeparator();
 	private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
@@ -30,6 +31,7 @@ public class GUI {
 	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/ 12;
 	private final int WINDOW_WIDTH = SCREEN_WIDTH*8;
 	private final int WINDOW_HEIGHT = SCREEN_HEIGHT*8;
+	private final JFileChooser FILE_CHOOSER = new JFileChooser();
 	@SuppressWarnings("unused")
 	private Main main;
 
@@ -164,12 +166,20 @@ public class GUI {
 		FRM_ENIGMA_GUI.setBounds(SCREEN_WIDTH*2, SCREEN_HEIGHT*2, WINDOW_WIDTH, WINDOW_HEIGHT);
 		FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		FRM_ENIGMA_GUI.getContentPane().setLayout(null);
+		
+		addComponent(PROGRESSBAR);
+	}
+
+	private void initProgressbar(){
 		//Loading bar
 		PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH-50, COMPONENT_HEIGHT-10);
 		PROGRESSBAR.setStringPainted(true);
-		PROGRESSBAR.setString("Verschlüsselung läuft");
-		
-		addComponent(PROGRESSBAR);
+		PROGRESSBAR.setString("Hier soll ein Text stehen");
+	}
+
+	private void initFileChooser(){
+		FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)","enigma"));
+
 	}
 	
 	
@@ -184,6 +194,8 @@ public class GUI {
 		initRadioButtons();
 		initTexts();
 		initBackGround();
+		initProgressbar();
+		initFileChooser();
 	}
 	
 	private void addComponent(Component component) {
@@ -210,5 +222,6 @@ public class GUI {
 	//Wird ausgeführt, wenn der "Datei" Button gedrückt wird
 	private void btnChooseFileClicked() {
 		System.out.println("File chooser button clicked");
+		FILE_CHOOSER.showOpenDialog(FRM_ENIGMA_GUI);
 	}
 }
