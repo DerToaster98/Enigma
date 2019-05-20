@@ -62,7 +62,7 @@ public class Enums {
 			}
 			return null;
 		}
-		public char[] getAlphabet() {
+		public static char[] getAlphabet() {
 			char[] array = new char[] {26};
 			
 			for(int i = 0; i < 26; i++) {
