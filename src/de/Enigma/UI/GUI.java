@@ -168,8 +168,7 @@ public class GUI {
 		FRM_ENIGMA_GUI.setBounds(SCREEN_WIDTH*2, SCREEN_HEIGHT*2, WINDOW_WIDTH, WINDOW_HEIGHT);
 		FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		FRM_ENIGMA_GUI.getContentPane().setLayout(null);
-		
-		addComponent(PROGRESSBAR);
+
 	}
 
 	private void initProgressbar(){
@@ -177,12 +176,12 @@ public class GUI {
 		PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH-50, COMPONENT_HEIGHT-10);
 		PROGRESSBAR.setStringPainted(true);
 		PROGRESSBAR.setString("Hier soll ein Text stehen");
+		addComponent(PROGRESSBAR);
 	}
 
 	private void initFileChooser() {
 		FILE_CHOOSER = new JFileChooser(main.getFileHandler().getPATH());
 		FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)", "enigma"));
-		//FILE_CHOOSER.setCurrentDirectory(new File());
 	}
 	
 	
@@ -226,5 +225,9 @@ public class GUI {
 	private void btnChooseFileClicked() {
 		System.out.println("File chooser button clicked");
 		FILE_CHOOSER.showOpenDialog(FRM_ENIGMA_GUI);
+		File enigmaFile = FILE_CHOOSER.getSelectedFile();
+		System.out.println(enigmaFile.getName());
+		//TODO
+		//handle chosen file
 	}
 }

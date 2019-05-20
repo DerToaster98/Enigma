@@ -15,11 +15,11 @@ public class FileHandler {
     private File outputFile;
     private File enigma;
 
-    public void appendChar(char letter){
+    public void appendChar(char letter) {
         toWrite = toWrite.concat(String.valueOf(letter));
     }
 
-    public void forceWrite(){
+    public void forceWrite() {
 
     }
 
@@ -32,7 +32,8 @@ public class FileHandler {
             path = URLDecoder.decode(p, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-            Log.e("FileHandler","createPath", "Decoding Path ran into a problem: UnsupportedEncodingException");
+            Log.getLogger().e("FileHandler", "createPath",
+                    "Decoding Path ran into a problem: UnsupportedEncodingException");
         }
 
 

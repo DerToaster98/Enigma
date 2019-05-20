@@ -5,38 +5,36 @@ import de.Enigma.Util.FileHandler;
 
 public class Main {
 
-	private GUI window;
-	private FileHandler fileHandler;
+    private GUI window;
+    private FileHandler fileHandler;
 
-	private Main() {
+    private Main() {
 
-		initFileHandler();
-		System.out.println(fileHandler.getPATH());
-		initGUI();
-	}
-	
-	public static void main(String[] args) {
-		new Main();
-	}
+        Log.getLogger();
+        initGUI();
+    }
 
-	private void initGUI() {
-		GUI window = new GUI(this);
-		window.show();
-	}
+    public static void main(String[] args) {
+        new Main();
+    }
 
-	private void initFileHandler(){
-		fileHandler = new FileHandler();
-	}
+    private void initGUI() {
+        GUI window = new GUI(this);
+        window.show();
+    }
 
-	public void btnOkClicked(){
-		System.out.println("BTN_OK Clicked");
-	}
+    public void btnOkClicked() {
+        System.out.println("BTN_OK Clicked");
+    }
 
-	public void btnCancelClicked(){
+    public void btnCancelClicked() {
 
-	}
+    }
 
-	public FileHandler getFileHandler(){
-		return fileHandler;
-	}
+    public FileHandler getFileHandler() {
+        if (fileHandler == null){
+            fileHandler = new FileHandler();
+        }
+        return fileHandler;
+    }
 }
