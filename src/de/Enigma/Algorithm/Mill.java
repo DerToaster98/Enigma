@@ -15,7 +15,6 @@ public class Mill {
 
 
 	public Mill(int indx, char startPos, EMillAlphabet alphabet) {
-		// TODO Auto-generated constructor stub
 		this.alphabet = alphabet.getAlphabet();
 		this.markerChar = new Character(alphabet.getTurnMarker());
 		index = indx;
