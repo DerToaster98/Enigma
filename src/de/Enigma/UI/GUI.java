@@ -169,13 +169,8 @@ public class GUI {
 		FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 
-	}
-
-	private void initProgressbar(){
-		//Loading bar
 		PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH-50, COMPONENT_HEIGHT-10);
-		PROGRESSBAR.setStringPainted(true);
-		PROGRESSBAR.setString("Hier soll ein Text stehen");
+
 		addComponent(PROGRESSBAR);
 	}
 
@@ -196,7 +191,6 @@ public class GUI {
 		initRadioButtons();
 		initTexts();
 		initBackGround();
-		initProgressbar();
 		initFileChooser();
 	}
 	
@@ -218,7 +212,11 @@ public class GUI {
 	//Wird ausgeführt, wenn der OK Button gedrückt wird
 	private void btnOkClicked(){
 		PROGRESSBAR.setIndeterminate(true);
-		main.btnOkClicked();
+		PROGRESSBAR.setStringPainted(true);
+		if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung läuft...");
+		else PROGRESSBAR.setString("Entschlüsselung läuft...");
+
+		main.btnOkClicked(TXT_FD_TEXT.getText(),TXT_FD_KEY.getText(),RDBTN_ENCRYPT.isSelected());
 	}
 	
 	//Wird ausgeführt, wenn der "Datei" Button gedrückt wird
@@ -229,5 +227,6 @@ public class GUI {
 		System.out.println(enigmaFile.getName());
 		//TODO
 		//handle chosen file
+		//setText: TEXT in TXT_FD_TEXT , KEY in TXT_FD_KEY
 	}
 }

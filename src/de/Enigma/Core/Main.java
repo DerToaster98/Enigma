@@ -23,7 +23,10 @@ public class Main {
         window.show();
     }
 
-    public void btnOkClicked() {
+    public void btnOkClicked(String text, String key, boolean encrypt) {
+        //TODO
+        //übergabeParameter einbinden
+        // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
         System.out.println("BTN_OK Clicked");
     }
 
