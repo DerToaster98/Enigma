@@ -74,25 +74,32 @@ public class Enums {
 	}
 
 	public enum EMillAlphabet {
-		//Sources: https://de.wikipedia.org/wiki/Enigma-Walzen
+		// Sources: https://de.wikipedia.org/wiki/Enigma-Walzen
 		// Walzen 1-5 aus Modell Enigma I
 		// UKW Walzen A-B aus Modell Enigma I
 		//	    			    1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26
-		I    ("1", new char[] {'E','K','M','F','L','G','D','Q','V','Z','N','T','O','W','Y','H','X','U','S','P','A','I','B','R','C','J'}),
-		II   ("2", new char[] {'A','J','D','K','S','I','R','U','X','B','L','H','W','T','M','C','Q','G','Z','N','P','Y','F','V','O','E'}),
-		III  ("3", new char[] {'B','D','F','H','J','L','C','P','R','T','X','V','Z','N','Y','E','I','W','G','A','K','M','U','S','Q','O'}),
-		IV   ("4", new char[] {'E','S','O','V','P','Z','J','A','Y','Q','U','I','R','H','X','L','N','F','T','G','K','D','C','M','W','B'}),
-		V    ("5", new char[] {'V','Z','B','R','G','I','T','Y','U','P','S','D','N','H','L','X','A','W','M','J','Q','O','F','E','C','K'}),
-		UKW_A("A", new char[] {'E','J','M','Z','A','L','Y','X','V','B','W','F','C','R','Q','U','O','N','T','S','P','I','K','H','G','D'}),
-		UKW_B("B", new char[] {'Y','R','U','H','Q','S','L','D','P','X','N','G','O','K','M','I','E','B','F','Z','C','W','V','J','A','T'}),
-		UKW_C("C", new char[] {'F','V','P','J','I','A','O','Y','E','D','R','Z','X','W','G','C','T','K','U','Q','S','B','N','M','H','L'});
+		I    ("1", new char[] {'E','K','M','F','L','G','D','Q','V','Z','N','T','O','W','Y','H','X','U','S','P','A','I','B','R','C','J'}, 'X'),
+		II   ("2", new char[] {'A','J','D','K','S','I','R','U','X','B','L','H','W','T','M','C','Q','G','Z','N','P','Y','F','V','O','E'}, 'S'),
+		III  ("3", new char[] {'B','D','F','H','J','L','C','P','R','T','X','V','Z','N','Y','E','I','W','G','A','K','M','U','S','Q','O'}, 'M'),
+		IV   ("4", new char[] {'E','S','O','V','P','Z','J','A','Y','Q','U','I','R','H','X','L','N','F','T','G','K','D','C','M','W','B'}, 'Q'),
+		V    ("5", new char[] {'V','Z','B','R','G','I','T','Y','U','P','S','D','N','H','L','X','A','W','M','J','Q','O','F','E','C','K'}, 'K'),
+		// '?' ist nur für Umkehrwalzen, da diese keine Übertragskerbe haben
+		UKW_A("A", new char[] {'E','J','M','Z','A','L','Y','X','V','B','W','F','C','R','Q','U','O','N','T','S','P','I','K','H','G','D'}, '?'),
+		UKW_B("B", new char[] {'Y','R','U','H','Q','S','L','D','P','X','N','G','O','K','M','I','E','B','F','Z','C','W','V','J','A','T'}, '?'),
+		UKW_C("C", new char[] {'F','V','P','J','I','A','O','Y','E','D','R','Z','X','W','G','C','T','K','U','Q','S','B','N','M','H','L'}, '?');
 		
 		private char[] millPhabet;
 		private String millID;
+		private char turnMarker;
 		
-		EMillAlphabet(String millID, char[] millPhabet) {
+		EMillAlphabet(String millID, char[] millPhabet, char turnMarker) {
 			this.millID = millID;
 			this.millPhabet = millPhabet;
+			this.turnMarker = turnMarker;
+		}
+		
+		public char getTurnMarker() {
+			return this.turnMarker;
 		}
 		
 		public char[] getAlphabet() {
