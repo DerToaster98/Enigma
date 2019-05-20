@@ -7,6 +7,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.io.File;
 
 public class GUI {
 
@@ -15,8 +16,8 @@ public class GUI {
 	private final int COMPONENT_DISTANCE = 20;
 	private final int COMPONENT_HEIGHT = 40;
 	private final JFrame FRM_ENIGMA_GUI = new JFrame();
-	private final JTextField TXT_FD_TEXT = new HintTextField("Zu ver- / entschlüsselnden Text eingeben");
-	private final JTextField TXT_FD_KEY = new HintTextField("Schlüssel eingeben");
+	private final HintTextField TXT_FD_TEXT = new HintTextField("Zu ver- / entschlüsselnden Text eingeben");
+	private final HintTextField TXT_FD_KEY = new HintTextField("Schlüssel eingeben: U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10");
 	private final JTextArea TXT_DEVELOPED_BY = new JTextArea();
 	private final JSeparator SEPARATOR = new JSeparator();
 	private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
@@ -31,9 +32,10 @@ public class GUI {
 	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/ 12;
 	private final int WINDOW_WIDTH = SCREEN_WIDTH*8;
 	private final int WINDOW_HEIGHT = SCREEN_HEIGHT*8;
-	private final JFileChooser FILE_CHOOSER = new JFileChooser();
-	@SuppressWarnings("unused")
 	private Main main;
+	private JFileChooser FILE_CHOOSER;
+	@SuppressWarnings("unused")
+
 
 
 	/**
@@ -177,9 +179,10 @@ public class GUI {
 		PROGRESSBAR.setString("Hier soll ein Text stehen");
 	}
 
-	private void initFileChooser(){
-		FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)","enigma"));
-
+	private void initFileChooser() {
+		FILE_CHOOSER = new JFileChooser(main.getFileHandler().getPATH());
+		FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)", "enigma"));
+		//FILE_CHOOSER.setCurrentDirectory(new File());
 	}
 	
 	
@@ -205,8 +208,8 @@ public class GUI {
 	//Wird ausgeführt, wenn der Cancel Button gedrückt wird
 	private void btnCancelClicked() {
 		System.out.println("BTN_CANCEL Clicked");
-		TXT_FD_TEXT.setText("");
-		TXT_FD_KEY.setText("");
+		TXT_FD_TEXT.setHint();
+		TXT_FD_KEY.setHint();
 		RDBTN_ENCRYPT.setSelected(true);
 		RDBTN_DECRYPT.setSelected(false);
 		BTN_START.setEnabled(false);
