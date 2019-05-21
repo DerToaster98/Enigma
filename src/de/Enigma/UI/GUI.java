@@ -229,4 +229,8 @@ public class GUI {
 		//handle chosen file
 		//setText: TEXT in TXT_FD_TEXT , KEY in TXT_FD_KEY
 	}
+
+	public void onFinished(){
+		
+	}
 }
