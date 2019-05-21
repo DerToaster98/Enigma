@@ -2,8 +2,8 @@ package de.Enigma.Core;
 
 /**
  * @brief Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben
- * @details Realisiert als Singleton -> nur eine Instanz pro Programminstanz
- * @details Zugriff über getLogger() Methode von überall aus möglich
+ * @details Realisiert als Singleton -> nur eine Instanz pro Programminstanz.\n
+ *          Zugriff über getLogger() Methode von überall aus möglich
  *
  * @author Nikolai
  */

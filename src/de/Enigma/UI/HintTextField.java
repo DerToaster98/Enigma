@@ -15,26 +15,30 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     private final String hint;
     private boolean showingHint;
 
-    HintTextField(final String hint) {
+    HintTextField(final String name, final String hint, final Font font) {
         super(hint);
         this.hint = hint;
         this.showingHint = true;
+        super.setName(name);
+        super.setFont(font);
         super.addFocusListener(this);
         super.addKeyListener(this);
+        super.setColumns(10);
         setForeground(Color.GRAY);
     }
 
     @Override
     public void focusGained(FocusEvent e) {
-        if(this.getText().isEmpty()) {
+        if (this.getText().isEmpty()) {
             super.setText("");
             setForeground(Color.BLACK);
             showingHint = false;
         }
     }
+
     @Override
     public void focusLost(FocusEvent e) {
-        if(this.getText().isEmpty()) {
+        if (this.getText().isEmpty()) {
             setHint();
             showingHint = true;
         }
@@ -53,7 +57,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        if (!checkValidity(e))
+        if (!checkValidInput(e))
             e.consume();
     }
 
@@ -67,24 +71,15 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     }
 
-    private boolean checkValidity(KeyEvent e) {
-        int kc = e.getKeyCode();
-        if (e.getComponent().getName().equals("TEXT"))
-        return checkValidLetter(e) || kc == KeyEvent.VK_SPACE || kc == KeyEvent.VK_BACK_SPACE || kc == KeyEvent.VK_DELETE;
-        else
-            return checkValidLetter(e) || checkValidSpecialChar(kc) || kc == KeyEvent.VK_BACK_SPACE || kc == KeyEvent.VK_DELETE;
-    }
-
-    private boolean checkValidSpecialChar(int kc) {
-        return kc == KeyEvent.VK_MINUS || kc == KeyEvent.VK_SEMICOLON || kc == KeyEvent.VK_1 || kc == KeyEvent.VK_2 || kc == KeyEvent.VK_3;
-    }
-
-    private boolean checkValidLetter(KeyEvent e) {
+    private boolean checkValidInput(KeyEvent e) {
         char c = Character.toUpperCase(e.getKeyChar());
+        System.out.println(c);
         for (Enums.EAlphabet eAlphabet : Enums.EAlphabet.values()) {
             if (c == eAlphabet.getAsChar())
                 return true;
         }
-        return false;
+        if (e.getComponent().getName().equals("TEXT")) {
+            return c == ' ';
+        } else return c == '-' || c == ';' || c == '1' || c == '2' || c == '3';
     }
 }
