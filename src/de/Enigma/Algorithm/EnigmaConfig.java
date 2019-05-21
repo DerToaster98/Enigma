@@ -12,7 +12,10 @@ public class EnigmaConfig {
 	private Mill reverseMill = null;
 
 	public EnigmaConfig() {
-		// TODO Auto-generated constructor stub
+		// TODO Key auf Richtigkeit prüfen
+		// TODO Walzen erstellen und hier zuweisen
+		// TODO "Steckbrett" befüllen
+		// TODO Buchstaben verschlüsseln schreiben
 	}
 
 	public char encryptLetter(char letter){
