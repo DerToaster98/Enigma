@@ -109,14 +109,14 @@ public class Enums {
 	/**
 	 * @brief Dieses Enum wird dazu verwendet, um die Instanzen der Walzen der Enigma anzusprechen, bzw. zwischen ihnen zu differenzieren
 	 * 
-	 * @author DerBoss
+	 * @author Gott
 	 *
 	 */
 	public enum EMill {
 		FIRST_MILL,
 		SECOND_MILL,
 		THIRD_MILL,
-		RETURN_MILL;
+		REVERSE_MILL;
 	}
 
 	/**

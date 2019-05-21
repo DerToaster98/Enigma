@@ -62,7 +62,7 @@ public class EnigmaConfig {
 		switch (mill) {
 		case FIRST_MILL:
 			return this.reverseMill;
-		case RETURN_MILL:
+		case REVERSE_MILL:
 			return this.mills[0];
 		case SECOND_MILL:
 			return this.mills[1];
