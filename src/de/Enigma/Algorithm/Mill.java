@@ -8,7 +8,7 @@ import de.Enigma.Util.Util;
  * @brief Walzen Klasse, welche eine Walze der Enigma darstellt
  * @details Realisiert als Objekt. Diesem wird sein "Alphabet" bei Erzeugung zugewiesen
  *
- * @author Gott
+ * @author Oliver Seiler
  */
 public class Mill {
 

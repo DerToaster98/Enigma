@@ -10,7 +10,7 @@ import de.Enigma.Util.Enums.EMill;
  * @details Enthält eine HashMap, welche das "Steckbrett" realisiert
  * @details Enthält die Instanzen der Walzen, welche benutzt werden
  * 
- * @author Gott
+ * @author Oliver Seiler
  *
  */
 public class EnigmaConfig {
