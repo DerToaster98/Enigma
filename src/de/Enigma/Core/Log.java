@@ -1,8 +1,8 @@
 package de.Enigma.Core;
 
 /**
- * (@brief) Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zuschreiben
- * (@details) Realisiert als Singelton -> nur eine Instanz pro Programminstanz
+ * (@brief) Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben
+ * (@details) Realisiert als Singleton -> nur eine Instanz pro Programminstanz
  * (@details) Zugriff über getLogger() Methode von überall aus möglich
  *
  * @author Nikolai
@@ -17,7 +17,7 @@ public class Log {
 
     /**
      * Info Logeintrag:
-     * erstellt über die dll einen Info Log der über Vorgänge innerhalb der Anwendung informieren soll
+     * erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll
      *
      * @param className  Name der Klasse von der der Aufruf erfolgt ist
      * @param methodName Name der Methode von der der Aufruf erfolgt ist
@@ -29,7 +29,7 @@ public class Log {
 
     /**
      * Warning Logeintrag:
-     * erstellt über die dll einen Warning Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll
+     * erstellt über die .dll einen Warning-Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll
      *
      * @param className  Name der Klasse von der der Aufruf erfolgt ist
      * @param methodName Name der Methode von der der Aufruf erfolgt ist
@@ -41,7 +41,7 @@ public class Log {
 
     /**
      * Error Logeintrag:
-     * erstellt über die dll einen Error Log der über kritische Fehler innerhalb der Anwendung informieren soll
+     * erstellt über die .dll einen Error-Log der über kritische Fehler innerhalb der Anwendung informieren soll
      *
      * @param className  Name der Klasse von der der Aufruf erfolgt ist
      * @param methodName Name der Methode von der der Aufruf erfolgt ist
