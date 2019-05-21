@@ -11,6 +11,11 @@ public class FileHandler {
     private final String PATH = createPath();
 
     private String toWrite;
+    private String key;
+    private String encodedText;
+    private String clearText;
+    private String metaData;
+
     private File logFile;
     private File outputFile;
     private File enigma;
@@ -19,7 +24,7 @@ public class FileHandler {
         toWrite = toWrite.concat(String.valueOf(letter));
     }
 
-    public void forceWrite() {
+    public void forceWrite(String text, String key) {
 
     }
 
@@ -35,7 +40,6 @@ public class FileHandler {
             Log.getLogger().e("FileHandler", "createPath",
                     "Decoding Path ran into a problem: UnsupportedEncodingException");
         }
-
 
         return path;
     }
