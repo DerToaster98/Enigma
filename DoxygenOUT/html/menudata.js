@@ -1,9 +1,9 @@
 var menudata={children:[
-{text:"Main Page",url:"index.html"},
-{text:"Classes",url:"annotated.html",children:[
-{text:"Class List",url:"annotated.html"},
-{text:"Class Index",url:"classes.html"},
-{text:"Class Hierarchy",url:"hierarchy.html"},
-{text:"Class Members",url:"functions.html",children:[
-{text:"All",url:"functions.html"},
-{text:"Functions",url:"functions_func.html"}]}]}]}
+{text:"Hauptseite",url:"index.html"},
+{text:"Klassen",url:"annotated.html",children:[
+{text:"Auflistung der Klassen",url:"annotated.html"},
+{text:"Klassen-Verzeichnis",url:"classes.html"},
+{text:"Klassenhierarchie",url:"hierarchy.html"},
+{text:"Klassen-Elemente",url:"functions.html",children:[
+{text:"Alle",url:"functions.html"},
+{text:"Funktionen",url:"functions_func.html"}]}]}]}
