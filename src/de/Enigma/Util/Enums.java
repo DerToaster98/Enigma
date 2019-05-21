@@ -63,7 +63,7 @@ public class Enums {
 			return null;
 		}
 		public static char[] getAlphabet() {
-			char[] array = new char[] {26};
+			char[] array = new char[26];
 			
 			for(int i = 0; i < 26; i++) {
 				array[i] = getFromIndex(i+1).getAsChar();

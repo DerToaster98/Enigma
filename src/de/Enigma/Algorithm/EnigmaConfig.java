@@ -2,12 +2,14 @@ package de.Enigma.Algorithm;
 
 import java.util.HashMap;
 
+import de.Enigma.Util.Enums.EMill;
+
 public class EnigmaConfig {
 
 	private String key;
-	private HashMap<Character,Character> letterChanger;
-	private Mill[] mills;
-	private Mill reverseMill;
+	private HashMap<Character,Character> letterChanger = new HashMap<Character, Character>();
+	private Mill[] mills = new Mill[] {null,null,null};
+	private Mill reverseMill = null;
 
 	public EnigmaConfig() {
 		// TODO Auto-generated constructor stub
@@ -17,8 +19,36 @@ public class EnigmaConfig {
 	return ' ';
 	}
 
-	private void checkMills(){
-
+	//Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
+	private void checkMills() {
+		Mill first = getMill(EMill.FIRST_MILL);
+		if(first != null && first.shouldRotateNeighborMill()) {
+			Mill second = getMill(EMill.SECOND_MILL);
+			if(second != null) {
+				second.rotateMill();
+				if(second.shouldRotateNeighborMill()) {
+					Mill third = getMill(EMill.THIRD_MILL);
+					if(third != null) {
+						third.rotateMill();
+					}
+				}
+			}
+		}
+	}
+	//Methode, um eine Walze anhand des enums zu identifizieren
+	private Mill getMill(EMill mill) {
+		switch (mill) {
+		case FIRST_MILL:
+			return this.reverseMill;
+		case RETURN_MILL:
+			return this.mills[0];
+		case SECOND_MILL:
+			return this.mills[1];
+		case THIRD_MILL:
+			return this.mills[2];
+		default:
+			return null;
+		}
 	}
 
 }

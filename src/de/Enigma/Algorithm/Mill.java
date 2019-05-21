@@ -30,20 +30,27 @@ public class Mill {
 
 	//Schiebt das array nach links -> rotiert um einen Buchstaben
 	public void rotateMill(){
-		char newLastChar = new Character(this.alphabet[(this.alphabet.length -1)]);
-		for(int i = 1; i < this.alphabet.length; i++) {
-			char currentChar = this.alphabet[i];
-			this.alphabet[(i-1)] = currentChar;
+		char newLastChar = new Character(this.getAlphabet()[(this.getAlphabet().length -1)]);
+		for(int i = 1; i < this.getAlphabet().length; i++) {
+			char currentChar = this.getAlphabet()[i];
+			this.getAlphabet()[(i-1)] = currentChar;
 		}
 		this.wasLatestFirstCharTheMark = false;
 		if(newLastChar == this.markerChar) {
 			this.wasLatestFirstCharTheMark = true;
 		}
-		this.alphabet[(this.alphabet.length -1)] = newLastChar;
+		this.getAlphabet()[(this.getAlphabet().length -1)] = newLastChar;
 	}
 	
 	public char encryptLetter(char c){
 		return ' ';
+	}
+	
+	public boolean shouldRotateNeighborMill() {
+		if(this.wasLatestFirstCharTheMark && this.getAlphabet()[this.getAlphabet().length -1] == this.markerChar) {
+			return true;
+		}
+		return false;
 	}
 	
 	public boolean incrementCounter(){
@@ -64,5 +71,10 @@ public class Mill {
 	public int getIndex() {
 		return index;
 	}
+
+	public char[] getAlphabet() {
+		return alphabet;
+	}
+
 }
 
