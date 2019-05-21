@@ -1,14 +1,33 @@
 package de.Enigma.Util;
 
+/**
+ * 
+ * (@brief) Klasse, welche verschiedene Enums enthält, welche verschiedene Aufgaben erfüllen
+ * 
+ * @author DerBoss
+ *
+ */
 public class Enums {
 
     //enum EMode;
+	/**
+	 * (@brief) Benutzt für die Übergabe des gewählten Modus der Enigma
+	 * 
+	 * @author DerBoss
+	 *
+	 */
 	public enum EMode {
 		ENCRYPT,
 		DECRYPT;
 	}
 
     //enum EAlphabet;
+	/**
+	 * (@brief) Ein Enum, welches das "normale" Alphabet enthält
+	 * 
+	 * @author DerBoss
+	 *
+	 */
 	public enum EAlphabet {
 		A('a',1),
 		B('b',2),
@@ -45,9 +64,18 @@ public class Enums {
 			this.character = c;
 		}
 		
+		/**
+		 * 
+		 * @return Liefert den Index dieses Eintrags im Alphabet zurück
+		 */
 		public int getIndex() {
 			return this.index;
 		}
+		
+		/**
+		 * 
+		 * @return Liefert den char dieses Eintrags
+		 */
 		public char getAsChar() {
 			return this.character;
 		}
@@ -62,6 +90,11 @@ public class Enums {
 			}
 			return null;
 		}
+		
+		/**
+		 * 
+		 * @return Liefert das normale Alphabet als array zurück
+		 */
 		public static char[] getAlphabet() {
 			char[] array = new char[26];
 			
@@ -73,6 +106,12 @@ public class Enums {
 		}
 	}
 	
+	/**
+	 * (@brief) Dieses Enum wird dazu verwendet, um die Instanzen der Walzen der Enigma anzusprechen, bzw. zwischen ihnen zu differenzieren
+	 * 
+	 * @author DerBoss
+	 *
+	 */
 	public enum EMill {
 		FIRST_MILL,
 		SECOND_MILL,
@@ -80,6 +119,12 @@ public class Enums {
 		RETURN_MILL;
 	}
 
+	/**
+	 * (@brief) Dieses Enum enthält hauptsächlich die Alphabete für die Walzen 1-5 und die Umkehrwalzen A,B,C, welche in der Enigma I verbaut wurden
+	 * 
+	 * @author DerBoss
+	 *
+	 */
 	public enum EMillAlphabet {
 		// Sources: https://de.wikipedia.org/wiki/Enigma-Walzen
 		// Walzen 1-5 aus Modell Enigma I
@@ -105,14 +150,26 @@ public class Enums {
 			this.turnMarker = turnMarker;
 		}
 		
+		/**
+		 * 
+		 * @return Liefert den Buchstaben zurück, an welchem diese Walze ihre Übertragskerbe hat. Ist dieser '?', so ist diese Walze eine Umkehrwalze, welche keine Übertragskerbe besitzt
+		 */
 		public char getTurnMarker() {
 			return this.turnMarker;
 		}
 		
+		/**
+		 * 
+		 * @return Liefert das verwendete Alphabet dieser Walze als char Array zurück
+		 */
 		public char[] getAlphabet() {
 			return this.millPhabet.clone();
 		}
 		
+		/**
+		 * 
+		 * @return Liefert die 'ID' dieser Walze zurück. 1-5: Walzen 1-5; A,B,C: Umkehrwalzen A,B,C
+		 */
 		public String getMillID() {
 			return this.millID;
 		}
