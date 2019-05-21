@@ -72,6 +72,13 @@ public class Enums {
 			return array;
 		}
 	}
+	
+	public enum EMill {
+		FIRST_MILL,
+		SECOND_MILL,
+		THIRD_MILL,
+		RETURN_MILL;
+	}
 
 	public enum EMillAlphabet {
 		// Sources: https://de.wikipedia.org/wiki/Enigma-Walzen
