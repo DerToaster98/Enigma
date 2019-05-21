@@ -24,12 +24,27 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import de.Enigma.Core.Main;
 
+/**
+ * @brief GUI Klasse für die grafische Darstellung des Programmes
+ * @details Wird durch die Main Klasse gestartet und bildet die Schnittstelle zum Benutzer, dieser interagiert mit ihr
+ *          und kann somit die Kernfunktionen triggern.
+ *          Die GUI ist nicht dynamisch und hat nicht den Anspruch eine gute und ansehnliche GUI zu sein, sie dient nur
+ *          dem Zweck der Kommunikation mit dem Nutzer.
+ *
+ *          Die GUI enthält Komponenten die den Nutzer teilweise führen und teilweise auch bestimmte Dinge ausprobieren
+ *          lassen, der Nutzer ist aber dennoch daran gebunden, dass die GUI ihn einschränkt.
+ */
 public class GUI {
 
     private final String FONT = "Segoe UI Semibold";
     private final int TEXT_SIZE = 21;
     private final int COMPONENT_DISTANCE = 20;
     private final int COMPONENT_HEIGHT = 40;
+    private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width / 12;
+    private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height / 12;
+    private final int WINDOW_WIDTH = SCREEN_WIDTH * 8;
+    private final int WINDOW_HEIGHT = SCREEN_HEIGHT * 8;
+
     private final JFrame FRM_ENIGMA_GUI = new JFrame();
     private final HintTextField TXT_FD_TEXT = new HintTextField("Zu ver- / entschlüsselnden Text eingeben");
     private final HintTextField TXT_FD_KEY = new HintTextField("U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10");
@@ -45,10 +60,7 @@ public class GUI {
     private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschlüsseln");
     private final JProgressBar PROGRESSBAR = new JProgressBar();
     private final JLabel BACKGROUND = new JLabel("");
-    private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width / 12;
-    private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height / 12;
-    private final int WINDOW_WIDTH = SCREEN_WIDTH * 8;
-    private final int WINDOW_HEIGHT = SCREEN_HEIGHT * 8;
+
     private Main main;
     private JFileChooser FILE_CHOOSER;
 
