@@ -5,10 +5,10 @@ import de.Enigma.Util.Enums.EMillAlphabet;
 import de.Enigma.Util.Util;
 
 /**
- * (@brief) Walzen Klasse, welche eine Walze der Enigma darstellt
- * (@details) Realisiert als Objekt. Diesem wird sein "Alphabet" bei Erzeugung zugewiesen
+ * @brief Walzen Klasse, welche eine Walze der Enigma darstellt
+ * @details Realisiert als Objekt. Diesem wird sein "Alphabet" bei Erzeugung zugewiesen
  *
- * @author DerBoss
+ * @author Gott
  */
 public class Mill {
 
@@ -40,8 +40,8 @@ public class Mill {
 	}
 
 	/**
-	 * (@details) Methode, um die Walze um einen Buchstaben zu drehen
-	 * (@details) Schiebt das array nach links -> rotiert um einen Buchstaben
+	 * @details Methode, um die Walze um einen Buchstaben zu drehen
+	 * @details Schiebt das array nach links -> rotiert um einen Buchstaben
 	 */
 	public void rotateMill(){
 		char newLastChar = new Character(this.getAlphabet()[(this.getAlphabet().length -1)]);
@@ -57,7 +57,7 @@ public class Mill {
 	}
 	
 	/**
-	 * (@details) Methode, um einen Buchstaben zu ersetzen
+	 * @details Methode, um einen Buchstaben zu ersetzen
 	 * @param c der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
 	 * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück
 	 */
@@ -66,7 +66,7 @@ public class Mill {
 	}
 	
 	/**
-	 * (@details) Methode, welche überprüft, ob die "Übertragskerbe" überschritten wurde
+	 * @details Methode, welche überprüft, ob die "Übertragskerbe" überschritten wurde
 	 * @return true: Die Übertragskerbe wurde überschritten   false: die Kerbe wurde nicht überschritten 
 	 */
 	public boolean shouldRotateNeighborMill() {

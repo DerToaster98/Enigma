@@ -2,18 +2,18 @@ package de.Enigma.Util;
 
 /**
  * 
- * (@brief) Klasse, welche verschiedene Enums enthält, welche verschiedene Aufgaben erfüllen
+ * @brief Klasse, welche verschiedene Enums enthält, welche verschiedene Aufgaben erfüllen
  * 
- * @author DerBoss
+ * @author Gott
  *
  */
 public class Enums {
 
     //enum EMode;
 	/**
-	 * (@brief) Benutzt für die Übergabe des gewählten Modus der Enigma
+	 * @brief Benutzt für die Übergabe des gewählten Modus der Enigma
 	 * 
-	 * @author DerBoss
+	 * @author Gott
 	 *
 	 */
 	public enum EMode {
@@ -23,9 +23,9 @@ public class Enums {
 
     //enum EAlphabet;
 	/**
-	 * (@brief) Ein Enum, welches das "normale" Alphabet enthält
+	 * @brief Ein Enum, welches das "normale" Alphabet enthält
 	 * 
-	 * @author DerBoss
+	 * @author Gott
 	 *
 	 */
 	public enum EAlphabet {
@@ -107,7 +107,7 @@ public class Enums {
 	}
 	
 	/**
-	 * (@brief) Dieses Enum wird dazu verwendet, um die Instanzen der Walzen der Enigma anzusprechen, bzw. zwischen ihnen zu differenzieren
+	 * @brief Dieses Enum wird dazu verwendet, um die Instanzen der Walzen der Enigma anzusprechen, bzw. zwischen ihnen zu differenzieren
 	 * 
 	 * @author DerBoss
 	 *
@@ -120,9 +120,9 @@ public class Enums {
 	}
 
 	/**
-	 * (@brief) Dieses Enum enthält hauptsächlich die Alphabete für die Walzen 1-5 und die Umkehrwalzen A,B,C, welche in der Enigma I verbaut wurden
+	 * @brief Dieses Enum enthält hauptsächlich die Alphabete für die Walzen 1-5 und die Umkehrwalzen A,B,C, welche in der Enigma I verbaut wurden
 	 * 
-	 * @author DerBoss
+	 * @author Gott
 	 *
 	 */
 	public enum EMillAlphabet {

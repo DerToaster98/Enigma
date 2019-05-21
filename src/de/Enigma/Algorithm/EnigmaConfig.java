@@ -6,11 +6,11 @@ import de.Enigma.Util.Enums.EMill;
 
 /**
  * 
- * (@brief) Klasse, welche essenziell für die Verschlüsselung ist
- * (@details) Enthält eine HashMap, welche das "Steckbrett" realisiert
- * (@details) Enthält die Instanzen der Walzen, welche benutzt werden
+ * @brief Klasse, welche essenziell für die Verschlüsselung ist
+ * @details Enthält eine HashMap, welche das "Steckbrett" realisiert
+ * @details Enthält die Instanzen der Walzen, welche benutzt werden
  * 
- * @author DerBoss
+ * @author Gott
  *
  */
 public class EnigmaConfig {
@@ -36,7 +36,7 @@ public class EnigmaConfig {
 	}
 
 	/**
-	 * (@details) Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
+	 * @details Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
 	 */
 	private void checkMills() {
 		Mill first = getMill(EMill.FIRST_MILL);

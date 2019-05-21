@@ -7,6 +7,5 @@ var searchData=
   ['getindexofcharinalphabet',['getIndexOfCharInAlphabet',['../classde_1_1_enigma_1_1_util_1_1_util.html#a8583f6d14bfa89ee6ce77bf065449086',1,'de::Enigma::Util::Util']]],
   ['getlogger',['getLogger',['../classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82',1,'de::Enigma::Core::Log']]],
   ['getmillid',['getMillID',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a69675608ee623ace1204f2cd46483034',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['getturnmarker',['getTurnMarker',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['gui',['GUI',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ac98b39fcda7d523f32565a14ca1b8487',1,'de::Enigma::UI::GUI']]]
+  ['getturnmarker',['getTurnMarker',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58',1,'de::Enigma::Util::Enums::EMillAlphabet']]]
 ];
