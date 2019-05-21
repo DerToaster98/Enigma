@@ -18,7 +18,7 @@ public class Enums {
 	 */
 	public enum EMode {
 		ENCRYPT,
-		DECRYPT;
+		DECRYPT,;
 	}
 
     //enum EAlphabet;
@@ -29,32 +29,32 @@ public class Enums {
 	 *
 	 */
 	public enum EAlphabet {
-		A('a',1),
-		B('b',2),
-		C('c',3),
-		D('d',4),
-		E('e',5),
-		F('f',6),
-		G('g',7),
-		H('h',8),
-		I('i',9),
-		J('j',10),
-		K('k',11),
-		L('l',12),
-		M('m',13),
-		N('n',14),
-		O('o',15),
-		P('p',16),
-		Q('q',17),
-		R('r',18),
-		S('s',19),
-		T('t',20),
-		U('u',21),
-		V('v',22),
-		W('w',23),
-		X('x',24),
-		Y('y',25),
-		Z('z',26);
+		A('A',1),
+		B('B',2),
+		C('C',3),
+		D('D',4),
+		E('E',5),
+		F('F',6),
+		G('G',7),
+		H('H',8),
+		I('I',9),
+		J('J',10),
+		K('K',11),
+		L('L',12),
+		M('M',13),
+		N('N',14),
+		O('O',15),
+		P('P',16),
+		Q('Q',17),
+		R('R',18),
+		S('S',19),
+		T('T',20),
+		U('U',21),
+		V('V',22),
+		W('W',23),
+		X('X',24),
+		Y('Y',25),
+		Z('Z',26),;
 
 		private char character;
 		private int index;
@@ -116,7 +116,7 @@ public class Enums {
 		FIRST_MILL,
 		SECOND_MILL,
 		THIRD_MILL,
-		REVERSE_MILL;
+		REVERSE_MILL,;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class Enums {
 		// '?' ist nur für Umkehrwalzen, da diese keine Übertragskerbe haben
 		UKW_A("A", new char[] {'E','J','M','Z','A','L','Y','X','V','B','W','F','C','R','Q','U','O','N','T','S','P','I','K','H','G','D'}, '?'),
 		UKW_B("B", new char[] {'Y','R','U','H','Q','S','L','D','P','X','N','G','O','K','M','I','E','B','F','Z','C','W','V','J','A','T'}, '?'),
-		UKW_C("C", new char[] {'F','V','P','J','I','A','O','Y','E','D','R','Z','X','W','G','C','T','K','U','Q','S','B','N','M','H','L'}, '?');
+		UKW_C("C", new char[] {'F','V','P','J','I','A','O','Y','E','D','R','Z','X','W','G','C','T','K','U','Q','S','B','N','M','H','L'}, '?'),;
 		
 		private char[] millPhabet;
 		private String millID;
