@@ -20,8 +20,13 @@ public class Util {
 		}
 		return c;
 	}
-	
-	// Liefert position eines buchstaben in einem alphabet zurück !!von 1 bis 26!! Wenn -1: nicht im Alphabet
+
+	/**
+	 * (@details) Liefert position eines buchstaben in einem alphabet zurück !!von 1 bis 26!! Wenn -1: nicht im Alphabet
+	 * @param c Buchstabe, von welchem der Index gesucht werden soll
+	 * @param alphabet Alphabet, in dem nach dem Buchstaben gesucht werden soll
+	 * @return Liefert den Index des gescuhten Buchstabens im Alphabet zurück; -1, wenn das Alphabet den Buchstaben nicht enthält
+	 */
 	public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
 		int index = 0;
 		for(int i = 0; i < alphabet.length; i++) {
