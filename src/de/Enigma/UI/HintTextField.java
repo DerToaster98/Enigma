@@ -1,12 +1,16 @@
 package de.Enigma.UI;
 
 
+import de.Enigma.Util.Enums;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-class HintTextField extends JTextField implements FocusListener {
+class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     private final String hint;
     private boolean showingHint;
@@ -16,6 +20,7 @@ class HintTextField extends JTextField implements FocusListener {
         this.hint = hint;
         this.showingHint = true;
         super.addFocusListener(this);
+        super.addKeyListener(this);
         setForeground(Color.GRAY);
     }
 
@@ -44,5 +49,42 @@ class HintTextField extends JTextField implements FocusListener {
     @Override
     public String getText() {
         return showingHint ? "" : super.getText();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (!checkValidity(e))
+            e.consume();
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    private boolean checkValidity(KeyEvent e) {
+        int kc = e.getKeyCode();
+        if (e.getComponent().getName().equals("TEXT"))
+        return checkValidLetter(e) || kc == KeyEvent.VK_SPACE || kc == KeyEvent.VK_BACK_SPACE || kc == KeyEvent.VK_DELETE;
+        else
+            return checkValidLetter(e) || checkValidSpecialChar(kc) || kc == KeyEvent.VK_BACK_SPACE || kc == KeyEvent.VK_DELETE;
+    }
+
+    private boolean checkValidSpecialChar(int kc) {
+        return kc == KeyEvent.VK_MINUS || kc == KeyEvent.VK_SEMICOLON || kc == KeyEvent.VK_1 || kc == KeyEvent.VK_2 || kc == KeyEvent.VK_3;
+    }
+
+    private boolean checkValidLetter(KeyEvent e) {
+        char c = Character.toUpperCase(e.getKeyChar());
+        for (Enums.EAlphabet eAlphabet : Enums.EAlphabet.values()) {
+            if (c == eAlphabet.getAsChar())
+                return true;
+        }
+        return false;
     }
 }

@@ -1,40 +1,26 @@
 package de.Enigma.UI;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.SystemColor;
-import java.awt.Toolkit;
-import java.io.File;
+import de.Enigma.Core.Main;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JRadioButton;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
+import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-import de.Enigma.Core.Main;
+import java.awt.*;
+import java.io.File;
 
 /**
  * @brief GUI Klasse für die grafische Darstellung des Programmes
  * @details Wird durch die Main Klasse gestartet und bildet die Schnittstelle zum Benutzer, dieser interagiert mit ihr
  *          und kann somit die Kernfunktionen triggern.
- *          Die GUI ist nicht dynamisch und hat nicht den Anspruch eine gute und ansehnliche GUI zu sein, sie dient nur
+ *          Die GUI ist nicht dynamisch und hat auch nicht den Anspruch eine gute und ansehnliche GUI zu sein, sie dient nur
  *          dem Zweck der Kommunikation mit dem Nutzer.
  *
  *          Die GUI enthält Komponenten die den Nutzer teilweise führen und teilweise auch bestimmte Dinge ausprobieren
  *          lassen, der Nutzer ist aber dennoch daran gebunden, dass die GUI ihn einschränkt.
  */
 public class GUI {
+
 
     private final String FONT = "Segoe UI Semibold";
     private final int TEXT_SIZE = 21;
@@ -101,9 +87,11 @@ public class GUI {
         TXT_FD_TEXT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
         TXT_FD_TEXT.setBounds(COMPONENT_DISTANCE * 6 + 10, COMPONENT_DISTANCE, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
         TXT_FD_TEXT.setColumns(10);
+        TXT_FD_TEXT.setName("TEXT");
         TXT_FD_TEXT.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
+
                 BTN_START.setEnabled(true);
             }
 
@@ -122,6 +110,7 @@ public class GUI {
         //Key Edit
         TXT_FD_KEY.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
         TXT_FD_KEY.setBounds(COMPONENT_DISTANCE * 6 + 10, 80, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
+        TXT_FD_KEY.setName("KEY");
         TXT_FD_KEY.setColumns(10);
 
         addComponent(TXT_FD_KEY);

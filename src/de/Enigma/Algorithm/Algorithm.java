@@ -6,7 +6,7 @@ public abstract class Algorithm {
 	 * U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10 max zehn Buchstaben
 	 * U = wechlche Umkehrwalze verwendet wird, A B oder C 
 	 * AAA = welche Walze an welcher Position steht z.B 3 2 1 
-	 * XXX= Walzenstellung z.B 07 23 04 aber als Zahlen
+	 * XXX= Walzenstellung z.B 07 23 04 aber als Buchstabe
 	 * X1;Y1 = Buchstabe X1 ist im Steckbrett mit Y2 verbunden z.B E;G
 	 * Beispiel: C-312-RQV-R;Q-A;S-T;L-C;N
 	 * Umkehrwalze C
