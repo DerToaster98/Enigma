@@ -1,6 +1,7 @@
 package de.Enigma.Algorithm;
 
 import de.Enigma.Util.Enums.EAlphabet;
+import de.Enigma.Util.Enums.EMill;
 import de.Enigma.Util.Enums.EMillAlphabet;
 import de.Enigma.Util.Util;
 
@@ -12,23 +13,18 @@ import de.Enigma.Util.Util;
  */
 public class Mill {
 
-	private int index;
 	private char[] alphabet;
 	private char markerChar;
 	private boolean wasLatestFirstCharTheMark;
-	private int position;
-	private int counter=0;
 
 
 	/**
-	 * @param indx UNUSED
 	 * @param startPos Der Buchstabe, welcher über den Schlüssel als Start Buchstabe angegeben wird
 	 * @param alphabet Das Alphabet, welches die Walze nutzt
 	 */
-	public Mill(int indx, char startPos, EMillAlphabet alphabet) {
+	public Mill(char startPos, EMillAlphabet alphabet) {
 		this.alphabet = alphabet.getAlphabet();
 		this.markerChar = new Character(alphabet.getTurnMarker());
-		index = indx;
 		
 		int rotations = 0;
 		rotations = Util.getIndexOfCharInAlphabet(startPos, EAlphabet.getAlphabet());
@@ -76,32 +72,6 @@ public class Mill {
 		return false;
 	}
 	
-	/**
-	 * UNUSED
-	 * @return true: Walze hat sich zum 26. mal gedreht    false: Walze hat sich weniger als 26x gedreht
-	 */
-	public boolean incrementCounter(){
-		if(counter == 26){
-			counter = 1;
-			return true;
-		}
-		counter++;
-		return false;
-	}
-
-
-	/**
-	 * @return Liefert die Anzahl der Umdrehungen der Walze zurück
-	 */
-	public int getCounter() {
-		return counter;
-
-	}
-
-	public int getIndex() {
-		return index;
-	}
-
 	/**
 	 * @return Liefert das "Alphabet" der Walze zurück -> das Alphabet, welches das normale Alphabet ersetzt
 	 */
