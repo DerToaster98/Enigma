@@ -18,6 +18,7 @@ public class Mill {
 
 
 	/**
+	 * @brief Walzenklasse, übergeben wird das zugehörige Alphabet und die Startstellung
 	 * @param startPos Der Buchstabe, welcher über den Schlüssel als Start Buchstabe angegeben wird
 	 * @param alphabet Das Alphabet, welches die Walze nutzt
 	 */

@@ -19,6 +19,7 @@ import java.io.File;
  * <p>
  * Die GUI enthält Komponenten die den Nutzer teilweise führen und teilweise auch bestimmte Dinge ausprobieren
  * lassen, der Nutzer ist aber dennoch daran gebunden, dass die GUI ihn einschränkt.
+ * @author Nikolai Klatt, Oliver Seiler
  */
 public class GUI {
 

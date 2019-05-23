@@ -23,7 +23,7 @@ public class EnigmaConfig {
 
 	
 	/**
-	 * Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels
+	 * @brief Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels
 	 */
 	public EnigmaConfig() {
 		// TODO Key auf Richtigkeit prüfen
@@ -78,7 +78,7 @@ public class EnigmaConfig {
 		}
 	}
 	/**
-	 * 
+	 * @brief Benutzt, um an die Instanzen der Walzen zu gelangen
 	 * @param mill Beschreibt durch ein Enum, welche Walze gemeint ist
 	 * @return Liefert die Instanz einer Walze zurück, welche durch 'mill' angesprochen wird -> FIRST_MILL: linke Walze, SECOND_MILL: mittlere Walze, etc.
 	 */
