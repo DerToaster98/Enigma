@@ -5,8 +5,11 @@ public class Util {
 	public Util() {
 		// TODO Auto-generated constructor stub
 	}
-
-	//wandelt String in char-Arrya um
+	/**
+	 * @brief wandelt String in char-Arrya um
+	 * @param message, String der umgewandelt werden soll 
+	 * @return
+	 */
 	public static char[] createCharArray(String message){
 		
 		char[] c = message.toCharArray();
