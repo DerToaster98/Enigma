@@ -1,5 +1,11 @@
 package de.Enigma.Util;
 
+
+/**
+ * @brief Klasse, welche hauptsächlich Hilfsmethoden für die Stringmanipulation enthält
+ * @author Alle
+ *
+ */
 public class Util {
 
 	public Util() {
@@ -7,10 +13,15 @@ public class Util {
 	}
 
 	//wandelt String in char-Arrya um
+	/**
+	 * @brief Methode, welche Strings, in char-Arrays umwandeln kann
+	 * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
+	 * @return Gibt das erzeugte char-Array zurück
+	 */
 	public static char[] createCharArray(String message){
-		
+
 		char[] c = message.toCharArray();
-		
+
 		return c;
 	}
 

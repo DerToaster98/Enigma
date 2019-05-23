@@ -1,15 +1,18 @@
 package de.Enigma.UI;
 
 
-import de.Enigma.Util.Enums;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JTextField;
+
+import de.Enigma.Util.Enums;
+
+@SuppressWarnings("serial")
 class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     private final String hint;

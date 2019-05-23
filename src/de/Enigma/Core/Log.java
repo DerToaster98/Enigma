@@ -1,5 +1,7 @@
 package de.Enigma.Core;
 
+import de.Enigma.Util.FileHandler;
+
 /**
  * @author Nikolai
  * @brief Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben
@@ -16,7 +18,7 @@ public class Log {
      * Der Logger als Singelton Objekt zu erzeugen, ist logisch, da nur eine Instanz des Loggers existieren sollte, denn sonst kann es zu Fehlern und Überschneidungen kommen.
      */
     private Log() {
-        // TODO Auto-generated constructor stub
+        FileHandler.getFileHandler().makeLogFile();
     }
 
     /**
@@ -28,16 +30,16 @@ public class Log {
      * erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.\n
      * Darunter zählen:\n
      * - generelle Infos über die Programmroutinen, wie zum Beispiel:\n
-     *      - Routine gestartet\n
-     *      - Routine erfolgreich beendet\n
-     *      - Routine startet Subroutine\n
-     *      - ...\n
+     * - Routine gestartet\n
+     * - Routine erfolgreich beendet\n
+     * - Routine startet Subroutine\n
+     * - ...\n
      * - Infos zu Programmabläufen\n
      * - ...\n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i("className", "methodName", "warning");
      */
     public void i(String className, String methodName, String info) {
-
+        FileHandler.getFileHandler().forceWrite("LOG", className+" "+ methodName +" "+ info, "INFO: ");
     }
 
     /**
@@ -56,7 +58,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w("className", "methodName", "warning");
      */
     public void w(String className, String methodName, String warning) {
-
+        FileHandler.getFileHandler().forceWrite("LOG", className+" "+ methodName +" "+ warning, "WARNING: ");
     }
 
     /**
@@ -73,7 +75,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e("className", "methodName", "warning");
      */
     public void e(String className, String methodName, String error) {
-
+        FileHandler.getFileHandler().forceWrite("LOG", className+" "+ methodName +" "+ error, "ERROR: ");
     }
 
     /**

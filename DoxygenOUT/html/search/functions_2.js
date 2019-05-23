@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['getalphabet',['getAlphabet',['../classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a918c53ae722325d91c19cea90fdbedb1',1,'de.Enigma.Algorithm.Mill.getAlphabet()'],['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#aebee015859ad2b6090c8ccf06fcdcd28',1,'de.Enigma.Util.Enums.EAlphabet.getAlphabet()'],['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a42738303dfbfa63d512306b1102a93cf',1,'de.Enigma.Util.Enums.EMillAlphabet.getAlphabet()']]],
-  ['getaschar',['getAsChar',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#ab8be59c4d6bb5263147572911f75c5c5',1,'de::Enigma::Util::Enums::EAlphabet']]],
-  ['getindex',['getIndex',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a9e9983168faaf9bb24090c3870ebbfa4',1,'de::Enigma::Util::Enums::EAlphabet']]],
-  ['getindexofcharinalphabet',['getIndexOfCharInAlphabet',['../classde_1_1_enigma_1_1_util_1_1_util.html#a8583f6d14bfa89ee6ce77bf065449086',1,'de::Enigma::Util::Util']]],
-  ['getkey',['getKey',['../classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#acf5ee30095ca4cb60ea28b4c04991fd4',1,'de::Enigma::Algorithm::EnigmaConfig']]],
-  ['getlogger',['getLogger',['../classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82',1,'de::Enigma::Core::Log']]],
-  ['getmillid',['getMillID',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a69675608ee623ace1204f2cd46483034',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['getturnmarker',['getTurnMarker',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['gui',['GUI',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ac98b39fcda7d523f32565a14ca1b8487',1,'de::Enigma::UI::GUI']]]
+  ['e',['e',['../classde_1_1_enigma_1_1_core_1_1_log.html#a402f5a4a3b918b178cf711f02eb6f67a',1,'de::Enigma::Core::Log']]],
+  ['ealphabet',['EAlphabet',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a53563139df6bbf6ed8e642018a1d6baf',1,'de::Enigma::Util::Enums::EAlphabet']]],
+  ['emillalphabet',['EMillAlphabet',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a758a01583486a28c58814f4b9655d8e2',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
+  ['encryptletter',['encryptLetter',['../classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a64f1ce01d395c838531db22c3dabff02',1,'de.Enigma.Algorithm.EnigmaConfig.encryptLetter()'],['../classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a1e194b90210fe67275ccd92b879b62d0',1,'de.Enigma.Algorithm.Mill.encryptLetter()']]],
+  ['enigmaconfig',['EnigmaConfig',['../classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#aa6eee4a7c5ca96c781a75b4de0ae8436',1,'de::Enigma::Algorithm::EnigmaConfig']]]
 ];

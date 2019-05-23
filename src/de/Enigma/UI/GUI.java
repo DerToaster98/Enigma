@@ -2,6 +2,7 @@ package de.Enigma.UI;
 
 import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
+import de.Enigma.Util.FileHandler;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -9,6 +10,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @brief GUI Klasse für die grafische Darstellung des Programmes
@@ -19,6 +21,7 @@ import java.io.File;
  * <p>
  * Die GUI enthält Komponenten die den Nutzer teilweise führen und teilweise auch bestimmte Dinge ausprobieren
  * lassen, der Nutzer ist aber dennoch daran gebunden, dass die GUI ihn einschränkt.
+ * @author Nikolai Klatt, Oliver Seiler
  */
 public class GUI {
 
@@ -316,11 +319,12 @@ public class GUI {
      * - FILE_CHOOSER:     Linie über der ProgressBar\n
      */
     private void initFileChooser() {
-        FILE_CHOOSER = new JFileChooser(main.getFileHandler().getHOME());
+        FILE_CHOOSER = new JFileChooser(FileHandler.getFileHandler().getHOME());
         FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (*.enigma)", "enigma"));
 
         Log.getLogger().i("GUI", "initFileChooser", "FileChooser initialisiert");
     }
+
     /**
      * @brief HelperMethode, die das Hinzufügen einer Komponente in das Frame erleichtert
      */
@@ -331,11 +335,12 @@ public class GUI {
     /**
      * @brief Methode, die die Routine hinter dem Cancel Button ausführt
      * @details Der Cancel Button soll folgende Dinge tun können:
-     *  - Beendet den Ver- bzw. Entschlüsselungsprozess\n
-     *  - Setzt die GUI nach Abschluss des Ver- bzw. Entschlüsselungsprozesses zurück\n
+     * - Beendet den Ver- bzw. Entschlüsselungsprozess\n
+     * - Setzt die GUI nach Abschluss des Ver- bzw. Entschlüsselungsprozesses zurück\n
      */
     private void btnCancelClicked() {
         BTN_CANCEL.setText("Cancel");
+        BTN_START.setText("O K");
         setGUIElementsEnabled(true);
         TF_TEXT.setHint();
         TF_KEY.setHint();
@@ -352,20 +357,31 @@ public class GUI {
     /**
      * @brief Methode, die die Routine hinter dem Ok Button ausführt
      * @details Der Ok Button soll folgende Dinge tun können:
-     *  - Startet den Ver- bzw. Entschlüsselungsprozess\n
-     *  - Deaktiviert die GUI bei Start des Ver- bzw. Entschlüsselungsprozesses \n
-     *  - Startet die ProgressBar\n
+     * - Startet den Ver- bzw. Entschlüsselungsprozess\n
+     * - Deaktiviert die GUI bei Start des Ver- bzw. Entschlüsselungsprozesses \n
+     * - Startet die ProgressBar\n
      */
     private void btnOkClicked() {
-        setGUIElementsEnabled(false);
-        PROGRESSBAR.setIndeterminate(true);
-        PROGRESSBAR.setStringPainted(true);
+        if (BTN_START.getText().equals("O K")) {
+            setGUIElementsEnabled(false);
+            PROGRESSBAR.setIndeterminate(true);
+            PROGRESSBAR.setStringPainted(true);
 
 
-        if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung läuft...");
-        else PROGRESSBAR.setString("Entschlüsselung läuft...");
+            if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung läuft...");
+            else PROGRESSBAR.setString("Entschlüsselung läuft...");
 
-        main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), RDBTN_ENCRYPT.isSelected());
+            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), RDBTN_ENCRYPT.isSelected());
+
+        } else {
+            //ermöglicht es durch einen Klick in das Verzeichnis mit den Dateien zu gelangen!
+            try {
+                Desktop.getDesktop().open(new File(FileHandler.getFileHandler().getHOME()));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.getLogger().e("GUI", "btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen!");
+            }
+        }
 
         Log.getLogger().i("GUI", "btnOkClicked", "BTN_START Clicked");
     }
@@ -390,6 +406,7 @@ public class GUI {
 
         Log.getLogger().i("GUI", "btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
     }
+
     /**
      * @brief Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt
      * @details Der Routine soll die Progressbar so verändern, dass sie zum gewählten Prozess das Richtige anzeigt.
@@ -400,9 +417,12 @@ public class GUI {
         PROGRESSBAR.setIndeterminate(false);
         PROGRESSBAR.setValue(100);
         BTN_CANCEL.setText("Again");
+        BTN_START.setEnabled(true);
+        BTN_START.setText("Datei Anzeigen");
 
         Log.getLogger().i("GUI", "onFinished", "onFinished aufgerufen: Prozess beendet");
     }
+
     /**
      * @brief Methode, die die GUI Elemente deaktiviert
      * @details Es werden nur die Elemente deaktiviert, die der Nutzer während des Prozesses nicht verändern können soll.
@@ -415,6 +435,6 @@ public class GUI {
         RDBTN_ENCRYPT.setEnabled(enabled);
         RDBTN_DECRYPT.setEnabled(enabled);
 
-        Log.getLogger().i("GUI", "setGUIElementsEnabled", "GUI Elements enabled set to: "+ enabled);
+        Log.getLogger().i("GUI", "setGUIElementsEnabled", "GUI Elements enabled set to: " + enabled);
     }
 }
