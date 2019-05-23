@@ -41,7 +41,7 @@ public class Main {
      * @param encrypt Ob nun ver- oder entschlüsselt wird 
      */
     public void btnOkClicked(String text, String key, boolean encrypt) {
-        //TODO Doxygen und Initialisierung vong dem ganzen ding
+        //TODO Doxygen und Initialisierung von dem ganzen ding
         //übergabeParameter einbinden
         // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
         System.out.println("BTN_OK Clicked");
@@ -55,14 +55,12 @@ public class Main {
     }
 
     /**
-     * @brief Methode, um auf den FileHandler zugreifen zu können
-     * @return Liefert die Instanz des FileHandlers zurück. Wurde er noch nicht erzeugt, wird eine neue Instanz erzeugt, welche anschließend zurückgegeben wird
+     * @brief Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt
+     * @details Der Routine soll die Dateien erstellen lassen und die GUI benachrichtigen
      */
-    public FileHandler getFileHandler() {
-        if (fileHandler == null){
-            fileHandler = new FileHandler();
-        }
-        return fileHandler;
+    public void onFinished() {
+        FileHandler.getFileHandler().makeFiles();
+        window.onFinished();
     }
 
     /**
