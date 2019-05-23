@@ -25,7 +25,7 @@ public class Main {
     }
 
     public void btnOkClicked(String text, String key, boolean encrypt) {
-        //TODO
+        //TODO Doxygen und Initialisierung vong dem ganzen ding
         //übergabeParameter einbinden
         // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
         System.out.println("BTN_OK Clicked");

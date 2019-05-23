@@ -44,7 +44,7 @@ public abstract class Algorithm {
 		letter = conf.encryptLetter(letter, EMill.THIRD_MILL, false);
 		
 		//Umkehrwalze
-		letter = conf.encryptLetter(letter, EMill.RETURN_MILL, false);
+		letter = conf.encryptLetter(letter, EMill.REVERSE_MILL, false);
 		
 		//rechte Walze
 		letter = conf.encryptLetter(letter, EMill.THIRD_MILL, true);
@@ -55,7 +55,8 @@ public abstract class Algorithm {
 		//linke Walze
 		letter = conf.encryptLetter(letter, EMill.FIRST_MILL, true);
 		
-		
+		//Walzen prüfen und eventuell rotieren
+		conf.checkMills();
 		
 		//Buchstabe zurückgeben
 		return letter;

@@ -34,6 +34,7 @@ public class AlgorithmController {
 		//txt in char array umwandeln
 		char[] c = util.createCharArray(txt);
 		char letter;
+		//@Lisa: Warum keine for-in Schleife? Wäre etwas schicker meiner Meinung nach....
 		for (int i = 0; i < c.length; i++) {
 			if(c[i]==' ') {
 				//Leerzeichen an FileHandler

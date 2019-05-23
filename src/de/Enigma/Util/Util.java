@@ -15,6 +15,7 @@ public class Util {
 	}
 
 	/**
+	 * @brief Liefert die Position eines Buchstaben in einem gegebenen Alphabet
 	 * @details Liefert position eines buchstaben in einem alphabet zurück !!von 1 bis 26!! Wenn -1: nicht im Alphabet
 	 * @param c Buchstabe, von welchem der Index gesucht werden soll
 	 * @param alphabet Alphabet, in dem nach dem Buchstaben gesucht werden soll

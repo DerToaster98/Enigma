@@ -2,6 +2,7 @@ package de.Enigma.Algorithm;
 
 import java.util.HashMap;
 
+import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMill;
 
 /**
@@ -15,7 +16,7 @@ import de.Enigma.Util.Enums.EMill;
  */
 public class EnigmaConfig {
 
-	private String key;
+	private String key = "?-???-???-?;?-?;?-?;?";
 	private HashMap<Character,Character> letterChanger = new HashMap<Character, Character>();
 	private Mill[] mills = new Mill[] {null,null,null};
 	private Mill reverseMill = null;
@@ -31,16 +32,37 @@ public class EnigmaConfig {
 		// TODO Buchstaben verschlüsseln schreiben
 	}
 
-	public char encryptLetter(char letter, EMill mill, boolean umk){
+	/**
+	 * @brief Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben.
+	 * @param letter Der Buchstabe der verschlüsselt werden soll.
+	 * @param mill Die Walze, welche verschlüsseln soll.
+	 * @param wasInReturnMill Ob nach diesem Entschlüsselvorgang die Walzen rotiert und gedreht werden sollen.
+	 * @return Der verschlüsselte Buchstabe
+	 */
+	public char encryptLetter(char letter, EMill mill, boolean wasInReturnMill){
+		if(letter == ' ') {
+			return letter;
+		}
+		char[] oldAlphabet = getPreviousAlphabet(mill, wasInReturnMill);
+		Character character = new Character(letter);
+		char toEncrypt = letter;
+		if(!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {
+			toEncrypt = this.letterChanger.get(character).charValue();
+		}
+		toEncrypt = getMill(mill).encryptLetter(toEncrypt, oldAlphabet);
 		
-	checkMills();	
-	return ' ';
+		if(wasInReturnMill) {
+			checkMills();
+		}
+		return toEncrypt;
 	}
 
 	/**
-	 * @details Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
+	 * @brief Diese Methode überprüft die Walzen, und zwar, ob sie drehen sollten.
+	 * @details Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. \n
+	 * Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
 	 */
-	private void checkMills() {
+	public void checkMills() {
 		Mill first = getMill(EMill.FIRST_MILL);
 		if(first != null && first.shouldRotateNeighborMill()) {
 			Mill second = getMill(EMill.SECOND_MILL);
@@ -73,6 +95,40 @@ public class EnigmaConfig {
 		default:
 			return null;
 		}
+	}
+	
+	/**
+	 * @brief Diese Methode findet heraus, mit welchem Alphabet die vorherige Verschlüsselung stattgefunden hat.
+	 * @param currentMill Die Walze, welche jetzt verschlüsselt.
+	 * @param wasInReturnMill Gibt an, ob der Buchstabe bereits "auf dem Rückweg ist".
+	 * @return Liefert das Alphabet als Char Array zurück, welches zuletzt zum Verschlüsseln verwendet wurde.
+	 */
+	private char[] getPreviousAlphabet(EMill currentMill, boolean wasInReturnMill) {
+		switch(currentMill) {
+		case FIRST_MILL:
+			if(wasInReturnMill) {
+				return getMill(EMill.SECOND_MILL).getAlphabet();
+			}
+			return EAlphabet.getAlphabet();
+		case REVERSE_MILL:
+			return getMill(EMill.THIRD_MILL).getAlphabet();
+		case SECOND_MILL:
+			if(wasInReturnMill) {
+				return getMill(EMill.THIRD_MILL).getAlphabet();
+			}
+			return getMill(EMill.FIRST_MILL).getAlphabet();
+		case THIRD_MILL:
+			if(wasInReturnMill) {
+				return getMill(EMill.REVERSE_MILL).getAlphabet();
+			}
+			return getMill(EMill.SECOND_MILL).getAlphabet();
+		default:
+			return EAlphabet.getAlphabet();
+		}
+	}
+
+	public String getKey() {
+		return key;
 	}
 
 }

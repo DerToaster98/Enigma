@@ -95,8 +95,14 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_log.ht
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a98177adb81490a58cdb21b365e71f290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a98177adb81490a58cdb21b365e71f290">i</a> (String className, String methodName, String info)</td></tr>
+<tr class="memdesc:a98177adb81490a58cdb21b365e71f290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Schreiben von Info-Logs Info Logeintrag: erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.<br />
+Darunter zählen:<br />
+.  <a href="#a98177adb81490a58cdb21b365e71f290">Mehr ...</a><br /></td></tr>
 <tr class="separator:a98177adb81490a58cdb21b365e71f290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c72582bc2dd2fd464f5a4cb7109f894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a2c72582bc2dd2fd464f5a4cb7109f894">w</a> (String className, String methodName, String warning)</td></tr>
+<tr class="memdesc:a2c72582bc2dd2fd464f5a4cb7109f894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Schreiben von Warning-Logs Warning Logeintrag: erstellt über die .dll einen Warning-Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll.<br />
+Darunter zählen:<br />
+.  <a href="#a2c72582bc2dd2fd464f5a4cb7109f894">Mehr ...</a><br /></td></tr>
 <tr class="separator:a2c72582bc2dd2fd464f5a4cb7109f894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a402f5a4a3b918b178cf711f02eb6f67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a402f5a4a3b918b178cf711f02eb6f67a">e</a> (String className, String methodName, String error)</td></tr>
 <tr class="separator:a402f5a4a3b918b178cf711f02eb6f67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,8 +114,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_log.ht
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben. </p>
-<p>Realisiert als Singleton -&gt; nur eine Instanz pro Programminstanz</p>
-<p>Zugriff über <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82">getLogger()</a> Methode von überall aus möglich</p>
+<p>Realisiert als Singleton -&gt; nur eine Instanz pro Programminstanz.<br />
+ Zugriff über <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82">getLogger()</a> Methode von überall aus möglich</p>
 <dl class="section author"><dt>Autor</dt><dd>Nikolai </dd></dl>
 </div><h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
 <a id="a402f5a4a3b918b178cf711f02eb6f67a"></a>
@@ -214,15 +220,35 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_log.ht
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Info Logeintrag: erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll</p>
-<dl class="params"><dt>Parameter</dt><dd>
+
+<p>Methode zum Schreiben von Info-Logs Info Logeintrag: erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.<br />
+Darunter zählen:<br />
+. </p>
+<ul>
+<li>generelle Infos über die Programmroutinen, wie zum Beispiel:<br />
+<ul>
+<li>Routine gestartet<br />
+</li>
+<li>Routine erfolgreich beendet<br />
+</li>
+<li>Routine startet Subroutine<br />
+</li>
+<li>...<br />
+</li>
+</ul>
+</li>
+<li>Infos zu Programmabläufen<br />
+</li>
+<li>Infos zu <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">className</td><td>Name der Klasse von der der Aufruf erfolgt ist </td></tr>
-    <tr><td class="paramname">methodName</td><td>Name der Methode von der der Aufruf erfolgt ist </td></tr>
-    <tr><td class="paramname">info</td><td>Info Nachricht, die vom Logger geloggt werden soll </td></tr>
+    <tr><td class="paramname">className</td><td>- Name der Klasse von der der Aufruf erfolgt ist </td></tr>
+    <tr><td class="paramname">methodName</td><td>- Name der Methode von der der Aufruf erfolgt ist </td></tr>
+    <tr><td class="paramname">info</td><td>- Info Nachricht, die vom Logger geloggt werden soll </td></tr>
   </table>
   </dd>
 </dl>
+</li>
+</ul>
 
 </div>
 </div>
@@ -257,7 +283,19 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_log.ht
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Warning Logeintrag: erstellt über die .dll einen Warning-Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll</p>
+
+<p>Methode zum Schreiben von Warning-Logs Warning Logeintrag: erstellt über die .dll einen Warning-Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll.<br />
+Darunter zählen:<br />
+. </p>
+<ul>
+<li>potenzielle Exceptions, die nicht durch einen try-catch gecatched werden können<br />
+</li>
+<li>potenzielle breakpoints im Code die zu vernachlässigbaren Fehlern führen können<br />
+</li>
+<li>potenzielle aber korrigierbare Fehler<br />
+ <br />
+Der Aufruf erfolgt immer über die static <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82">getLogger()</a> Methode: <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82">Log.getLogger()</a>.w("className", "methodName", "warning");</li>
+</ul>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">className</td><td>Name der Klasse von der der Aufruf erfolgt ist </td></tr>

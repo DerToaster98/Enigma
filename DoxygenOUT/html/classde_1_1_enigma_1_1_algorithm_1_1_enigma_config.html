@@ -95,9 +95,15 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_e
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:aa6eee4a7c5ca96c781a75b4de0ae8436"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#aa6eee4a7c5ca96c781a75b4de0ae8436">EnigmaConfig</a> ()</td></tr>
 <tr class="separator:aa6eee4a7c5ca96c781a75b4de0ae8436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2788ae04b5cea34f7193e486ced93f21"><td class="memItemLeft" align="right" valign="top"><a id="a2788ae04b5cea34f7193e486ced93f21"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>encryptLetter</b> (char letter)</td></tr>
-<tr class="separator:a2788ae04b5cea34f7193e486ced93f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f1ce01d395c838531db22c3dabff02"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a64f1ce01d395c838531db22c3dabff02">encryptLetter</a> (char letter, <a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a> mill, boolean wasInReturnMill)</td></tr>
+<tr class="memdesc:a64f1ce01d395c838531db22c3dabff02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben.  <a href="#a64f1ce01d395c838531db22c3dabff02">Mehr ...</a><br /></td></tr>
+<tr class="separator:a64f1ce01d395c838531db22c3dabff02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40617f38009ee751db2b24ff5ae70170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a40617f38009ee751db2b24ff5ae70170">checkMills</a> ()</td></tr>
+<tr class="memdesc:a40617f38009ee751db2b24ff5ae70170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode überprüft die Walzen, und zwar, ob sie drehen sollten.  <a href="#a40617f38009ee751db2b24ff5ae70170">Mehr ...</a><br /></td></tr>
+<tr class="separator:a40617f38009ee751db2b24ff5ae70170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5ee30095ca4cb60ea28b4c04991fd4"><td class="memItemLeft" align="right" valign="top"><a id="acf5ee30095ca4cb60ea28b4c04991fd4"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>getKey</b> ()</td></tr>
+<tr class="separator:acf5ee30095ca4cb60ea28b4c04991fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Klasse, welche essenziell für die Verschlüsselung ist. </p>
@@ -120,6 +126,73 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>encryptLetter</b> (ch
       </table>
 </div><div class="memdoc">
 <p>Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a40617f38009ee751db2b24ff5ae70170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40617f38009ee751db2b24ff5ae70170">&#9670;&nbsp;</a></span>checkMills()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void de.Enigma.Algorithm.EnigmaConfig.checkMills </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diese Methode überprüft die Walzen, und zwar, ob sie drehen sollten. </p>
+<p>Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. <br />
+Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste.... </p>
+
+</div>
+</div>
+<a id="a64f1ce01d395c838531db22c3dabff02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f1ce01d395c838531db22c3dabff02">&#9670;&nbsp;</a></span>encryptLetter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char de.Enigma.Algorithm.EnigmaConfig.encryptLetter </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>letter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a>&#160;</td>
+          <td class="paramname"><em>mill</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>wasInReturnMill</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">letter</td><td>Der Buchstabe der verschlüsselt werden soll. </td></tr>
+    <tr><td class="paramname">mill</td><td>Die Walze, welche verschlüsseln soll. </td></tr>
+    <tr><td class="paramname">wasInReturnMill</td><td>Ob nach diesem Entschlüsselvorgang die Walzen rotiert und gedreht werden sollen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Der verschlüsselte Buchstabe </dd></dl>
 
 </div>
 </div>

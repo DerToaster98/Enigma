@@ -1,7 +1,6 @@
 package de.Enigma.Algorithm;
 
 import de.Enigma.Util.Enums.EAlphabet;
-import de.Enigma.Util.Enums.EMill;
 import de.Enigma.Util.Enums.EMillAlphabet;
 import de.Enigma.Util.Util;
 
@@ -36,6 +35,7 @@ public class Mill {
 	}
 
 	/**
+	 * @brief Diese Methode dreht die Walze um eine Position weiter
 	 * @details Methode, um die Walze um einen Buchstaben zu drehen
 	 * @details Schiebt das array nach links -> rotiert um einen Buchstaben
 	 */
@@ -53,15 +53,25 @@ public class Mill {
 	}
 	
 	/**
+	 * @brief Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.
 	 * @details Methode, um einen Buchstaben zu ersetzen
 	 * @param c der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
-	 * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück
+	 * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben.
 	 */
-	public char encryptLetter(char c){
-		return ' ';
+	public char encryptLetter(char c, char[] oldAlphabet){
+		if(c == ' ') {
+			return c;
+		}
+		int posOfC = Util.getIndexOfCharInAlphabet(c, oldAlphabet);
+		if(posOfC > 0) {
+			return this.getAlphabet()[posOfC -1];
+		}
+		//TODO: log.w oder log.e
+		return '?';
 	}
 	
 	/**
+	 * @brief Diese Methode überprüft, ob die Nachbarwalze auch rotiert werden soll, also ob die Übertragskerbe überschritten wurde
 	 * @details Methode, welche überprüft, ob die "Übertragskerbe" überschritten wurde
 	 * @return true: Die Übertragskerbe wurde überschritten   false: die Kerbe wurde nicht überschritten 
 	 */
@@ -73,6 +83,7 @@ public class Mill {
 	}
 	
 	/**
+	 * @brief Liefert das "Alphabet" dieser Walze zurück.
 	 * @return Liefert das "Alphabet" der Walze zurück -> das Alphabet, welches das normale Alphabet ersetzt
 	 */
 	public char[] getAlphabet() {
