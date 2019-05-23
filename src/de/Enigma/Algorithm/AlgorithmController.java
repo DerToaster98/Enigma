@@ -12,7 +12,13 @@ public class AlgorithmController {
 	//private Algorithm cryptor;
 	private Util util;
 	private Enums.EMode cryptMode;
+	private FileHandler fileHandler;
 
+	/**
+	 * @brief Die Klasse steuert die Ver- und Entschlüsselung.
+	 * @param key
+	 * @param mode
+	 */
 
 	public AlgorithmController(String key, Enums.EMode mode ) {
 		// TODO Auto-generated constructor stub
@@ -28,7 +34,14 @@ public class AlgorithmController {
 		}
 		
 	}
-
+	public FileHandler getFileHander() {
+		return fileHandler;
+	}
+	/**
+	 * @brief Ver- und Entschlüsselt den Text
+	 * @param txt, Text der ver- oder entschlüsselt werden soll
+	 * @return
+	 */
 	public String crypt(String txt){
 		
 		//txt in char array umwandeln
