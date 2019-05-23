@@ -7,17 +7,10 @@ public class Util {
 	}
 
 	//wandelt String in char-Arrya um
-	//die Leerzeichen werden nicht in das char-Array übernommen
 	public static char[] createCharArray(String message){
 		
-		char[] c = new char[message.length()];
-		int j = 0;
-		for (int i = 0; i < message.length(); i++) {
-			if(message.charAt(i)!= ' ') {
-				c[j] = message.charAt(i);
-				j++;
-			}
-		}
+		char[] c = message.toCharArray();
+		
 		return c;
 	}
 	

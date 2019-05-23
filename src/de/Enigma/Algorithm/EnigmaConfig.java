@@ -15,7 +15,9 @@ public class EnigmaConfig {
 		// TODO Auto-generated constructor stub
 	}
 
-	public char encryptLetter(char letter){
+	public char encryptLetter(char letter, EMill mill, boolean umk){
+		
+	checkMills();	
 	return ' ';
 	}
 

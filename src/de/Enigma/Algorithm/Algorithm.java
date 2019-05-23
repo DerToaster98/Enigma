@@ -1,6 +1,9 @@
 package de.Enigma.Algorithm;
 
+import de.Enigma.Util.Enums.EMill;
+
 public abstract class Algorithm {
+	private EnigmaConfig conf;
 
 	/* Überprüfung ob Schlüssel korrekt ist 
 	 * U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10 max zehn Buchstaben
@@ -30,10 +33,38 @@ public abstract class Algorithm {
 	}
 
 	protected char encrypt(char letter){
-		return ' ';
+		
+		//linke Walze
+		letter = conf.encryptLetter(letter, EMill.FIRST_MILL, false);
+		
+		//mittlere Walze
+		letter = conf.encryptLetter(letter, EMill.SECOND_MILL, false);
+		
+		//rechte Walze
+		letter = conf.encryptLetter(letter, EMill.THIRD_MILL, false);
+		
+		//Umkehrwalze
+		letter = conf.encryptLetter(letter, EMill.RETURN_MILL, false);
+		
+		//rechte Walze
+		letter = conf.encryptLetter(letter, EMill.THIRD_MILL, true);
+		
+		//mittlere Walze
+		letter = conf.encryptLetter(letter, EMill.SECOND_MILL, true);
+		
+		//linke Walze
+		letter = conf.encryptLetter(letter, EMill.FIRST_MILL, true);
+		
+		
+		
+		//Buchstabe zurückgeben
+		return letter;
 	}
 
 	protected boolean checkKey(String key){
+		
+		
+		
 		return false;
 	}
 
