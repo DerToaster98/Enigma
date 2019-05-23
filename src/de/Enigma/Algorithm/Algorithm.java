@@ -5,7 +5,8 @@ import de.Enigma.Util.Enums.EMill;
 public abstract class Algorithm {
 	private EnigmaConfig conf;
 
-	/* Überprüfung ob Schlüssel korrekt ist 
+	/*
+	 * Überprüfung ob Schlüssel korrekt ist 
 	 * U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10 max zehn Buchstaben
 	 * U = wechlche Umkehrwalze verwendet wird, A B oder C 
 	 * AAA = welche Walze an welcher Position steht z.B 3 2 1 
