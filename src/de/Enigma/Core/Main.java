@@ -12,7 +12,6 @@ import de.Enigma.Util.FileHandler;
 public class Main {
 
     private GUI window;
-    private FileHandler fileHandler;
 
     private Main() {
 
