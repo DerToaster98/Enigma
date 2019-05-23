@@ -8,7 +8,7 @@ import java.net.URLDecoder;
 
 public class FileHandler {
 
-    private final String PATH = createPath();
+    private final String HOME = createPath();
 
     private String toWrite;
     private String key;
@@ -40,11 +40,17 @@ public class FileHandler {
             Log.getLogger().e("FileHandler", "createPath",
                     "Decoding Path ran into a problem: UnsupportedEncodingException");
         }
+        if (!(new File(path+"/Enigma").exists()))
+        new File(path+"/Enigma").mkdir();
 
         return path;
     }
 
-    public String getPATH() {
-        return PATH;
+    public void createNewEnigma(){
+        
+    }
+
+    public String getHOME() {
+        return HOME;
     }
 }

@@ -63,8 +63,8 @@ public class GUI {
     /**
      * @param m Assoziation mit der Main, dadurch kann die GUI Methoden der Main aufrufen
      * @brief Konstruktor der GUI
-     * Der Konstruktor der GUI initialisiert alle Elemente der GUI
-     * @see Main
+     * @details Der Konstruktor der GUI initialisiert alle Elemente der GUI
+     * @see de.Enigma.Core.Main
      */
     public GUI(Main m) {
         main = m;
@@ -91,7 +91,7 @@ public class GUI {
 
     /**
      * @brief Methode zum Initialisieren aller Elemente der GUI
-     * Diese Methode ruft andere Methoden auf, in denen die Elemente der GUI initialisiert werden.
+     * @details Diese Methode ruft andere Methoden auf, in denen die Elemente der GUI initialisiert werden.
      * Dadurch wird die GUI "zusammengebaut"
      */
     private void initialize() {
@@ -101,14 +101,14 @@ public class GUI {
         initButtons();
         initRadioButtons();
         initProgressBar();
-        initTexts();
+        initTextArea();
         initBackGround();
         initFileChooser();
     }
 
     /**
      * @brief Methode, die das JFrame baut
-     * Das Fenster soll sich dynamisch an die Auflösung anpassen: Es wird im Bildschirm zentriert.\n
+     * @details Das Fenster soll sich dynamisch an die Auflösung anpassen: Es wird im Bildschirm zentriert.\n
      * Komponente:\n
      * - FRM_ENIGMA_GUI:  JFrame für die GUI Elemente\n
      */
@@ -124,7 +124,7 @@ public class GUI {
 
     /**
      * @brief Methode, die JLabels baut
-     * Die JLabels stehen vor den TextFields und dienen zur Orientierung des Nutzers.
+     * @details Die JLabels stehen vor den TextFields und dienen zur Orientierung des Nutzers.
      * Sie sollen zeigen, was man in die TextFields schreiben soll.\n
      * Komponenten:\n
      * - LBL_TEXT:  Label für das TextField TF_TEXT\n
@@ -148,16 +148,16 @@ public class GUI {
 
     /**
      * @brief Methode, die die Textfields baut
-     * Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' Textfield eingegeben wurde, das soll sicherstellen,
-     * dass keine Ver- / Entschlüsselung ohne Text angefangen werden kann.\n
+     * @details Die Textfields sind in diesem Falle von JTextField abgeleitete HintTextFields, um das Arbeiten mit den Hints und dem CharacterFilter zu vereinfachen.\n
      * Komponenten:\n
      * - TF_TEXT:  TextField für den Text\n
      * - TF_KEY:   TextField für den Schlüssel\n
-     * @details Die Textfields sind in diesem Falle von JTextField abgeleitete HintTextFields, um das Arbeiten mit den Hints und dem CharacterFilter zu vereinfachen.
-     * @see HintTextField
+     * @see de.Enigma.UI.HintTextField
      */
     private void initTextfields() {
         TF_TEXT.setBounds(COMPONENT_DISTANCE * 6 + 10, COMPONENT_DISTANCE, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
+        //Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' Textfield eingegeben wurde, das soll sicherstellen,
+        //dass keine Ver- / Entschlüsselung ohne Text angefangen werden kann.
         TF_TEXT.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -187,7 +187,7 @@ public class GUI {
 
     /**
      * @brief Methode, die die Buttons baut
-     * Die Buttons dienen der Kommunikation des Nutzers mit der Anwendung.\n
+     * @details Die Buttons dienen der Kommunikation des Nutzers mit der Anwendung.\n
      * Komponenten:\n
      * - BTN_CHOOSE_FILE:  Button, um eine Datei auszuwählen\n
      * - BTN_START:        Button, um den Vorgang zu starten\n
@@ -223,7 +223,7 @@ public class GUI {
 
     /**
      * @brief Methode, die die RadioButtons baut
-     * Die RadioButtons dienen der Einstellung, ob Ver- oder Entschlüsselt wird.\n
+     * @details Die RadioButtons dienen der Einstellung, ob Ver- oder Entschlüsselt wird.\n
      * Komponenten:\n
      * - RDBTN_ENCRYPT:  RadioButton, um die Verschlüsselung einzustellen\n
      * - RDBTN_DECRYPT:  RadioButton, um die Entschlüsselunmg einzustellen\n
@@ -250,11 +250,13 @@ public class GUI {
         BUTTON_GROUP.add(RDBTN_DECRYPT);
 
         addComponent(RDBTN_DECRYPT);
+
+        Log.getLogger().i("GUI", "initRadioButtons", "RadioButtons initialisiert");
     }
 
     /**
      * @brief Methode, die die ProgressBar baut
-     * Die ProgressBar ist ein Indikator dafür, ob eine Ver- oder Entschlüsselung läuft.\n
+     * @details Die ProgressBar ist ein Indikator dafür, ob eine Ver- oder Entschlüsselung läuft.\n
      * Komponenten:\n
      * - PROGRESSBAR:  ProgressBar, die den Progress anzeigt\n
      */
@@ -262,15 +264,17 @@ public class GUI {
         PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH - 50, COMPONENT_HEIGHT - 10);
 
         addComponent(PROGRESSBAR);
+
+        Log.getLogger().i("GUI", "initProgressBar", "ProgressBar initialisiert");
     }
 
     /**
      * @brief Methode, die die TextArea baut
-     * Die TextArea zeigt die Entwickler an.\n
+     * @details Die TextArea zeigt die Entwickler an.\n
      * Komponenten:\n
      * - TXT_DEVELOPED_BY:  TextArea, die Text anzeigt\n
      */
-    private void initTexts() {
+    private void initTextArea() {
         TXT_DEVELOPED_BY.setOpaque(false);
         TXT_DEVELOPED_BY.setFont(FONT);
         TXT_DEVELOPED_BY.setEditable(false);
@@ -282,9 +286,16 @@ public class GUI {
         TXT_DEVELOPED_BY.setColumns(10);
 
         addComponent(TXT_DEVELOPED_BY);
+
+        Log.getLogger().i("GUI", "initTextArea", "TextArea initialisiert");
     }
 
-    //Stellt das Hintergrundbild ein
+    /**
+     * @brief Methode, die den Hintergrund und den Separator baut
+     * @details Komponenten:\n
+     * - SEPARATOR:     Linie über der ProgressBar\n
+     * - BACKGROUND:    JLabel mit Icon\n
+     */
     private void initBackGround() {
         //"The Line"
         SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH - 50, 3);
@@ -295,20 +306,35 @@ public class GUI {
         BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         addComponent(BACKGROUND);
+
+        Log.getLogger().i("GUI", "initBackGround", "Background initialisiert");
     }
 
+    /**
+     * @brief Methode, die den FileChooser baut
+     * @details Komponenten:\n
+     * - FILE_CHOOSER:     Linie über der ProgressBar\n
+     */
     private void initFileChooser() {
-        FILE_CHOOSER = new JFileChooser(main.getFileHandler().getPATH());
-        FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)", "enigma"));
-    }
+        FILE_CHOOSER = new JFileChooser(main.getFileHandler().getHOME());
+        FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (*.enigma)", "enigma"));
 
+        Log.getLogger().i("GUI", "initFileChooser", "FileChooser initialisiert");
+    }
+    /**
+     * @brief HelperMethode, die das Hinzufügen einer Komponente in das Frame erleichtert
+     */
     private void addComponent(Component component) {
         FRM_ENIGMA_GUI.getContentPane().add(component);
     }
 
-    //Wird ausgeführt, wenn der Cancel Button gedrückt wird
+    /**
+     * @brief Methode, die die Routine hinter dem Cancel Button ausführt
+     * @details Der Cancel Button soll folgende Dinge tun können:
+     *  - Beendet den Ver- bzw. Entschlüsselungsprozess\n
+     *  - Setzt die GUI nach Abschluss des Ver- bzw. Entschlüsselungsprozesses zurück\n
+     */
     private void btnCancelClicked() {
-        System.out.println("BTN_CANCEL Clicked");
         BTN_CANCEL.setText("Cancel");
         setGUIElementsEnabled(true);
         TF_TEXT.setHint();
@@ -319,9 +345,17 @@ public class GUI {
         PROGRESSBAR.setIndeterminate(false);
         PROGRESSBAR.setValue(0);
         PROGRESSBAR.setString("");
+
+        Log.getLogger().i("GUI", "btnCancelClicked", "BTN_CANCEL Clicked");
     }
 
-    //Wird ausgeführt, wenn der OK Button gedrückt wird
+    /**
+     * @brief Methode, die die Routine hinter dem Ok Button ausführt
+     * @details Der Ok Button soll folgende Dinge tun können:
+     *  - Startet den Ver- bzw. Entschlüsselungsprozess\n
+     *  - Deaktiviert die GUI bei Start des Ver- bzw. Entschlüsselungsprozesses \n
+     *  - Startet die ProgressBar\n
+     */
     private void btnOkClicked() {
         setGUIElementsEnabled(false);
         PROGRESSBAR.setIndeterminate(true);
@@ -332,9 +366,15 @@ public class GUI {
         else PROGRESSBAR.setString("Entschlüsselung läuft...");
 
         main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), RDBTN_ENCRYPT.isSelected());
+
+        Log.getLogger().i("GUI", "btnOkClicked", "BTN_START Clicked");
     }
 
-    //Wird ausgeführt, wenn der "Datei" Button gedrückt wird
+    /**
+     * @brief Methode, die die Routine hinter dem Datei Button ausführt
+     * @details Der Datei Button soll einen OpenFileDialog öffnen, mit dem man *.enigma Files einlesen kann
+     * und der Nutzer so eine frühere Ver- bzw. Entschlüsselung wiederholen kann.
+     */
     private void btnChooseFileClicked() {
         System.out.println("File chooser button clicked");
         FILE_CHOOSER.showOpenDialog(FRM_ENIGMA_GUI);
@@ -347,16 +387,26 @@ public class GUI {
             //handle chosen file
             //setText: TEXT in TF_TEXT , KEY in TF_KEY
         }
-    }
 
+        Log.getLogger().i("GUI", "btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
+    }
+    /**
+     * @brief Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt
+     * @details Der Routine soll die Progressbar so verändern, dass sie zum gewählten Prozess das Richtige anzeigt.
+     */
     public void onFinished() {
         if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung abgeschlossen");
         else PROGRESSBAR.setString("Entschlüsselung abgeschlossen");
         PROGRESSBAR.setIndeterminate(false);
         PROGRESSBAR.setValue(100);
         BTN_CANCEL.setText("Again");
-    }
 
+        Log.getLogger().i("GUI", "onFinished", "onFinished aufgerufen: Prozess beendet");
+    }
+    /**
+     * @brief Methode, die die GUI Elemente deaktiviert
+     * @details Es werden nur die Elemente deaktiviert, die der Nutzer während des Prozesses nicht verändern können soll.
+     */
     private void setGUIElementsEnabled(boolean enabled) {
         TF_TEXT.setEnabled(enabled);
         TF_KEY.setEnabled(enabled);
@@ -364,5 +414,7 @@ public class GUI {
         BTN_CHOOSE_FILE.setEnabled(enabled);
         RDBTN_ENCRYPT.setEnabled(enabled);
         RDBTN_DECRYPT.setEnabled(enabled);
+
+        Log.getLogger().i("GUI", "setGUIElementsEnabled", "GUI Elements enabled set to: "+ enabled);
     }
 }
