@@ -31,7 +31,8 @@ public class Log {
      *              - Routine startet Subroutine\n
      *              - ...\n
      *      - Infos zu Programmabläufen\n
-     *      - Infos zu
+     *      - ...\n
+     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i("className", "methodName", "warning");
      * @param className  - Name der Klasse von der der Aufruf erfolgt ist
      * @param methodName - Name der Methode von der der Aufruf erfolgt ist
      * @param info       - Info Nachricht, die vom Logger geloggt werden soll
@@ -48,6 +49,7 @@ public class Log {
      *      - potenzielle Exceptions, die nicht durch einen try-catch gecatched werden können\n
      *      - potenzielle breakpoints im Code die zu vernachlässigbaren Fehlern führen können\n
      *      - potenzielle aber korrigierbare Fehler\n
+     *      - ...
      *      \n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w("className", "methodName", "warning");
      *
@@ -60,8 +62,14 @@ public class Log {
     }
 
     /**
+     * @brief Methode zum Schreiben von Error-Logs
      * Error Logeintrag:
-     * erstellt über die .dll einen Error-Log der über kritische Fehler innerhalb der Anwendung informieren soll
+     * erstellt über die .dll einen Error-Log der über kritische Fehler innerhalb der Anwendung informieren soll.\n
+     * Darunter zählen:\n
+     *      - Exceptions, die durch einen try-catch geworfen werden\n
+     *      - kritische Fehler, die das System beeinträchtigen können\n
+     *      - ...\n
+     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e("className", "methodName", "warning");
      *
      * @param className  Name der Klasse von der der Aufruf erfolgt ist
      * @param methodName Name der Methode von der der Aufruf erfolgt ist
@@ -72,8 +80,9 @@ public class Log {
     }
 
     /**
-     * @details erstellt ein Singleton Objekt, sobald die Instanz benötigt wird
-     * @details Das stellt sicher, dass es nur einen Logger gibt und dieser von allen Objekten von überall aus genutzt werden kann.
+     * @brief Methode zum Erstellen des Singelton Logger-Objektes
+     * Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
+     * Das stellt sicher, dass es nur einen Logger gibt und dieser von allen Objekten von überall aus genutzt werden kann.
      *
      * @return gibt das logger Singelton Objekt zurück
      */

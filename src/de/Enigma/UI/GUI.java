@@ -108,9 +108,9 @@ public class GUI {
 
     /**
      * @brief Methode, die das JFrame baut
-     * Das Fenster soll sich dynamisch an die Auflösung anpassen: Es wird im Bildschirm zentriert.
+     * Das Fenster soll sich dynamisch an die Auflösung anpassen: Es wird im Bildschirm zentriert.\n
      * Komponente:\n
-     *      - FRM_ENIGMA_GUI:  JFrame für die GUI Elemente\n
+     * - FRM_ENIGMA_GUI:  JFrame für die GUI Elemente\n
      */
     private void initFrame() {
         FRM_ENIGMA_GUI.setFont(FONT);
@@ -125,10 +125,10 @@ public class GUI {
     /**
      * @brief Methode, die JLabels baut
      * Die JLabels stehen vor den TextFields und dienen zur Orientierung des Nutzers.
-     * Sie sollen zeigen, was man in die TextFields schreiben soll.
+     * Sie sollen zeigen, was man in die TextFields schreiben soll.\n
      * Komponenten:\n
-     *      - LBL_TEXT:  Label für das TextField TF_TEXT\n
-     *      - LBL_KEY:   Label für das TextField TF_KEY\n
+     * - LBL_TEXT:  Label für das TextField TF_TEXT\n
+     * - LBL_KEY:   Label für das TextField TF_KEY\n
      */
     private void initLabels() {
         LBL_TEXT.setFont(FONT);
@@ -151,8 +151,8 @@ public class GUI {
      * Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' Textfield eingegeben wurde, das soll sicherstellen,
      * dass keine Ver- / Entschlüsselung ohne Text angefangen werden kann.\n
      * Komponenten:\n
-     *      - TF_TEXT:  TextField für den Text\n
-     *      - TF_KEY:   TextField für den Schlüssel\n
+     * - TF_TEXT:  TextField für den Text\n
+     * - TF_KEY:   TextField für den Schlüssel\n
      * @details Die Textfields sind in diesem Falle von JTextField abgeleitete HintTextFields, um das Arbeiten mit den Hints und dem CharacterFilter zu vereinfachen.
      * @see HintTextField
      */
@@ -187,12 +187,11 @@ public class GUI {
 
     /**
      * @brief Methode, die die Buttons baut
-     * Die Buttons dienen der Kommunikation des Nutzers mit der Anwendung.
+     * Die Buttons dienen der Kommunikation des Nutzers mit der Anwendung.\n
      * Komponenten:\n
-     *      - BTN_CHOOSE_FILE:  Button, um eine Datei auszuwählen\n
-     *      - BTN_START:        Button, um den Vorgang zu starten\n
-     *      - BTN_CANCEL:       Button zum Abbrechen des Vorgangs\n
-     *
+     * - BTN_CHOOSE_FILE:  Button, um eine Datei auszuwählen\n
+     * - BTN_START:        Button, um den Vorgang zu starten\n
+     * - BTN_CANCEL:       Button zum Abbrechen des Vorgangs\n
      */
     private void initButtons() {
         //File chooser button
@@ -222,7 +221,14 @@ public class GUI {
         Log.getLogger().i("GUI", "initButtons", "Buttons initialisiert");
     }
 
-    //Stellt alle RadioButtons ein
+    /**
+     * @brief Methode, die die RadioButtons baut
+     * Die RadioButtons dienen der Einstellung, ob Ver- oder Entschlüsselt wird.\n
+     * Komponenten:\n
+     * - RDBTN_ENCRYPT:  RadioButton, um die Verschlüsselung einzustellen\n
+     * - RDBTN_DECRYPT:  RadioButton, um die Entschlüsselunmg einzustellen\n
+     * - BUTTON_GROUP:   ButtonGroup, um die Einstellung zu managen\n
+     */
     private void initRadioButtons() {
         //Encrypt RdBtn
         RDBTN_ENCRYPT.setForeground(SystemColor.textText);
@@ -246,13 +252,24 @@ public class GUI {
         addComponent(RDBTN_DECRYPT);
     }
 
+    /**
+     * @brief Methode, die die ProgressBar baut
+     * Die ProgressBar ist ein Indikator dafür, ob eine Ver- oder Entschlüsselung läuft.\n
+     * Komponenten:\n
+     * - PROGRESSBAR:  ProgressBar, die den Progress anzeigt\n
+     */
     private void initProgressBar() {
         PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH - 50, COMPONENT_HEIGHT - 10);
 
         addComponent(PROGRESSBAR);
     }
-    
-    //Erzeugt alle "Labels", bzw. Beschreibungen
+
+    /**
+     * @brief Methode, die die TextArea baut
+     * Die TextArea zeigt die Entwickler an.\n
+     * Komponenten:\n
+     * - TXT_DEVELOPED_BY:  TextArea, die Text anzeigt\n
+     */
     private void initTexts() {
         TXT_DEVELOPED_BY.setOpaque(false);
         TXT_DEVELOPED_BY.setFont(FONT);
