@@ -4,6 +4,15 @@ import java.util.HashMap;
 
 import de.Enigma.Util.Enums.EMill;
 
+/**
+ * 
+ * @brief Klasse, welche essenziell für die Verschlüsselung ist
+ * @details Enthält eine HashMap, welche das "Steckbrett" realisiert
+ * @details Enthält die Instanzen der Walzen, welche benutzt werden
+ * 
+ * @author Oliver Seiler
+ *
+ */
 public class EnigmaConfig {
 
 	private String key;
@@ -11,8 +20,15 @@ public class EnigmaConfig {
 	private Mill[] mills = new Mill[] {null,null,null};
 	private Mill reverseMill = null;
 
+	
+	/**
+	 * Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels
+	 */
 	public EnigmaConfig() {
-		// TODO Auto-generated constructor stub
+		// TODO Key auf Richtigkeit prüfen
+		// TODO Walzen erstellen und hier zuweisen
+		// TODO "Steckbrett" befüllen
+		// TODO Buchstaben verschlüsseln schreiben
 	}
 
 	public char encryptLetter(char letter, EMill mill, boolean umk){
@@ -21,7 +37,9 @@ public class EnigmaConfig {
 	return ' ';
 	}
 
-	//Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
+	/**
+	 * @details Überprüft die Walzen auf ihre Kerben. wenn die dritte Walze die Kerbe überschritten hat, so rotiert auch die zweite. Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
+	 */
 	private void checkMills() {
 		Mill first = getMill(EMill.FIRST_MILL);
 		if(first != null && first.shouldRotateNeighborMill()) {
@@ -37,12 +55,16 @@ public class EnigmaConfig {
 			}
 		}
 	}
-	//Methode, um eine Walze anhand des enums zu identifizieren
+	/**
+	 * 
+	 * @param mill Beschreibt durch ein Enum, welche Walze gemeint ist
+	 * @return Liefert die Instanz einer Walze zurück, welche durch 'mill' angesprochen wird -> FIRST_MILL: linke Walze, SECOND_MILL: mittlere Walze, etc.
+	 */
 	private Mill getMill(EMill mill) {
 		switch (mill) {
 		case FIRST_MILL:
 			return this.reverseMill;
-		case RETURN_MILL:
+		case REVERSE_MILL:
 			return this.mills[0];
 		case SECOND_MILL:
 			return this.mills[1];

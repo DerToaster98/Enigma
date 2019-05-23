@@ -21,6 +21,7 @@ public class Main {
     private void initGUI() {
         GUI window = new GUI(this);
         window.show();
+        this.window = window;
     }
 
     public void btnOkClicked(String text, String key, boolean encrypt) {
@@ -40,4 +41,9 @@ public class Main {
         }
         return fileHandler;
     }
+
+	public GUI getWindow() {
+		return window;
+	}
+
 }

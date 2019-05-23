@@ -1,5 +1,6 @@
 package de.Enigma.UI;
 
+import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
 
 import javax.swing.*;
@@ -9,228 +10,342 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
 
+/**
+ * @brief GUI Klasse für die grafische Darstellung des Programmes
+ * @details Wird durch die Main Klasse gestartet und bildet die Schnittstelle zum Benutzer, dieser interagiert mit ihr
+ * und kann somit die Kernfunktionen triggern.
+ * Die GUI ist nicht dynamisch und hat auch nicht den Anspruch eine gute und ansehnliche GUI zu sein, sie dient nur
+ * dem Zweck der Kommunikation mit dem Nutzer.
+ * <p>
+ * Die GUI enthält Komponenten die den Nutzer teilweise führen und teilweise auch bestimmte Dinge ausprobieren
+ * lassen, der Nutzer ist aber dennoch daran gebunden, dass die GUI ihn einschränkt.
+ */
 public class GUI {
 
-	private final String FONT = "Segoe UI Semibold";
-	private final int TEXT_SIZE = 21;
-	private final int COMPONENT_DISTANCE = 20;
-	private final int COMPONENT_HEIGHT = 40;
-	private final JFrame FRM_ENIGMA_GUI = new JFrame();
-	private final HintTextField TXT_FD_TEXT = new HintTextField("Zu ver- / entschlüsselnden Text eingeben");
-	private final HintTextField TXT_FD_KEY = new HintTextField("Schlüssel eingeben: U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10");
-	private final JTextArea TXT_DEVELOPED_BY = new JTextArea();
-	private final JSeparator SEPARATOR = new JSeparator();
-	private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
-	private final JButton BTN_CANCEL = new JButton("Cancel");
-	private final JButton BTN_START = new JButton("O K");
-	private final JButton BTN_CHOOSE_FILE = new JButton("Datei");
-	private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschlüsseln");
-	private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschlüsseln");
-	private final JProgressBar PROGRESSBAR = new JProgressBar();
-	private final JLabel BACKGROUND = new JLabel("");
-	private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width/ 12;
-	private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height/ 12;
-	private final int WINDOW_WIDTH = SCREEN_WIDTH*8;
-	private final int WINDOW_HEIGHT = SCREEN_HEIGHT*8;
-	private Main main;
-	private JFileChooser FILE_CHOOSER;
-	@SuppressWarnings("unused")
+    //wichtige Konstanten
+    private final int COMPONENT_DISTANCE = 20;
+    private final int COMPONENT_HEIGHT = 40;
+    private final int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width / 12;
+    private final int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height / 12;
+    private final int WINDOW_WIDTH = SCREEN_WIDTH * 8;
+    private final int WINDOW_HEIGHT = SCREEN_HEIGHT * 8;
+    private final Font FONT = new Font("Segoe UI Semibold", Font.PLAIN, 21);
+
+    //GUI elemente
+    private final JFrame FRM_ENIGMA_GUI = new JFrame("Enigma V2");
+
+    private final HintTextField TF_TEXT = new HintTextField("TEXT", "Zu ver- / entschlüsselnden Text eingeben", FONT);
+    private final HintTextField TF_KEY = new HintTextField("KEY", "U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10", FONT);
+
+    private final JLabel LBL_TEXT = new JLabel("Text:");
+    private final JLabel LBL_KEY = new JLabel("Schlüssel:");
+    private final JTextArea TXT_DEVELOPED_BY = new JTextArea();
+
+    private final JSeparator SEPARATOR = new JSeparator();
+
+    private final JButton BTN_CANCEL = new JButton("Cancel");
+    private final JButton BTN_START = new JButton("O K");
+    private final JButton BTN_CHOOSE_FILE = new JButton("Datei");
+
+    private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
+    private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschlüsseln");
+    private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschlüsseln");
+
+    private final JProgressBar PROGRESSBAR = new JProgressBar();
+    private final JLabel BACKGROUND = new JLabel("");
+
+    private JFileChooser FILE_CHOOSER;
+
+    //Assoziation mit der Main
+    private Main main;
 
 
+    /**
+     * @param m Assoziation mit der Main, dadurch kann die GUI Methoden der Main aufrufen
+     * @brief Konstruktor der GUI
+     * Der Konstruktor der GUI initialisiert alle Elemente der GUI
+     * @see Main
+     */
+    public GUI(Main m) {
+        main = m;
+        initialize();
 
-	/**
-	 * Create the application.
-	 */
-	public GUI(Main m) {
-		main = m;
-		initialize();
-	}
-	
-	//Zeigt das Fenster
-	public void show() {
-		FRM_ENIGMA_GUI.setVisible(true);
-	}
-	//Verbirgt das Fenster
-	public void hide() {
-		FRM_ENIGMA_GUI.setVisible(false);
-	}
+        Log.getLogger().i("GUI", "initialize", "GUI initialisiert");
+    }
 
-	//Initiiert alle TextFields / Die Eingabefelder
-	private void initEdits() {
-		//Text Edit
-		TXT_FD_TEXT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		TXT_FD_TEXT.setBounds(COMPONENT_DISTANCE, COMPONENT_DISTANCE, WINDOW_WIDTH-350, COMPONENT_HEIGHT);
-		TXT_FD_TEXT.setColumns(10);
-		TXT_FD_TEXT.getDocument().addDocumentListener(new DocumentListener() {
-			@Override
-			public void insertUpdate(DocumentEvent e) {
-				BTN_START.setEnabled(true);
-			}
+    /**
+     * @brief Methode zum anzeigen der GUI
+     */
+    public void show() {
+        FRM_ENIGMA_GUI.setVisible(true);
+        Log.getLogger().i("GUI", "show", "GUI wird angezeigt");
+    }
 
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-				if (TXT_FD_TEXT.getText().equals("")) BTN_START.setEnabled(false);
-			}
+    /**
+     * @brief Methode zum verbergen der GUI
+     */
+    public void hide() {
+        FRM_ENIGMA_GUI.setVisible(false);
+        Log.getLogger().i("GUI", "hide", "GUI wird verborgen");
+    }
 
-			@Override
-			public void changedUpdate(DocumentEvent e) {
+    /**
+     * @brief Methode zum Initialisieren aller Elemente der GUI
+     * Diese Methode ruft andere Methoden auf, in denen die Elemente der GUI initialisiert werden.
+     * Dadurch wird die GUI "zusammengebaut"
+     */
+    private void initialize() {
+        initFrame();
+        initLabels();
+        initTextfields();
+        initButtons();
+        initRadioButtons();
+        initProgressBar();
+        initTexts();
+        initBackGround();
+        initFileChooser();
+    }
 
-			}
-		});
-		
-		addComponent(TXT_FD_TEXT);
-		//Key Edit
-		TXT_FD_KEY.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		TXT_FD_KEY.setBounds(COMPONENT_DISTANCE, 80, WINDOW_WIDTH-350, COMPONENT_HEIGHT);
-		TXT_FD_KEY.setColumns(10);
-		
-		addComponent(TXT_FD_KEY);
-	}
+    /**
+     * @brief Methode, die das JFrame baut
+     * Das Fenster soll sich dynamisch an die Auflösung anpassen: Es wird im Bildschirm zentriert.
+     * Komponente:\n
+     *      - FRM_ENIGMA_GUI:  JFrame für die GUI Elemente\n
+     */
+    private void initFrame() {
+        FRM_ENIGMA_GUI.setFont(FONT);
+        FRM_ENIGMA_GUI.setResizable(false);
+        FRM_ENIGMA_GUI.setBounds(SCREEN_WIDTH * 2, SCREEN_HEIGHT * 2, WINDOW_WIDTH, WINDOW_HEIGHT);
+        FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 
-	//Stellt das Hintergrundbild ein
-	private void initBackGround() {
-		//"The Line"
-		SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH-50, 3);
+        Log.getLogger().i("GUI", "initFrame", "Frame initialisiert");
+    }
 
-		addComponent(SEPARATOR);
-		//BackGround image
-		BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH,WINDOW_HEIGHT,Image.SCALE_SMOOTH)));
-		BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-		
-		addComponent(BACKGROUND);
-	}
-	private void initButtons() {
-		//File chooser button
-		BTN_CHOOSE_FILE.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		BTN_CHOOSE_FILE.setBounds(WINDOW_WIDTH-300, COMPONENT_DISTANCE, 270, COMPONENT_HEIGHT);
-		BTN_CHOOSE_FILE.addActionListener(e -> btnChooseFileClicked());
-		
-		addComponent(BTN_CHOOSE_FILE);
-		//Start En/Decryption button
-		BTN_START.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		BTN_START.setEnabled(false);
-		BTN_START.setBounds(WINDOW_WIDTH-300, WINDOW_HEIGHT-110, 270, COMPONENT_HEIGHT);
-		BTN_START.addActionListener(e -> btnOkClicked());
-		
-		addComponent(BTN_START);
-		//Cancel Button
-		BTN_CANCEL.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		BTN_CANCEL.setBounds(WINDOW_WIDTH-620, WINDOW_HEIGHT-110, 270, COMPONENT_HEIGHT);
-		BTN_CANCEL.addActionListener(e -> btnCancelClicked());
-		
-		addComponent(BTN_CANCEL);
-	}
+    /**
+     * @brief Methode, die JLabels baut
+     * Die JLabels stehen vor den TextFields und dienen zur Orientierung des Nutzers.
+     * Sie sollen zeigen, was man in die TextFields schreiben soll.
+     * Komponenten:\n
+     *      - LBL_TEXT:  Label für das TextField TF_TEXT\n
+     *      - LBL_KEY:   Label für das TextField TF_KEY\n
+     */
+    private void initLabels() {
+        LBL_TEXT.setFont(FONT);
+        LBL_TEXT.setForeground(Color.BLACK);
+        LBL_TEXT.setBounds(COMPONENT_DISTANCE, COMPONENT_DISTANCE, 100, COMPONENT_HEIGHT);
 
-	//Stellt alle RadioButtons ein
-	private void initRadioButtons() {
-		//Encrypt RdBtn
-		RDBTN_ENCRYPT.setForeground(SystemColor.textText);
-		RDBTN_ENCRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		RDBTN_ENCRYPT.setContentAreaFilled(false);
-		RDBTN_ENCRYPT.setSelected(true);
-		RDBTN_ENCRYPT.setBounds(COMPONENT_DISTANCE, 140, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
-		
-		BUTTON_GROUP.add(RDBTN_ENCRYPT);
+        addComponent(LBL_TEXT);
 
-		addComponent(RDBTN_ENCRYPT);
+        LBL_KEY.setFont(FONT);
+        LBL_KEY.setForeground(Color.BLACK);
+        LBL_KEY.setBounds(COMPONENT_DISTANCE, 80, 100, COMPONENT_HEIGHT);
 
-		//Decrypt RdBtn
-		RDBTN_DECRYPT.setForeground(SystemColor.textText);
-		RDBTN_DECRYPT.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		RDBTN_DECRYPT.setBounds(COMPONENT_DISTANCE, 180, WINDOW_WIDTH/2, COMPONENT_HEIGHT);
-		RDBTN_DECRYPT.setContentAreaFilled(false);
+        addComponent(LBL_KEY);
 
-		BUTTON_GROUP.add(RDBTN_DECRYPT);
+        Log.getLogger().i("GUI", "initLabels", "Labels initialisiert");
+    }
 
-		addComponent(RDBTN_DECRYPT);
-	}
-	//Erzeugt alle "Labels", bzw. Beschreibungen
-	private void initTexts() {
-		TXT_DEVELOPED_BY.setOpaque(false);
-		TXT_DEVELOPED_BY.setFont(new Font(FONT, Font.BOLD, TEXT_SIZE));
-		TXT_DEVELOPED_BY.setEditable(false);
-		TXT_DEVELOPED_BY.setHighlighter(null);
-		TXT_DEVELOPED_BY.setForeground(Color.WHITE);
-		TXT_DEVELOPED_BY.setBackground(SystemColor.menu);
-		TXT_DEVELOPED_BY.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
-		TXT_DEVELOPED_BY.setBounds(COMPONENT_DISTANCE, WINDOW_HEIGHT-235, 240, 300);
-		TXT_DEVELOPED_BY.setColumns(10);
-		
-		addComponent(TXT_DEVELOPED_BY);
-	}
-	//Stellt das Fenster ein
-	private void initFrame() {
-		//Frame
-		FRM_ENIGMA_GUI.setFont(new Font(FONT, Font.PLAIN, TEXT_SIZE));
-		String TITLE = "Enigma V2";
-		FRM_ENIGMA_GUI.setTitle(TITLE);
-		FRM_ENIGMA_GUI.setResizable(false);
-		FRM_ENIGMA_GUI.setBounds(SCREEN_WIDTH*2, SCREEN_HEIGHT*2, WINDOW_WIDTH, WINDOW_HEIGHT);
-		FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		FRM_ENIGMA_GUI.getContentPane().setLayout(null);
+    /**
+     * @brief Methode, die die Textfields baut
+     * Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' Textfield eingegeben wurde, das soll sicherstellen,
+     * dass keine Ver- / Entschlüsselung ohne Text angefangen werden kann.\n
+     * Komponenten:\n
+     *      - TF_TEXT:  TextField für den Text\n
+     *      - TF_KEY:   TextField für den Schlüssel\n
+     * @details Die Textfields sind in diesem Falle von JTextField abgeleitete HintTextFields, um das Arbeiten mit den Hints und dem CharacterFilter zu vereinfachen.
+     * @see HintTextField
+     */
+    private void initTextfields() {
+        TF_TEXT.setBounds(COMPONENT_DISTANCE * 6 + 10, COMPONENT_DISTANCE, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
+        TF_TEXT.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
 
-		PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH-50, COMPONENT_HEIGHT-10);
+                BTN_START.setEnabled(true);
+            }
 
-		addComponent(PROGRESSBAR);
-	}
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                if (TF_TEXT.getText().equals("")) BTN_START.setEnabled(false);
+            }
 
-	private void initFileChooser() {
-		FILE_CHOOSER = new JFileChooser(main.getFileHandler().getPATH());
-		FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)", "enigma"));
-	}
-	
-	
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	//Baut die GUI zusammen
-	private void initialize() {
-		initFrame();
-		initEdits();
-		initButtons();
-		initRadioButtons();
-		initTexts();
-		initBackGround();
-		initFileChooser();
-	}
-	
-	private void addComponent(Component component) {
-		FRM_ENIGMA_GUI.getContentPane().add(component);
-	}
+            @Override
+            public void changedUpdate(DocumentEvent e) {
 
-	//Wird ausgeführt, wenn der Cancel Button gedrückt wird
-	private void btnCancelClicked() {
-		System.out.println("BTN_CANCEL Clicked");
-		TXT_FD_TEXT.setHint();
-		TXT_FD_KEY.setHint();
-		RDBTN_ENCRYPT.setSelected(true);
-		RDBTN_DECRYPT.setSelected(false);
-		BTN_START.setEnabled(false);
-		PROGRESSBAR.setIndeterminate(false);
-	}
+            }
+        });
 
-	//Wird ausgeführt, wenn der OK Button gedrückt wird
-	private void btnOkClicked(){
-		PROGRESSBAR.setIndeterminate(true);
-		PROGRESSBAR.setStringPainted(true);
-		if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung läuft...");
-		else PROGRESSBAR.setString("Entschlüsselung läuft...");
+        addComponent(TF_TEXT);
 
-		main.btnOkClicked(TXT_FD_TEXT.getText(),TXT_FD_KEY.getText(),RDBTN_ENCRYPT.isSelected());
-	}
-	
-	//Wird ausgeführt, wenn der "Datei" Button gedrückt wird
-	private void btnChooseFileClicked() {
-		System.out.println("File chooser button clicked");
-		FILE_CHOOSER.showOpenDialog(FRM_ENIGMA_GUI);
-		File enigmaFile = FILE_CHOOSER.getSelectedFile();
-		System.out.println(enigmaFile.getName());
-		//TODO
-		//handle chosen file
-		//setText: TEXT in TXT_FD_TEXT , KEY in TXT_FD_KEY
-	}
+        TF_KEY.setBounds(COMPONENT_DISTANCE * 6 + 10, 80, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
 
-	public void onFinished(){
-		
-	}
+        addComponent(TF_KEY);
+
+        Log.getLogger().i("GUI", "initTextfields", "TextFields initialisiert");
+    }
+
+    /**
+     * @brief Methode, die die Buttons baut
+     * Die Buttons dienen der Kommunikation des Nutzers mit der Anwendung.
+     * Komponenten:\n
+     *      - BTN_CHOOSE_FILE:  Button, um eine Datei auszuwählen\n
+     *      - BTN_START:        Button, um den Vorgang zu starten\n
+     *      - BTN_CANCEL:       Button zum Abbrechen des Vorgangs\n
+     *
+     */
+    private void initButtons() {
+        //File chooser button
+        BTN_CHOOSE_FILE.setFont(FONT);
+        BTN_CHOOSE_FILE.setBounds(WINDOW_WIDTH - 300, COMPONENT_DISTANCE, 270, COMPONENT_HEIGHT);
+        BTN_CHOOSE_FILE.addActionListener(e -> btnChooseFileClicked());
+
+        addComponent(BTN_CHOOSE_FILE);
+
+        //Start En/Decryption button
+        //standardmäßig auf disabled, damit man die Ver- / Entschlüsselung nicht sofort starten kann
+        BTN_START.setFont(FONT);
+        BTN_START.setEnabled(false);
+        BTN_START.grabFocus();
+        BTN_START.setBounds(WINDOW_WIDTH - 300, WINDOW_HEIGHT - 110, 270, COMPONENT_HEIGHT);
+        BTN_START.addActionListener(e -> btnOkClicked());
+
+        addComponent(BTN_START);
+
+        //Cancel Button
+        BTN_CANCEL.setFont(FONT);
+        BTN_CANCEL.setBounds(WINDOW_WIDTH - 620, WINDOW_HEIGHT - 110, 270, COMPONENT_HEIGHT);
+        BTN_CANCEL.addActionListener(e -> btnCancelClicked());
+
+        addComponent(BTN_CANCEL);
+
+        Log.getLogger().i("GUI", "initButtons", "Buttons initialisiert");
+    }
+
+    //Stellt alle RadioButtons ein
+    private void initRadioButtons() {
+        //Encrypt RdBtn
+        RDBTN_ENCRYPT.setForeground(SystemColor.textText);
+        RDBTN_ENCRYPT.setFont(FONT);
+        RDBTN_ENCRYPT.setContentAreaFilled(false);
+        RDBTN_ENCRYPT.setSelected(true);
+        RDBTN_ENCRYPT.setBounds(COMPONENT_DISTANCE, 140, WINDOW_WIDTH / 2, COMPONENT_HEIGHT);
+
+        BUTTON_GROUP.add(RDBTN_ENCRYPT);
+
+        addComponent(RDBTN_ENCRYPT);
+
+        //Decrypt RdBtn
+        RDBTN_DECRYPT.setForeground(SystemColor.textText);
+        RDBTN_DECRYPT.setFont(FONT);
+        RDBTN_DECRYPT.setBounds(COMPONENT_DISTANCE, 180, WINDOW_WIDTH / 2, COMPONENT_HEIGHT);
+        RDBTN_DECRYPT.setContentAreaFilled(false);
+
+        BUTTON_GROUP.add(RDBTN_DECRYPT);
+
+        addComponent(RDBTN_DECRYPT);
+    }
+
+    private void initProgressBar() {
+        PROGRESSBAR.setBounds(COMPONENT_DISTANCE, 280, WINDOW_WIDTH - 50, COMPONENT_HEIGHT - 10);
+
+        addComponent(PROGRESSBAR);
+    }
+    
+    //Erzeugt alle "Labels", bzw. Beschreibungen
+    private void initTexts() {
+        TXT_DEVELOPED_BY.setOpaque(false);
+        TXT_DEVELOPED_BY.setFont(FONT);
+        TXT_DEVELOPED_BY.setEditable(false);
+        TXT_DEVELOPED_BY.setHighlighter(null);
+        TXT_DEVELOPED_BY.setForeground(Color.WHITE);
+        TXT_DEVELOPED_BY.setBackground(SystemColor.menu);
+        TXT_DEVELOPED_BY.setText("Developed by: \r\nSovietware Corp.\r\n\r\nLisa Binkert\r\nNikolai Klatt\r\nOliver Seiler");
+        TXT_DEVELOPED_BY.setBounds(COMPONENT_DISTANCE, WINDOW_HEIGHT - 235, 240, 300);
+        TXT_DEVELOPED_BY.setColumns(10);
+
+        addComponent(TXT_DEVELOPED_BY);
+    }
+
+    //Stellt das Hintergrundbild ein
+    private void initBackGround() {
+        //"The Line"
+        SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH - 50, 3);
+
+        addComponent(SEPARATOR);
+        //BackGround image
+        BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
+        BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+        addComponent(BACKGROUND);
+    }
+
+    private void initFileChooser() {
+        FILE_CHOOSER = new JFileChooser(main.getFileHandler().getPATH());
+        FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (.enigma)", "enigma"));
+    }
+
+    private void addComponent(Component component) {
+        FRM_ENIGMA_GUI.getContentPane().add(component);
+    }
+
+    //Wird ausgeführt, wenn der Cancel Button gedrückt wird
+    private void btnCancelClicked() {
+        System.out.println("BTN_CANCEL Clicked");
+        BTN_CANCEL.setText("Cancel");
+        setGUIElementsEnabled(true);
+        TF_TEXT.setHint();
+        TF_KEY.setHint();
+        RDBTN_ENCRYPT.setSelected(true);
+        RDBTN_DECRYPT.setSelected(false);
+        BTN_START.setEnabled(false);
+        PROGRESSBAR.setIndeterminate(false);
+        PROGRESSBAR.setValue(0);
+        PROGRESSBAR.setString("");
+    }
+
+    //Wird ausgeführt, wenn der OK Button gedrückt wird
+    private void btnOkClicked() {
+        setGUIElementsEnabled(false);
+        PROGRESSBAR.setIndeterminate(true);
+        PROGRESSBAR.setStringPainted(true);
+
+
+        if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung läuft...");
+        else PROGRESSBAR.setString("Entschlüsselung läuft...");
+
+        main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), RDBTN_ENCRYPT.isSelected());
+    }
+
+    //Wird ausgeführt, wenn der "Datei" Button gedrückt wird
+    private void btnChooseFileClicked() {
+        System.out.println("File chooser button clicked");
+        FILE_CHOOSER.showOpenDialog(FRM_ENIGMA_GUI);
+        //prüft, ob eine Datei ausgewählt wurde
+        //falls nicht wird sie auch nicht behandelt
+        if (FILE_CHOOSER.getSelectedFile() != null) {
+            File enigmaFile = FILE_CHOOSER.getSelectedFile();
+            System.out.println(enigmaFile.getName());
+            //TODO
+            //handle chosen file
+            //setText: TEXT in TF_TEXT , KEY in TF_KEY
+        }
+    }
+
+    public void onFinished() {
+        if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung abgeschlossen");
+        else PROGRESSBAR.setString("Entschlüsselung abgeschlossen");
+        PROGRESSBAR.setIndeterminate(false);
+        PROGRESSBAR.setValue(100);
+        BTN_CANCEL.setText("Again");
+    }
+
+    private void setGUIElementsEnabled(boolean enabled) {
+        TF_TEXT.setEnabled(enabled);
+        TF_KEY.setEnabled(enabled);
+        BTN_START.setEnabled(enabled);
+        BTN_CHOOSE_FILE.setEnabled(enabled);
+        RDBTN_ENCRYPT.setEnabled(enabled);
+        RDBTN_DECRYPT.setEnabled(enabled);
+    }
 }
