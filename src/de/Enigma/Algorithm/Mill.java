@@ -1,5 +1,6 @@
 package de.Enigma.Algorithm;
 
+import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMillAlphabet;
 import de.Enigma.Util.Util;
@@ -68,7 +69,8 @@ public class Mill {
 		if(posOfC > 0) {
 			return this.getAlphabet()[posOfC -1];
 		}
-		//TODO: log.w oder log.e
+		//DONE: log.w oder log.e
+		Log.getLogger().e(getClass().getName(), "encryptLetter", "Fatal: Failed to encrypt letter " + c + "! It seems that either the alphabet does not exist or the letter is not in the alphabet!");
 		return '?';
 	}
 	

@@ -56,7 +56,8 @@ public abstract class Algorithm {
 		for (int i = 2; i >0; i--) {
 			letter = conf.encryptLetter(letter, EMill.values()[i], true);
 		}
-		
+		//Dritte Walze rotieren
+		conf.getMill(EMill.THIRD_MILL).rotateMill();
 		//Walzen prüfen und eventuell rotieren
 		conf.checkMills();
 		

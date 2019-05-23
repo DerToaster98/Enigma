@@ -2,6 +2,7 @@ package de.Enigma.Algorithm;
 
 import java.util.HashMap;
 
+import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMill;
 
@@ -82,7 +83,7 @@ public class EnigmaConfig {
 	 * @param mill Beschreibt durch ein Enum, welche Walze gemeint ist
 	 * @return Liefert die Instanz einer Walze zurück, welche durch 'mill' angesprochen wird -> FIRST_MILL: linke Walze, SECOND_MILL: mittlere Walze, etc.
 	 */
-	private Mill getMill(EMill mill) {
+	Mill getMill(EMill mill) {
 		switch (mill) {
 		case FIRST_MILL:
 			return this.reverseMill;
@@ -93,6 +94,7 @@ public class EnigmaConfig {
 		case THIRD_MILL:
 			return this.mills[2];
 		default:
+			Log.getLogger().w(getClass().getName(), "getMill", "Returning 'null' as requested mill, this should (and can) never happen"); 
 			return null;
 		}
 	}
@@ -123,6 +125,7 @@ public class EnigmaConfig {
 			}
 			return getMill(EMill.SECOND_MILL).getAlphabet();
 		default:
+			Log.getLogger().w(getClass().getName(), "getPreviousAlphabet", "Returning default alphabet as previous alphabet, this should never happen!");
 			return EAlphabet.getAlphabet();
 		}
 	}
