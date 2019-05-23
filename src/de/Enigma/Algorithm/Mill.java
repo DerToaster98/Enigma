@@ -56,6 +56,7 @@ public class Mill {
 	 * @brief Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.
 	 * @details Methode, um einen Buchstaben zu ersetzen
 	 * @param c der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
+	 * @param oldAlphabet Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde
 	 * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben.
 	 */
 	public char encryptLetter(char c, char[] oldAlphabet){

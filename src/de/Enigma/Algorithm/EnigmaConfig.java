@@ -126,7 +126,11 @@ public class EnigmaConfig {
 			return EAlphabet.getAlphabet();
 		}
 	}
-
+	
+	/**
+	 * @brief Liefert den momentan verwendeten Schlüssel zurück.
+	 * @return Gibt den Schlüssel in Form eines speziell konstruierten Strings zurück.
+	 */
 	public String getKey() {
 		return key;
 	}
