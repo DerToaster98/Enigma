@@ -39,7 +39,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i("className", "methodName", "warning");
      */
     public void i(String className, String methodName, String info) {
-        FileHandler.getFileHandler().forceWrite("LOG", className+" "+ methodName +" "+ info, "INFO: ");
+        FileHandler.getFileHandler().writeLog(className+" "+ methodName +" "+ info, "INFO: ");
     }
 
     /**
@@ -58,7 +58,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w("className", "methodName", "warning");
      */
     public void w(String className, String methodName, String warning) {
-        FileHandler.getFileHandler().forceWrite("LOG", className+" "+ methodName +" "+ warning, "WARNING: ");
+        FileHandler.getFileHandler().writeLog( className+" "+ methodName +" "+ warning, "WARNING: ");
     }
 
     /**
@@ -75,7 +75,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e("className", "methodName", "warning");
      */
     public void e(String className, String methodName, String error) {
-        FileHandler.getFileHandler().forceWrite("LOG", className+" "+ methodName +" "+ error, "ERROR: ");
+        FileHandler.getFileHandler().writeLog(className+" "+ methodName +" "+ error, "ERROR: ");
     }
 
     /**

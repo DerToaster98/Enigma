@@ -33,16 +33,9 @@ public class FileHandler {
         toWrite = toWrite.concat(String.valueOf(letter));
     }
 
-   public void forceWrite(String File, String text, String key){
-//        if (File.equals("LOG")){
-            logFile.write(key, text);
-        }
-//        else if (File.equals("TEXT")){
-//            textFile.write();
-//        }
-//        else
-//            enigmaFile.write();
-//    }
+    public void writeLog(String text, String key) {
+        logFile.write(key, text);
+    }
 
     private String createPath() {
 
@@ -81,6 +74,17 @@ public class FileHandler {
     }
 
     public void makeFiles() {
+        try {
+            enigmaFile = new EnigmaFile(currentHome + "Enigma.enigma", metaData,key, clearText, encodedText);
+            if (logFile.createNewFile())
+                Log.getLogger().i(getClass().getName(), "makeFiles", "EngimaFile wurde erfolgreich erzeugt!");
+            textFile = new TextFile(currentHome + "Text.txt");
+            if (logFile.createNewFile())
+                Log.getLogger().i(getClass().getName(), "makeFiles", "TextFile wurde erfolgreich erzeugt!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.getLogger().e(getClass().getName(), "makeFiles", "Error während der Erzeugung der Output Files!");
+        }
 
     }
 

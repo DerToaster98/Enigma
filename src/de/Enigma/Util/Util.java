@@ -1,5 +1,6 @@
 package de.Enigma.Util;
 
+import com.google.gson.Gson;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -53,6 +54,16 @@ public class Util {
     static String getTimeString() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss");
         return dateFormat.format(new Date());
+    }
+
+    /**
+     * @param s Der zu konvertierende String
+     * @return JSON String
+     * @brief Methode zum Konvertieren eines Strings zu einem JSON String
+     */
+    static String resolveStringtoJSON(String s) {
+        Gson gson = new Gson();
+        return gson.toJson(s);
     }
 
 }
