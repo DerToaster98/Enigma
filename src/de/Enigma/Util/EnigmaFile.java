@@ -18,7 +18,7 @@ class EnigmaFile extends File {
         keyJson = Util.resolveStringtoJSON(key);
         clearTextJson = Util.resolveStringtoJSON(clearText);
         encodedTextJson = Util.resolveStringtoJSON(encodedText);
-        
+
     }
 
 }
