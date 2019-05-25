@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * @author Alle
- * @brief Klasse, welche hauptsächlich Hilfsmethoden für die Stringmanipulation enthält
+ * @brief Klasse, welche Hilfsmethoden für die Stringmanipulation enthält
  */
 public class Util {
 

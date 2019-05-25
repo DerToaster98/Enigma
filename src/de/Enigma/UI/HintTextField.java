@@ -13,6 +13,9 @@ import javax.swing.JTextField;
 import de.Enigma.Util.Enums;
 
 @SuppressWarnings("serial")
+/**
+ * @brief 
+ */
 class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     private final String hint;
