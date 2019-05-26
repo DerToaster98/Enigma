@@ -17,7 +17,7 @@ public class FileHandler {
     private String key;
     private String encodedText = "missingNo";
     private String clearText;
-    private String[] metaData;
+    private String[] metaData = new String[6];
     //metaData[0] -> Typ
 
 
