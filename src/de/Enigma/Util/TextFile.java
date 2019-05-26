@@ -9,16 +9,25 @@ import java.io.IOException;
 
 class TextFile extends File {
 
+
     TextFile(String pathname, String[] metaData, String key, String clearText, String encodedText) {
         super(pathname);
-        write(clearText);
+
+
+        write("Key:", key);
+        write("Klartext: ", clearText);
+        write("Verschlüsselter Text: ", encodedText);
     }
 
-    public void write(String text) {
+    public void write(String desc, String text) {
 
-        BufferedWriter writer = null;
+        BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
+            writer.write("***************************************************************************************");
+            writer.newLine();
+            writer.write(desc);
+            writer.newLine();
             writer.write(text);
             writer.newLine();
             writer.close();

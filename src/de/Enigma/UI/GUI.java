@@ -55,7 +55,7 @@ public class GUI {
     private final JFrame FRM_ENIGMA_GUI = new JFrame("Enigma V2");
 
     private final HintTextField TF_TEXT = new HintTextField("TEXT", "Zu ver- / entschlüsselnden Text eingeben", FONT);
-    private final HintTextField TF_KEY = new HintTextField("KEY", "U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10", FONT);
+    private final HintTextField TF_KEY = new HintTextField("KEY", "U-AAA-XXX-X1;Y1-X2;Y2-X3;Y3-X4;Y4-X5;Y5-X6;Y6-X7;Y7-X8;Y8-X9;Y9-X10;Y10", FONT);
 
     private final JLabel LBL_TEXT = new JLabel("Text:");
     private final JLabel LBL_KEY = new JLabel("Schlüssel:");
@@ -161,19 +161,19 @@ public class GUI {
      * @see de.Enigma.UI.HintTextField
      */
     private void initTextfields() {
+        //Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' und 'Schlüssel' Textfield eingegeben wurde, das soll sicherstellen,
+        //dass keine Ver- / Entschlüsselung ohne Text oder Schlüssel angefangen werden kann.
         TF_TEXT.setBounds(COMPONENT_DISTANCE * 6 + 10, COMPONENT_DISTANCE, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
-        //Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' Textfield eingegeben wurde, das soll sicherstellen,
-        //dass keine Ver- / Entschlüsselung ohne Text angefangen werden kann.
         TF_TEXT.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-
+                if (!TF_KEY.isShowingHint())
                 BTN_START.setEnabled(true);
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                if (TF_TEXT.getText().equals("")) BTN_START.setEnabled(false);
+                if (TF_TEXT.getText().equals("") || TF_KEY.getText().equals("")) BTN_START.setEnabled(false);
             }
 
             @Override
@@ -185,6 +185,23 @@ public class GUI {
         addComponent(TF_TEXT);
 
         TF_KEY.setBounds(COMPONENT_DISTANCE * 6 + 10, 80, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
+        TF_KEY.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                if (!TF_TEXT.isShowingHint() && TF_KEY.getText().length() >= 9)
+                BTN_START.setEnabled(true);
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                if (TF_KEY.getText().equals("") || TF_TEXT.getText().equals("")) BTN_START.setEnabled(false);
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+        });
 
         addComponent(TF_KEY);
 
@@ -387,10 +404,16 @@ public class GUI {
             PROGRESSBAR.setStringPainted(true);
 
 
-            if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung läuft...");
-            else PROGRESSBAR.setString("Entschlüsselung läuft...");
+            if (RDBTN_ENCRYPT.isSelected()) {
+                PROGRESSBAR.setString("Verschlüsselung läuft...");
+                FileHandler.getFileHandler().setTypeMetaData("Verschlüsselung");
+            }
+            else {
+                PROGRESSBAR.setString("Entschlüsselung läuft...");
+                FileHandler.getFileHandler().setTypeMetaData("Entschlüsselung");
+            }
 
-            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), RDBTN_ENCRYPT.isSelected());
+            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText());
 
         } else {
             //ermöglicht es durch einen Klick in das Verzeichnis mit den Dateien zu gelangen!
