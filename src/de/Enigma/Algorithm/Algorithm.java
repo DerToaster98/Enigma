@@ -1,7 +1,6 @@
 package de.Enigma.Algorithm;
 
 
-import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMill;
 
 /**

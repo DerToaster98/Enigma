@@ -32,19 +32,19 @@ public class Main {
     }
 
     /**
-     * @param text    Der zu ver/entschlüsselnde Text
-     * @param key     Der Schlüssel, mit dem gearbeitet wird
-     * @param encrypt Ob nun ver- oder entschlüsselt wird
+     * @param text Der zu ver/entschlüsselnde Text
+     * @param key  Der Schlüssel, mit dem gearbeitet wird
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key) {
         FileHandler.getFileHandler().setKey(key);
         FileHandler.getFileHandler().setClearText(text);
-        //TODO Doxygen und Initialisierung von dem ganzen ding
-        //übergabeParameter einbinden
-        // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
-        controller = new AlgorithmController(key);
+
+        long starting_Time = System.currentTimeMillis();
+        controller = new AlgorithmController(this, key);
         controller.crypt(text);
+
+        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);
     }
 
     /**

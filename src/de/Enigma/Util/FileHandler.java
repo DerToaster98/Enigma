@@ -92,10 +92,13 @@ public class FileHandler {
 
     public void setClearText(String clearText) {
         this.clearText = clearText;
-        makeFiles();
     }
 
-   public void setTypeMetaData(String type){
+    public void resetEncodedText() {
+        this.encodedText = "";
+    }
+
+    public void setTypeMetaData(String type){
         metaData[0]= type;
    }
 

@@ -20,7 +20,7 @@ public class Util {
     public Util() {
     }
 
-    //wandelt String in char-Arrya um
+    //wandelt String in char-Array um
 
     /**
      * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
@@ -127,10 +127,10 @@ public class Util {
         Gson gson = new Gson();
         return gson.toJson(s);
     }
-    
-    private static List<Character> plugboard = new ArrayList<Character>();
 
-    
+    private static List<Character> plugboard = new ArrayList<>();
+
+
     public static boolean isKeyValid(String key) {
 
         String[] parts = key.split("-");
@@ -145,18 +145,14 @@ public class Util {
 
                             return false;
                         }
-
-
                     }
                     return true;
                 }
             }
-
         }
         return false;
-
     }
-    
+
 
     private static boolean checkLetterKey(String txt) {
         char[] c = txt.toCharArray();
@@ -167,7 +163,6 @@ public class Util {
                 if (c[1] == ';') {
 
                     if (notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true)) {
-                        ;
                         return true;
                     }
                 }
@@ -179,33 +174,33 @@ public class Util {
 
 
     private static boolean notInPlugboardKey(char c) {
-    	if(plugboard.contains(c)) {
-    		return false;
-    	}
-    	
+        if (plugboard.contains(c)) {
+            return false;
+        }
+
         return true;
     }
-    
+
 
     private static boolean inAlphabetKey(char c, boolean plugboardBool) {
         char character = String.valueOf(c).toUpperCase().toCharArray()[0];
-    	for (EAlphabet alphabet : EAlphabet.values()) {
-            
+        for (EAlphabet alphabet : EAlphabet.values()) {
+
             if (character == alphabet.getAsChar()) {
                 if (plugboardBool) {
-                	plugboard.add(character);
+                    plugboard.add(character);
                 }
             }
-            
-                return true;
-            }
 
-        
+            return true;
+        }
+
+
         return false;
     }
 
     private static boolean checkPositionKey(String txt) {
-    	//Position der einzelnen Walzen
+        //Position der einzelnen Walzen
         char[] c = txt.toCharArray();
         if (c.length == 3) {
             return inAlphabetKey(c[0], false) && inAlphabetKey(c[1], false) && inAlphabetKey(c[2], false);
@@ -215,7 +210,7 @@ public class Util {
     }
 
     private static boolean checkMillsKey(String txt) {
-    	//einzelne Walzen
+        //einzelne Walzen
         char[] mill = txt.toCharArray();
         if (mill.length == 3) {
             for (int i = 1; i <= 5; i++) {
