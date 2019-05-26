@@ -49,6 +49,11 @@ public abstract class Algorithm {
 		
 	}
 
+	/**
+	 * @brief Ver-/Entschlüssel einen Buchstaben
+	 * @param letter
+	 * @return
+	 */
 	protected char encrypt(char letter){
 		
 		//erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
@@ -98,8 +103,6 @@ public abstract class Algorithm {
 		return false;
 
 	}
-	
-
 
 private boolean checkLetter(String txt) {
 	char[]c = txt.toCharArray();
@@ -116,8 +119,6 @@ private boolean checkLetter(String txt) {
 	
 	return false;
 }
-
-
 
 
 private boolean notInPlugboard(char c) {
@@ -165,7 +166,6 @@ private  boolean checkPosition(String txt) {
 	
 	return false;
 }
-
 
 
 private boolean checkMills(String txt) {

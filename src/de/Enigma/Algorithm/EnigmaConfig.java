@@ -26,7 +26,8 @@ public class EnigmaConfig {
 	/**
 	 * @brief Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels
 	 */
-	public EnigmaConfig() {
+	public EnigmaConfig(String key) {
+		this.key = key;
 		// TODO Key auf Richtigkeit prüfen
 		// TODO Walzen erstellen und hier zuweisen
 		// TODO "Steckbrett" befüllen
