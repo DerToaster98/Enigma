@@ -84,7 +84,7 @@ public class Algorithm {
      */
 
     protected void createMetaData() {
-        metaData[0] = "Typ: " + getClass().getName();
+        metaData[0] = "Typ: ";
         String key = controller.getKey();
         String[] parts = key.split("-");
         char[] walzen = parts[1].toCharArray();
