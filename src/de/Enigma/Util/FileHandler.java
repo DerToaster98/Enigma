@@ -92,6 +92,10 @@ public class FileHandler {
         makeFiles();
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getHOME() {
         return HOME;
     }

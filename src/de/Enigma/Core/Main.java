@@ -41,11 +41,11 @@ public class Main {
      * @param encrypt Ob nun ver- oder entschlüsselt wird 
      */
     public void btnOkClicked(String text, String key, boolean encrypt) {
+        FileHandler.getFileHandler().setKey(key);
+        FileHandler.getFileHandler().setClearText(text);
         //TODO Doxygen und Initialisierung von dem ganzen ding
         //übergabeParameter einbinden
         // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
-        FileHandler.getFileHandler().setClearText(text);
-        System.out.println("BTN_OK Clicked");
     }
 
     /**
