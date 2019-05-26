@@ -1,5 +1,6 @@
 package de.Enigma.Algorithm;
 
+import de.Enigma.Core.Log;
 import de.Enigma.Util.*;
 import de.Enigma.Util.Enums.EMode;
 
@@ -13,6 +14,7 @@ public class AlgorithmController {
 	private Util util;
 	private Enums.EMode cryptMode;
 	private FileHandler fileHandler;
+	private Log logger;
 
 	/**
 	 * @brief Die Klasse steuert die Ver- und Entschlüsselung.
@@ -23,6 +25,11 @@ public class AlgorithmController {
 	public AlgorithmController(String key, Enums.EMode mode ) {
 		// TODO Auto-generated constructor stub
 		cryptMode = mode;
+		encrypt = new Encryptor();
+		decrypt = new Decryptor();
+		util = new Util();
+		fileHandler = FileHandler.getFileHandler();
+		logger = Log.getLogger();
 		
 		if(!encrypt.checkKey(key)) {
 			//Schlüssel enthält fehler
@@ -30,12 +37,12 @@ public class AlgorithmController {
 			//Schlüssel neu generieren
 			
 			//message an Log.w
+			logger.w("AlgorithmController", "checkKey()", "Schlüssel wurde falsch eingegeben- Schlüssel wird automatisch generiert");
 			
 		}
 		
-	}
-	public FileHandler getFileHander() {
-		return fileHandler;
+		
+		eConfig = new EnigmaConfig(key);
 	}
 	/**
 	 * @brief Ver- und Entschlüsselt den Text
@@ -49,21 +56,23 @@ public class AlgorithmController {
 		char letter;
 		//@Lisa: Warum keine for-in Schleife? Wäre etwas schicker meiner Meinung nach....
 		for (int i = 0; i < c.length; i++) {
-			if(c[i]==' ') {
+			if(c[i]==' '|| c[i]=='.') {
 				//Leerzeichen an FileHandler
+				fileHandler.appendChar(c[i]);
 			}
 			else {
 				//Buchstabe wird ver oder entschlüsselt
 				if(cryptMode.equals(EMode.ENCRYPT) ) {
 					// Buchstabe mit Encryptor verschlüsseln
 					letter = encrypt.encrypt(c[i]);
-					
 					// Buchstabe an FileHandler
+					fileHandler.appendChar(c[i]);
 				}
 				else if (cryptMode.equals(EMode.DECRYPT)) {
 					// Buchstabe mit Decryptor entschlüsseln
-					letter = encrypt.encrypt(c[i]);
+					letter = decrypt.encrypt(c[i]);
 					// Buchstabe an FileHandler
+					fileHandler.appendChar(c[i]);
 					
 				}
 				
