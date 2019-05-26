@@ -3,6 +3,8 @@ package de.Enigma.Core;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
 
+import java.io.File;
+
 /**
  * @brief Dies ist die Hauptklasse und "Instanz" des Programms
  * @details Hier werden lediglich die Kern-Instanzen erzeugt und aufgerufen. Außerdem ist diese Klasse für die Kommunikation der einzelnen Kern-Instanzen untereinander essenziell.
@@ -43,6 +45,7 @@ public class Main {
         //TODO Doxygen und Initialisierung von dem ganzen ding
         //übergabeParameter einbinden
         // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
+        FileHandler.getFileHandler().setClearText(text);
         System.out.println("BTN_OK Clicked");
     }
 

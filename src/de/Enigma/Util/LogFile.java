@@ -32,9 +32,5 @@ class LogFile extends File {
             e.printStackTrace();
             Log.getLogger().e("LogFile", "write", "Error während des Schreibens in die Logdatei!");
         }
-
-
-
-
     }
 }

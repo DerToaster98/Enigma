@@ -14,7 +14,7 @@ import de.Enigma.Util.Enums;
 
 @SuppressWarnings("serial")
 /**
- * @brief 
+ * @brief
  */
 class HintTextField extends JTextField implements FocusListener, KeyListener {
 

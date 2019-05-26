@@ -14,7 +14,6 @@ public class FileHandler {
     private final String HOME = createPath();
     private String currentHome;
 
-    private String toWrite;
     private String key;
     private String encodedText;
     private String clearText;
@@ -30,7 +29,7 @@ public class FileHandler {
     }
 
     public void appendChar(char letter) {
-        toWrite = toWrite.concat(String.valueOf(letter));
+        encodedText = encodedText.concat(String.valueOf(letter));
     }
 
     public void writeLog(String text, String key) {
@@ -75,17 +74,22 @@ public class FileHandler {
 
     public void makeFiles() {
         try {
-            enigmaFile = new EnigmaFile(currentHome + "Enigma.enigma", metaData,key, clearText, encodedText);
-            if (logFile.createNewFile())
+            enigmaFile = new EnigmaFile(currentHome + "Enigma.enigma", metaData, key, clearText, encodedText);
+            if (enigmaFile.createNewFile())
                 Log.getLogger().i(getClass().getName(), "makeFiles", "EngimaFile wurde erfolgreich erzeugt!");
-            textFile = new TextFile(currentHome + "Text.txt");
-            if (logFile.createNewFile())
+            textFile = new TextFile(currentHome + "Text.txt", metaData, key, clearText, encodedText);
+            if (textFile.createNewFile())
                 Log.getLogger().i(getClass().getName(), "makeFiles", "TextFile wurde erfolgreich erzeugt!");
         } catch (IOException e) {
             e.printStackTrace();
             Log.getLogger().e(getClass().getName(), "makeFiles", "Error während der Erzeugung der Output Files!");
         }
 
+    }
+
+    public void setClearText(String clearText) {
+        this.clearText = clearText;
+        makeFiles();
     }
 
     public String getHOME() {
