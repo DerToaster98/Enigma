@@ -29,18 +29,13 @@ public class AlgorithmController {
 		encrypt = new Encryptor();
 		decrypt = new Decryptor();
 		
-		if(!encrypt.checkKey(key)) {
-			//Schlüssel enthält fehler
-			
+		while(!encrypt.isKeyValid(key)) {
 			//Schlüssel neu generieren
 			key = util.getNewRandomKey();
-			
 			//message an Log.w
-			logger.w(getClass().getName(), "checkKey", "Schlüssel wurde falsch eingegeben- Schlüssel wird automatisch generiert");
+			logger.w(getClass().getName(), "checkKey", "Schlüssel wurde falsch eingegeben oder generiert- neuer Schlüssel wird automatisch generiert");
 			
 		}
-		
-		
 		eConfig = new EnigmaConfig(key);
 	}
 	/**
@@ -81,12 +76,22 @@ public class AlgorithmController {
 		if(cryptMode.equals(EMode.DECRYPT){
 		logger.i(getClass().getName(), "crypt", "Text wurde verschlüsselt");
 		}
-		else if(cryptMode.equals(EMode.Encrypt){
+		else if(cryptMode.equals(EMode.ENCRYPT){
 		logger.i(getClass().getName(), "crypt", "Text wurde entschlüsselt");	
 		}
 		return txt;
 	}
+	public String getKey() {
+		return key;
+	}
+	public EnigmaConfig getEnigmaConfig() {
+		return eConfig;
+	}
 
+	public AlgorithmController getController() {
+		return this;
+	}
+	
 }
 
 
