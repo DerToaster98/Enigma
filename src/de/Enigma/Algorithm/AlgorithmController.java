@@ -36,6 +36,7 @@ public class AlgorithmController {
 			
 			//Schlüssel neu generieren
 			
+			
 			//message an Log.w
 			logger.w("AlgorithmController", "checkKey()", "Schlüssel wurde falsch eingegeben- Schlüssel wird automatisch generiert");
 			
@@ -79,7 +80,7 @@ public class AlgorithmController {
 				
 			}
 		}
-		
+		logger.i("AlgorithmConroller", "crypt", "Text wurde ver/entschlüsselt");
 		return txt;
 	}
 

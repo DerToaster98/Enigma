@@ -5,6 +5,7 @@ var hierarchy =
       [ "de.Enigma.Algorithm.Encryptor", "classde_1_1_enigma_1_1_algorithm_1_1_encryptor.html", null ]
     ] ],
     [ "de.Enigma.Algorithm.AlgorithmController", "classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html", null ],
+    [ "de.Enigma.Tests.Algorithm.AlgorithmTest", "classde_1_1_enigma_1_1_tests_1_1_algorithm_1_1_algorithm_test.html", null ],
     [ "de.Enigma.Util.Enums.EAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html", null ],
     [ "de.Enigma.Util.Enums.EMill", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html", null ],
     [ "de.Enigma.Util.Enums.EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html", null ],
@@ -16,8 +17,5 @@ var hierarchy =
     [ "de.Enigma.Core.Log", "classde_1_1_enigma_1_1_core_1_1_log.html", null ],
     [ "de.Enigma.Core.Main", "classde_1_1_enigma_1_1_core_1_1_main.html", null ],
     [ "de.Enigma.Algorithm.Mill", "classde_1_1_enigma_1_1_algorithm_1_1_mill.html", null ],
-    [ "de.Enigma.Util.Util", "classde_1_1_enigma_1_1_util_1_1_util.html", null ],
-    [ "File", null, [
-      [ "de.Enigma.Util.TextFile", "classde_1_1_enigma_1_1_util_1_1_text_file.html", null ]
-    ] ]
+    [ "de.Enigma.Util.Util", "classde_1_1_enigma_1_1_util_1_1_util.html", null ]
 ];

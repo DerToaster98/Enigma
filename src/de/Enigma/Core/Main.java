@@ -16,7 +16,6 @@ public class Main {
     private GUI window;
 
     private Main() {
-
         Log.getLogger();
         initGUI();
     }
