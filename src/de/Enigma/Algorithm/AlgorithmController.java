@@ -44,8 +44,8 @@ public class AlgorithmController {
      * @author Lisa Binkert
      */
     public void crypt(String txt) {
-
         //txt in char array umwandeln
+    	String cryptText = "";
         char[] c = Util.createCharArray(txt);
         char letter;
         //@Lisa: Warum keine for-in Schleife? Wäre etwas schicker meiner Meinung nach....
@@ -53,19 +53,18 @@ public class AlgorithmController {
             if (value == ' ' || value == '.') {
                 //Leerzeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
+                cryptText += value;
             } else {
                     // Buchstabe mit Decryptor entschlüsseln
                     letter = algorithm.encrypt(value);
                     // Buchstabe an FileHandler
                     FileHandler.getFileHandler().appendChar(letter);
-
+                    cryptText += letter;
                 }
-
-
             }
-        
-            Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
-            
+        //System.out.println(FileHandler.getFileHandler().get);
+        System.out.println(cryptText);
+        Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
     }
 
     public String getKey() {

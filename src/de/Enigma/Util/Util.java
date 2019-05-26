@@ -28,8 +28,7 @@ public class Util {
      * @brief Methode, welche Strings, in char-Arrays umwandeln kann
      */
     public static char[] createCharArray(String message) {
-
-        return message.toCharArray();
+        return message.toUpperCase().toCharArray();
     }
 
     /**
