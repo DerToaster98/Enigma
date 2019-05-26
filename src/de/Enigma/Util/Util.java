@@ -51,7 +51,10 @@ public class Util {
         return -1;
     }
     
-    
+    /**
+     * @brief Erzeugt einen zufälligen Schlüssel
+     * @return Liefert einen zufälligen Schlüssel zurück
+     */
     public static String getNewRandomKey() {
     	char[] rmValues = new char[] {'A','B','C'};
     	List<Integer> millValues = new ArrayList<Integer>();
