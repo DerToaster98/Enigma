@@ -27,6 +27,9 @@ public class Main {
         new Main();
     }
 
+    /**
+     * @brief Methode, die die GUI initialisiert
+     */
     private void initGUI() {
         window = new GUI(this);
     }
@@ -56,7 +59,7 @@ public class Main {
 
     /**
      * @brief Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt
-     * @details Der Routine soll die Dateien erstellen lassen und die GUI benachrichtigen
+     * @details Die Routine soll die Dateien erstellen lassen und die GUI benachrichtigen
      */
     public void onFinished() {
         FileHandler.getFileHandler().makeFiles();

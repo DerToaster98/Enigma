@@ -22,7 +22,7 @@ public class AlgorithmController {
         // TODO Auto-generated constructor stub
         main = m;
         this.key = key;
-        
+
 
         while (!Util.isKeyValid(key)) {
             //Schlüssel neu generieren
@@ -33,7 +33,7 @@ public class AlgorithmController {
         }
         eConfig = new EnigmaConfig(key);
         algorithm = new Algorithm(this);
-       
+
     }
 
     /**
@@ -44,26 +44,25 @@ public class AlgorithmController {
      */
     public void crypt(String txt) {
         //txt in char array umwandeln
-    	String cryptText = "";
+        String cryptText = "";
         char[] c = Util.createCharArray(txt);
         char letter;
 
         FileHandler.getFileHandler().resetEncodedText();
 
         for (char value : c) {
-            if (value == ' ' || value == '.') {
+            if (value == ' ' || value == '.' || value == ',' || value == '?' || value == '!') {
                 //Leerzeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
                 cryptText = cryptText.concat(String.valueOf(value));
             } else {
-                    // Buchstabe mit Decryptor entschlüsseln
-                    letter = algorithm.encrypt(value);
-                    // Buchstabe an FileHandler
-                    FileHandler.getFileHandler().appendChar(letter);
+                // Buchstabe mit Decryptor entschlüsseln
+                letter = algorithm.encrypt(value);
+                // Buchstabe an FileHandler
+                FileHandler.getFileHandler().appendChar(letter);
                 cryptText = cryptText.concat(String.valueOf(letter));
-                }
             }
-        //System.out.println(FileHandler.getFileHandler().get);
+        }
         System.out.println(cryptText);
         main.onFinished();
         Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");

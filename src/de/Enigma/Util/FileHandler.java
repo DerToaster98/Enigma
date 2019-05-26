@@ -98,9 +98,9 @@ public class FileHandler {
         this.encodedText = "";
     }
 
-    public void setTypeMetaData(String type){
-        metaData[0]= type;
-   }
+    public void setTypeMetaData(String type) {
+        metaData[0] = type;
+    }
 
     public void setKey(String key) {
         this.key = key;

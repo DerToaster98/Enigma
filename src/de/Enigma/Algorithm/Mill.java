@@ -58,14 +58,14 @@ public class Mill {
      * @details Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, char[] oldAlphabet) {
-    	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypting letter " + c + "...");
+        Log.getLogger().i(getClass().getName() + ".encryptLetter()", "Crypting letter " + c + "...");
         if (c == ' ') {
             return c;
         }
         int posOfC = Util.getIndexOfCharInAlphabet(c, oldAlphabet);
         if (posOfC >= 0) {
-        	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypted letter is " + this.getAlphabet()[posOfC -1]);
-            return this.getAlphabet()[posOfC -1];
+            Log.getLogger().i(getClass().getName() + ".encryptLetter()", "Crypted letter is " + this.getAlphabet()[posOfC - 1]);
+            return this.getAlphabet()[posOfC - 1];
         }
         //DONE: log.w oder log.e
         Log.getLogger().e(getClass().getName() + ".encryptLetter", "Fatal: Failed to encrypt letter " + c + "! It seems that either the alphabet does not exist or the letter is not in the alphabet!");
