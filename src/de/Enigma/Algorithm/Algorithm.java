@@ -40,21 +40,19 @@ import de.Enigma.Util.Enums.EAlphabet;
  */
 public abstract class Algorithm {
 	private EnigmaConfig conf;
+	private AlgorithmController controller;
+	private String key;
 	private String [] metaData;
-	private String ukw;
-	private String [] walzen;
-	private String [] position;
-	private String []buchstabenArray;
-	private int buchstabenCounter;
 	private char[] plugboard = new char[40];
 	private int counter = 0 ;
-	
-	private 
+
 	
 	
 
 	public Algorithm() {
 		// TODO Auto-generated constructor stub
+		conf = controller.getEnigmaConfig();
+		controller = controller.getController();
 		
 	}
 
@@ -84,11 +82,11 @@ public abstract class Algorithm {
 	 * @param key
 	 * @return
 	 */
-public boolean checkKey(String key){
+public boolean isKeyValid(String key){
 		
 		String [] parts = key.split("-");
 		if(checkUKW(parts[0])) {
-			ukw = parts[0];
+			
 			if(checkMills(parts[1])) {
 				if(checkPosition(parts[2])) {
 	 				
@@ -115,16 +113,11 @@ private boolean checkLetter(String txt) {
 	if(c.length==3) {
 		System.out.println(c.length);
 		if(notInPlugboard(c[0])&& inAlphabet(c[0],true)) {
-			buchstabenArray[buchstabenCounter] = String.valueOf(c[0]);
-			buchstabenCounter++;
+
 			if(c[1]== ';') {
-				buchstabenArray[buchstabenCounter] = "&";
-				buchstabenCounter++;
+
 				if(notInPlugboard(c[2]) &&inAlphabet(c[2],true)) {
-				buchstabenArray[buchstabenCounter] = String.valueOf(c[2]);
-				buchstabenCounter++;
-				buchstabenArray[buchstabenCounter] = ",  ";
-				buchstabenCounter++;
+;
 					return true;
 				}
 			}
@@ -174,7 +167,7 @@ private  boolean checkPosition(String txt) {
 	if(c.length==3) {
 		if(inAlphabet(c[0],false)&&inAlphabet(c[1],false)&& inAlphabet(c[2],false)) {
 			for (int i = 0; i < c.length; i++) {
-				position[i] = String.valueOf(c[i]);
+				
 			}
 			
 			return true;
@@ -197,9 +190,7 @@ private boolean checkMills(String txt) {
 					for (int k = 1 ; k <= 5; k++) {
 						char z = (char)(k+'0');
 						if(mill[2]== z && mill[2]!=y && mill[2]!= x) {
-							for (int l = 0; l < mill.length; l++) {
-								walzen[i] = String.valueOf(mill[i]);
-							}
+
 						return true;
 					}
 			}
@@ -224,33 +215,22 @@ private boolean checkUKW(String u) {
 
 	protected  void createMetaData() {
 		metaData[0]= "Typ: "+getClass().getName();
-		metaData[1]= "Umkehrwalze: "+ getUmkehrwalze();
-		metaData[2]= "1. Walze: "+ getWalze(0)+ " Startposition: "+ getPosition(0);
-		metaData[3]= "2. Walze: "+ getWalze(1)+ " Startposition: "+ getPosition(1);
-		metaData[4]= "3. Walze: "+ getWalze(2)+ " Startposition: "+ getPosition(2);
-		metaData[5]= "Vertauschte Buchstaben:" +getBuchstaben();	
+		String key = controller.getKey();
+		String [] parts = key.split("-");
+		char [] walzen = parts[1].toCharArray();
+		char []	position = parts[2].toCharArray();
+		String buchstaben = " ";
+		for (int i = 3; i < parts.length; i++) {
+			buchstaben = buchstaben +parts[i] + " ";
+		}
+		
+		metaData[1]= "Umkehrwalze: "+ parts[0];
+		metaData[2]= "1. Walze: "+String.valueOf(walzen[0]) + " Startposition: "+String.valueOf(position[0]);
+		metaData[3]= "2. Walze: "+String.valueOf(walzen[1]) + " Startposition: "+String.valueOf(position[1]);
+		metaData[4]= "3. Walze: "+String.valueOf(walzen[2]) + " Startposition: "+String.valueOf(position[2]);
+		metaData[5]= "Vertauschte Buchstaben:" +buchstaben;	
 		
 	}
 
-	private String getBuchstaben() {
-		String buchstaben = " ";
-		for (int i = 0; i < buchstabenArray.length; i++) {
-			buchstaben = buchstaben+ " "+ buchstabenArray[i];
-		}
-		return buchstaben;
-	}
 
-	private String getPosition(int i) {
-		// TODO Auto-generated method stub
-		return position[i];
-	}
-
-	private String getWalze(int i) {
-		return walzen[i];
-	}
-
-	private String getUmkehrwalze() {
-		// TODO Auto-generated method stub
-		return ukw;
-	}
 }
