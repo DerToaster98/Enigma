@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rotatemill',['rotateMill',['../classde_1_1_enigma_1_1_algorithm_1_1_mill.html#ae84e4853d3e2d32451a85a6cc8c8591d',1,'de::Enigma::Algorithm::Mill']]]
+  ['onfinished',['onFinished',['../classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452',1,'de.Enigma.Core.Main.onFinished()'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a298bbca8a9e094757b7443530b181c37',1,'de.Enigma.UI.GUI.onFinished()']]]
 ];

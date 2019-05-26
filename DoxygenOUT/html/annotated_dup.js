@@ -25,6 +25,7 @@ var annotated_dup =
             [ "EMode", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode" ]
           ] ],
           [ "FileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html", "classde_1_1_enigma_1_1_util_1_1_file_handler" ],
+          [ "TextFile", "classde_1_1_enigma_1_1_util_1_1_text_file.html", "classde_1_1_enigma_1_1_util_1_1_text_file" ],
           [ "Util", "classde_1_1_enigma_1_1_util_1_1_util.html", "classde_1_1_enigma_1_1_util_1_1_util" ]
         ] ]
       ] ]

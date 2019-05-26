@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Programmieren-Enigma
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.4a</span>
    </div>
   </td>
  </tr>
@@ -87,6 +87,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_a
 <div class="title">de.Enigma.Algorithm.Algorithm Klassenreferenz<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Die Klasse <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html" title="Die Klasse Algorithm enthält die Ver/Entschlüsselungs Methode für Encrytor und Decryptor, sowie eine checkKey Methode. ">Algorithm</a> enthält die Ver/Entschlüsselungs Methode für Encrytor und <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_decryptor.html">Decryptor</a>, sowie eine checkKey Methode.  
+ <a href="classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html#details">Mehr ...</a></p>
 <div class="dynheader">
 Klassendiagramm für de.Enigma.Algorithm.Algorithm:</div>
 <div class="dyncontent">
@@ -110,7 +113,16 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>checkKey</b> (Stri
 abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>createMetaData</b> ()</td></tr>
 <tr class="separator:ae5019b8fe67a27bb68e4d3b3eac259eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Die Klasse <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html" title="Die Klasse Algorithm enthält die Ver/Entschlüsselungs Methode für Encrytor und Decryptor, sowie eine checkKey Methode. ">Algorithm</a> enthält die Ver/Entschlüsselungs Methode für Encrytor und <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_decryptor.html">Decryptor</a>, sowie eine checkKey Methode. </p>
+<p>Ein Key muss folgendermaßen aufgebaut sein: U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10 U = wechlche Umkehrwalze verwendet wird, A B oder C</p>
+<p>AAA = welche Walze an welcher Position steht z.B 3 2 1 Es gibt fünf Walzen jede Walze kann nur einmal verwendet werden</p>
+<p>XXX= Walzenstellung z.B TCK, es müssen drei Buchstaben sein</p>
+<p>X1;Y1 = Buchstabe X1 ist im Steckbrett mit Y2 verbunden z.B E;G Die Buchstaben die mitteinander vertauscht werden müssen mit einem ";" getrennt werden Es können maximal zehn Buchstabenpaare vertauscht werden.</p>
+<p>Beispiel: C-312-RQV-R;Q-A;S-T;L-C;N Umkehrwalze C erste Walze (Walze 3) auf R zweite Walze (Walze 1) auf Q dritte Walze (Walze 2) auf V R mit Q verbunden A mit S verbunden T mit L verbunden C mit N verbunden</p>
+<p>Enthält Basis Algorithmus für Ver/Entschlüsselung Außerdem ist eine Methode enthalten, welche überprüft, ob ein Schlüssel korrekt ist Dies überprüft die "Steckbrett Sektion" des Schlüssels auf Duplikate</p>
+<dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
+</div><hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
 <li>src/de/Enigma/Algorithm/Algorithm.java</li>
 </ul>
 </div><!-- contents -->
