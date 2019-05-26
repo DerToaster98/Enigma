@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['w',['w',['../classde_1_1_enigma_1_1_core_1_1_log.html#a2c72582bc2dd2fd464f5a4cb7109f894',1,'de::Enigma::Core::Log']]]
+  ['teardownafterclass',['tearDownAfterClass',['../classde_1_1_enigma_1_1_tests_1_1_algorithm_1_1_algorithm_test.html#a0cd23f3a2f0533f26bb429e99892c265',1,'de::Enigma::Tests::Algorithm::AlgorithmTest']]]
 ];
