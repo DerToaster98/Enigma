@@ -1,5 +1,6 @@
 package de.Enigma.Core;
 
+import de.Enigma.Algorithm.AlgorithmController;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
 
@@ -11,6 +12,7 @@ import de.Enigma.Util.FileHandler;
 public class Main {
 
     private GUI window;
+    private AlgorithmController controller;
 
     private Main() {
         Log.getLogger();
@@ -41,6 +43,8 @@ public class Main {
         //TODO Doxygen und Initialisierung von dem ganzen ding
         //übergabeParameter einbinden
         // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
+        controller = new AlgorithmController(key);
+        controller.crypt(text);
     }
 
     /**
