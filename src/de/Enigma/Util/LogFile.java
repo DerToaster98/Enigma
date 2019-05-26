@@ -20,22 +20,16 @@ class LogFile extends File {
 
     public void write(String key, String text) {
 
-        BufferedWriter writer = null;
+        BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
             writer.write(key + " " + text);
             writer.newLine();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
             Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Logdatei!");
-        } finally {
-            try {
-                writer.close();
-                Log.getLogger().w(getClass().getName() + ".write", "Statement writer.close() could throw NullPointerException!");
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.getLogger().e(getClass().getName() + ".write", "Error beim Schließen des Writers!");
-            }
+
         }
     }
 }

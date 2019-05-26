@@ -37,7 +37,7 @@ public class Main {
      * @param encrypt Ob nun ver- oder entschlüsselt wird
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
-    public void btnOkClicked(String text, String key, boolean encrypt) {
+    public void btnOkClicked(String text, String key) {
         FileHandler.getFileHandler().setKey(key);
         FileHandler.getFileHandler().setClearText(text);
         //TODO Doxygen und Initialisierung von dem ganzen ding

@@ -15,9 +15,11 @@ public class FileHandler {
     private String currentHome;
 
     private String key;
-    private String encodedText;
+    private String encodedText = "missingNo";
     private String clearText;
     private String[] metaData;
+    //metaData[0] -> Typ
+
 
     private LogFile logFile;
     private TextFile textFile;
@@ -92,6 +94,10 @@ public class FileHandler {
         this.clearText = clearText;
         makeFiles();
     }
+
+   public void setTypeMetaData(String type){
+        metaData[0]= type;
+   }
 
     public void setKey(String key) {
         this.key = key;

@@ -4,6 +4,8 @@ package de.Enigma.UI;
 import de.Enigma.Util.Enums;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -14,7 +16,7 @@ import java.awt.event.KeyListener;
 /**
  * @brief
  */
-class HintTextField extends JTextField implements FocusListener, KeyListener {
+class HintTextField extends JTextField implements FocusListener, KeyListener{
 
     private final String hint;
     private boolean showingHint;
@@ -88,5 +90,9 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     void setShowingHint(boolean showingHint) {
         this.showingHint = showingHint;
+    }
+
+    boolean isShowingHint() {
+        return showingHint;
     }
 }
