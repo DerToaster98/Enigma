@@ -7,38 +7,36 @@ import de.Enigma.Util.Enums.EMode;
 public class AlgorithmController {
 
 	private String text;
+	private String key;
 	private EnigmaConfig eConfig;
 	private Encryptor encrypt;
 	private Decryptor decrypt;
-	//private Algorithm cryptor;
 	private Util util;
 	private Enums.EMode cryptMode;
 	private FileHandler fileHandler;
 	private Log logger;
-
+	
+			
 	/**
 	 * @brief Die Klasse steuert die Ver- und Entschlüsselung.
 	 * @param key
 	 * @param mode
 	 */
-
 	public AlgorithmController(String key, Enums.EMode mode ) {
 		// TODO Auto-generated constructor stub
 		cryptMode = mode;
+		this.key = key;
 		encrypt = new Encryptor();
 		decrypt = new Decryptor();
-		util = new Util();
-		fileHandler = FileHandler.getFileHandler();
-		logger = Log.getLogger();
 		
 		if(!encrypt.checkKey(key)) {
 			//Schlüssel enthält fehler
 			
 			//Schlüssel neu generieren
-			
+			key = util.getNewRandomKey();
 			
 			//message an Log.w
-			logger.w("AlgorithmController", "checkKey()", "Schlüssel wurde falsch eingegeben- Schlüssel wird automatisch generiert");
+			logger.w(getClass().getName(), "checkKey", "Schlüssel wurde falsch eingegeben- Schlüssel wird automatisch generiert");
 			
 		}
 		
@@ -80,7 +78,12 @@ public class AlgorithmController {
 				
 			}
 		}
-		logger.i("AlgorithmConroller", "crypt", "Text wurde ver/entschlüsselt");
+		if(cryptMode.equals(EMode.DECRYPT){
+		logger.i(getClass().getName(), "crypt", "Text wurde verschlüsselt");
+		}
+		else if(cryptMode.equals(EMode.Encrypt){
+		logger.i(getClass().getName(), "crypt", "Text wurde entschlüsselt");	
+		}
 		return txt;
 	}
 
