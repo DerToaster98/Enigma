@@ -61,7 +61,7 @@ public class Util {
      * @return JSON String
      * @brief Methode zum Konvertieren eines Strings zu einem JSON String
      */
-    static String resolveStringtoJSON(String s) {
+    static String resolvetoJSON(String[] s) {
         Gson gson = new Gson();
         return gson.toJson(s);
     }
