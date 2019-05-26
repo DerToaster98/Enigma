@@ -35,6 +35,7 @@ import de.Enigma.Util.Enums.EMill;
  * Enthält Basis Algorithmus für Ver/Entschlüsselung
  * Außerdem ist eine Methode enthalten, welche überprüft, ob ein Schlüssel korrekt ist
  * Dies überprüft die "Steckbrett Sektion" des Schlüssels auf Duplikate
+ * 
  */
 public class Algorithm {
     private EnigmaConfig conf;
@@ -57,7 +58,7 @@ public class Algorithm {
      * @brief Ver-/Entschlüssel einen Buchstaben
      */
     protected char encrypt(char letter) {
-
+    	letter = conf.encryptLetterWithPlugBoard(letter);
         //erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
         for (EMill mill : EMill.values()) {
             letter = conf.encryptLetter(letter, mill, false);

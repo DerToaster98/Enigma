@@ -132,7 +132,7 @@ public class Util {
     private char[] plugboard = new char[40];
     private int counter = 0;
     
-    public boolean isKeyValid(String key) {
+    public static boolean isKeyValid(String key) {
 
         String[] parts = key.split("-");
         if (checkUKW(parts[0])) {
@@ -159,7 +159,7 @@ public class Util {
     }
     
 
-    private boolean checkLetter(String txt) {
+    private static boolean checkLetter(String txt) {
         char[] c = txt.toCharArray();
         if (c.length == 3) {
             System.out.println(c.length);
@@ -179,7 +179,7 @@ public class Util {
     }
 
 
-    private boolean notInPlugboard(char c) {
+    private static boolean notInPlugboard(char c) {
         for (char value : plugboard) {
             if (c == value) {
                 return false;
@@ -188,7 +188,7 @@ public class Util {
         return true;
     }
 
-    private boolean inAlphabet(char c, boolean plugboardBool) {
+    private static boolean inAlphabet(char c, boolean plugboardBool) {
         for (EAlphabet alphabet : EAlphabet.values()) {
             char lowerAlphabet = (char) (alphabet.getAsChar() + 32);
             if (c == alphabet.getAsChar()) {
@@ -213,7 +213,7 @@ public class Util {
         return false;
     }
 
-    private boolean checkPosition(String txt) {
+    private static boolean checkPosition(String txt) {
 
         char[] c = txt.toCharArray();
         if (c.length == 3) {
@@ -223,7 +223,7 @@ public class Util {
         return false;
     }
 
-    private boolean checkMills(String txt) {
+    private static boolean checkMills(String txt) {
 
         char[] mill = txt.toCharArray();
         if (mill.length == 3) {
@@ -249,7 +249,7 @@ public class Util {
     }
 
 
-    private boolean checkUKW(String u) {
+    private static boolean checkUKW(String u) {
         return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
     }
 

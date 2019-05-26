@@ -42,6 +42,7 @@ public class AlgorithmController {
      * @param txt, Text der ver- oder entschlüsselt werden soll
      * @return
      * @brief Ver- und Entschlüsselt den Text
+     * @author Lisa Binkert
      */
     public void crypt(String txt) {
 
