@@ -79,13 +79,16 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     private boolean checkValidInput(KeyEvent e) {
         char c = Character.toUpperCase(e.getKeyChar());
-        System.out.println(c);
         for (Enums.EAlphabet eAlphabet : Enums.EAlphabet.values()) {
             if (c == eAlphabet.getAsChar())
                 return true;
         }
         if (e.getComponent().getName().equals("TEXT")) {
             return c == ' ';
-        } else return c == '-' || c == ';' || c == '1' || c == '2' || c == '3';
+        } else return c == '-' || c == ';' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5';
+    }
+
+    void setShowingHint(boolean showingHint) {
+        this.showingHint = showingHint;
     }
 }

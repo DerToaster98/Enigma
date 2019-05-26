@@ -3,6 +3,7 @@ package de.Enigma.UI;
 import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
 import de.Enigma.Util.FileHandler;
+import de.Enigma.Util.Util;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -48,7 +49,8 @@ public class GUI {
 
     private final JButton BTN_CANCEL = new JButton("Cancel");
     private final JButton BTN_START = new JButton("O K");
-    private final JButton BTN_CHOOSE_FILE = new JButton("Datei");
+    private final JButton BTN_CHOOSE_FILE = new JButton("Datei einlesen");
+    private final JButton BTN_CREATE_KEY = new JButton("Schlüssel erzeugen");
 
     private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
     private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschlüsseln");
@@ -193,6 +195,7 @@ public class GUI {
      * @details Die Buttons dienen der Kommunikation des Nutzers mit der Anwendung.\n
      * Komponenten:\n
      * - BTN_CHOOSE_FILE:  Button, um eine Datei auszuwählen\n
+     * - BTN_CREATE_KEY:   Button, der einen Schlüssel erzeugt\n
      * - BTN_START:        Button, um den Vorgang zu starten\n
      * - BTN_CANCEL:       Button zum Abbrechen des Vorgangs\n
      */
@@ -203,6 +206,13 @@ public class GUI {
         BTN_CHOOSE_FILE.addActionListener(e -> btnChooseFileClicked());
 
         addComponent(BTN_CHOOSE_FILE);
+
+        //CreateKey button
+        BTN_CREATE_KEY.setFont(FONT);
+        BTN_CREATE_KEY.setBounds(WINDOW_WIDTH - 300, 80, 270, COMPONENT_HEIGHT);
+        BTN_CREATE_KEY.addActionListener(e -> btnCreateKeyClicked());
+
+        addComponent(BTN_CREATE_KEY);
 
         //Start En/Decryption button
         //standardmäßig auf disabled, damit man die Ver- / Entschlüsselung nicht sofort starten kann
@@ -352,6 +362,14 @@ public class GUI {
         PROGRESSBAR.setString("");
 
         Log.getLogger().i("GUI", "btnCancelClicked", "BTN_CANCEL Clicked");
+    }
+
+    private void btnCreateKeyClicked(){
+        TF_KEY.setText(Util.getNewRandomKey());
+        TF_KEY.setForeground(Color.BLACK);
+        TF_KEY.setShowingHint(false);
+
+        Log.getLogger().i("GUI", "btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
     }
 
     /**
