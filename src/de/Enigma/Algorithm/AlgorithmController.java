@@ -11,8 +11,7 @@ public class AlgorithmController {
     private String text;
     private String key;
     private EnigmaConfig eConfig;
-    private Encryptor encrypt;
-    private Decryptor decrypt;
+    private Algorithm algorithm;
     private Enums.EMode cryptMode;
 
 
@@ -25,10 +24,9 @@ public class AlgorithmController {
         // TODO Auto-generated constructor stub
         cryptMode = mode;
         this.key = key;
-        encrypt = new Encryptor();
-        decrypt = new Decryptor();
+        
 
-        while (!encrypt.isKeyValid(key)) {
+        while (!util.isKeyValid(key)) {
             //Schlüssel neu generieren
             key = Util.getNewRandomKey();
             //message an Log.w
@@ -36,6 +34,8 @@ public class AlgorithmController {
 
         }
         eConfig = new EnigmaConfig(key);
+        algorithm = new Algorithm();
+       
     }
 
     /**
@@ -43,7 +43,7 @@ public class AlgorithmController {
      * @return
      * @brief Ver- und Entschlüsselt den Text
      */
-    public String crypt(String txt) {
+    public void crypt(String txt) {
 
         //txt in char array umwandeln
         char[] c = Util.createCharArray(txt);
@@ -54,15 +54,9 @@ public class AlgorithmController {
                 //Leerzeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
             } else {
-                //Buchstabe wird ver oder entschlüsselt
-                if (cryptMode.equals(EMode.ENCRYPT)) {
-                    // Buchstabe mit Encryptor verschlüsseln
-                    letter = encrypt.encrypt(value);
-                    // Buchstabe an FileHandler
-                    FileHandler.getFileHandler().appendChar(letter);
-                } else if (cryptMode.equals(EMode.DECRYPT)) {
+            	
                     // Buchstabe mit Decryptor entschlüsseln
-                    letter = decrypt.encrypt(value);
+                    letter = algorithm.encrypt(value);
                     // Buchstabe an FileHandler
                     FileHandler.getFileHandler().appendChar(letter);
 
@@ -70,13 +64,9 @@ public class AlgorithmController {
 
 
             }
-        }
-        if (cryptMode.equals(EMode.DECRYPT)) {
-            Log.getLogger().i(getClass().getName() + "crypt", "Text wurde verschlüsselt.");
-        } else if (cryptMode.equals(EMode.ENCRYPT)) {
-            Log.getLogger().i(getClass().getName() + "crypt", "Text wurde entschlüsselt.");
-        }
-        return txt;
+        
+            Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
+            
     }
 
     public String getKey() {
