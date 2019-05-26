@@ -22,9 +22,8 @@ public class Log {
     }
 
     /**
-     * @param className  - Name der Klasse von der der Aufruf erfolgt ist
-     * @param methodName - Name der Methode von der der Aufruf erfolgt ist
-     * @param info       - Info Nachricht, die vom Logger geloggt werden soll
+     * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
+     * @param info              Info Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von Info-Logs
      * @details Info Logeintrag:
      * erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.\n
@@ -38,14 +37,13 @@ public class Log {
      * - ...\n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i("className", "methodName", "warning");
      */
-    public void i(String className, String methodName, String info) {
-        FileHandler.getFileHandler().writeLog(className+" "+ methodName +" "+ info, "INFO: ");
+    public void i(String class_Method_Name, String info) {
+        FileHandler.getFileHandler().writeLog(class_Method_Name + " " + info, "INFO: ");
     }
 
     /**
-     * @param className  Name der Klasse von der der Aufruf erfolgt ist
-     * @param methodName Name der Methode von der der Aufruf erfolgt ist
-     * @param warning    Warning Nachricht, die vom Logger geloggt werden soll
+     * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
+     * @param warning           Warning Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von Warning-Logs
      * @details Warning Logeintrag:
      * erstellt über die .dll einen Warning-Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll.\n
@@ -57,14 +55,13 @@ public class Log {
      * \n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w("className", "methodName", "warning");
      */
-    public void w(String className, String methodName, String warning) {
-        FileHandler.getFileHandler().writeLog( className+" "+ methodName +" "+ warning, "WARNING: ");
+    public void w(String class_Method_Name, String warning) {
+        FileHandler.getFileHandler().writeLog(class_Method_Name + " " + warning, "WARNING: ");
     }
 
     /**
-     * @param className  Name der Klasse von der der Aufruf erfolgt ist
-     * @param methodName Name der Methode von der der Aufruf erfolgt ist
-     * @param error      Error Nachricht, die vom Logger geloggt werden soll
+     * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
+     * @param error             Error Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von Error-Logs
      * @details Error Logeintrag:
      * erstellt über die .dll einen Error-Log der über kritische Fehler innerhalb der Anwendung informieren soll.\n
@@ -74,8 +71,8 @@ public class Log {
      * - ...\n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e("className", "methodName", "warning");
      */
-    public void e(String className, String methodName, String error) {
-        FileHandler.getFileHandler().writeLog(className+" "+ methodName +" "+ error, "ERROR: ");
+    public void e(String class_Method_Name, String error) {
+        FileHandler.getFileHandler().writeLog(class_Method_Name + " " + error, "ERROR: ");
     }
 
     /**
