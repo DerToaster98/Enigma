@@ -309,6 +309,34 @@ public class Enums {
 		public String getMillID() {
 			return this.millID;
 		}
+		
+		/**
+		 * @brief Methode, um Walzeneinstellung aus ihrer ID zu bekommen
+		 * @param id Die ID der Walze
+		 * @return Liefert die zur ID gehörende Walzeneinstellung zurück
+		 */
+		public static EMillAlphabet getByID(String id) {
+			switch(id.toUpperCase()) {
+			case "1":
+				return EMillAlphabet.I;
+			case "2":
+				return EMillAlphabet.II;
+			case "3":
+				return EMillAlphabet.III;
+			case "4":
+				return EMillAlphabet.IV;
+			case "5":
+				return EMillAlphabet.V;
+			case "A":
+				return EMillAlphabet.UKW_A;
+			case "B":
+				return EMillAlphabet.UKW_B;
+			case "C":
+				return EMillAlphabet.UKW_C;
+			default:
+				return null;
+			}
+		}
 	}
 
 }

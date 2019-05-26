@@ -9,6 +9,7 @@ import java.util.Random;
 
 import com.google.gson.Gson;
 
+import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
 
 /**
@@ -17,9 +18,7 @@ import de.Enigma.Util.Enums.EAlphabet;
  */
 public class Util {
 
-    public Util() {
-        // TODO Auto-generated constructor stub
-    }
+    public Util() {}
 
     //wandelt String in char-Arrya um
 
@@ -105,7 +104,7 @@ public class Util {
     		alphabet[secondCharIndex] = '?';
     		key += plug;
     	}
-    	
+    	Log.getLogger().i(Util.class.getName(), "getNewRandomKey()", "Neuen Schlüssel generiert: " + key);
     	return key;
     }
 
