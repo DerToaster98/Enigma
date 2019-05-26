@@ -1,17 +1,33 @@
 package de.Enigma.UI;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Desktop;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.SystemColor;
+import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+import javax.swing.JRadioButton;
+import javax.swing.JSeparator;
+import javax.swing.JTextArea;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
-
-import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * @brief GUI Klasse für die grafische Darstellung des Programmes
@@ -315,7 +331,7 @@ public class GUI {
 
         addComponent(SEPARATOR);
         //BackGround image
-        BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
+       	BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
         BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         addComponent(BACKGROUND);
