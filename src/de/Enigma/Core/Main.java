@@ -3,13 +3,10 @@ package de.Enigma.Core;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
 
-import java.io.File;
-
 /**
+ * @author Alle
  * @brief Dies ist die Hauptklasse und "Instanz" des Programms
  * @details Hier werden lediglich die Kern-Instanzen erzeugt und aufgerufen. Außerdem ist diese Klasse für die Kommunikation der einzelnen Kern-Instanzen untereinander essenziell.
- * @author Alle
- *
  */
 public class Main {
 
@@ -21,24 +18,22 @@ public class Main {
     }
 
     /**
-     * @brief "Startmethode" des Programms
      * @param args Verschiedene (nicht verwendete) Argumente, welche dem Programm beim Start mitgegeben werden können
+     * @brief "Startmethode" des Programms
      */
     public static void main(String[] args) {
         new Main();
     }
 
     private void initGUI() {
-        GUI window = new GUI(this);
-        window.show();
-        this.window = window;
+        window = new GUI(this);
     }
 
     /**
+     * @param text    Der zu ver/entschlüsselnde Text
+     * @param key     Der Schlüssel, mit dem gearbeitet wird
+     * @param encrypt Ob nun ver- oder entschlüsselt wird
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
-     * @param text Der zu ver/entschlüsselnde Text
-     * @param key Der Schlüssel, mit dem gearbeitet wird
-     * @param encrypt Ob nun ver- oder entschlüsselt wird 
      */
     public void btnOkClicked(String text, String key, boolean encrypt) {
         FileHandler.getFileHandler().setKey(key);
@@ -63,13 +58,4 @@ public class Main {
         FileHandler.getFileHandler().makeFiles();
         window.onFinished();
     }
-
-    /**
-     * @brief Methode, um auf die Instanz der GUI zugreifen zu können
-     * @return Liefert die Instanz der GUI zurück
-     */
-	public GUI getWindow() {
-		return window;
-	}
-
 }

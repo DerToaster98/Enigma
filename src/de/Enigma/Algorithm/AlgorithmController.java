@@ -1,8 +1,10 @@
 package de.Enigma.Algorithm;
 
 import de.Enigma.Core.Log;
-import de.Enigma.Util.*;
+import de.Enigma.Util.Enums;
 import de.Enigma.Util.Enums.EMode;
+import de.Enigma.Util.FileHandler;
+import de.Enigma.Util.Util;
 
 public class AlgorithmController {
 
@@ -30,7 +32,7 @@ public class AlgorithmController {
             //Schlüssel neu generieren
             key = Util.getNewRandomKey();
             //message an Log.w
-            Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert- neuer Schlüssel wird automatisch generiert");
+            Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert!");
 
         }
         eConfig = new EnigmaConfig(key);
@@ -70,9 +72,9 @@ public class AlgorithmController {
             }
         }
         if (cryptMode.equals(EMode.DECRYPT)) {
-            Log.getLogger().i(getClass().getName() + "crypt", "Text wurde verschlüsselt");
+            Log.getLogger().i(getClass().getName() + "crypt", "Text wurde verschlüsselt.");
         } else if (cryptMode.equals(EMode.ENCRYPT)) {
-            Log.getLogger().i(getClass().getName() + "crypt", "Text wurde entschlüsselt");
+            Log.getLogger().i(getClass().getName() + "crypt", "Text wurde entschlüsselt.");
         }
         return txt;
     }

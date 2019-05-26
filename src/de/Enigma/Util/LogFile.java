@@ -23,15 +23,15 @@ class LogFile extends File {
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
-            writer.write(key +" "+ text);
+            writer.write(key + " " + text);
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.getLogger().e(getClass().getName()+".write", "Error während des Schreibens in die Logdatei!");
-        }finally {
-            try{
+            Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Logdatei!");
+        } finally {
+            try {
                 writer.close();
-                Log.getLogger().w(getClass().getName()+".write", "Statement writer.close() could throw NullPointerException!");
+                Log.getLogger().w(getClass().getName() + ".write", "Statement writer.close() could throw NullPointerException!");
             } catch (IOException e) {
                 e.printStackTrace();
                 Log.getLogger().e(getClass().getName() + ".write", "Error beim Schließen des Writers!");

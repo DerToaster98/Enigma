@@ -1,16 +1,14 @@
 package de.Enigma.UI;
 
 
-import java.awt.Color;
-import java.awt.Font;
+import de.Enigma.Util.Enums;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-import javax.swing.JTextField;
-
-import de.Enigma.Util.Enums;
 
 @SuppressWarnings("serial")
 /**
@@ -84,7 +82,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
                 return true;
         }
         if (e.getComponent().getName().equals("TEXT")) {
-            return c == ' ';
+            return c == ' ' || c == '.' || c == ',' || c == '?' || c == '!';
         } else return c == '-' || c == ';' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5';
     }
 

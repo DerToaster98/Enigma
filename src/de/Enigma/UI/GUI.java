@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * @author Nikolai Klatt, Oliver Seiler
  * @brief GUI Klasse für die grafische Darstellung des Programmes
  * @details Wird durch die Main Klasse gestartet und bildet die Schnittstelle zum Benutzer, dieser interagiert mit ihr
  * und kann somit die Kernfunktionen triggern.
@@ -22,7 +23,6 @@ import java.io.IOException;
  * <p>
  * Die GUI enthält Komponenten die den Nutzer teilweise führen und teilweise auch bestimmte Dinge ausprobieren
  * lassen, der Nutzer ist aber dennoch daran gebunden, dass die GUI ihn einschränkt.
- * @author Nikolai Klatt, Oliver Seiler
  */
 public class GUI {
 
@@ -74,24 +74,9 @@ public class GUI {
     public GUI(Main m) {
         main = m;
         initialize();
-
-        Log.getLogger().i("GUI", "initialize", "GUI initialisiert");
-    }
-
-    /**
-     * @brief Methode zum anzeigen der GUI
-     */
-    public void show() {
         FRM_ENIGMA_GUI.setVisible(true);
-        Log.getLogger().i("GUI", "show", "GUI wird angezeigt");
-    }
 
-    /**
-     * @brief Methode zum verbergen der GUI
-     */
-    public void hide() {
-        FRM_ENIGMA_GUI.setVisible(false);
-        Log.getLogger().i("GUI", "hide", "GUI wird verborgen");
+        Log.getLogger().i(getClass().getName() + ".initialize", "GUI initialisiert.");
     }
 
     /**
@@ -124,7 +109,7 @@ public class GUI {
         FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 
-        Log.getLogger().i("GUI", "initFrame", "Frame initialisiert");
+        Log.getLogger().i(getClass().getName()+ ".initFrame", "Frame initialisiert");
     }
 
     /**
@@ -148,7 +133,7 @@ public class GUI {
 
         addComponent(LBL_KEY);
 
-        Log.getLogger().i("GUI", "initLabels", "Labels initialisiert");
+        Log.getLogger().i(getClass().getName()+ ".initLabels", "Labels initialisiert");
     }
 
     /**
@@ -187,7 +172,7 @@ public class GUI {
 
         addComponent(TF_KEY);
 
-        Log.getLogger().i("GUI", "initTextfields", "TextFields initialisiert");
+        Log.getLogger().i(getClass().getName()+ ".initTextfields", "TextFields initialisiert");
     }
 
     /**
@@ -231,7 +216,7 @@ public class GUI {
 
         addComponent(BTN_CANCEL);
 
-        Log.getLogger().i("GUI", "initButtons", "Buttons initialisiert");
+        Log.getLogger().i(getClass().getName()+ ".initButtons", "Buttons initialisiert");
     }
 
     /**
@@ -264,7 +249,7 @@ public class GUI {
 
         addComponent(RDBTN_DECRYPT);
 
-        Log.getLogger().i("GUI", "initRadioButtons", "RadioButtons initialisiert");
+        Log.getLogger().i(getClass().getName()+ "initRadioButtons", "RadioButtons initialisiert");
     }
 
     /**
@@ -278,7 +263,7 @@ public class GUI {
 
         addComponent(PROGRESSBAR);
 
-        Log.getLogger().i("GUI", "initProgressBar", "ProgressBar initialisiert");
+        Log.getLogger().i(getClass().getName()+".initProgressBar", "ProgressBar initialisiert");
     }
 
     /**
@@ -300,7 +285,7 @@ public class GUI {
 
         addComponent(TXT_DEVELOPED_BY);
 
-        Log.getLogger().i("GUI", "initTextArea", "TextArea initialisiert");
+        Log.getLogger().i(getClass().getName()+ ".initTextArea", "TextArea initialisiert");
     }
 
     /**
@@ -320,7 +305,7 @@ public class GUI {
 
         addComponent(BACKGROUND);
 
-        Log.getLogger().i("GUI", "initBackGround", "Background initialisiert");
+        Log.getLogger().i(getClass().getName()+ ".initBackGround", "Background initialisiert");
     }
 
     /**
@@ -332,7 +317,7 @@ public class GUI {
         FILE_CHOOSER = new JFileChooser(FileHandler.getFileHandler().getHOME());
         FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (*.enigma)", "enigma"));
 
-        Log.getLogger().i("GUI", "initFileChooser", "FileChooser initialisiert");
+        Log.getLogger().i(getClass().getName()+".initFileChooser", "FileChooser initialisiert");
     }
 
     /**
@@ -361,15 +346,15 @@ public class GUI {
         PROGRESSBAR.setValue(0);
         PROGRESSBAR.setString("");
 
-        Log.getLogger().i("GUI", "btnCancelClicked", "BTN_CANCEL Clicked");
+        Log.getLogger().i(getClass().getName()+ ".btnCancelClicked", "BTN_CANCEL Clicked");
     }
 
-    private void btnCreateKeyClicked(){
+    private void btnCreateKeyClicked() {
         TF_KEY.setText(Util.getNewRandomKey());
         TF_KEY.setForeground(Color.BLACK);
         TF_KEY.setShowingHint(false);
 
-        Log.getLogger().i("GUI", "btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
+        Log.getLogger().i(getClass().getName()+ ".btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
     }
 
     /**
@@ -397,11 +382,11 @@ public class GUI {
                 Desktop.getDesktop().open(new File(FileHandler.getFileHandler().getHOME()));
             } catch (IOException e) {
                 e.printStackTrace();
-                Log.getLogger().e("GUI", "btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen!");
+                Log.getLogger().e(getClass().getName()+ ".btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen!");
             }
         }
 
-        Log.getLogger().i("GUI", "btnOkClicked", "BTN_START Clicked");
+        Log.getLogger().i(getClass().getName()+".btnOkClicked", "BTN_START Clicked");
     }
 
     /**
@@ -422,7 +407,7 @@ public class GUI {
             //setText: TEXT in TF_TEXT , KEY in TF_KEY
         }
 
-        Log.getLogger().i("GUI", "btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
+        Log.getLogger().i(getClass().getName()+ ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
     }
 
     /**
@@ -438,7 +423,7 @@ public class GUI {
         BTN_START.setEnabled(true);
         BTN_START.setText("Datei Anzeigen");
 
-        Log.getLogger().i("GUI", "onFinished", "onFinished aufgerufen: Prozess beendet");
+        Log.getLogger().i(getClass().getName()+ ".onFinished", "onFinished aufgerufen: Prozess beendet");
     }
 
     /**
@@ -453,6 +438,6 @@ public class GUI {
         RDBTN_ENCRYPT.setEnabled(enabled);
         RDBTN_DECRYPT.setEnabled(enabled);
 
-        Log.getLogger().i("GUI", "setGUIElementsEnabled", "GUI Elements enabled set to: " + enabled);
+        Log.getLogger().i(getClass().getName()+".setGUIElementsEnabled", "GUI Elements enabled set to: " + enabled);
     }
 }

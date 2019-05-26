@@ -35,7 +35,7 @@ public class Log {
      * - ...\n
      * - Infos zu Programmabläufen\n
      * - ...\n
-     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i("className", "methodName", "warning");
+     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i(getClass().getName()+ ".methodName", "warning");
      */
     public void i(String class_Method_Name, String info) {
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + info, "INFO: ");
@@ -53,7 +53,7 @@ public class Log {
      * - potenzielle aber korrigierbare Fehler\n
      * - ...
      * \n
-     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w("className", "methodName", "warning");
+     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w(getClass().getName()+ ".methodName", "warning");
      */
     public void w(String class_Method_Name, String warning) {
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + warning, "WARNING: ");
@@ -69,7 +69,7 @@ public class Log {
      * - Exceptions, die durch einen try-catch geworfen werden\n
      * - kritische Fehler, die das System beeinträchtigen können\n
      * - ...\n
-     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e("className", "methodName", "warning");
+     * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e(getClass().getName()+ ".methodName", "warning");
      */
     public void e(String class_Method_Name, String error) {
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + error, "ERROR: ");
