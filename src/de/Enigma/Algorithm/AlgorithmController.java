@@ -12,7 +12,6 @@ public class AlgorithmController {
     private String key;
     private EnigmaConfig eConfig;
     private Algorithm algorithm;
-    private Enums.EMode cryptMode;
 
 
     /**
@@ -20,13 +19,13 @@ public class AlgorithmController {
      * @param mode
      * @brief Die Klasse steuert die Ver- und Entschlüsselung.
      */
-    public AlgorithmController(String key, Enums.EMode mode) {
+    public AlgorithmController(String key) {
         // TODO Auto-generated constructor stub
-        cryptMode = mode;
+
         this.key = key;
         
 
-        while (!util.isKeyValid(key)) {
+        while (!Util.isKeyValid(key)) {
             //Schlüssel neu generieren
             key = Util.getNewRandomKey();
             //message an Log.w

@@ -129,20 +129,20 @@ public class Util {
         return gson.toJson(s);
     }
     
-    private char[] plugboard = new char[40];
-    private int counter = 0;
+    private static List<Character> plugboard = new ArrayList<Character>();
+
     
     public static boolean isKeyValid(String key) {
 
         String[] parts = key.split("-");
         if (checkUKW(parts[0])) {
 
-            if (checkMills(parts[1])) {
-                if (checkPosition(parts[2])) {
+            if (checkMillsKey(parts[1])) {
+                if (checkPositionKey(parts[2])) {
 
                     for (int i = 3; i < parts.length; i++) {
 
-                        if (!checkLetter(parts[i])) {
+                        if (!checkLetterKey(parts[i])) {
 
                             return false;
                         }
@@ -159,15 +159,15 @@ public class Util {
     }
     
 
-    private static boolean checkLetter(String txt) {
+    private static boolean checkLetterKey(String txt) {
         char[] c = txt.toCharArray();
         if (c.length == 3) {
             System.out.println(c.length);
-            if (notInPlugboard(c[0]) && inAlphabet(c[0], true)) {
+            if (notInPlugboardKey(c[0]) && inAlphabetKey(c[0], true)) {
 
                 if (c[1] == ';') {
 
-                    if (notInPlugboard(c[2]) && inAlphabet(c[2], true)) {
+                    if (notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true)) {
                         ;
                         return true;
                     }
@@ -179,52 +179,44 @@ public class Util {
     }
 
 
-    private static boolean notInPlugboard(char c) {
-        for (char value : plugboard) {
-            if (c == value) {
-                return false;
-            }
-        }
+    private static boolean notInPlugboardKey(char c) {
+    	if(plugboard.contains(c)) {
+    		return false;
+    	}
+    	
         return true;
     }
+    
 
-    private static boolean inAlphabet(char c, boolean plugboardBool) {
-        for (EAlphabet alphabet : EAlphabet.values()) {
-            char lowerAlphabet = (char) (alphabet.getAsChar() + 32);
-            if (c == alphabet.getAsChar()) {
+    private static boolean inAlphabetKey(char c, boolean plugboardBool) {
+        char character = String.valueOf(c).toUpperCase().toCharArray()[0];
+    	for (EAlphabet alphabet : EAlphabet.values()) {
+            
+            if (character == alphabet.getAsChar()) {
                 if (plugboardBool) {
-                    plugboard[counter] = c;
-                    counter++;
-                    plugboard[counter] = (char) (c + 32);
-                    counter++;
+                	plugboard.add(character);
                 }
             }
-            if (c == lowerAlphabet) {
-                if (plugboardBool) {
-                    plugboard[counter] = c;
-                    counter++;
-                    plugboard[counter] = (char) (c - 32);
-                    counter++;
-                }
+            
                 return true;
             }
 
-        }
+        
         return false;
     }
 
-    private static boolean checkPosition(String txt) {
-
+    private static boolean checkPositionKey(String txt) {
+    	//Position der einzelnen Walzen
         char[] c = txt.toCharArray();
         if (c.length == 3) {
-            return inAlphabet(c[0], false) && inAlphabet(c[1], false) && inAlphabet(c[2], false);
+            return inAlphabetKey(c[0], false) && inAlphabetKey(c[1], false) && inAlphabetKey(c[2], false);
         }
 
         return false;
     }
 
-    private static boolean checkMills(String txt) {
-
+    private static boolean checkMillsKey(String txt) {
+    	//einzelne Walzen
         char[] mill = txt.toCharArray();
         if (mill.length == 3) {
             for (int i = 1; i <= 5; i++) {
