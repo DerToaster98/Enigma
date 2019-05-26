@@ -9,6 +9,7 @@ import java.util.Random;
 
 import com.google.gson.Gson;
 
+import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
 
 /**
@@ -17,9 +18,7 @@ import de.Enigma.Util.Enums.EAlphabet;
  */
 public class Util {
 
-    public Util() {
-        // TODO Auto-generated constructor stub
-    }
+    public Util() {}
 
     //wandelt String in char-Arrya um
 
@@ -51,7 +50,10 @@ public class Util {
         return -1;
     }
     
-    
+    /**
+     * @brief Erzeugt einen zufälligen Schlüssel
+     * @return Liefert einen zufälligen Schlüssel zurück
+     */
     public static String getNewRandomKey() {
     	char[] rmValues = new char[] {'A','B','C'};
     	List<Integer> millValues = new ArrayList<Integer>();
@@ -102,7 +104,7 @@ public class Util {
     		alphabet[secondCharIndex] = '?';
     		key += plug;
     	}
-    	
+    	Log.getLogger().i(Util.class.getName(), "getNewRandomKey()", "Neuen Schlüssel generiert: " + key);
     	return key;
     }
 
@@ -121,7 +123,7 @@ public class Util {
      * @return JSON String
      * @brief Methode zum Konvertieren eines Strings zu einem JSON String
      */
-    static String resolveStringtoJSON(String s) {
+    static String resolvetoJSON(String[] s) {
         Gson gson = new Gson();
         return gson.toJson(s);
     }

@@ -9,9 +9,7 @@ import java.io.IOException;
 
 class TextFile extends File {
 
-    private final String EXTENSION = ".txt";
-
-    TextFile(String pathname, String metaData, String key, String clearText, String encodedText) {
+    TextFile(String pathname, String[] metaData, String key, String clearText, String encodedText) {
         super(pathname);
         write(clearText);
     }

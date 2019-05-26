@@ -14,6 +14,11 @@ var annotated_dup =
           [ "Log", "classde_1_1_enigma_1_1_core_1_1_log.html", "classde_1_1_enigma_1_1_core_1_1_log" ],
           [ "Main", "classde_1_1_enigma_1_1_core_1_1_main.html", "classde_1_1_enigma_1_1_core_1_1_main" ]
         ] ],
+        [ "Tests", null, [
+          [ "Algorithm", null, [
+            [ "AlgorithmTest", "classde_1_1_enigma_1_1_tests_1_1_algorithm_1_1_algorithm_test.html", "classde_1_1_enigma_1_1_tests_1_1_algorithm_1_1_algorithm_test" ]
+          ] ]
+        ] ],
         [ "UI", null, [
           [ "GUI", "classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html", "classde_1_1_enigma_1_1_u_i_1_1_g_u_i" ]
         ] ],
@@ -25,7 +30,6 @@ var annotated_dup =
             [ "EMode", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode" ]
           ] ],
           [ "FileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html", "classde_1_1_enigma_1_1_util_1_1_file_handler" ],
-          [ "TextFile", "classde_1_1_enigma_1_1_util_1_1_text_file.html", "classde_1_1_enigma_1_1_util_1_1_text_file" ],
           [ "Util", "classde_1_1_enigma_1_1_util_1_1_util.html", "classde_1_1_enigma_1_1_util_1_1_util" ]
         ] ]
       ] ]

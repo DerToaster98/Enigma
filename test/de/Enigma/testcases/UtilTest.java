@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.Enigma.Tests.Algorithm;
+package de.Enigma.testcases;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author Admin
  *
  */
-public class AlgorithmTest {
+public class UtilTest {
 
 	/**
 	 * @throws java.lang.Exception

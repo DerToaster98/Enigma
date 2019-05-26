@@ -9,8 +9,6 @@ import java.io.IOException;
 
 class LogFile extends File {
 
-    private final String EXTENSION = ".log";
-
     LogFile(String pathname) {
         super(pathname);
         writeImmediateMetaData();

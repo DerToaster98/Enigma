@@ -5,6 +5,7 @@ import java.util.HashMap;
 import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMill;
+import de.Enigma.Util.Enums.EMillAlphabet;
 
 /**
  * 
@@ -27,11 +28,35 @@ public class EnigmaConfig {
 	 * @brief Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels
 	 */
 	public EnigmaConfig(String key) {
+		// TODO: Unit test wäre hier sinnvoll, da hier nicht überprüft wird, ob der key gültig ist
 		this.key = key;
-		// TODO Key auf Richtigkeit prüfen
-		// TODO Walzen erstellen und hier zuweisen
-		// TODO "Steckbrett" befüllen
-		// TODO Buchstaben verschlüsseln schreiben
+		// DONE Key auf Richtigkeit prüfen -> Algorithm, wird vorüberprüft
+		// DONE Walzen erstellen und hier zuweisen
+		String[] keyValues = this.key.split("-");
+		EMillAlphabet reverseMillType = EMillAlphabet.getByID(keyValues[0]);
+		
+		// Holt sich die "Konfiguration" der Walzen aus dem key
+		char[] millIDs = keyValues[1].toCharArray();
+		EMillAlphabet millOneType = EMillAlphabet.getByID(String.valueOf(millIDs[0]));
+		EMillAlphabet millTwoType = EMillAlphabet.getByID(String.valueOf(millIDs[1]));
+		EMillAlphabet millThreeType = EMillAlphabet.getByID(String.valueOf(millIDs[2]));
+		
+		// Holt sich die Startwerte der Walzen aus dem key
+		char[] millStartMarks = keyValues[2].toCharArray();
+		this.reverseMill = new Mill('?', reverseMillType);
+		this.mills[0] = new Mill(millStartMarks[0], millOneType);
+		this.mills[1] = new Mill(millStartMarks[1], millTwoType);
+		this.mills[2] = new Mill(millStartMarks[2], millThreeType);
+		// DONE "Steckbrett" befüllen
+		if(keyValues.length > 3) {
+			for(int i = 3; i < keyValues.length; i++) {
+				String[] plugConf =  keyValues[i].split(";");
+				if(plugConf.length == 2) {
+					this.letterChanger.put(new Character(plugConf[0].toCharArray()[0]), new Character(plugConf[1].toCharArray()[0]));
+				}
+			}
+		}
+		// DONE Buchstaben verschlüsseln schreiben
 	}
 
 	/**
@@ -53,7 +78,8 @@ public class EnigmaConfig {
 		}
 		toEncrypt = getMill(mill).encryptLetter(toEncrypt, oldAlphabet);
 		
-		if(wasInReturnMill) {
+		if(wasInReturnMill && mill.equals(EMill.THIRD_MILL)) {
+			getMill(EMill.THIRD_MILL).rotateMill();
 			checkMills();
 		}
 		return toEncrypt;
