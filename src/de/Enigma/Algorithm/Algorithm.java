@@ -40,10 +40,19 @@ import de.Enigma.Util.Enums.EAlphabet;
  */
 public abstract class Algorithm {
 	private EnigmaConfig conf;
+	private String [] metaData;
+	private String ukw;
+	private String [] walzen;
+	private String [] position;
+	private String []buchstabenArray;
+	private int buchstabenCounter;
+	private char[] plugboard = new char[40];
+	private int counter = 0 ;
+	
+	private 
+	
 	
 
-
-	
 	public Algorithm() {
 		// TODO Auto-generated constructor stub
 		
@@ -63,27 +72,24 @@ public abstract class Algorithm {
 		for (int i = 2; i >0; i--) {
 			letter = conf.encryptLetter(letter, EMill.values()[i], true);
 		}
-		//Dritte Walze rotieren
-		conf.getMill(EMill.THIRD_MILL).rotateMill();
-		//Walzen prüfen und eventuell rotieren
-		conf.checkMills();
 		
 		//Buchstabe zurückgeben
 		return letter;
 	}
 
-	private char[] plugboard = new char[40];
-	private int counter = 0 ;
+
 	
-	protected boolean checkKey(String key){
+	/**
+	 * @brief Überprüft ob der Schlüssel korrekt eingegeben wurde
+	 * @param key
+	 * @return
+	 */
+public boolean checkKey(String key){
 		
 		String [] parts = key.split("-");
 		if(checkUKW(parts[0])) {
-			
-			
+			ukw = parts[0];
 			if(checkMills(parts[1])) {
-				
-				
 				if(checkPosition(parts[2])) {
 	 				
 					for (int i = 3; i < parts.length;i++) {
@@ -109,8 +115,16 @@ private boolean checkLetter(String txt) {
 	if(c.length==3) {
 		System.out.println(c.length);
 		if(notInPlugboard(c[0])&& inAlphabet(c[0],true)) {
+			buchstabenArray[buchstabenCounter] = String.valueOf(c[0]);
+			buchstabenCounter++;
 			if(c[1]== ';') {
+				buchstabenArray[buchstabenCounter] = "&";
+				buchstabenCounter++;
 				if(notInPlugboard(c[2]) &&inAlphabet(c[2],true)) {
+				buchstabenArray[buchstabenCounter] = String.valueOf(c[2]);
+				buchstabenCounter++;
+				buchstabenArray[buchstabenCounter] = ",  ";
+				buchstabenCounter++;
 					return true;
 				}
 			}
@@ -159,7 +173,10 @@ private  boolean checkPosition(String txt) {
 	char[] c = txt.toCharArray();
 	if(c.length==3) {
 		if(inAlphabet(c[0],false)&&inAlphabet(c[1],false)&& inAlphabet(c[2],false)) {
-;
+			for (int i = 0; i < c.length; i++) {
+				position[i] = String.valueOf(c[i]);
+			}
+			
 			return true;
 		}
 	}
@@ -167,12 +184,11 @@ private  boolean checkPosition(String txt) {
 	return false;
 }
 
-
 private boolean checkMills(String txt) {
+	
 	char[] mill = txt.toCharArray();
 	if(mill.length==3) {
 	for (int i = 1; i <=5; i++) {
-		//System.out.println(i +"i");
 		char x = (char)(i+'0');
 		if(mill[0] == x ) {
 			for (int j = 1; j <= 5; j++) {
@@ -181,6 +197,9 @@ private boolean checkMills(String txt) {
 					for (int k = 1 ; k <= 5; k++) {
 						char z = (char)(k+'0');
 						if(mill[2]== z && mill[2]!=y && mill[2]!= x) {
+							for (int l = 0; l < mill.length; l++) {
+								walzen[i] = String.valueOf(mill[i]);
+							}
 						return true;
 					}
 			}
@@ -193,14 +212,45 @@ private boolean checkMills(String txt) {
 }
 
 
-
 private boolean checkUKW(String u) {
 	if(u.equals("A")| u.equals("B")| u.equals("C") ) {
 		return true;
 	}
 	return false;
 }	
-	
+	/**
+	 * @brief Übergibt metaData an FileHandler()
+	 */
 
-	protected abstract void createMetaData();
+	protected  void createMetaData() {
+		metaData[0]= "Typ: "+getClass().getName();
+		metaData[1]= "Umkehrwalze: "+ getUmkehrwalze();
+		metaData[2]= "1. Walze: "+ getWalze(0)+ " Startposition: "+ getPosition(0);
+		metaData[3]= "2. Walze: "+ getWalze(1)+ " Startposition: "+ getPosition(1);
+		metaData[4]= "3. Walze: "+ getWalze(2)+ " Startposition: "+ getPosition(2);
+		metaData[5]= "Vertauschte Buchstaben:" +getBuchstaben();	
+		
+	}
+
+	private String getBuchstaben() {
+		String buchstaben = " ";
+		for (int i = 0; i < buchstabenArray.length; i++) {
+			buchstaben = buchstaben+ " "+ buchstabenArray[i];
+		}
+		return buchstaben;
+	}
+
+	private String getPosition(int i) {
+		// TODO Auto-generated method stub
+		return position[i];
+	}
+
+	private String getWalze(int i) {
+		return walzen[i];
+	}
+
+	private String getUmkehrwalze() {
+		// TODO Auto-generated method stub
+		return ukw;
+	}
 }
