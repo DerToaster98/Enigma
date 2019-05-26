@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Programmieren-Enigma
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.4a</span>
    </div>
   </td>
  </tr>
@@ -101,9 +101,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#afc8fb7733ef95bfd1e2d9ec1ece359bd">btnCancelClicked</a> ()</td></tr>
 <tr class="memdesc:afc8fb7733ef95bfd1e2d9ec1ece359bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn der Button, welcher den laufen Ver/Entschlüsselungsvorgang abbricht, geklickt wird. <br /></td></tr>
 <tr class="separator:afc8fb7733ef95bfd1e2d9ec1ece359bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96ef5b0aee61943c2262e1af9c058cda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html">FileHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a96ef5b0aee61943c2262e1af9c058cda">getFileHandler</a> ()</td></tr>
-<tr class="memdesc:a96ef5b0aee61943c2262e1af9c058cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, um auf den FileHandler zugreifen zu können.  <a href="#a96ef5b0aee61943c2262e1af9c058cda">Mehr ...</a><br /></td></tr>
-<tr class="separator:a96ef5b0aee61943c2262e1af9c058cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93767098d207088b4b24aa747f748452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452">onFinished</a> ()</td></tr>
+<tr class="memdesc:a93767098d207088b4b24aa747f748452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt.  <a href="#a93767098d207088b4b24aa747f748452">Mehr ...</a><br /></td></tr>
+<tr class="separator:a93767098d207088b4b24aa747f748452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d6ebe9d505bb478607121f61b52c3a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html">GUI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a7d6ebe9d505bb478607121f61b52c3a6">getWindow</a> ()</td></tr>
 <tr class="memdesc:a7d6ebe9d505bb478607121f61b52c3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, um auf die Instanz der GUI zugreifen zu können.  <a href="#a7d6ebe9d505bb478607121f61b52c3a6">Mehr ...</a><br /></td></tr>
 <tr class="separator:a7d6ebe9d505bb478607121f61b52c3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,26 +162,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="a96ef5b0aee61943c2262e1af9c058cda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96ef5b0aee61943c2262e1af9c058cda">&#9670;&nbsp;</a></span>getFileHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html">FileHandler</a> de.Enigma.Core.Main.getFileHandler </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Methode, um auf den FileHandler zugreifen zu können. </p>
-<dl class="section return"><dt>Rückgabe</dt><dd>Liefert die Instanz des FileHandlers zurück. Wurde er noch nicht erzeugt, wird eine neue Instanz erzeugt, welche anschließend zurückgegeben wird </dd></dl>
-
-</div>
-</div>
 <a id="a7d6ebe9d505bb478607121f61b52c3a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d6ebe9d505bb478607121f61b52c3a6">&#9670;&nbsp;</a></span>getWindow()</h2>
 
@@ -233,6 +213,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a93767098d207088b4b24aa747f748452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93767098d207088b4b24aa747f748452">&#9670;&nbsp;</a></span>onFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void de.Enigma.Core.Main.onFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt. </p>
+<p>Der Routine soll die Dateien erstellen lassen und die GUI benachrichtigen </p>
 
 </div>
 </div>

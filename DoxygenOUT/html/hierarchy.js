@@ -16,5 +16,8 @@ var hierarchy =
     [ "de.Enigma.Core.Log", "classde_1_1_enigma_1_1_core_1_1_log.html", null ],
     [ "de.Enigma.Core.Main", "classde_1_1_enigma_1_1_core_1_1_main.html", null ],
     [ "de.Enigma.Algorithm.Mill", "classde_1_1_enigma_1_1_algorithm_1_1_mill.html", null ],
-    [ "de.Enigma.Util.Util", "classde_1_1_enigma_1_1_util_1_1_util.html", null ]
+    [ "de.Enigma.Util.Util", "classde_1_1_enigma_1_1_util_1_1_util.html", null ],
+    [ "File", null, [
+      [ "de.Enigma.Util.TextFile", "classde_1_1_enigma_1_1_util_1_1_text_file.html", null ]
+    ] ]
 ];
