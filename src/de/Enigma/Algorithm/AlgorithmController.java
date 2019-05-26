@@ -33,7 +33,7 @@ public class AlgorithmController {
 
         }
         eConfig = new EnigmaConfig(key);
-        algorithm = new Algorithm();
+        algorithm = new Algorithm(this);
        
     }
 
@@ -54,7 +54,6 @@ public class AlgorithmController {
                 //Leerzeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
             } else {
-            	
                     // Buchstabe mit Decryptor entschlüsseln
                     letter = algorithm.encrypt(value);
                     // Buchstabe an FileHandler

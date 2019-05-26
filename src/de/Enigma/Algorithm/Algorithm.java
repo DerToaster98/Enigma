@@ -45,10 +45,11 @@ public class Algorithm {
 
 
 
-    public Algorithm() {
+    public Algorithm(AlgorithmController controller) {
         // TODO Auto-generated constructor stub
+    	this.controller = controller;
         conf = controller.getEnigmaConfig();
-        controller = controller.getController();
+        
 
     }
 
