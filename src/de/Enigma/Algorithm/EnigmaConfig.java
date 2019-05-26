@@ -50,6 +50,7 @@ public class EnigmaConfig {
                 String[] plugConf = keyValues[i].split(";");
                 if (plugConf.length == 2) {
                     this.letterChanger.put(new Character(plugConf[0].toCharArray()[0]), new Character(plugConf[1].toCharArray()[0]));
+                    this.letterChanger.put(new Character(plugConf[1].toCharArray()[0]), new Character(plugConf[0].toCharArray()[0]));
                 }
             }
         }
@@ -68,16 +69,29 @@ public class EnigmaConfig {
             return letter;
         }
         char[] oldAlphabet = getPreviousAlphabet(mill, wasInReturnMill);
-        Character character = new Character(letter);
-        char toEncrypt = letter;
-        if (!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {
-            toEncrypt = this.letterChanger.get(character).charValue();
-        }
-        toEncrypt = getMill(mill).encryptLetter(toEncrypt, oldAlphabet);
+        
+        letter = getMill(mill).encryptLetter(letter, oldAlphabet);
 
         if (wasInReturnMill && mill.equals(EMill.THIRD_MILL)) {
             getMill(EMill.THIRD_MILL).rotateMill();
             checkMills();
+        }
+        return letter;
+    }
+    
+    /**
+     * @brief Verschlüsselung durch Steckbrett
+     * @param letter Der Buchstabe, welcher ersetzt werden soll
+     * @return Liefert den ersetzten Buchstaben zurück
+     */
+    public char encryptLetterWithPlugBoard(char letter) {
+    	if (letter == ' ') {
+            return letter;
+        }
+    	Character character = new Character(letter);
+        char toEncrypt = letter;
+        if (!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {
+            toEncrypt = this.letterChanger.get(character).charValue();
         }
         return toEncrypt;
     }
