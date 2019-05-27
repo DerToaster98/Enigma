@@ -68,14 +68,16 @@ public class EnigmaConfig {
         if (letter == ' ') {
             return letter;
         }
-        char[] oldAlphabet = getPreviousAlphabet(mill, wasInReturnMill);
+        //char[] oldAlphabet = getPreviousAlphabet(mill, wasInReturnMill);
         
-        letter = getMill(mill).encryptLetter(letter, oldAlphabet);
+        letter = getMill(mill).encryptLetter(letter, EAlphabet.getAlphabet(), wasInReturnMill);
 
-        if (wasInReturnMill && mill.equals(EMill.THIRD_MILL)) {
+        // Wenn der Buchstabe bereits in der UKW "war" und jetzt die erste, bzw. letzte Walze durchlaufen hat -> dritte Walze um ein sechsundzwanzigstel weiterdrehen...
+        // Jetzt in Algorithm
+        /*if (wasInReturnMill && mill.equals(EMill.FIRST_MILL)) {
             getMill(EMill.THIRD_MILL).rotateMill();
             checkMills();
-        }
+        }*/
         return letter;
     }
     
@@ -102,13 +104,13 @@ public class EnigmaConfig {
      * Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste....
      */
     public void checkMills() {
-        Mill first = getMill(EMill.FIRST_MILL);
+        Mill first = getMill(EMill.THIRD_MILL);
         if (first != null && first.shouldRotateNeighborMill()) {
             Mill second = getMill(EMill.SECOND_MILL);
             if (second != null) {
                 second.rotateMill();
                 if (second.shouldRotateNeighborMill()) {
-                    Mill third = getMill(EMill.THIRD_MILL);
+                    Mill third = getMill(EMill.FIRST_MILL);
                     if (third != null) {
                         third.rotateMill();
                     }
@@ -125,9 +127,9 @@ public class EnigmaConfig {
     Mill getMill(EMill mill) {
         switch (mill) {
             case FIRST_MILL:
-                return this.reverseMill;
-            case REVERSE_MILL:
                 return this.mills[0];
+            case REVERSE_MILL:
+                return this.reverseMill;
             case SECOND_MILL:
                 return this.mills[1];
             case THIRD_MILL:

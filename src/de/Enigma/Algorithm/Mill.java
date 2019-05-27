@@ -28,7 +28,7 @@ public class Mill {
 
         int rotations = 0;
         rotations = Util.getIndexOfCharInAlphabet(startPos, EAlphabet.getAlphabet());
-        if (rotations > 0) {
+        if (rotations > 0 && (startPos != 'A' || startPos != 'a' || startPos != '?') && this.markerChar != '?') {
             for (int i = 0; i < rotations; i++) {
                 rotateMill();
             }
@@ -41,7 +41,7 @@ public class Mill {
      * @details Schiebt das array nach links -> rotiert um einen Buchstaben
      */
     public void rotateMill() {
-        char newLastChar = new Character(this.getAlphabet()[(this.getAlphabet().length - 1)]);
+        char newLastChar = new Character(this.getAlphabet()[0]);
         for (int i = 1; i < this.getAlphabet().length; i++) {
             char currentChar = this.getAlphabet()[i];
             this.getAlphabet()[(i - 1)] = currentChar;
@@ -57,15 +57,17 @@ public class Mill {
      * @brief Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.
      * @details Methode, um einen Buchstaben zu ersetzen
      */
-    public char encryptLetter(char c, char[] oldAlphabet) {
+    public char encryptLetter(char c, char[] oldAlphabet, boolean wasInReturnMill) {
     	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypting letter " + c + "...");
         if (c == ' ') {
             return c;
         }
-        int posOfC = Util.getIndexOfCharInAlphabet(c, oldAlphabet);
+        int posOfC = Util.getIndexOfCharInAlphabet(c, wasInReturnMill ? this.alphabet.clone() : oldAlphabet);
+        
         if (posOfC >= 0) {
-        	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypted letter is " + this.getAlphabet()[posOfC -1]);
-            return this.getAlphabet()[posOfC -1];
+        	char cryptedChar = wasInReturnMill ? EAlphabet.getAlphabet().clone()[posOfC] : this.getAlphabet()[posOfC];
+        	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypted letter is " + cryptedChar);
+            return cryptedChar;
         }
         //DONE: log.w oder log.e
         Log.getLogger().e(getClass().getName() + ".encryptLetter", "Fatal: Failed to encrypt letter " + c + "! It seems that either the alphabet does not exist or the letter is not in the alphabet!");

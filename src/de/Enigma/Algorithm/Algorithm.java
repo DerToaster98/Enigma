@@ -1,7 +1,6 @@
 package de.Enigma.Algorithm;
 
 
-import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMill;
 
 /**
@@ -40,7 +39,8 @@ import de.Enigma.Util.Enums.EMill;
 public class Algorithm {
     private EnigmaConfig conf;
     private AlgorithmController controller;
-    private String key;
+    @SuppressWarnings("unused")
+	private String key;
     private String[] metaData;
 
 
@@ -61,29 +61,31 @@ public class Algorithm {
     protected char encrypt(char letter) {
     	letter = conf.encryptLetterWithPlugBoard(letter);
         //erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
+    	// Funktioniert so!
         for (EMill mill : EMill.values()) {
             letter = conf.encryptLetter(letter, mill, false);
         }
-        for (int i = 2; i > 0; i--) {
+        for (int i = 2; i >= 0; i--) {
             letter = conf.encryptLetter(letter, EMill.values()[i], true);
         }
+        
+        // Buchstabe durchläuft zuletzt noch einmal das steckbrett...
+        letter = conf.encryptLetterWithPlugBoard(letter);
+        
+        //Dritte Walze drehen und danach die Stellung der Walzen überprüfen
+        conf.getMill(EMill.THIRD_MILL).rotateMill();
+        conf.checkMills();
 
         //Buchstabe zurückgeben
         return letter;
     }
 
 
-    /**
-     * @param key
-     * @return
-     * @brief Überprüft ob der Schlüssel korrekt eingegeben wurde
-     */
   
 
     /**
      * @brief Übergibt metaData an FileHandler()
      */
-
     protected void createMetaData() {
         metaData[0] = "Typ: ";
         String key = controller.getKey();

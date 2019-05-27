@@ -36,15 +36,15 @@ public class Util {
      * @param alphabet Alphabet, in dem nach dem Buchstaben gesucht werden soll
      * @return Liefert den Index des gescuhten Buchstabens im Alphabet zurück; -1, wenn das Alphabet den Buchstaben nicht enthält
      * @brief Liefert die Position eines Buchstaben in einem gegebenen Alphabet
-     * @details Liefert position eines buchstaben in einem alphabet zurück !!von 1 bis 26!! Wenn -1: nicht im Alphabet
+     * @details Liefert position eines buchstaben in einem alphabet zurück !!von 0 bis 25!! Wenn -1: nicht im Alphabet
      */
     public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
         int index = 0;
         for (char value : alphabet) {
-            index++;
             if (value == c) {
                 return index;
             }
+            index++;
         }
         return -1;
     }
@@ -130,7 +130,12 @@ public class Util {
     
     private static List<Character> plugboard = new ArrayList<Character>();
 
-    
+
+    /**
+     * @param key
+     * @return
+     * @brief Überprüft ob der Schlüssel korrekt eingegeben wurde
+     */
     public static boolean isKeyValid(String key) {
 
         String[] parts = key.split("-");
@@ -161,7 +166,6 @@ public class Util {
     private static boolean checkLetterKey(String txt) {
         char[] c = txt.toCharArray();
         if (c.length == 3) {
-            System.out.println(c.length);
             if (notInPlugboardKey(c[0]) && inAlphabetKey(c[0], true)) {
 
                 if (c[1] == ';') {

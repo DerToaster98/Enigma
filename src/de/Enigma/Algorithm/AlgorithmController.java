@@ -1,14 +1,13 @@
 package de.Enigma.Algorithm;
 
 import de.Enigma.Core.Log;
-import de.Enigma.Util.Enums;
-import de.Enigma.Util.Enums.EMode;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
 
 public class AlgorithmController {
 
-    private String text;
+    @SuppressWarnings("unused")
+	private String text;
     private String key;
     private EnigmaConfig eConfig;
     private Algorithm algorithm;
@@ -48,7 +47,6 @@ public class AlgorithmController {
     	String cryptText = "";
         char[] c = Util.createCharArray(txt);
         char letter;
-        //@Lisa: Warum keine for-in Schleife? Wäre etwas schicker meiner Meinung nach....
         for (char value : c) {
             if (value == ' ' || value == '.') {
                 //Leerzeichen an FileHandler
