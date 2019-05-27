@@ -2,6 +2,9 @@ package de.Enigma.Algorithm;
 
 
 import de.Enigma.Util.Enums.EMill;
+import de.Enigma.Util.FileHandler;
+
+import java.io.File;
 
 /**
  * @author Lisa Binkert
@@ -40,7 +43,7 @@ public class Algorithm {
     private AlgorithmController controller;
     @SuppressWarnings("unused")
 	private String key;
-    private String[] metaData;
+    private String[] metaData = new String[6];
 
 
     public Algorithm(AlgorithmController controller) {
@@ -83,7 +86,6 @@ public class Algorithm {
      * @brief Übergibt metaData an FileHandler()
      */
     protected void createMetaData() {
-        metaData[0] = "Typ: ";
         String key = controller.getKey();
         String[] parts = key.split("-");
         char[] walzen = parts[1].toCharArray();
@@ -98,7 +100,7 @@ public class Algorithm {
         metaData[3] = "2. Walze: " + walzen[1] + " Startposition: " + position[1];
         metaData[4] = "3. Walze: " + walzen[2] + " Startposition: " + position[2];
         metaData[5] = "Vertauschte Buchstaben:" + buchstaben;
-
+        //FileHandler.getFileHandler().setMetaData(metaData);
     }
 
 
