@@ -5,7 +5,7 @@ import de.Enigma.Util.Enums.EMill;
 
 /**
  * @author Lisa Binkert
- * @brief Die Klasse Algorithm enthält die Ver/Entschlüsselungs Methode für Encrytor und Decryptor,
+ * @brief Die Klasse Algorithm enthält die Ver/Entschlüsselungs Methode,
  * sowie eine checkKey Methode.
  * @details Ein Key muss folgendermaßen aufgebaut sein:
  * U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10
@@ -90,7 +90,7 @@ public class Algorithm {
         char[] position = parts[2].toCharArray();
         String buchstaben = " ";
         for (int i = 3; i < parts.length; i++) {
-            buchstaben = buchstaben + parts[i] + " ";
+            buchstaben = buchstaben.concat(parts[i]+" ");
         }
 
         metaData[1] = "Umkehrwalze: " + parts[0];

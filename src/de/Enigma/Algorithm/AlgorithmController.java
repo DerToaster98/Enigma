@@ -32,6 +32,7 @@ public class AlgorithmController {
             Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert!");
 
         }
+        FileHandler.getFileHandler().setKey(key);
         eConfig = new EnigmaConfig(key);
         algorithm = new Algorithm(this);
 
@@ -53,7 +54,7 @@ public class AlgorithmController {
 
         for (char value : c) {
             if (value == ' ' || value == '.' || value == ',' || value == '?' || value == '!') {
-                //Leerzeichen an FileHandler
+                //Nicht zu verschlüsselnde Zeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
                 cryptText = cryptText.concat(String.valueOf(value));
             } else {
