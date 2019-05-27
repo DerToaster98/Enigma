@@ -351,9 +351,15 @@ public class GUI {
      * - Setzt die GUI nach Abschluss des Ver- bzw. Entschlüsselungsprozesses zurück\n
      */
     private void btnCancelClicked() {
+        if (BTN_CANCEL.getText().equals("Again")){
+            FileHandler.getFileHandler().createNewCurrentDirectory();
+            FileHandler.getFileHandler().makeLogFile();
+        }
         BTN_CANCEL.setText("Cancel");
         BTN_START.setText("O K");
         setGUIElementsEnabled(true);
+        TF_TEXT.setText("");
+        TF_KEY.setText("");
         TF_TEXT.setHint();
         TF_KEY.setHint();
         RDBTN_ENCRYPT.setSelected(true);

@@ -26,6 +26,10 @@ public class FileHandler {
     private EnigmaFile enigmaFile;
 
     private FileHandler() {
+        createNewCurrentDirectory();
+    }
+
+    public void createNewCurrentDirectory() {
         currentHome = HOME + "/[" + Util.getTimeString() + "]/";
         makeNewFolder(currentHome);
     }

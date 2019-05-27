@@ -16,7 +16,9 @@ class TextFile extends File {
 
         write("Key:", key);
         write("Klartext: ", clearText);
+        if (metaData[0].equals("Verschlüsselung"))
         write("Verschlüsselter Text: ", encodedText);
+        else write("Entschlüsselter Text: ", encodedText);
     }
 
     public void write(String desc, String text) {
