@@ -44,6 +44,12 @@ class EnigmaFile extends File {
         }
     }
 
+    /**
+     * @param writer
+     * @param name
+     * @param value
+     * @throws IOException
+     */
     private void writeObject(JsonWriter writer, String name, String value) throws IOException {
         writer.name(name);
         writer.value(value);

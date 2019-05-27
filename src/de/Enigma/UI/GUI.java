@@ -1,33 +1,17 @@
 package de.Enigma.UI;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Desktop;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.SystemColor;
-import java.awt.Toolkit;
-import java.io.File;
-import java.io.IOException;
-
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JRadioButton;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
 import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
+
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author Nikolai Klatt, Oliver Seiler
@@ -125,7 +109,7 @@ public class GUI {
         FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 
-        Log.getLogger().i(getClass().getName()+ ".initFrame", "Frame initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initFrame", "Frame initialisiert");
     }
 
     /**
@@ -149,7 +133,7 @@ public class GUI {
 
         addComponent(LBL_KEY);
 
-        Log.getLogger().i(getClass().getName()+ ".initLabels", "Labels initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initLabels", "Labels initialisiert");
     }
 
     /**
@@ -168,7 +152,7 @@ public class GUI {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 if (!TF_KEY.isShowingHint())
-                BTN_START.setEnabled(true);
+                    BTN_START.setEnabled(true);
             }
 
             @Override
@@ -189,7 +173,7 @@ public class GUI {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 if (!TF_TEXT.isShowingHint() && TF_KEY.getText().length() >= 9)
-                BTN_START.setEnabled(true);
+                    BTN_START.setEnabled(true);
             }
 
             @Override
@@ -205,7 +189,7 @@ public class GUI {
 
         addComponent(TF_KEY);
 
-        Log.getLogger().i(getClass().getName()+ ".initTextfields", "TextFields initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initTextfields", "TextFields initialisiert");
     }
 
     /**
@@ -249,7 +233,7 @@ public class GUI {
 
         addComponent(BTN_CANCEL);
 
-        Log.getLogger().i(getClass().getName()+ ".initButtons", "Buttons initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initButtons", "Buttons initialisiert");
     }
 
     /**
@@ -282,7 +266,7 @@ public class GUI {
 
         addComponent(RDBTN_DECRYPT);
 
-        Log.getLogger().i(getClass().getName()+ "initRadioButtons", "RadioButtons initialisiert");
+        Log.getLogger().i(getClass().getName() + "initRadioButtons", "RadioButtons initialisiert");
     }
 
     /**
@@ -296,7 +280,7 @@ public class GUI {
 
         addComponent(PROGRESSBAR);
 
-        Log.getLogger().i(getClass().getName()+".initProgressBar", "ProgressBar initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initProgressBar", "ProgressBar initialisiert");
     }
 
     /**
@@ -318,7 +302,7 @@ public class GUI {
 
         addComponent(TXT_DEVELOPED_BY);
 
-        Log.getLogger().i(getClass().getName()+ ".initTextArea", "TextArea initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initTextArea", "TextArea initialisiert");
     }
 
     /**
@@ -333,12 +317,12 @@ public class GUI {
 
         addComponent(SEPARATOR);
         //BackGround image
-       	BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
+        BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.jpg")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
         BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         addComponent(BACKGROUND);
 
-        Log.getLogger().i(getClass().getName()+ ".initBackGround", "Background initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initBackGround", "Background initialisiert");
     }
 
     /**
@@ -350,7 +334,7 @@ public class GUI {
         FILE_CHOOSER = new JFileChooser(FileHandler.getFileHandler().getHOME());
         FILE_CHOOSER.setFileFilter(new FileNameExtensionFilter("EnigmaFiles (*.enigma)", "enigma"));
 
-        Log.getLogger().i(getClass().getName()+".initFileChooser", "FileChooser initialisiert");
+        Log.getLogger().i(getClass().getName() + ".initFileChooser", "FileChooser initialisiert");
     }
 
     /**
@@ -379,15 +363,19 @@ public class GUI {
         PROGRESSBAR.setValue(0);
         PROGRESSBAR.setString("");
 
-        Log.getLogger().i(getClass().getName()+ ".btnCancelClicked", "BTN_CANCEL Clicked");
+        Log.getLogger().i(getClass().getName() + ".btnCancelClicked", "BTN_CANCEL Clicked");
     }
 
+    /**
+     * @brief Methode, die die Routine hinter dem Create Key Button ausführt
+     * @details Der Create Key Button soll einen zufällig erzeugten Schlüssel in das Key TextField eintragen
+     */
     private void btnCreateKeyClicked() {
         TF_KEY.setText(Util.getNewRandomKey());
         TF_KEY.setForeground(Color.BLACK);
         TF_KEY.setShowingHint(false);
 
-        Log.getLogger().i(getClass().getName()+ ".btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
+        Log.getLogger().i(getClass().getName() + ".btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
     }
 
     /**
@@ -407,8 +395,7 @@ public class GUI {
             if (RDBTN_ENCRYPT.isSelected()) {
                 PROGRESSBAR.setString("Verschlüsselung läuft...");
                 FileHandler.getFileHandler().setTypeMetaData("Verschlüsselung");
-            }
-            else {
+            } else {
                 PROGRESSBAR.setString("Entschlüsselung läuft...");
                 FileHandler.getFileHandler().setTypeMetaData("Entschlüsselung");
             }
@@ -421,11 +408,11 @@ public class GUI {
                 Desktop.getDesktop().open(new File(FileHandler.getFileHandler().getHOME()));
             } catch (IOException e) {
                 e.printStackTrace();
-                Log.getLogger().e(getClass().getName()+ ".btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen!");
+                Log.getLogger().e(getClass().getName() + ".btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen!");
             }
         }
 
-        Log.getLogger().i(getClass().getName()+".btnOkClicked", "BTN_START Clicked");
+        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "BTN_START Clicked");
     }
 
     /**
@@ -446,7 +433,7 @@ public class GUI {
             //setText: TEXT in TF_TEXT , KEY in TF_KEY
         }
 
-        Log.getLogger().i(getClass().getName()+ ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
+        Log.getLogger().i(getClass().getName() + ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
     }
 
     /**
@@ -462,7 +449,7 @@ public class GUI {
         BTN_START.setEnabled(true);
         BTN_START.setText("Datei Anzeigen");
 
-        Log.getLogger().i(getClass().getName()+ ".onFinished", "onFinished aufgerufen: Prozess beendet");
+        Log.getLogger().i(getClass().getName() + ".onFinished", "onFinished aufgerufen: Prozess beendet");
     }
 
     /**
@@ -477,6 +464,6 @@ public class GUI {
         RDBTN_ENCRYPT.setEnabled(enabled);
         RDBTN_DECRYPT.setEnabled(enabled);
 
-        Log.getLogger().i(getClass().getName()+".setGUIElementsEnabled", "GUI Elements enabled set to: " + enabled);
+        Log.getLogger().i(getClass().getName() + ".setGUIElementsEnabled", "GUI Elements enabled set to: " + enabled);
     }
 }

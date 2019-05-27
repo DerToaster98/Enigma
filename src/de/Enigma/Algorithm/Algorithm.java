@@ -34,7 +34,6 @@ import de.Enigma.Util.Enums.EMill;
  * Enthält Basis Algorithmus für Ver/Entschlüsselung
  * Außerdem ist eine Methode enthalten, welche überprüft, ob ein Schlüssel korrekt ist
  * Dies überprüft die "Steckbrett Sektion" des Schlüssels auf Duplikate
- * 
  */
 public class Algorithm {
     private EnigmaConfig conf;
@@ -44,12 +43,11 @@ public class Algorithm {
     private String[] metaData;
 
 
-
     public Algorithm(AlgorithmController controller) {
         // TODO Auto-generated constructor stub
-    	this.controller = controller;
+        this.controller = controller;
         conf = controller.getEnigmaConfig();
-        
+
 
     }
 
@@ -59,7 +57,7 @@ public class Algorithm {
      * @brief Ver-/Entschlüssel einen Buchstaben
      */
     protected char encrypt(char letter) {
-    	letter = conf.encryptLetterWithPlugBoard(letter);
+        letter = conf.encryptLetterWithPlugBoard(letter);
         //erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
     	// Funktioniert so!
         for (EMill mill : EMill.values()) {
@@ -80,8 +78,6 @@ public class Algorithm {
         return letter;
     }
 
-
-  
 
     /**
      * @brief Übergibt metaData an FileHandler()

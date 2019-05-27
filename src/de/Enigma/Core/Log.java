@@ -10,6 +10,7 @@ import de.Enigma.Util.FileHandler;
  */
 public class Log {
 
+    //private Logger Instanz
     private static Log logger;
 
     /**

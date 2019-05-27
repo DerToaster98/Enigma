@@ -68,6 +68,7 @@ public class EnigmaConfig {
         if (letter == ' ') {
             return letter;
         }
+
         //char[] oldAlphabet = getPreviousAlphabet(mill, wasInReturnMill);
         
         letter = getMill(mill).encryptLetter(letter, EAlphabet.getAlphabet(), wasInReturnMill);
@@ -80,17 +81,17 @@ public class EnigmaConfig {
         }*/
         return letter;
     }
-    
+
     /**
-     * @brief Verschlüsselung durch Steckbrett
      * @param letter Der Buchstabe, welcher ersetzt werden soll
      * @return Liefert den ersetzten Buchstaben zurück
+     * @brief Verschlüsselung durch Steckbrett
      */
     public char encryptLetterWithPlugBoard(char letter) {
-    	if (letter == ' ') {
+        if (letter == ' ') {
             return letter;
         }
-    	Character character = new Character(letter);
+        Character character = new Character(letter);
         char toEncrypt = letter;
         if (!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {
             toEncrypt = this.letterChanger.get(character).charValue();
