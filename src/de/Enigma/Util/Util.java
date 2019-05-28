@@ -20,8 +20,6 @@ public class Util {
     public Util() {
     }
 
-    // wandelt String in char-Arrya um
-
     /**
      * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
      * @return Gibt das erzeugte char-Array zurück
@@ -58,7 +56,7 @@ public class Util {
      */
     public static String getNewRandomKey() {
         char[] rmValues = new char[]{'A', 'B', 'C'};
-        List<Integer> millValues = new ArrayList<Integer>();
+        List<Integer> millValues = new ArrayList<>();
         // Umkehrwalze Werte
         for (int i = 1; i <= 5; i++) {
             millValues.add(i);
@@ -178,10 +176,7 @@ public class Util {
 
                 if (c[1] == ';') {
 
-                    if (notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true)) {
-                        ;
-                        return true;
-                    }
+                    return notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true);
                 }
             }
         }
@@ -196,11 +191,8 @@ public class Util {
      * @details Überprüft ob sich char in der plugboard-Liste befindet.
      */
     private static boolean notInPlugboardKey(char c) {
-        if (plugboard.contains(c)) {
-            return false;
-        }
+        return !plugboard.contains(c);
 
-        return true;
     }
 
     /**
