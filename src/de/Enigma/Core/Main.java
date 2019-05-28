@@ -3,6 +3,7 @@ package de.Enigma.Core;
 import de.Enigma.Algorithm.AlgorithmController;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
+import de.Enigma.Util.Util;
 
 /**
  * @author Alle
@@ -40,11 +41,12 @@ public class Main {
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key) {
-        FileHandler.getFileHandler().setKey(key);
+        String newKey = key.toUpperCase();
+        FileHandler.getFileHandler().setKey(newKey);
         FileHandler.getFileHandler().setClearText(text);
 
         long starting_Time = System.currentTimeMillis();
-        controller = new AlgorithmController(this, key);
+        controller = new AlgorithmController(this, newKey);
         controller.crypt(text);
 
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);

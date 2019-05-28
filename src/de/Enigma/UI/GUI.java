@@ -169,6 +169,7 @@ public class GUI {
         addComponent(TF_TEXT);
 
         TF_KEY.setBounds(COMPONENT_DISTANCE * 6 + 10, 80, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
+        TF_KEY.setToolTipText("Digga willst du mich flicken?!");
         TF_KEY.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {

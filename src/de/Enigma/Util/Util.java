@@ -20,8 +20,6 @@ public class Util {
     public Util() {
     }
 
-    //wandelt String in char-Array um
-
     /**
      * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
      * @return Gibt das erzeugte char-Array zurück
@@ -55,7 +53,7 @@ public class Util {
      */
     public static String getNewRandomKey() {
         char[] rmValues = new char[]{'A', 'B', 'C'};
-        List<Integer> millValues = new ArrayList<Integer>();
+        List<Integer> millValues = new ArrayList<>();
         //Umkehrwalze Werte
         for (int i = 1; i <= 5; i++) {
             millValues.add(i);
@@ -72,14 +70,14 @@ public class Util {
         //walzen wählen und anhängen
         for (int millIndex = 1; millIndex <= 3; millIndex++) {
             Integer millID = millValues.get(rdm.nextInt(millValues.size()));
-            key += millID;
+            key = key.concat(String.valueOf(millID));
 
             millValues.remove(millID);
         }
         key += "-";
         //Startpositionen der Walzen wählen und anhängen
         for (int startPosIndex = 1; startPosIndex <= 3; startPosIndex++) {
-            key += EAlphabet.getFromIndex(rdm.nextInt(26) + 1);
+            key = key.concat(String.valueOf(EAlphabet.getFromIndex(rdm.nextInt(26) + 1)));
         }
         //key += "-";
 
@@ -102,7 +100,7 @@ public class Util {
             }
             plug += alphabet[secondCharIndex];
             alphabet[secondCharIndex] = '?';
-            key += plug;
+            key = key.concat(plug);
         }
         Log.getLogger().i(Util.class.getName() + ".getNewRandomKey", "Neuen Schlüssel generiert: " + key);
         return key;
@@ -127,9 +125,9 @@ public class Util {
         Gson gson = new Gson();
         return gson.toJson(s);
     }
-	
-	private static List<Character> plugboard = new ArrayList<>();
-	
+
+    private static List<Character> plugboard = new ArrayList<>();
+
     /**
      * @param key
      * @return
@@ -165,9 +163,7 @@ public class Util {
 
                 if (c[1] == ';') {
 
-                    if (notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true)) {
-                        return true;
-                    }
+                    return notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true);
                 }
             }
         }
@@ -177,11 +173,7 @@ public class Util {
 
 
     private static boolean notInPlugboardKey(char c) {
-        if (plugboard.contains(c)) {
-            return false;
-        }
-
-        return true;
+        return !plugboard.contains(c);
     }
 
 
@@ -194,7 +186,7 @@ public class Util {
                     plugboard.add(character);
                 }
             }
-
+            //Resolve return Not Looping statement!!
             return true;
         }
 
@@ -241,6 +233,5 @@ public class Util {
     private static boolean checkUKW(String u) {
         return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
     }
-
 
 }

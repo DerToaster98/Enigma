@@ -39,6 +39,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i(getClass().getName()+ ".methodName", "warning");
      */
     public void i(String class_Method_Name, String info) {
+
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + info, "INFO: ");
     }
 
