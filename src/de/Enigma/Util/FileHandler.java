@@ -26,6 +26,10 @@ public class FileHandler {
     private EnigmaFile enigmaFile;
 
     private FileHandler() {
+        createNewCurrentDirectory();
+    }
+
+    public void createNewCurrentDirectory() {
         currentHome = HOME + "/[" + Util.getTimeString() + "]/";
         makeNewFolder(currentHome);
     }
@@ -92,12 +96,15 @@ public class FileHandler {
 
     public void setClearText(String clearText) {
         this.clearText = clearText;
-        makeFiles();
     }
 
-   public void setTypeMetaData(String type){
-        metaData[0]= type;
-   }
+    public void resetEncodedText() {
+        this.encodedText = "";
+    }
+
+    public void setTypeMetaData(String type) {
+        metaData[0] = type;
+    }
 
     public void setKey(String key) {
         this.key = key;

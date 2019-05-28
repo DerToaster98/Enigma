@@ -3,6 +3,7 @@ package de.Enigma.Core;
 import de.Enigma.Algorithm.AlgorithmController;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
+import de.Enigma.Util.Util;
 
 /**
  * @author Alle
@@ -27,24 +28,28 @@ public class Main {
         new Main();
     }
 
+    /**
+     * @brief Methode, die die GUI initialisiert
+     */
     private void initGUI() {
         window = new GUI(this);
     }
 
     /**
-     * @param text    Der zu ver/entschlüsselnde Text
-     * @param key     Der Schlüssel, mit dem gearbeitet wird
-     * @param encrypt Ob nun ver- oder entschlüsselt wird
+     * @param text Der zu ver/entschlüsselnde Text
+     * @param key  Der Schlüssel, mit dem gearbeitet wird
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key) {
-        FileHandler.getFileHandler().setKey(key);
+        String newKey = key.toUpperCase();
+        FileHandler.getFileHandler().setKey(newKey);
         FileHandler.getFileHandler().setClearText(text);
-        //TODO Doxygen und Initialisierung von dem ganzen ding
-        //übergabeParameter einbinden
-        // encrypt als boolean abfragen -> wenn true dann "new Encryptor", sonst "new Decryptor"?
-        controller = new AlgorithmController(key);
+
+        long starting_Time = System.currentTimeMillis();
+        controller = new AlgorithmController(this, newKey);
         controller.crypt(text);
+
+        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);
     }
 
     /**
@@ -56,7 +61,7 @@ public class Main {
 
     /**
      * @brief Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt
-     * @details Der Routine soll die Dateien erstellen lassen und die GUI benachrichtigen
+     * @details Die Routine soll die Dateien erstellen lassen und die GUI benachrichtigen
      */
     public void onFinished() {
         FileHandler.getFileHandler().makeFiles();

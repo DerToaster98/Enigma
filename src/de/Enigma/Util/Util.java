@@ -17,6 +17,7 @@ import java.util.Random;
  */
 public class Util {
 
+<<<<<<< HEAD
 	public Util() {
 	}
 
@@ -283,5 +284,223 @@ public class Util {
 	private static boolean checkUKW(String u) {
 		return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
 	}
+=======
+    public Util() {
+    }
+
+    /**
+     * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
+     * @return Gibt das erzeugte char-Array zurück
+     * @brief Methode, welche Strings, in char-Arrays umwandeln kann
+     */
+    public static char[] createCharArray(String message) {
+        return message.toUpperCase().toCharArray();
+    }
+
+    /**
+     * @param c        Buchstabe, von welchem der Index gesucht werden soll
+     * @param alphabet Alphabet, in dem nach dem Buchstaben gesucht werden soll
+     * @return Liefert den Index des gescuhten Buchstabens im Alphabet zurück; -1, wenn das Alphabet den Buchstaben nicht enthält
+     * @brief Liefert die Position eines Buchstaben in einem gegebenen Alphabet
+     * @details Liefert position eines buchstaben in einem alphabet zurück !!von 0 bis 25!! Wenn -1: nicht im Alphabet
+     */
+    public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
+        int index = 0;
+        for (char value : alphabet) {
+            if (value == c) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
+    }
+
+    /**
+     * @return Liefert einen zufälligen Schlüssel zurück
+     * @brief Erzeugt einen zufälligen Schlüssel
+     */
+    public static String getNewRandomKey() {
+        char[] rmValues = new char[]{'A', 'B', 'C'};
+        List<Integer> millValues = new ArrayList<>();
+        //Umkehrwalze Werte
+        for (int i = 1; i <= 5; i++) {
+            millValues.add(i);
+        }
+        int plugboardElementCount;
+
+        String key = "";
+
+        Random rdm = new Random();
+        //Umkehrwalze wählen und anhängen
+        key += rmValues[rdm.nextInt(rmValues.length)];
+        key += "-";
+
+        //walzen wählen und anhängen
+        for (int millIndex = 1; millIndex <= 3; millIndex++) {
+            Integer millID = millValues.get(rdm.nextInt(millValues.size()));
+            key = key.concat(String.valueOf(millID));
+
+            millValues.remove(millID);
+        }
+        key += "-";
+        //Startpositionen der Walzen wählen und anhängen
+        for (int startPosIndex = 1; startPosIndex <= 3; startPosIndex++) {
+            key = key.concat(String.valueOf(EAlphabet.getFromIndex(rdm.nextInt(26) + 1)));
+        }
+        //key += "-";
+
+        //Steckbrett erstellen
+        char[] alphabet = EAlphabet.getAlphabet().clone();
+        plugboardElementCount = rdm.nextInt(11);
+        for (int i = 1; i < plugboardElementCount; i++) {
+            String plug = "-";
+            int firstCharIndex = rdm.nextInt(alphabet.length);
+            while (alphabet[firstCharIndex] == '?') {
+                firstCharIndex = rdm.nextInt(alphabet.length);
+            }
+            plug += alphabet[firstCharIndex];
+            plug += ";";
+            alphabet[firstCharIndex] = '?';
+
+            int secondCharIndex = rdm.nextInt(alphabet.length);
+            while (alphabet[secondCharIndex] == '?') {
+                secondCharIndex = rdm.nextInt(alphabet.length);
+            }
+            plug += alphabet[secondCharIndex];
+            alphabet[secondCharIndex] = '?';
+            key = key.concat(plug);
+        }
+        Log.getLogger().i(Util.class.getName() + ".getNewRandomKey", "Neuen Schlüssel generiert: " + key);
+        return key;
+    }
+
+    /**
+     * @return String der das Datum enthält. Format: 2016-11-16 12.08.43
+     * @brief Methode zum Erzeugen eines Date String
+     * @details Dieser String soll als Ordnername für die Dateien, die vom FileHandler erzeugt werden gemacht werden.
+     */
+    static String getTimeString() {
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss");
+        return dateFormat.format(new Date());
+    }
+
+    /**
+     * @param s Der zu konvertierende String
+     * @return JSON String
+     * @brief Methode zum Konvertieren eines Strings zu einem JSON String
+     */
+    static String resolvetoJSON(String[] s) {
+        Gson gson = new Gson();
+        return gson.toJson(s);
+    }
+
+    private static List<Character> plugboard = new ArrayList<>();
+
+    /**
+     * @param key
+     * @return
+     * @brief Überprüft ob der Schlüssel korrekt eingegeben wurde
+     */
+    public static boolean isKeyValid(String key) {
+
+        String[] parts = key.split("-");
+        if (checkUKW(parts[0])) {
+
+            if (checkMillsKey(parts[1])) {
+                if (checkPositionKey(parts[2])) {
+
+                    for (int i = 3; i < parts.length; i++) {
+
+                        if (!checkLetterKey(parts[i])) {
+
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    private static boolean checkLetterKey(String txt) {
+        char[] c = txt.toCharArray();
+        if (c.length == 3) {
+            if (notInPlugboardKey(c[0]) && inAlphabetKey(c[0], true)) {
+
+                if (c[1] == ';') {
+
+                    return notInPlugboardKey(c[2]) && inAlphabetKey(c[2], true);
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    private static boolean notInPlugboardKey(char c) {
+        return !plugboard.contains(c);
+    }
+
+
+    private static boolean inAlphabetKey(char c, boolean plugboardBool) {
+        char character = String.valueOf(c).toUpperCase().toCharArray()[0];
+        for (EAlphabet alphabet : EAlphabet.values()) {
+
+            if (character == alphabet.getAsChar()) {
+                if (plugboardBool) {
+                    plugboard.add(character);
+                }
+            }
+            //Resolve return Not Looping statement!!
+            return true;
+        }
+
+
+        return false;
+    }
+
+    private static boolean checkPositionKey(String txt) {
+        //Position der einzelnen Walzen
+        char[] c = txt.toCharArray();
+        if (c.length == 3) {
+            return inAlphabetKey(c[0], false) && inAlphabetKey(c[1], false) && inAlphabetKey(c[2], false);
+        }
+
+        return false;
+    }
+
+    private static boolean checkMillsKey(String txt) {
+        //einzelne Walzen
+        char[] mill = txt.toCharArray();
+        if (mill.length == 3) {
+            for (int i = 1; i <= 5; i++) {
+                char x = (char) (i + '0');
+                if (mill[0] == x) {
+                    for (int j = 1; j <= 5; j++) {
+                        char y = (char) (j + '0');
+                        if (mill[1] == y && mill[1] != x) {
+                            for (int k = 1; k <= 5; k++) {
+                                char z = (char) (k + '0');
+                                if (mill[2] == z && mill[2] != y && mill[2] != x) {
+
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+    private static boolean checkUKW(String u) {
+        return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
+    }
+>>>>>>> fbf5bb00cab22a484d42b924e0c21d010a9babd4
 
 }

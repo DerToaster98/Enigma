@@ -34,107 +34,107 @@ public class Enums {
         /**
          * @brief Repräsentiert den Buchstaben 'A'
          */
-        A('A', 1),
+        A('A', 0),
         /**
          * @brief Repräsentiert den Buchstaben 'B'
          */
-        B('B', 2),
+        B('B', 1),
         /**
          * @brief Repräsentiert den Buchstaben 'C'
          */
-        C('C', 3),
+        C('C', 2),
         /**
          * @brief Repräsentiert den Buchstaben 'D'
          */
-        D('D', 4),
+        D('D', 3),
         /**
          * @brief Repräsentiert den Buchstaben 'E'
          */
-        E('E', 5),
+        E('E', 4),
         /**
          * @brief Repräsentiert den Buchstaben 'F'
          */
-        F('F', 6),
+        F('F', 5),
         /**
          * @brief Repräsentiert den Buchstaben 'G'
          */
-        G('G', 7),
+        G('G', 6),
         /**
          * @brief Repräsentiert den Buchstaben 'H'
          */
-        H('H', 8),
+        H('H', 7),
         /**
          * @brief Repräsentiert den Buchstaben 'I'
          */
-        I('I', 9),
+        I('I', 8),
         /**
          * @brief Repräsentiert den Buchstaben 'J'
          */
-        J('J', 10),
+        J('J', 9),
         /**
          * @brief Repräsentiert den Buchstaben 'K'
          */
-        K('K', 11),
+        K('K', 10),
         /**
          * @brief Repräsentiert den Buchstaben 'L'
          */
-        L('L', 12),
+        L('L', 11),
         /**
          * @brief Repräsentiert den Buchstaben 'M'
          */
-        M('M', 13),
+        M('M', 12),
         /**
          * @brief Repräsentiert den Buchstaben 'N'
          */
-        N('N', 14),
+        N('N', 13),
         /**
          * @brief Repräsentiert den Buchstaben 'O'
          */
-        O('O', 15),
+        O('O', 14),
         /**
          * @brief Repräsentiert den Buchstaben 'P'
          */
-        P('P', 16),
+        P('P', 15),
         /**
          * @brief Repräsentiert den Buchstaben 'Q'
          */
-        Q('Q', 17),
+        Q('Q', 16),
         /**
          * @brief Repräsentiert den Buchstaben 'R'
          */
-        R('R', 18),
+        R('R', 17),
         /**
          * @brief Repräsentiert den Buchstaben 'S'
          */
-        S('S', 19),
+        S('S', 18),
         /**
          * @brief Repräsentiert den Buchstaben 'T'
          */
-        T('T', 20),
+        T('T', 19),
         /**
          * @brief Repräsentiert den Buchstaben 'U'
          */
-        U('U', 21),
+        U('U', 20),
         /**
          * @brief Repräsentiert den Buchstaben 'V'
          */
-        V('V', 22),
+        V('V', 21),
         /**
          * @brief Repräsentiert den Buchstaben 'W'
          */
-        W('W', 23),
+        W('W', 22),
         /**
          * @brief Repräsentiert den Buchstaben 'X'
          */
-        X('X', 24),
+        X('X', 23),
         /**
          * @brief Repräsentiert den Buchstaben 'Y'
          */
-        Y('Y', 25),
+        Y('Y', 24),
         /**
          * @brief Repräsentiert den Buchstaben 'Z'
          */
-        Z('Z', 26),
+        Z('Z', 25),
         ;
 
         private char character;
@@ -167,12 +167,12 @@ public class Enums {
         }
 
         /**
-         * @param i Repräsentiert die Position im Alphabet
+         * @param i Repräsentiert die Position (0-25) im Alphabet
          * @return Gibt den Buchstaben an Position i im normalen Alphabet aus
          * @brief Liefert den passenden Eintrag für die gewünschte Position im Alphabet
          */
         public static EAlphabet getFromIndex(int i) {
-            if (i >= 1 && i <= 26) {
+            if (i >= 0 && i < 26) {
                 for (EAlphabet ea : values()) {
                     if (ea.getIndex() == i) {
                         return ea;
@@ -190,7 +190,7 @@ public class Enums {
             char[] array = new char[26];
 
             for (int i = 0; i < 26; i++) {
-                array[i] = getFromIndex(i + 1).getAsChar();
+                array[i] = getFromIndex(i).getAsChar();
             }
 
             return array;
@@ -230,17 +230,21 @@ public class Enums {
         // Walzen 1-5 aus Modell Enigma I
         // UKW Walzen A-B aus Modell Enigma I
         //	    			    1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26
+        //
         /**
          * @brief Repräsentiert die Walze I der Enigma I
          */
+    	 //	    		   1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
         I("1", new char[]{'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J'}, 'X'),
         /**
          * @brief Repräsentiert die Walze II der Enigma I
          */
+        //	    			1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
         II("2", new char[]{'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E'}, 'S'),
         /**
          * @brief Repräsentiert die Walze III der Enigma I
          */
+        //	    			 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
         III("3", new char[]{'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O'}, 'M'),
         /**
          * @brief Repräsentiert die Walze IV der Enigma I
@@ -254,6 +258,7 @@ public class Enums {
         /**
          * @brief Repräsentiert die Umkehrwalze A der Enigma I
          */
+        //                     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
         UKW_A("A", new char[]{'E', 'J', 'M', 'Z', 'A', 'L', 'Y', 'X', 'V', 'B', 'W', 'F', 'C', 'R', 'Q', 'U', 'O', 'N', 'T', 'S', 'P', 'I', 'K', 'H', 'G', 'D'}, '?'),
         /**
          * @brief Repräsentiert die Umkehrwalze B der Enigma I
@@ -322,11 +327,11 @@ public class Enums {
                     return EMillAlphabet.IV;
                 case "5":
                     return EMillAlphabet.V;
-                case "A":
+                case "A": case "a":
                     return EMillAlphabet.UKW_A;
-                case "B":
+                case "B": case "b":
                     return EMillAlphabet.UKW_B;
-                case "C":
+                case "C": case "c":
                     return EMillAlphabet.UKW_C;
                 default:
                     return null;

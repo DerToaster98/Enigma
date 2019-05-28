@@ -1,29 +1,29 @@
 package de.Enigma.Algorithm;
 
 import de.Enigma.Core.Log;
-import de.Enigma.Util.Enums;
-import de.Enigma.Util.Enums.EMode;
+import de.Enigma.Core.Main;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
 
 public class AlgorithmController {
 
-    private String text;
+    @SuppressWarnings("unused")
+	private String text;
     private String key;
     private EnigmaConfig eConfig;
     private Algorithm algorithm;
+    private Main main;
 
 
     /**
      * @param key
-     * @param mode
      * @brief Die Klasse steuert die Ver- und Entschlüsselung.
      */
-    public AlgorithmController(String key) {
+    public AlgorithmController(Main m, String key) {
         // TODO Auto-generated constructor stub
-
+        main = m;
         this.key = key;
-        
+
 
         while (!Util.isKeyValid(key)) {
             //Schlüssel neu generieren
@@ -32,40 +32,42 @@ public class AlgorithmController {
             Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert!");
 
         }
+        FileHandler.getFileHandler().setKey(key);
         eConfig = new EnigmaConfig(key);
         algorithm = new Algorithm(this);
-       
+
     }
 
     /**
-     * @param txt, Text der ver- oder entschlüsselt werden soll
+     * @param txt Text der ver- oder entschlüsselt werden soll
      * @return
      * @brief Ver- und Entschlüsselt den Text
      * @author Lisa Binkert
      */
     public void crypt(String txt) {
-
         //txt in char array umwandeln
+        String cryptText = "";
         char[] c = Util.createCharArray(txt);
         char letter;
-        //@Lisa: Warum keine for-in Schleife? Wäre etwas schicker meiner Meinung nach....
+		
+        FileHandler.getFileHandler().resetEncodedText();
+
         for (char value : c) {
-            if (value == ' ' || value == '.') {
-                //Leerzeichen an FileHandler
+            if (value == ' ' || value == '.' || value == ',' || value == '?' || value == '!') {
+                //Nicht zu verschlüsselnde Zeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
+                cryptText = cryptText.concat(String.valueOf(value));
             } else {
-                    // Buchstabe mit Decryptor entschlüsseln
-                    letter = algorithm.encrypt(value);
-                    // Buchstabe an FileHandler
-                    FileHandler.getFileHandler().appendChar(letter);
-
-                }
-
-
+                // Buchstabe mit Decryptor entschlüsseln
+                letter = algorithm.encrypt(value);
+                // Buchstabe an FileHandler
+                FileHandler.getFileHandler().appendChar(letter);
+                cryptText = cryptText.concat(String.valueOf(letter));
             }
-        
-            Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
-            
+        }
+        System.out.println(cryptText);
+        main.onFinished();
+        Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
     }
 
     public String getKey() {
