@@ -17,9 +17,6 @@ import java.util.Random;
  */
 public class Util {
 
-	public Util() {
-	}
-
 	/**
 	 * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
 	 * @return Gibt das erzeugte char-Array zurück
@@ -113,10 +110,11 @@ public class Util {
 	 * @return String der das Datum enthält. Format: 2016-11-16 12.08.43
 	 * @brief Methode zum Erzeugen eines Date String
 	 * @details Dieser String soll als Ordnername für die Dateien, die vom
-	 *          FileHandler erzeugt werden gemacht werden.
+	 *          FileHandler erzeugt werden genutzt werden.
 	 */
 	static String getTimeString() {
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss");
+		Log.getLogger().i(Util.class.getName()+".getTimeString", "Zeit String generiert.");
 		return dateFormat.format(new Date());
 	}
 
