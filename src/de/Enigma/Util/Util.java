@@ -133,7 +133,7 @@ public class Util {
 	private static List<Character> plugboard = new ArrayList<Character>();
 
 	/**
-	 * @param keyA; Schlüssel, der geprüft werden soll
+	 * @param keyA  Schlüssel, der geprüft werden soll
 	 * @return Boolean: true -> Schlüssel ist korrekt, false -> Schlüssel enthält
 	 *         Fehler
 	 * @brief Überprüft ob Key gültig ist
@@ -152,8 +152,8 @@ public class Util {
 	 *          werden.
 	 *          <p>
 	 *          Beispiel: C-312-RQV-R;Q-A;S-T;L-C;N Umkehrwalze C erste Walze (Walze
-	 *          3) auf R zweite Walze (Walze 1) auf Q dritte Walze (Walze 2) auf V R
-	 *          mit Q verbunden A mit S verbunden T mit L verbunden C mit N
+	 *          3) auf R zweite Walze (Walze 1) auf Q dritte Walze (Walze 2) auf V 
+	 *          R mit Q verbunden A mit S verbunden T mit L verbunden C mit N
 	 *          verbunden
 	 * @author Lisa Binkert
 	 */
@@ -183,8 +183,8 @@ public class Util {
 	}
 
 	/**
-	 * @param txt, ein TeilString der Steckbretteingabe
-	 * @return boolean, true -> Teilstring ist korrekt
+	 * @param txt ein TeilString der Steckbretteingabe
+	 * @return true -> Teilstring ist korrekt
 	 * @brief Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key)
 	 * @details Eine Eingaben besteht aus zwei Buchstaben, getrennt durch ein
 	 *          Semikolon. Jeder Buchstabe darf nur einmal vorkommen.
@@ -206,8 +206,8 @@ public class Util {
 	}
 
 	/**
-	 * @param c, Char
-	 * @return Boolean, true -> plugboard enthält c nicht, false -> plugboard
+	 * @param c Buchstabe von der Steckbretteingabe
+	 * @return true -> plugboard enthält c nicht, false -> plugboard
 	 *         enthält c
 	 * @brief Teilfunktion von checkLetterKey()
 	 * @details Überprüft ob sich char in der plugboard-Liste befindet.
@@ -219,9 +219,9 @@ public class Util {
 	}
 
 	/**
-	 * @param c,             Char
-	 * @param plugboardBool, Boolean, true-> schreib c in plugboard,
-	 * @return Boolean, true -> c ist ein Buchstabe
+	 * @param c Buchstabe 
+	 * @param plugboardBool  true-> schreib c in plugboard,
+	 * @return true -> c ist ein Buchstabe
 	 * @brief Teilfunktion von checkPositionKey() und checkLetterKey()
 	 * @details Überprüft ob der char ein Buchstabe ist. Bei checkLetterKey() ist
 	 *          der Parameter plugboardBool auf true, dann wird der Buchstabe
@@ -245,8 +245,8 @@ public class Util {
 	}
 
 	/**
-	 * @param txt, TeilString des Keys
-	 * @return boolean, true -> Teilstring ist korrekt
+	 * @param txt TeilString des Keys
+	 * @return true -> Teilstring ist korrekt
 	 * @brief Überprüft ob die Walzenpositionen gültig sind (dritter Teil des Keys)
 	 * @details Die Positionen werden von drei Buchstaben bestimmt
 	 * @author Lisa Binkert
@@ -262,8 +262,8 @@ public class Util {
 	}
 
 	/**
-	 * @param txt, TeilString des Keys
-	 * @return boolean, true -> Teilstring ist korrekt
+	 * @param txt TeilString des Keys
+	 * @return true -> Teilstring ist korrekt
 	 * @brief Überprüft ob die Walzen gültig sind (zweiter Teil des Keys)
 	 * @details Es müssen drei Zahlen zwischen eins und fünf sein, jede Zahl darf
 	 *          maximal einmal vorkommen.
@@ -293,8 +293,8 @@ public class Util {
 	}
 
 	/**
-	 * @param u, TeilString des Keys, besteht aus nur einem Buchstaben
-	 * @return boolean, true -> Teilstring ist korrekt
+	 * @param u TeilString des Keys, besteht aus nur einem Buchstaben
+	 * @return true -> Teilstring ist korrekt
 	 * @brief Überprüft ob die Umkehrwalzen gültig sind (erster Teil des Keys)
 	 * @details ein Buchstabe, entweder A, B oder C
 	 * @author Lisa Binkert
