@@ -109,6 +109,7 @@ public class Util {
 		return key;
 	}
 
+	
 	/**
 	 * @return String der das Datum enthält. Format: 2016-11-16 12.08.43
 	 * @brief Methode zum Erzeugen eines Date String
