@@ -5,8 +5,8 @@ import de.Enigma.Util.FileHandler;
 /**
  * @author Nikolai
  * @brief Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben
- * @details Realisiert als Singleton -> nur eine Instanz pro Programminstanz.\n
- * Zugriff über getLogger() Methode von überall aus möglich
+ * @details Realisiert als Singleton, das heißt nur eine Instanz pro Programminstanz.\n
+ * Zugriff über getLogger() Methode von überall aus möglich.
  */
 public class Log {
 
@@ -17,25 +17,26 @@ public class Log {
      * @brief Privater Konstruktor, zum Erzeugen eines Singelton Objektes
      * @details Der Konstruktor kann nur intern aufgerufen werden, somit kann nur die Methode getLogger() ein Objekt erzeugen.
      * Der Logger als Singelton Objekt zu erzeugen, ist logisch, da nur eine Instanz des Loggers existieren sollte, denn sonst kann es zu Fehlern und Überschneidungen kommen.
+     * Der Logger erzeugt auch gleich den FileHandler.
      */
     private Log() {
         FileHandler.getFileHandler().makeLogFile();
     }
 
     /**
-     * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
-     * @param info              Info Nachricht, die vom Logger geloggt werden soll
+     * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
+     * @param info - Info Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von Info-Logs
-     * @details Info Logeintrag:
+     * @details Info Logeintrag:\n
      * erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.\n
      * Darunter zählen:\n
-     * - generelle Infos über die Programmroutinen, wie zum Beispiel:\n
-     * - Routine gestartet\n
-     * - Routine erfolgreich beendet\n
-     * - Routine startet Subroutine\n
-     * - ...\n
-     * - Infos zu Programmabläufen\n
-     * - ...\n
+     *  - generelle Infos über die Programmroutinen, wie zum Beispiel:\n
+     *      - Routine gestartet\n
+     *      - Routine erfolgreich beendet\n
+     *      - Routine startet Subroutine\n
+     *      - ...\n
+     *  - Infos zu Programmabläufen\n
+     *  - ...\n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i(getClass().getName()+ ".methodName", "warning");
      */
     public void i(String class_Method_Name, String info) {
