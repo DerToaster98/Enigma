@@ -1,4 +1,7 @@
-package de.Enigma.testcases;
+/**
+ * 
+ */
+package de.Enigma.UI;
 
 import static org.junit.Assert.*;
 
@@ -6,12 +9,22 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AlgoritmControllerTest {
+/**
+ * @author Admin
+ *
+ */
+public class GUITest {
 
+	/**
+	 * @throws java.lang.Exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
 
+	/**
+	 * @throws java.lang.Exception
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}

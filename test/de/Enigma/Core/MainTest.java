@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.Enigma.testcases;
+package de.Enigma.Core;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author Admin
  *
  */
-public class FileHandlerTest {
+public class MainTest {
 
 	/**
 	 * @throws java.lang.Exception

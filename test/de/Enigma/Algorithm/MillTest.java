@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.Enigma.testcases;
+package de.Enigma.Algorithm;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author Admin
  *
  */
-public class MainTest {
+public class MillTest {
 
 	/**
 	 * @throws java.lang.Exception
