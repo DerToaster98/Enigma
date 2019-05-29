@@ -7,11 +7,6 @@ import de.Enigma.Util.Enums.EMill;
  * @author Lisa Binkert
  * @brief Die Klasse Algorithm enthält die Ver/Entschlüsselungs Methode,
  *
- * <p>
- * <p>
- * Enthält Basis Algorithmus für Ver/Entschlüsselung
- * Außerdem ist eine Methode enthalten, welche überprüft, ob ein Schlüssel korrekt ist
- * Dies überprüft die "Steckbrett Sektion" des Schlüssels auf Duplikate
  */
 public class Algorithm {
     private EnigmaConfig conf;
