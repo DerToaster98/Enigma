@@ -199,11 +199,11 @@ Statische, private Attribute</h2></td></tr>
 <p>Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key) </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">txt,ein</td><td>TeilString der Steckbretteingabe </td></tr>
+    <tr><td class="paramname">txt</td><td>- ein TeilString der Steckbretteingabe </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>boolean, true -&gt; Teilstring ist korrekt</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet Teilstring ist korrekt</dd></dl>
 <p>Eine Eingaben besteht aus zwei Buchstaben, getrennt durch ein Semikolon. Jeder Buchstabe darf nur einmal vorkommen. </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
@@ -235,11 +235,11 @@ Statische, private Attribute</h2></td></tr>
 <p>Überprüft ob die Walzen gültig sind (zweiter Teil des Keys) </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">txt,TeilString</td><td>des Keys </td></tr>
+    <tr><td class="paramname">txt</td><td>- TeilString des Keys </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>boolean, true -&gt; Teilstring ist korrekt</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet Teilstring ist korrekt</dd></dl>
 <p>Es müssen drei Zahlen zwischen eins und fünf sein, jede Zahl darf maximal einmal vorkommen. </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
@@ -271,11 +271,11 @@ Statische, private Attribute</h2></td></tr>
 <p>Überprüft ob die Walzenpositionen gültig sind (dritter Teil des Keys) </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">txt,TeilString</td><td>des Keys </td></tr>
+    <tr><td class="paramname">txt</td><td>- TeilString des Keys </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>boolean, true -&gt; Teilstring ist korrekt</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet Teilstring ist korrekt</dd></dl>
 <p>Die Positionen werden von drei Buchstaben bestimmt </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
@@ -307,11 +307,11 @@ Statische, private Attribute</h2></td></tr>
 <p>Überprüft ob die Umkehrwalzen gültig sind (erster Teil des Keys) </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u,TeilString</td><td>des Keys, besteht aus nur einem Buchstaben </td></tr>
+    <tr><td class="paramname">u</td><td>- TeilString des Keys, besteht aus nur einem Buchstaben </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>boolean, true -&gt; Teilstring ist korrekt</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet Teilstring ist korrekt</dd></dl>
 <p>ein Buchstabe, entweder A, B oder C </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
@@ -492,12 +492,12 @@ Statische, private Attribute</h2></td></tr>
 <p>Teilfunktion von <a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#ab8eaf603b8b25989ab177b2c9462fa52" title="Überprüft ob die Walzenpositionen gültig sind (dritter Teil des Keys) ">checkPositionKey()</a> und <a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#a051e3cb961244e23aa6d1b4467df0d27" title="Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key) ">checkLetterKey()</a> </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c,Char</td><td></td></tr>
-    <tr><td class="paramname">plugboardBool,Boolean,true-&gt;</td><td>schreib c in plugboard, </td></tr>
+    <tr><td class="paramname">c</td><td>- Buchstabe </td></tr>
+    <tr><td class="paramname">plugboardBool</td><td>- true bedeutet schreib c in plugboard, </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>Boolean, true -&gt; c ist ein Buchstabe</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet c ist ein Buchstabe</dd></dl>
 <p>Überprüft ob der char ein Buchstabe ist. Bei <a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#a051e3cb961244e23aa6d1b4467df0d27" title="Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key) ">checkLetterKey()</a> ist der Parameter plugboardBool auf true, dann wird der Buchstabe zusätzlich noch zur plugboard-Liste hinzugefügt. </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
@@ -529,17 +529,16 @@ Statische, private Attribute</h2></td></tr>
 <p>Überprüft ob Key gültig ist. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">keyA;</td><td>Schlüssel, der geprüft werden soll </td></tr>
+    <tr><td class="paramname">keyA</td><td>- Schlüssel, der geprüft werden soll </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>Boolean: true -&gt; Schlüssel ist korrekt, false -&gt; Schlüssel enthält Fehler</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet Schlüssel ist korrekt, false -&gt; Schlüssel enthält Fehler</dd></dl>
 <p>Ein Key muss folgendermaßen aufgebaut sein: U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10 U = wechlche Umkehrwalze verwendet wird, A B oder C </p>
 <p>AAA = welche Walze an welcher Position steht z.B 3 2 1 Es gibt fünf Walzen jede Walze kann nur einmal verwendet werden </p>
 <p>XXX= Walzenstellung z.B TCK, es müssen drei Buchstaben sein </p>
 <p>X1;Y1 = Buchstabe X1 ist im Steckbrett mit Y2 verbunden z.B E;G Die Buchstaben die mitteinander vertauscht werden müssen mit einem ";" getrennt werden Es können maximal zehn Buchstabenpaare vertauscht werden. </p>
 <p>Beispiel: C-312-RQV-R;Q-A;S-T;L-C;N Umkehrwalze C erste Walze (Walze 3) auf R zweite Walze (Walze 1) auf Q dritte Walze (Walze 2) auf V R mit Q verbunden A mit S verbunden T mit L verbunden C mit N verbunden </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
-
 
 </div>
 </div>
@@ -570,11 +569,11 @@ Statische, private Attribute</h2></td></tr>
 <p>Teilfunktion von <a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#a051e3cb961244e23aa6d1b4467df0d27" title="Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key) ">checkLetterKey()</a> </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c,Char</td><td></td></tr>
+    <tr><td class="paramname">c</td><td>- Buchstabe von der Steckbretteingabe </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>Boolean, true -&gt; plugboard enthält c nicht, false -&gt; plugboard enthält c</dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true bedeutet plugboard enthält c nicht, false -&gt; plugboard enthält c</dd></dl>
 <p>Überprüft ob sich char in der plugboard-Liste befindet. </p><dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
@@ -606,7 +605,7 @@ Statische, private Attribute</h2></td></tr>
 <p>Methode zum Konvertieren eines Strings zu einem JSON String. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>Der zu konvertierende String </td></tr>
+    <tr><td class="paramname">s</td><td>- Der zu konvertierende String </td></tr>
   </table>
   </dd>
 </dl>
