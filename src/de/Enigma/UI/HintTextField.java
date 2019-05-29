@@ -22,10 +22,10 @@ import java.awt.event.KeyListener;
  * - '-' ';'\n
  * - 1-5\n
  */
-@SuppressWarnings("serial")
 class HintTextField extends JTextField implements FocusListener, KeyListener {
 
-    private final String hint;
+	private static final long serialVersionUID = -5418099739080562425L;
+	private final String hint;
     private boolean showingHint;
 
     /**
@@ -99,8 +99,12 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyTyped(KeyEvent e) {
-        if (!checkValidInput(e))
-            e.consume();
+        if (!checkValidInput(e)) {
+        	e.consume();
+        } else {
+        	e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
+        }
+            
     }
 
     /**

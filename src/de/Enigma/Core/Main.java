@@ -3,7 +3,6 @@ package de.Enigma.Core;
 import de.Enigma.Algorithm.AlgorithmController;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
-import de.Enigma.Util.Util;
 
 /**
  * @author Alle
@@ -13,7 +12,8 @@ import de.Enigma.Util.Util;
 public class Main {
 
     private GUI window;
-    private AlgorithmController controller;
+    @SuppressWarnings("unused")
+	private AlgorithmController controller;
 
     private Main() {
         Log.getLogger();

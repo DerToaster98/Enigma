@@ -135,7 +135,8 @@ public class EnigmaConfig {
      * @return Liefert das Alphabet als Char Array zurück, welches zuletzt zum Verschlüsseln verwendet wurde.
      * @brief Diese Methode findet heraus, mit welchem Alphabet die vorherige Verschlüsselung stattgefunden hat.
      */
-    private char[] getPreviousAlphabet(EMill currentMill, boolean wasInReturnMill) {
+    @SuppressWarnings("unused")
+	private char[] getPreviousAlphabet(EMill currentMill, boolean wasInReturnMill) {
         switch (currentMill) {
             case FIRST_MILL:
                 if (wasInReturnMill) {

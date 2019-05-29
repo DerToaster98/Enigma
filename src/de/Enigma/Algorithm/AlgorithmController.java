@@ -72,7 +72,7 @@ public class AlgorithmController {
         main.onFinished();
         Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
     }
-
+    
     public String getKey() {
         return key;
     }

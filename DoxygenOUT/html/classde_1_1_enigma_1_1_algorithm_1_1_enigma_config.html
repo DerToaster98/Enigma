@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Programmieren-Enigma
-   &#160;<span id="projectnumber">0.4a</span>
+   &#160;<span id="projectnumber">0.5b</span>
    </div>
   </td>
  </tr>
@@ -82,6 +82,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_e
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pac-methods">Paketfunktionen</a> &#124;
+<a href="#pri-methods">Private Methoden</a> &#124;
+<a href="#pri-attribs">Private Attribute</a> &#124;
 <a href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
 <div class="title">de.Enigma.Algorithm.EnigmaConfig Klassenreferenz</div>  </div>
@@ -93,9 +96,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_e
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:af37ecc82cdd44b4f231f082def4d3f7f"><td class="memItemLeft" align="right" valign="top"><a id="af37ecc82cdd44b4f231f082def4d3f7f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#af37ecc82cdd44b4f231f082def4d3f7f">EnigmaConfig</a> (String key)</td></tr>
-<tr class="memdesc:af37ecc82cdd44b4f231f082def4d3f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels. <br /></td></tr>
+<tr class="memitem:af37ecc82cdd44b4f231f082def4d3f7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#af37ecc82cdd44b4f231f082def4d3f7f">EnigmaConfig</a> (String <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a834f412111b86a8445c16b0e5c7ec83e">key</a>)</td></tr>
+<tr class="memdesc:af37ecc82cdd44b4f231f082def4d3f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels.  <a href="#af37ecc82cdd44b4f231f082def4d3f7f">Mehr ...</a><br /></td></tr>
 <tr class="separator:af37ecc82cdd44b4f231f082def4d3f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64f1ce01d395c838531db22c3dabff02"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a64f1ce01d395c838531db22c3dabff02">encryptLetter</a> (char letter, <a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a> mill, boolean wasInReturnMill)</td></tr>
 <tr class="memdesc:a64f1ce01d395c838531db22c3dabff02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben.  <a href="#a64f1ce01d395c838531db22c3dabff02">Mehr ...</a><br /></td></tr>
@@ -109,13 +111,57 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_e
 <tr class="memitem:acf5ee30095ca4cb60ea28b4c04991fd4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#acf5ee30095ca4cb60ea28b4c04991fd4">getKey</a> ()</td></tr>
 <tr class="memdesc:acf5ee30095ca4cb60ea28b4c04991fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den momentan verwendeten Schlüssel zurück.  <a href="#acf5ee30095ca4cb60ea28b4c04991fd4">Mehr ...</a><br /></td></tr>
 <tr class="separator:acf5ee30095ca4cb60ea28b4c04991fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
+Paketfunktionen</h2></td></tr>
+<tr class="memitem:a4ef61a1e8c9052a2c9757dd8aba3f2a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a4ef61a1e8c9052a2c9757dd8aba3f2a6">getMill</a> (<a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a> mill)</td></tr>
+<tr class="memdesc:a4ef61a1e8c9052a2c9757dd8aba3f2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Benutzt, um an die Instanzen der Walzen zu gelangen.  <a href="#a4ef61a1e8c9052a2c9757dd8aba3f2a6">Mehr ...</a><br /></td></tr>
+<tr class="separator:a4ef61a1e8c9052a2c9757dd8aba3f2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Methoden</h2></td></tr>
+<tr class="memitem:afe7e1d4690600930be2c033ac50240df"><td class="memItemLeft" align="right" valign="top">char []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#afe7e1d4690600930be2c033ac50240df">getPreviousAlphabet</a> (<a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a> currentMill, boolean wasInReturnMill)</td></tr>
+<tr class="memdesc:afe7e1d4690600930be2c033ac50240df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode findet heraus, mit welchem Alphabet die vorherige Verschlüsselung stattgefunden hat.  <a href="#afe7e1d4690600930be2c033ac50240df">Mehr ...</a><br /></td></tr>
+<tr class="separator:afe7e1d4690600930be2c033ac50240df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:a834f412111b86a8445c16b0e5c7ec83e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a834f412111b86a8445c16b0e5c7ec83e">key</a></td></tr>
+<tr class="separator:a834f412111b86a8445c16b0e5c7ec83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079f858d642eb31fc426108b24bd3cd7"><td class="memItemLeft" align="right" valign="top">HashMap&lt; Character, Character &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a079f858d642eb31fc426108b24bd3cd7">letterChanger</a> = new HashMap&lt;&gt;()</td></tr>
+<tr class="separator:a079f858d642eb31fc426108b24bd3cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90f8404b088c513f4bba20e03d9a453"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#ab90f8404b088c513f4bba20e03d9a453">mills</a> = new <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a>[]{null, null, null}</td></tr>
+<tr class="separator:ab90f8404b088c513f4bba20e03d9a453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62320bf04f9adcceb4f84338f6eb845a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a62320bf04f9adcceb4f84338f6eb845a">reverseMill</a></td></tr>
+<tr class="separator:a62320bf04f9adcceb4f84338f6eb845a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Klasse, welche essenziell für die Verschlüsselung ist. </p>
 <dl class="section author"><dt>Autor</dt><dd>Oliver Seiler</dd></dl>
 <p>Enthält eine HashMap, welche das "Steckbrett" realisiert</p>
 <p>Enthält die Instanzen der Walzen, welche benutzt werden </p>
-</div><h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a id="af37ecc82cdd44b4f231f082def4d3f7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37ecc82cdd44b4f231f082def4d3f7f">&#9670;&nbsp;</a></span>EnigmaConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">de.Enigma.Algorithm.EnigmaConfig.EnigmaConfig </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor, erzeugt die Instanzen der Walzen und das Steckbrett anhand des Schlüssels. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
 <a id="a40617f38009ee751db2b24ff5ae70170"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40617f38009ee751db2b24ff5ae70170">&#9670;&nbsp;</a></span>checkMills()</h2>
 
@@ -229,15 +275,185 @@ Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste...
 
 </div>
 </div>
+<a id="a4ef61a1e8c9052a2c9757dd8aba3f2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef61a1e8c9052a2c9757dd8aba3f2a6">&#9670;&nbsp;</a></span>getMill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a> de.Enigma.Algorithm.EnigmaConfig.getMill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a>&#160;</td>
+          <td class="paramname"><em>mill</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Benutzt, um an die Instanzen der Walzen zu gelangen. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mill</td><td>Beschreibt durch ein Enum, welche Walze gemeint ist </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Liefert die Instanz einer Walze zurück, welche durch 'mill' angesprochen wird -&gt; FIRST_MILL: linke Walze, SECOND_MILL: mittlere Walze, etc. </dd></dl>
+
+</div>
+</div>
+<a id="afe7e1d4690600930be2c033ac50240df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7e1d4690600930be2c033ac50240df">&#9670;&nbsp;</a></span>getPreviousAlphabet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char [] de.Enigma.Algorithm.EnigmaConfig.getPreviousAlphabet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a>&#160;</td>
+          <td class="paramname"><em>currentMill</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>wasInReturnMill</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Diese Methode findet heraus, mit welchem Alphabet die vorherige Verschlüsselung stattgefunden hat. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentMill</td><td>Die Walze, welche jetzt verschlüsselt. </td></tr>
+    <tr><td class="paramname">wasInReturnMill</td><td>Gibt an, ob der Buchstabe bereits "auf dem Rückweg ist". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Liefert das Alphabet als Char Array zurück, welches zuletzt zum Verschlüsseln verwendet wurde. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="a834f412111b86a8445c16b0e5c7ec83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834f412111b86a8445c16b0e5c7ec83e">&#9670;&nbsp;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String de.Enigma.Algorithm.EnigmaConfig.key</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a079f858d642eb31fc426108b24bd3cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079f858d642eb31fc426108b24bd3cd7">&#9670;&nbsp;</a></span>letterChanger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashMap&lt;Character, Character&gt; de.Enigma.Algorithm.EnigmaConfig.letterChanger = new HashMap&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab90f8404b088c513f4bba20e03d9a453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90f8404b088c513f4bba20e03d9a453">&#9670;&nbsp;</a></span>mills</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a> [] de.Enigma.Algorithm.EnigmaConfig.mills = new <a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a>[]{null, null, null}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62320bf04f9adcceb4f84338f6eb845a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62320bf04f9adcceb4f84338f6eb845a">&#9670;&nbsp;</a></span>reverseMill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html">Mill</a> de.Enigma.Algorithm.EnigmaConfig.reverseMill</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
-<li>src/de/Enigma/Algorithm/EnigmaConfig.java</li>
+<li>src/de/Enigma/Algorithm/<a class="el" href="_enigma_config_8java.html">EnigmaConfig.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>de</b></li><li class="navelem"><b>Enigma</b></li><li class="navelem"><b>Algorithm</b></li><li class="navelem"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html">EnigmaConfig</a></li>
+    <li class="navelem"><a class="el" href="namespacede.html">de</a></li><li class="navelem"><a class="el" href="namespacede_1_1_enigma.html">Enigma</a></li><li class="navelem"><a class="el" href="namespacede_1_1_enigma_1_1_algorithm.html">Algorithm</a></li><li class="navelem"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html">EnigmaConfig</a></li>
     <li class="footer">Erzeugt von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
