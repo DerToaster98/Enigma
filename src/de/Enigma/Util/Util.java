@@ -121,7 +121,7 @@ public class Util {
 	}
 
 	/**
-	 * @param s Der zu konvertierende String
+	 * @param s - Der zu konvertierende String
 	 * @return JSON String
 	 * @brief Methode zum Konvertieren eines Strings zu einem JSON String
 	 */
@@ -133,8 +133,8 @@ public class Util {
 	private static List<Character> plugboard = new ArrayList<Character>();
 
 	/**
-	 * @param keyA  Schlüssel, der geprüft werden soll
-	 * @return Boolean: true -> Schlüssel ist korrekt, false -> Schlüssel enthält
+	 * @param keyA - Schlüssel, der geprüft werden soll
+	 * @return true bedeutet Schlüssel ist korrekt, false -> Schlüssel enthält
 	 *         Fehler
 	 * @brief Überprüft ob Key gültig ist
 	 * @details Ein Key muss folgendermaßen aufgebaut sein:
@@ -183,8 +183,8 @@ public class Util {
 	}
 
 	/**
-	 * @param txt ein TeilString der Steckbretteingabe
-	 * @return true -> Teilstring ist korrekt
+	 * @param txt - ein TeilString der Steckbretteingabe
+	 * @return true bedeutet Teilstring ist korrekt
 	 * @brief Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key)
 	 * @details Eine Eingaben besteht aus zwei Buchstaben, getrennt durch ein
 	 *          Semikolon. Jeder Buchstabe darf nur einmal vorkommen.
@@ -206,8 +206,8 @@ public class Util {
 	}
 
 	/**
-	 * @param c Buchstabe von der Steckbretteingabe
-	 * @return true -> plugboard enthält c nicht, false -> plugboard
+	 * @param c - Buchstabe von der Steckbretteingabe
+	 * @return true bedeutet plugboard enthält c nicht, false -> plugboard
 	 *         enthält c
 	 * @brief Teilfunktion von checkLetterKey()
 	 * @details Überprüft ob sich char in der plugboard-Liste befindet.
@@ -219,9 +219,9 @@ public class Util {
 	}
 
 	/**
-	 * @param c Buchstabe 
-	 * @param plugboardBool  true-> schreib c in plugboard,
-	 * @return true -> c ist ein Buchstabe
+	 * @param c - Buchstabe 
+	 * @param plugboardBool - true bedeutet schreib c in plugboard,
+	 * @return true bedeutet c ist ein Buchstabe
 	 * @brief Teilfunktion von checkPositionKey() und checkLetterKey()
 	 * @details Überprüft ob der char ein Buchstabe ist. Bei checkLetterKey() ist
 	 *          der Parameter plugboardBool auf true, dann wird der Buchstabe
@@ -245,8 +245,8 @@ public class Util {
 	}
 
 	/**
-	 * @param txt TeilString des Keys
-	 * @return true -> Teilstring ist korrekt
+	 * @param txt - TeilString des Keys
+	 * @return true bedeutet Teilstring ist korrekt
 	 * @brief Überprüft ob die Walzenpositionen gültig sind (dritter Teil des Keys)
 	 * @details Die Positionen werden von drei Buchstaben bestimmt
 	 * @author Lisa Binkert
@@ -262,8 +262,8 @@ public class Util {
 	}
 
 	/**
-	 * @param txt TeilString des Keys
-	 * @return true -> Teilstring ist korrekt
+	 * @param txt - TeilString des Keys
+	 * @return true bedeutet Teilstring ist korrekt
 	 * @brief Überprüft ob die Walzen gültig sind (zweiter Teil des Keys)
 	 * @details Es müssen drei Zahlen zwischen eins und fünf sein, jede Zahl darf
 	 *          maximal einmal vorkommen.
@@ -293,8 +293,8 @@ public class Util {
 	}
 
 	/**
-	 * @param u TeilString des Keys, besteht aus nur einem Buchstaben
-	 * @return true -> Teilstring ist korrekt
+	 * @param u - TeilString des Keys, besteht aus nur einem Buchstaben
+	 * @return true bedeutet Teilstring ist korrekt
 	 * @brief Überprüft ob die Umkehrwalzen gültig sind (erster Teil des Keys)
 	 * @details ein Buchstabe, entweder A, B oder C
 	 * @author Lisa Binkert
