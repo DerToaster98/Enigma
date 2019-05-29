@@ -42,10 +42,10 @@ public class Util {
 	public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
 		int index = 0;
 		for (char value : alphabet) {
-			index++;
 			if (value == c) {
 				return index;
 			}
+			index++;
 		}
 		return -1;
 	}
