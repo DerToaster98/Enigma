@@ -28,7 +28,8 @@ public class Mill {
 
         int rotations = 0;
         rotations = Util.getIndexOfCharInAlphabet(startPos, EAlphabet.getAlphabet());
-        if (rotations > 0 && (startPos != 'A' || startPos != 'a' || startPos != '?') && this.markerChar != '?') {
+        //if (rotations > 0 && (startPos != 'A' || startPos != 'a' || startPos != '?') && this.markerChar != '?') {
+        if (rotations > 0 && (startPos != this.alphabet[0] || startPos != '?') && this.markerChar != '?') {
             for (int i = 0; i < rotations; i++) {
                 rotateMill();
             }
@@ -53,15 +54,14 @@ public class Mill {
     /**
      * @param c           der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
      * @param oldAlphabet Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde
+     * @param wasInReturnMill Gibt an, ob die Walze von vorne oder von hitnen durchlaufen wurde
      * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben.
      * @brief Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.
      * @details Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, char[] oldAlphabet, boolean wasInReturnMill) {
     	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypting letter " + c + "...");
-        if (c == ' ') {
-            return c;
-        }
+
         int posOfC = Util.getIndexOfCharInAlphabet(c, wasInReturnMill ? this.alphabet.clone() : oldAlphabet);
         
         if (posOfC >= 0) {

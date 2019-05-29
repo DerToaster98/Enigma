@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_e
 <tr class="memitem:a64f1ce01d395c838531db22c3dabff02"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a64f1ce01d395c838531db22c3dabff02">encryptLetter</a> (char letter, <a class="el" href="enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html">EMill</a> mill, boolean wasInReturnMill)</td></tr>
 <tr class="memdesc:a64f1ce01d395c838531db22c3dabff02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben.  <a href="#a64f1ce01d395c838531db22c3dabff02">Mehr ...</a><br /></td></tr>
 <tr class="separator:a64f1ce01d395c838531db22c3dabff02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54dbdb475c2a4c69c0a02f1a09843f8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#ac54dbdb475c2a4c69c0a02f1a09843f8">encryptLetterWithPlugBoard</a> (char letter)</td></tr>
+<tr class="memdesc:ac54dbdb475c2a4c69c0a02f1a09843f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verschlüsselung durch Steckbrett.  <a href="#ac54dbdb475c2a4c69c0a02f1a09843f8">Mehr ...</a><br /></td></tr>
+<tr class="separator:ac54dbdb475c2a4c69c0a02f1a09843f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40617f38009ee751db2b24ff5ae70170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a40617f38009ee751db2b24ff5ae70170">checkMills</a> ()</td></tr>
 <tr class="memdesc:a40617f38009ee751db2b24ff5ae70170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode überprüft die Walzen, und zwar, ob sie drehen sollten.  <a href="#a40617f38009ee751db2b24ff5ae70170">Mehr ...</a><br /></td></tr>
 <tr class="separator:a40617f38009ee751db2b24ff5ae70170"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,9 +112,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_e
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Klasse, welche essenziell für die Verschlüsselung ist. </p>
+<dl class="section author"><dt>Autor</dt><dd>Oliver Seiler</dd></dl>
 <p>Enthält eine HashMap, welche das "Steckbrett" realisiert</p>
-<p>Enthält die Instanzen der Walzen, welche benutzt werden</p>
-<dl class="section author"><dt>Autor</dt><dd>Oliver Seiler </dd></dl>
+<p>Enthält die Instanzen der Walzen, welche benutzt werden </p>
 </div><h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
 <a id="a40617f38009ee751db2b24ff5ae70170"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40617f38009ee751db2b24ff5ae70170">&#9670;&nbsp;</a></span>checkMills()</h2>
@@ -176,6 +179,33 @@ Hat auch die zweite Walze die Kerbe überschritten, so rotiert auch die erste...
   </dd>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>Der verschlüsselte Buchstabe </dd></dl>
+
+</div>
+</div>
+<a id="ac54dbdb475c2a4c69c0a02f1a09843f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54dbdb475c2a4c69c0a02f1a09843f8">&#9670;&nbsp;</a></span>encryptLetterWithPlugBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char de.Enigma.Algorithm.EnigmaConfig.encryptLetterWithPlugBoard </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>letter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verschlüsselung durch Steckbrett. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">letter</td><td>Der Buchstabe, welcher ersetzt werden soll </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Liefert den ersetzten Buchstaben zurück </dd></dl>
 
 </div>
 </div>

@@ -65,20 +65,11 @@ public class EnigmaConfig {
      * @brief Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben.
      */
     public char encryptLetter(char letter, EMill mill, boolean wasInReturnMill) {
-        if (letter == ' ') {
-            return letter;
-        }
-
-        //char[] oldAlphabet = getPreviousAlphabet(mill, wasInReturnMill);
-        
         letter = getMill(mill).encryptLetter(letter, EAlphabet.getAlphabet(), wasInReturnMill);
 
         // Wenn der Buchstabe bereits in der UKW "war" und jetzt die erste, bzw. letzte Walze durchlaufen hat -> dritte Walze um ein sechsundzwanzigstel weiterdrehen...
         // Jetzt in Algorithm
-        /*if (wasInReturnMill && mill.equals(EMill.FIRST_MILL)) {
-            getMill(EMill.THIRD_MILL).rotateMill();
-            checkMills();
-        }*/
+
         return letter;
     }
 
@@ -88,9 +79,6 @@ public class EnigmaConfig {
      * @brief Verschlüsselung durch Steckbrett
      */
     public char encryptLetterWithPlugBoard(char letter) {
-        if (letter == ' ') {
-            return letter;
-        }
         Character character = new Character(letter);
         char toEncrypt = letter;
         if (!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {

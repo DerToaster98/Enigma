@@ -2,9 +2,6 @@ package de.Enigma.Algorithm;
 
 
 import de.Enigma.Util.Enums.EMill;
-import de.Enigma.Util.FileHandler;
-
-import java.io.File;
 
 /**
  * @author Lisa Binkert

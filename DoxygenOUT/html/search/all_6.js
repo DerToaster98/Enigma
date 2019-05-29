@@ -12,6 +12,5 @@ var searchData=
   ['getmillid',['getMillID',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a69675608ee623ace1204f2cd46483034',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
   ['getnewrandomkey',['getNewRandomKey',['../classde_1_1_enigma_1_1_util_1_1_util.html#abfc888442b9a20d1e32a8282fad92403',1,'de::Enigma::Util::Util']]],
   ['getturnmarker',['getTurnMarker',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['getwindow',['getWindow',['../classde_1_1_enigma_1_1_core_1_1_main.html#a7d6ebe9d505bb478607121f61b52c3a6',1,'de::Enigma::Core::Main']]],
   ['gui',['GUI',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html',1,'de.Enigma.UI.GUI'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ac98b39fcda7d523f32565a14ca1b8487',1,'de.Enigma.UI.GUI.GUI()']]]
 ];

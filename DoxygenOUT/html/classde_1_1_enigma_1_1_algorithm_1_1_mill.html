@@ -99,9 +99,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 <tr class="memitem:ae84e4853d3e2d32451a85a6cc8c8591d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#ae84e4853d3e2d32451a85a6cc8c8591d">rotateMill</a> ()</td></tr>
 <tr class="memdesc:ae84e4853d3e2d32451a85a6cc8c8591d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode dreht die Walze um eine Position weiter.  <a href="#ae84e4853d3e2d32451a85a6cc8c8591d">Mehr ...</a><br /></td></tr>
 <tr class="separator:ae84e4853d3e2d32451a85a6cc8c8591d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e194b90210fe67275ccd92b879b62d0"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a1e194b90210fe67275ccd92b879b62d0">encryptLetter</a> (char c, char[] oldAlphabet)</td></tr>
-<tr class="memdesc:a1e194b90210fe67275ccd92b879b62d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.  <a href="#a1e194b90210fe67275ccd92b879b62d0">Mehr ...</a><br /></td></tr>
-<tr class="separator:a1e194b90210fe67275ccd92b879b62d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa1e8607646e3fbb97bd9585c538f0e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a6fa1e8607646e3fbb97bd9585c538f0e">encryptLetter</a> (char c, char[] oldAlphabet, boolean wasInReturnMill)</td></tr>
+<tr class="memdesc:a6fa1e8607646e3fbb97bd9585c538f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.  <a href="#a6fa1e8607646e3fbb97bd9585c538f0e">Mehr ...</a><br /></td></tr>
+<tr class="separator:a6fa1e8607646e3fbb97bd9585c538f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4280b579540485a67e742202682cbf"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#ade4280b579540485a67e742202682cbf">shouldRotateNeighborMill</a> ()</td></tr>
 <tr class="memdesc:ade4280b579540485a67e742202682cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode überprüft, ob die Nachbarwalze auch rotiert werden soll, also ob die Übertragskerbe überschritten wurde.  <a href="#ade4280b579540485a67e742202682cbf">Mehr ...</a><br /></td></tr>
 <tr class="separator:ade4280b579540485a67e742202682cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,8 +111,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Walzen Klasse, welche eine Walze der Enigma darstellt. </p>
-<p>Realisiert als Objekt. Diesem wird sein "Alphabet" bei Erzeugung zugewiesen</p>
-<dl class="section author"><dt>Autor</dt><dd>Oliver Seiler </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Oliver Seiler</dd></dl>
+<p>Realisiert als Objekt. Diesem wird sein "Alphabet" bei Erzeugung zugewiesen </p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a id="a78266c877d3e293fef20cd0ab19d7a6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78266c877d3e293fef20cd0ab19d7a6c">&#9670;&nbsp;</a></span>Mill()</h2>
@@ -152,8 +152,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="a1e194b90210fe67275ccd92b879b62d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e194b90210fe67275ccd92b879b62d0">&#9670;&nbsp;</a></span>encryptLetter()</h2>
+<a id="a6fa1e8607646e3fbb97bd9585c538f0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa1e8607646e3fbb97bd9585c538f0e">&#9670;&nbsp;</a></span>encryptLetter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +168,13 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char []&#160;</td>
-          <td class="paramname"><em>oldAlphabet</em>&#160;</td>
+          <td class="paramname"><em>oldAlphabet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>wasInReturnMill</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -179,14 +185,16 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 </div><div class="memdoc">
 
 <p>Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze. </p>
-<p>Methode, um einen Buchstaben zu ersetzen </p><dl class="params"><dt>Parameter</dt><dd>
+<dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll </td></tr>
     <tr><td class="paramname">oldAlphabet</td><td>Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde </td></tr>
+    <tr><td class="paramname">wasInReturnMill</td><td>Gibt an, ob die Walze von vorne oder von hitnen durchlaufen wurde </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben. </dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben.</dd></dl>
+<p>Methode, um einen Buchstaben zu ersetzen </p>
 
 </div>
 </div>
@@ -247,7 +255,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 </div><div class="memdoc">
 
 <p>Diese Methode überprüft, ob die Nachbarwalze auch rotiert werden soll, also ob die Übertragskerbe überschritten wurde. </p>
-<p>Methode, welche überprüft, ob die "Übertragskerbe" überschritten wurde </p><dl class="section return"><dt>Rückgabe</dt><dd>true: Die Übertragskerbe wurde überschritten false: die Kerbe wurde nicht überschritten </dd></dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>true: Die Übertragskerbe wurde überschritten false: die Kerbe wurde nicht überschritten</dd></dl>
+<p>Methode, welche überprüft, ob die "Übertragskerbe" überschritten wurde </p>
 
 </div>
 </div>
