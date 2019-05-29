@@ -1,13 +1,27 @@
 var classde_1_1_enigma_1_1_util_1_1_file_handler =
 [
+    [ "FileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#ae6f37b592c822afcd0d1a4057c249160", null ],
     [ "appendChar", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a79a8f6db44470265e74f7b99c9894a14", null ],
     [ "createNewCurrentDirectory", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a224c207358f16458bc116eba97b666d1", null ],
+    [ "createPath", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#adc0a9f46d490548a823df754d6358174", null ],
+    [ "getFileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8ea84d3f19d6851768c8295682af5137", null ],
     [ "getHOME", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#ae1e8caea4db5445ef916bee31f948da9", null ],
     [ "makeFiles", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8b36933dce9fcc1d9103fcb7f7f598ff", null ],
     [ "makeLogFile", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#aa42ba993bf4c4e4dba3d19ee8ab26eef", null ],
+    [ "makeNewFolder", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a53407711531d00398b2cd6e6920d6ff5", null ],
     [ "resetEncodedText", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a1056c63337073447177168f9c038f919", null ],
     [ "setClearText", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8147c84e83baa33ceb6365154a1dff26", null ],
     [ "setKey", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#aa368563d717808c286a6c91c81979698", null ],
     [ "setTypeMetaData", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a99ecbca82802ee8878106a8fbb3bdc9e", null ],
-    [ "writeLog", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a5ff9343da6ac950a98abda2529cd6568", null ]
+    [ "writeLog", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a5ff9343da6ac950a98abda2529cd6568", null ],
+    [ "clearText", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a14f25e412fe621bead62a927b1ab5853", null ],
+    [ "currentHome", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a6f30e6fd781b2440561884ddbdeae903", null ],
+    [ "encodedText", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a747e05c4145762ca9e224007a549ab76", null ],
+    [ "enigmaFile", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a0b32078e21797ac51fc7c81bf6d480d0", null ],
+    [ "fileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a013e863a05bce577caef3bf09336fc86", null ],
+    [ "HOME", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#adeef1d43018e27fbb988d0924396fbf0", null ],
+    [ "key", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a539db2c86d7341b1cdd6de4603d6150f", null ],
+    [ "logFile", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a296888780d850d677140e1905036d975", null ],
+    [ "metaData", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a829c05e0ebb508a102278b2c8bd5d627", null ],
+    [ "textFile", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#aa82cc6d6fd2fd4914e62ed4260b55e7a", null ]
 ];
