@@ -25,7 +25,7 @@ public class Log {
      */
     private Log() {
         FileHandler.getFileHandler().makeLogFile();
-
+        logger = this;
         logger.i(getClass().getName() + ".Logger", "Logger Instanz erzeugt!");
     }
     //@formatter:off

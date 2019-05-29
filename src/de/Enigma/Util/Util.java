@@ -114,7 +114,7 @@ public class Util {
 	 */
 	static String getTimeString() {
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss");
-		Log.getLogger().i(Util.class.getName()+".getTimeString", "Zeit String generiert.");
+		//Log.getLogger().i(Util.class.getName()+".getTimeString", "Zeit String generiert.");
 		return dateFormat.format(new Date());
 	}
 
