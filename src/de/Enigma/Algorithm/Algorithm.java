@@ -6,29 +6,7 @@ import de.Enigma.Util.Enums.EMill;
 /**
  * @author Lisa Binkert
  * @brief Die Klasse Algorithm enthält die Ver/Entschlüsselungs Methode,
- * sowie eine checkKey Methode.
- * @details Ein Key muss folgendermaßen aufgebaut sein:
- * U-AAA-XXX-X1;Y1-X2;Y2-...-X10;Y10
- * U = wechlche Umkehrwalze verwendet wird, A B oder C
- * <p>
- * AAA = welche Walze an welcher Position steht z.B 3 2 1
- * Es gibt fünf Walzen jede Walze kann nur einmal verwendet werden
- * <p>
- * XXX= Walzenstellung z.B TCK, es müssen drei Buchstaben sein
- * <p>
- * X1;Y1 = Buchstabe X1 ist im Steckbrett mit Y2 verbunden z.B E;G
- * Die Buchstaben die mitteinander vertauscht werden müssen mit einem ";" getrennt werden
- * Es können maximal zehn Buchstabenpaare  vertauscht werden.
- * <p>
- * Beispiel: C-312-RQV-R;Q-A;S-T;L-C;N
- * Umkehrwalze C
- * erste Walze (Walze 3) auf R
- * zweite Walze (Walze 1) auf Q
- * dritte Walze (Walze 2) auf V
- * R mit Q verbunden
- * A mit S verbunden
- * T mit L verbunden
- * C mit N verbunden
+ *
  * <p>
  * <p>
  * Enthält Basis Algorithmus für Ver/Entschlüsselung
