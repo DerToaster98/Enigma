@@ -126,8 +126,8 @@ Statische, private Attribute</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben. </p>
 <dl class="section author"><dt>Autor</dt><dd>Nikolai</dd></dl>
-<p>Realisiert als Singleton -&gt; nur eine Instanz pro Programminstanz.<br />
-Zugriff über <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82" title="Methode zum Erstellen des Singelton Logger-Objektes. ">getLogger()</a> Methode von überall aus möglich </p>
+<p>Realisiert als Singleton, das heißt nur eine Instanz pro Programminstanz.<br />
+Zugriff über <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82" title="Methode zum Erstellen des Singelton Logger-Objektes. ">getLogger()</a> Methode von überall aus möglich. </p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a id="aadaf92c9aca18c364072283bdf239093"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aadaf92c9aca18c364072283bdf239093">&#9670;&nbsp;</a></span>Log()</h2>
@@ -153,7 +153,7 @@ Zugriff über <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2
 </div><div class="memdoc">
 
 <p>Privater Konstruktor, zum Erzeugen eines Singelton Objektes. </p>
-<p>Der Konstruktor kann nur intern aufgerufen werden, somit kann nur die Methode <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82" title="Methode zum Erstellen des Singelton Logger-Objektes. ">getLogger()</a> ein Objekt erzeugen. Der Logger als Singelton Objekt zu erzeugen, ist logisch, da nur eine Instanz des Loggers existieren sollte, denn sonst kann es zu Fehlern und Überschneidungen kommen. </p>
+<p>Der Konstruktor kann nur intern aufgerufen werden, somit kann nur die Methode <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82" title="Methode zum Erstellen des Singelton Logger-Objektes. ">getLogger()</a> ein Objekt erzeugen. Der Logger als Singelton Objekt zu erzeugen, ist logisch, da nur eine Instanz des Loggers existieren sollte, denn sonst kann es zu Fehlern und Überschneidungen kommen. Der Logger erzeugt auch gleich den FileHandler. </p>
 
 </div>
 </div>
@@ -263,16 +263,17 @@ Der Aufruf erfolgt immer über die static <a class="el" href="classde_1_1_enigma
 <p>Methode zum Schreiben von Info-Logs. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">class_Method_Name</td><td>Name der Klasse und Methode von der der Aufruf erfolgt ist </td></tr>
-    <tr><td class="paramname">info</td><td>Info Nachricht, die vom Logger geloggt werden soll</td></tr>
+    <tr><td class="paramname">class_Method_Name</td><td>- Name der Klasse und Methode von der der Aufruf erfolgt ist </td></tr>
+    <tr><td class="paramname">info</td><td>- Info Nachricht, die vom Logger geloggt werden soll</td></tr>
   </table>
   </dd>
 </dl>
-<p>Info Logeintrag: erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.<br />
+<p>Info Logeintrag:<br />
+erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.<br />
 Darunter zählen:<br />
 </p><ul>
 <li>generelle Infos über die Programmroutinen, wie zum Beispiel:<br />
-</li>
+<ul>
 <li>Routine gestartet<br />
 </li>
 <li>Routine erfolgreich beendet<br />
@@ -280,6 +281,8 @@ Darunter zählen:<br />
 <li>Routine startet Subroutine<br />
 </li>
 <li>...<br />
+</li>
+</ul>
 </li>
 <li>Infos zu Programmabläufen<br />
 </li>

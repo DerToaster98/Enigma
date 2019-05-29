@@ -1,6 +1,5 @@
 var NAVTREEINDEX0 =
 {
-
 "_algorithm_8java.html":[2,0,0,0,0,0,0],
 "_algorithm_controller_8java.html":[2,0,0,0,0,0,1],
 "_enigma_config_8java.html":[2,0,0,0,0,0,2],
@@ -251,5 +250,4 @@ var NAVTREEINDEX0 =
 "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a7162214f197d3d611a171f6ba7299e16":[1,0,0,0,3,1,2,2],
 "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a758a01583486a28c58814f4b9655d8e2":[1,0,0,0,3,1,2,0],
 "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#aa26fea3741f0c38bf15204bbf0cba51d":[1,0,0,0,3,1,2,15]
-
 };

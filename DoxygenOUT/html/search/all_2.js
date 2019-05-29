@@ -14,11 +14,9 @@ var searchData=
   ['conf',['conf',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html#af022438021875a0f510e688bdfb9864e',1,'de::Enigma::Algorithm::Algorithm']]],
   ['controller',['controller',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html#a7c24764841b07b1a81aef30e4a809a72',1,'de.Enigma.Algorithm.Algorithm.controller()'],['../classde_1_1_enigma_1_1_core_1_1_main.html#a13e3c5117adebe89360acbd7e87d7a5d',1,'de.Enigma.Core.Main.controller()']]],
   ['createchararray',['createCharArray',['../classde_1_1_enigma_1_1_util_1_1_util.html#a1ae628e98776e06f1c48d627a58d3346',1,'de::Enigma::Util::Util']]],
-
   ['createmetadata',['createMetaData',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html#aa01219feb57686b44b1d8db88d34f38b',1,'de::Enigma::Algorithm::Algorithm']]],
   ['createnewcurrentdirectory',['createNewCurrentDirectory',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#a224c207358f16458bc116eba97b666d1',1,'de::Enigma::Util::FileHandler']]],
   ['createpath',['createPath',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#adc0a9f46d490548a823df754d6358174',1,'de::Enigma::Util::FileHandler']]],
   ['crypt',['crypt',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html#adea7d47f817527047ed9feac6b5b0e95',1,'de::Enigma::Algorithm::AlgorithmController']]],
   ['currenthome',['currentHome',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#a6f30e6fd781b2440561884ddbdeae903',1,'de::Enigma::Util::FileHandler']]]
-
 ];
