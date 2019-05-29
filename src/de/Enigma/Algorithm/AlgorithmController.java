@@ -19,6 +19,7 @@ public class AlgorithmController {
      * 
      * @param key
      * @brief Die Klasse steuert die Ver- und Entschlüsselung.
+     * @author Lisa Binkert
      */
     public AlgorithmController(Main m, String key, String txt) {
         // TODO Auto-generated constructor stub
