@@ -28,7 +28,6 @@ public class Mill {
 
         int rotations = 0;
         rotations = Util.getIndexOfCharInAlphabet(startPos, EAlphabet.getAlphabet());
-        //if (rotations > 0 && (startPos != 'A' || startPos != 'a' || startPos != '?') && this.markerChar != '?') {
         if (rotations > 0 && (startPos != this.alphabet[0] || startPos != '?') && this.markerChar != '?') {
             for (int i = 0; i < rotations; i++) {
                 rotateMill();
@@ -60,13 +59,13 @@ public class Mill {
      * @details Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, char[] oldAlphabet, boolean wasInReturnMill) {
-    	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypting letter " + c + "...");
+    	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Encrypting letter " + c + " with mill alphabet...");
 
         int posOfC = Util.getIndexOfCharInAlphabet(c, wasInReturnMill ? this.alphabet.clone() : oldAlphabet);
         
         if (posOfC >= 0) {
         	char cryptedChar = wasInReturnMill ? EAlphabet.getAlphabet().clone()[posOfC] : this.getAlphabet()[posOfC];
-        	Log.getLogger().i(getClass().getName() +".encryptLetter()", "Crypted letter is " + cryptedChar);
+        	Log.getLogger().i(getClass().getName() +".encryptLetter()", "encrypted letter " +c + " to " + cryptedChar);
             return cryptedChar;
         }
         //DONE: log.w oder log.e

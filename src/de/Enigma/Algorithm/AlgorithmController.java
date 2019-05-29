@@ -55,6 +55,8 @@ public class AlgorithmController {
 		
         FileHandler.getFileHandler().resetEncodedText();
 
+        Log.getLogger().i(getClass().getName() + ".crypt", "Encrypting text " + txt);
+        
         for (char value : c) {
             if (value == ' ' || value == '.' || value == ',' || value == '?' || value == '!') {
                 //Nicht zu verschlüsselnde Zeichen an FileHandler
@@ -62,6 +64,7 @@ public class AlgorithmController {
                 cryptText = cryptText.concat(String.valueOf(value));
             } else {
                 // Buchstabe mit Decryptor entschlüsseln
+            	Log.getLogger().i(getClass().getName() + ".crypt", "Encrypting letter " + value);
                 letter = algorithm.encrypt(value);
                 // Buchstabe an FileHandler
                 FileHandler.getFileHandler().appendChar(letter);
