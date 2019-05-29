@@ -10,7 +10,12 @@ import java.io.IOException;
 class TextFile extends File {
 
 
-    TextFile(String pathname, String[] metaData, String key, String clearText, String encodedText) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2386034996542721472L;
+
+	TextFile(String pathname, String[] metaData, String key, String clearText, String encodedText) {
         super(pathname);
 
 

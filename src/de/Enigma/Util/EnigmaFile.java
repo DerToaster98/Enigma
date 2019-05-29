@@ -9,7 +9,11 @@ import java.io.IOException;
 
 class EnigmaFile extends File {
 
-    private String metaData;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6316501597004789916L;
+	private String metaData;
     private String key;
     private String clearText;
     private String encodedText;
