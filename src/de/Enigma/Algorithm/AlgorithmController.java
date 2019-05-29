@@ -16,10 +16,11 @@ public class AlgorithmController {
 
 
     /**
+     * 
      * @param key
      * @brief Die Klasse steuert die Ver- und Entschlüsselung.
      */
-    public AlgorithmController(Main m, String key) {
+    public AlgorithmController(Main m, String key, String txt) {
         // TODO Auto-generated constructor stub
         main = m;
         this.key = key;
@@ -35,6 +36,7 @@ public class AlgorithmController {
         FileHandler.getFileHandler().setKey(key);
         eConfig = new EnigmaConfig(key);
         algorithm = new Algorithm(this);
+        crypt(txt);
 
     }
 
@@ -44,7 +46,7 @@ public class AlgorithmController {
      * @brief Ver- und Entschlüsselt den Text
      * @author Lisa Binkert
      */
-    public void crypt(String txt) {
+    private void crypt(String txt) {
         //txt in char array umwandeln
         String cryptText = "";
         char[] c = Util.createCharArray(txt);

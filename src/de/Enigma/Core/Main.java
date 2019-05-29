@@ -46,8 +46,8 @@ public class Main {
         FileHandler.getFileHandler().setClearText(text);
 
         long starting_Time = System.currentTimeMillis();
-        controller = new AlgorithmController(this, newKey);
-        controller.crypt(text);
+        controller = new AlgorithmController(this, newKey, text);
+        
 
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);
     }
