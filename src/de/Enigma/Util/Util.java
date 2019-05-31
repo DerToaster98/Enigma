@@ -77,7 +77,7 @@ public class Util {
 		key += "-";
 		// Startpositionen der Walzen wählen und anhängen
 		for (int startPosIndex = 1; startPosIndex <= 3; startPosIndex++) {
-			key += EAlphabet.getFromIndex(rdm.nextInt(26) + 1);
+			key += EAlphabet.getFromIndex(rdm.nextInt(26));
 		}
 		// key += "-";
 
