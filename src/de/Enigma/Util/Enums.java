@@ -338,6 +338,42 @@ public class Enums {
             }
         }
     }
+    
+    public enum EExtraCharacters {
+    	COMMA(','),
+    	SEMICOLON(';'),
+    	FULL_STOP('.'),
+    	AE('Ä'),
+    	OE('Ö'),
+    	UE('Ü'),
+    	MINUS('-'),
+    	PLUS('+'),
+    	TAG('#'),
+    	SPACE(' '),
+    	EXCLAMATION_MARK('!'),
+    	QUESTION_MARK('?'),
+    	DIVIDE(':'),;
+    	
+    	private char assignedChar;
+    	
+    	EExtraCharacters(char character) {
+    		this.assignedChar = character;
+		}
+    	
+    	public char getAssignedChar() {
+    		return this.assignedChar;
+    	}
+    	
+    	public static boolean isExtraCharacter(char c) {
+    		for(EExtraCharacters chara : values()) {
+    			if(chara.getAssignedChar() == c) {
+    				return true;
+    			}
+    		}
+    		return false;
+    	}
+    }
 
 }
 
+ 
