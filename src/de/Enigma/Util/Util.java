@@ -114,8 +114,8 @@ public class Util {
 	 *          FileHandler erzeugt werden genutzt werden.
 	 */
 	static String getTimeString() {
+		//nicht logbar, da benötigt, um den Logger zu starten...
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss");
-		//Log.getLogger().i(Util.class.getName()+".getTimeString", "Zeit String generiert.");
 		return dateFormat.format(new Date());
 	}
 
@@ -270,7 +270,7 @@ public class Util {
 	 */
 	private static boolean checkMillsKey(String txt) {
 		// einzelne Walzen
-		List<Character> number = new ArrayList<Character>();
+		List<Character> number = new ArrayList<>();
 		char[] millArray = txt.toCharArray();
 		if (millArray.length == 3) {
 			for (char mill : millArray) {

@@ -75,6 +75,7 @@ public class GUI {
         main = m;
         initialize();
         FRM_ENIGMA_GUI.setVisible(true);
+        BTN_CREATE_KEY.requestFocus();
 
         Log.getLogger().i(getClass().getName() + ".initialize", "GUI initialisiert.");
     }
@@ -378,10 +379,10 @@ public class GUI {
      * @details Der Create Key Button soll einen zufällig erzeugten Schlüssel in das Key TextField eintragen
      */
     private void btnCreateKeyClicked() {
+        TF_KEY.setShowingHint(false);
         TF_KEY.setText(Util.getNewRandomKey());
         TF_KEY.setForeground(Color.BLACK);
-        TF_KEY.setShowingHint(false);
-
+        
         Log.getLogger().i(getClass().getName() + ".btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
     }
 

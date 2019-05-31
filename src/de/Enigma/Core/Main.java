@@ -12,8 +12,6 @@ import de.Enigma.Util.FileHandler;
 public class Main {
 
     private GUI window;
-    @SuppressWarnings("unused")
-	private AlgorithmController controller;
 
     private Main() {
         Log.getLogger();
@@ -46,7 +44,7 @@ public class Main {
         FileHandler.getFileHandler().setClearText(text);
 
         long starting_Time = System.currentTimeMillis();
-        controller = new AlgorithmController(this, newKey, text);
+        new AlgorithmController(this, newKey, text);
         
 
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);

@@ -23,7 +23,7 @@ public class Log {
      * Der Logger als Singelton Objekt zu erzeugen, ist logisch, da nur eine Instanz des Loggers existieren sollte, denn sonst kann es zu Fehlern und Überschneidungen kommen.
      * Der Logger erzeugt auch gleich den FileHandler.
      */
-    private Log() {
+    private Log(){
         FileHandler.getFileHandler().makeLogFile();
         logger = this;
         logger.i(getClass().getName() + ".Logger", "Logger Instanz erzeugt!");
