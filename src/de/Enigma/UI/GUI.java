@@ -382,7 +382,7 @@ public class GUI {
         TF_KEY.setShowingHint(false);
         TF_KEY.setText(Util.getNewRandomKey());
         TF_KEY.setForeground(Color.BLACK);
-        
+
         Log.getLogger().i(getClass().getName() + ".btnCreateKeyClicked", "BTN_CREATE_KEY Clicked");
     }
 

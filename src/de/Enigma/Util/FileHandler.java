@@ -26,7 +26,6 @@ public class FileHandler {
     private EnigmaFile enigmaFile;
 
     private FileHandler() {
-        createNewCurrentDirectory();
     }
 
     public void createNewCurrentDirectory() {
@@ -114,10 +113,19 @@ public class FileHandler {
         return HOME;
     }
 
+    public boolean logFileexists() {
+        try {
+            return logFile.exists();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public static FileHandler getFileHandler() {
         if (fileHandler == null) {
             fileHandler = new FileHandler();
         }
         return fileHandler;
     }
+
 }

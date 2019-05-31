@@ -23,10 +23,8 @@ public class Log {
      * Der Logger als Singelton Objekt zu erzeugen, ist logisch, da nur eine Instanz des Loggers existieren sollte, denn sonst kann es zu Fehlern und Überschneidungen kommen.
      * Der Logger erzeugt auch gleich den FileHandler.
      */
-    private Log(){
-        FileHandler.getFileHandler().makeLogFile();
-        logger = this;
-        logger.i(getClass().getName() + ".Logger", "Logger Instanz erzeugt!");
+    private Log() {
+        FileHandler.getFileHandler();
     }
     //@formatter:off
     /**
@@ -46,9 +44,10 @@ public class Log {
      */
     //@formatter:on
     public void i(String class_Method_Name, String info) {
-
+        checkLogFile();
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + info, "INFO: ");
     }
+
 
     /**
      * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
@@ -64,7 +63,7 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w(getClass().getName()+ ".methodName", "warning");
      */
     public void w(String class_Method_Name, String warning) {
-
+        checkLogFile();
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + warning, "WARNING: ");
     }
 
@@ -80,8 +79,17 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e(getClass().getName()+ ".methodName", "warning");
      */
     public void e(String class_Method_Name, String error) {
-
+        checkLogFile();
         FileHandler.getFileHandler().writeLog(class_Method_Name + " " + error, "ERROR: ");
+    }
+
+    /**
+     * @brief Methode zum Erzeugenlassen der Logfile, sobald sie benötigt wird
+     */
+    private void checkLogFile() {
+        if (!FileHandler.getFileHandler().logFileexists())
+             FileHandler.getFileHandler().createNewCurrentDirectory();
+            FileHandler.getFileHandler().makeLogFile();
     }
 
     /**
@@ -93,6 +101,7 @@ public class Log {
     public static Log getLogger() {
         if (logger == null) {
             logger = new Log();
+            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt!");
         }
         return logger;
     }
