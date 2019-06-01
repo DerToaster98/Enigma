@@ -113,6 +113,10 @@ public class FileHandler {
         return HOME;
     }
 
+    public String getCurrentHome() {
+        return currentHome;
+    }
+
     public boolean logFileexists() {
         try {
             return logFile.exists();

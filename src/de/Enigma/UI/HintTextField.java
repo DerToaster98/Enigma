@@ -124,7 +124,9 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyReleased(KeyEvent e) {
-
+        if (this.getName().equals("KEY")){
+            System.out.println(this.getText());
+        }
     }
 
     /**
@@ -138,7 +140,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
             if (c == eAlphabet.getAsChar())
                 return true;
         }
-        if (e.getComponent().getName().equals("TEXT")) {
+        if (this.getName().equals("TEXT")) {
             return c == ' ' || c == '.' || c == ',' || c == '?' || c == '!';
         } else return c == '-' || c == ';' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5';
     }

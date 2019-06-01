@@ -426,7 +426,7 @@ public class GUI {
         } else {
             //ermöglicht es durch einen Klick in das Verzeichnis mit den Dateien zu gelangen!
             try {
-                Desktop.getDesktop().open(new File(FileHandler.getFileHandler().getHOME()));
+                Desktop.getDesktop().open(new File(FileHandler.getFileHandler().getCurrentHome()));
             } catch (IOException e) {
                 e.printStackTrace();
                 Log.getLogger().e(getClass().getName() + ".btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen!");
