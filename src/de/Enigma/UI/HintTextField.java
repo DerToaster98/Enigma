@@ -99,7 +99,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyTyped(KeyEvent e) {
-        if (!checkValidInput(e) || (this.getText().length() >= 49 && this.getName().equals("KEY"))) {
+        if (!checkValidInput(e) || (this.getName().equals("KEY") && this.getText().length() >= 49)) {
         	e.consume();
         } else {
         	e.setKeyChar(Character.toUpperCase(e.getKeyChar()));

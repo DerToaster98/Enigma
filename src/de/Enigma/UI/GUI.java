@@ -173,7 +173,11 @@ public class GUI {
         addComponent(TF_TEXT);
 
         TF_KEY.setBounds(COMPONENT_DISTANCE * 6 + 10, 80, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
-        TF_KEY.setToolTipText("Digga willst du mich flicken?!");
+        TF_KEY.setToolTipText("<html>U-AAA-XXX-X1;Y1-X2;Y2-X3;Y3-X4;Y4-X5;Y5-X6;Y6-X7;Y7-X8;Y8-X9;Y9-X10;Y10<br>" +
+                "U:     Umkehrwalze - Erlaubter Input: A,B,C<br>" +
+                "AAA:   Walzenordnung - Erlaubter Input: 1,2,3,4,5<br>" +
+                "XXX:   Walzenstellung: - Erlaubter Input: A-Z<br>" +
+                "X1;Y1: Steckbrett X1 wird zu Y1 - Erlaubter Input: A-Z</html>");
         TF_KEY.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -242,7 +246,7 @@ public class GUI {
     }
 
 
-    private void initCheckBox(){
+    private void initCheckBox() {
         CHBX_REAL_ENIGMA.setBounds(WINDOW_WIDTH - 300, 140, 270, COMPONENT_HEIGHT);
         CHBX_REAL_ENIGMA.setContentAreaFilled(false);
         CHBX_REAL_ENIGMA.setFont(FONT);
@@ -365,7 +369,7 @@ public class GUI {
      * - Setzt die GUI nach Abschluss des Ver- bzw. Entschlüsselungsprozesses zurück\n
      */
     private void btnCancelClicked() {
-        if (BTN_CANCEL.getText().equals("Again")){
+        if (BTN_CANCEL.getText().equals("Again")) {
             FileHandler.getFileHandler().createNewCurrentDirectory();
             FileHandler.getFileHandler().makeLogFile();
             Util.resetPlugBoardList();
