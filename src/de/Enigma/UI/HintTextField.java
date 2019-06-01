@@ -132,8 +132,8 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      * @brief Methode, die checkt, ob ein Zeichen erlaubt ist, oder nicht
      */
     private boolean checkValidInput(KeyEvent e) {
-        //char c = Character.toUpperCase(e.getKeyChar());
-    	char c = e.getKeyChar();
+        char c = Character.toUpperCase(e.getKeyChar());
+    	//char c = e.getKeyChar();
         for (Enums.EAlphabet eAlphabet : Enums.EAlphabet.values()) {
             if (c == eAlphabet.getAsChar())
                 return true;
