@@ -26,7 +26,6 @@ public class AlgorithmController {
         main = m;
         this.key = key;
 
-
         while (!Util.isKeyValid(key)) {
             //Schlüssel neu generieren
             key = Util.getNewRandomKey();
@@ -34,7 +33,7 @@ public class AlgorithmController {
             Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert!");
 
         }
-        FileHandler.getFileHandler().setKey(key);
+        //FileHandler.getFileHandler().setKey(key);
         eConfig = new EnigmaConfig(key);
         algorithm = new Algorithm(this);
         crypt(txt);
