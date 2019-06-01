@@ -42,6 +42,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
         this.showingHint = true;
         super.setName(name);
         super.setFont(font);
+        super.setTransferHandler(null);
         super.addFocusListener(this);
         super.addKeyListener(this);
         super.setColumns(10);

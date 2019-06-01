@@ -10,11 +10,11 @@ import java.io.IOException;
 class LogFile extends File {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -7409210531157611910L;
+     *
+     */
+    private static final long serialVersionUID = -7409210531157611910L;
 
-	LogFile(String pathname) {
+    LogFile(String pathname) {
         super(pathname);
         writeImmediateMetaData();
     }
