@@ -308,7 +308,7 @@ public class Util {
 		Util.plugboard = new ArrayList<>();
 	}
 	
-	public static String prepareStringForRealEnigma(String originalText) {
+	public static String prepareStringForReligma(String originalText) {
 		String tmp = originalText.replaceAll(" ", "");
 		
 		tmp = tmp.replaceAll("SCH", "@");

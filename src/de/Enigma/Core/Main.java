@@ -42,7 +42,7 @@ public class Main {
     public void btnOkClicked(String text, String key, boolean chbx_selected) {
         //String newKey = key.toUpperCase();
         if (chbx_selected){
-            text = Util.prepareStringForRealEnigma(text);
+            text = Util.prepareStringForReligma(text);
         }
         FileHandler.getFileHandler().setKey(key);
         FileHandler.getFileHandler().setClearText(text);
