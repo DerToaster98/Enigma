@@ -3,6 +3,7 @@ package de.Enigma.Core;
 import de.Enigma.Algorithm.AlgorithmController;
 import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
+import de.Enigma.Util.Util;
 
 /**
  * @author Alle
@@ -38,8 +39,11 @@ public class Main {
      * @param key  Der Schlüssel, mit dem gearbeitet wird
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
-    public void btnOkClicked(String text, String key) {
+    public void btnOkClicked(String text, String key, boolean chbx_selected) {
         //String newKey = key.toUpperCase();
+        if (chbx_selected){
+            text = Util.prepareStringForRealEnigma(text);
+        }
         FileHandler.getFileHandler().setKey(key);
         FileHandler.getFileHandler().setClearText(text);
 
