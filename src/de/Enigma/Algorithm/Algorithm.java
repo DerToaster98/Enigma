@@ -1,6 +1,7 @@
 package de.Enigma.Algorithm;
 
 
+import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EMill;
 
 /**
@@ -30,6 +31,8 @@ public class Algorithm {
      * @brief Ver-/Entschlüssel einen Buchstaben
      */
     protected char encrypt(char letter) {
+    	char origLetter = letter;
+    	Log.getLogger().i(getClass().getName() +".encrypt", "Encrypting char " + origLetter + "...");
         letter = conf.encryptLetterWithPlugBoard(letter);
         //erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
     	// Funktioniert so!
@@ -46,7 +49,11 @@ public class Algorithm {
         //Dritte Walze drehen und danach die Stellung der Walzen überprüfen
         conf.getMill(EMill.THIRD_MILL).rotateMill();
         conf.checkMills();
-
+        
+        Log.getLogger().i(getClass().getName() +".encrypt", "Encrypted char " + origLetter);
+        Log.getLogger().i("", "");
+        Log.getLogger().i(getClass().getName() + ".encrypt", origLetter + " -> " + letter);
+        Log.getLogger().i("", "-------------------------------------------------------------------------------");
         //Buchstabe zurückgeben
         return letter;
     }
