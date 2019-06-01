@@ -52,6 +52,8 @@ public class GUI {
     private final JButton BTN_CHOOSE_FILE = new JButton("Datei einlesen");
     private final JButton BTN_CREATE_KEY = new JButton("Schlüssel erzeugen");
 
+    private final JCheckBox CHBX_REAL_ENIGMA = new JCheckBox("Simuliere echte Enigma");
+
     private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
     private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschlüsseln");
     private final JRadioButton RDBTN_ENCRYPT = new JRadioButton("Verschlüsseln");
@@ -90,6 +92,7 @@ public class GUI {
         initLabels();
         initTextfields();
         initButtons();
+        initCheckBox();
         initRadioButtons();
         initProgressBar();
         initTextArea();
@@ -236,6 +239,15 @@ public class GUI {
         addComponent(BTN_CANCEL);
 
         Log.getLogger().i(getClass().getName() + ".initButtons", "Buttons initialisiert");
+    }
+
+
+    private void initCheckBox(){
+        CHBX_REAL_ENIGMA.setBounds(WINDOW_WIDTH - 300, 140, 270, COMPONENT_HEIGHT);
+        CHBX_REAL_ENIGMA.setContentAreaFilled(false);
+        CHBX_REAL_ENIGMA.setFont(FONT);
+
+        addComponent(CHBX_REAL_ENIGMA);
     }
 
     /**
@@ -408,7 +420,7 @@ public class GUI {
                 FileHandler.getFileHandler().setTypeMetaData("Entschlüsselung");
             }
 
-            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText());
+            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected());
 
         } else {
             //ermöglicht es durch einen Klick in das Verzeichnis mit den Dateien zu gelangen!
