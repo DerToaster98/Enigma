@@ -3,6 +3,7 @@ package de.Enigma.Util;
 import com.google.gson.Gson;
 import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
+import de.Enigma.Util.Enums.EExtraCharacters;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -306,4 +307,29 @@ public class Util {
 		Util.plugboard = null;
 		Util.plugboard = new ArrayList<>();
 	}
+	
+	public static String prepareStringForRealEnigma(String originalText) {
+		String tmp = originalText.replaceAll(" ", "");
+		
+		tmp = tmp.replaceAll("SCH", "@");
+		tmp = tmp.replaceAll("CH", "Q");
+		tmp = tmp.replaceAll("CK", "Q");
+		tmp = tmp.replaceAll("@", "SCH");
+		
+		//in 5er gruppen gruppieren
+		String filteredString = "";
+		int counter = 0;
+		for(char c : tmp.toCharArray()) {
+			if(!EExtraCharacters.isExtraCharacter(c)) {
+				if(counter % 5 == 0 && counter > 0) {
+					filteredString += EExtraCharacters.SPACE.getAssignedChar();
+				}
+				filteredString += c;
+				counter++;
+			}
+		}
+		
+		return filteredString;
+	}
+
 }
