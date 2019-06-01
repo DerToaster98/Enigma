@@ -37,6 +37,7 @@ public class Main {
     /**
      * @param text Der zu ver/entschlüsselnde Text
      * @param key  Der Schlüssel, mit dem gearbeitet wird
+     * @param chbx_selected Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key, boolean chbx_selected) {
