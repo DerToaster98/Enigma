@@ -368,6 +368,7 @@ public class GUI {
         if (BTN_CANCEL.getText().equals("Again")){
             FileHandler.getFileHandler().createNewCurrentDirectory();
             FileHandler.getFileHandler().makeLogFile();
+            Util.resetPlugBoardList();
         }
         BTN_CANCEL.setText("Cancel");
         BTN_START.setText("O K");

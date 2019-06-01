@@ -3,6 +3,7 @@ package de.Enigma.Util;
 import com.google.gson.Gson;
 import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EAlphabet;
+import de.Enigma.Util.Enums.EExtraCharacters;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -33,8 +34,8 @@ public class Util {
 	 * @return Liefert den Index des gescuhten Buchstabens im Alphabet zurück; -1,
 	 *         wenn das Alphabet den Buchstaben nicht enthält
 	 * @brief Liefert die Position eines Buchstaben in einem gegebenen Alphabet
-	 * @details Liefert position eines buchstaben in einem alphabet zurück !!von 1
-	 *          bis 26!! Wenn -1: nicht im Alphabet
+	 * @details Liefert position eines buchstaben in einem alphabet zurück !!von 0
+	 *          bis 20!! Wenn -1: nicht im Alphabet
 	 */
 	public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
 		int index = 0;
@@ -160,7 +161,7 @@ public class Util {
 		String key = keyA.toUpperCase();
 		String[] parts = key.split("-");
 		if (checkUKW(parts[0])) {
-
+			//TODO Loggen, welcher teil des schlüssels falsch ist
 			if (checkMillsKey(parts[1])) {
 				if (checkPositionKey(parts[2])) {
 
@@ -301,4 +302,34 @@ public class Util {
 	private static boolean checkUKW(String u) {
 		return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
 	}
+	
+	public static void resetPlugBoardList() {
+		Util.plugboard = null;
+		Util.plugboard = new ArrayList<>();
+	}
+	
+	public static String prepareStringForRealEnigma(String originalText) {
+		String tmp = originalText.replaceAll(" ", "");
+		
+		tmp = tmp.replaceAll("SCH", "@");
+		tmp = tmp.replaceAll("CH", "Q");
+		tmp = tmp.replaceAll("CK", "Q");
+		tmp = tmp.replaceAll("@", "SCH");
+		
+		//in 5er gruppen gruppieren
+		String filteredString = "";
+		int counter = 0;
+		for(char c : tmp.toCharArray()) {
+			if(!EExtraCharacters.isExtraCharacter(c)) {
+				if(counter % 5 == 0 && counter > 0) {
+					filteredString += EExtraCharacters.SPACE.getAssignedChar();
+				}
+				filteredString += c;
+				counter++;
+			}
+		}
+		
+		return filteredString;
+	}
+
 }

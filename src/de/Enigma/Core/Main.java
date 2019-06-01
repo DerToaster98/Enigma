@@ -39,12 +39,12 @@ public class Main {
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key) {
-        String newKey = key.toUpperCase();
-        FileHandler.getFileHandler().setKey(newKey);
+        //String newKey = key.toUpperCase();
+        FileHandler.getFileHandler().setKey(key);
         FileHandler.getFileHandler().setClearText(text);
 
         long starting_Time = System.currentTimeMillis();
-        new AlgorithmController(this, newKey, text);
+        new AlgorithmController(this, key, text);
         
 
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);

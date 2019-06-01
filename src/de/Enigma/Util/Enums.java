@@ -343,16 +343,11 @@ public class Enums {
     	COMMA(','),
     	SEMICOLON(';'),
     	FULL_STOP('.'),
-    	AE('Ä'),
-    	OE('Ö'),
-    	UE('Ü'),
     	MINUS('-'),
-    	PLUS('+'),
-    	TAG('#'),
     	SPACE(' '),
     	EXCLAMATION_MARK('!'),
     	QUESTION_MARK('?'),
-    	DIVIDE(':'),;
+    	AT('@'),;
     	
     	private char assignedChar;
     	
