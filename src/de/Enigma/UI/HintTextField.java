@@ -99,7 +99,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyTyped(KeyEvent e) {
-        if (!checkValidInput(e)) {
+        if (!checkValidInput(e) || (this.getText().length() >= 49 && this.getName().equals("KEY"))) {
         	e.consume();
         } else {
         	e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
@@ -114,7 +114,38 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if (this.getName().equals("KEY") && checkValidInput(e)) {
+            int c = this.getText().length();
+            String txt = this.getText();
+            switch (c) {
+                case 1:
+                case 5:
+                case 9:
+                case 13:
+                case 17:
+                case 21:
+                case 25:
+                case 29:
+                case 33:
+                case 37:
+                case 41:
+                case 45:
+                    txt += "-";
+                    break;
+                case 11:
+                case 15:
+                case 19:
+                case 23:
+                case 27:
+                case 31:
+                case 35:
+                case 39:
+                case 43:
+                case 47:
+                    txt += ";";
+            }
+            this.setText(txt);
+        }
     }
 
     /**
@@ -124,9 +155,6 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyReleased(KeyEvent e) {
-        if (this.getName().equals("KEY")){
-            System.out.println(this.getText());
-        }
     }
 
     /**
@@ -142,7 +170,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
         }
         if (this.getName().equals("TEXT")) {
             return c == ' ' || c == '.' || c == ',' || c == '?' || c == '!';
-        } else return c == '-' || c == ';' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5';
+        } else return c == '1' || c == '2' || c == '3' || c == '4' || c == '5';
     }
 
     /**
