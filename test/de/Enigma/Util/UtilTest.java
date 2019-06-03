@@ -29,6 +29,14 @@ public class UtilTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	@Test
+	public void getIndexOfCharInAlphabetTest() {
+		
+		char[] alphabet = new char[] {'A','B','C','D'};
+		assertEquals(1, Util.getIndexOfCharInAlphabet('B', alphabet));
+		assertEquals(-1, Util.getIndexOfCharInAlphabet('L', alphabet));
+		
+	}
 
 
 	@Test
