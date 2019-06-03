@@ -35,17 +35,15 @@ public class UtilTest {
 		String ergebnis = "NAQRI QTXBO BDUSX JUQEN SQOKO LADEX XSQLA NGEXH AQFLE ISQX";
 		
 		assertEquals(ergebnis, Util.prepareStringForReligma(text.toUpperCase()));
-		
-		
 	}
 	
 	@Test
 	public void getIndexOfCharInAlphabetTest() {
 		
 		char[] alphabet = new char[] {'A','B','C','D'};
+		
 		assertEquals(1, Util.getIndexOfCharInAlphabet('B', alphabet));
 		assertEquals(-1, Util.getIndexOfCharInAlphabet('L', alphabet));
-		
 	}
 
 
@@ -68,9 +66,6 @@ public class UtilTest {
 		assertFalse(Util.isKeyValid(key4));
 		assertFalse(Util.isKeyValid(key5));
 		assertFalse(Util.isKeyValid(key6));
-		
-		
-		
 	}
 	
 	
