@@ -34,8 +34,6 @@ public class FileHandler {
     //metaData[6] -> Dauer
 
     private LogFile logFile;
-    private TextFile textFile;
-    private EnigmaFile enigmaFile;
 
     /**
      * @brief privater FileHandler Konstruktor
@@ -121,10 +119,10 @@ public class FileHandler {
      */
     public void makeFiles() {
         try {
-            enigmaFile = new EnigmaFile(currentHome + "Enigma.enigma", metaData, key, clearText, encodedText);
+            EnigmaFile enigmaFile = new EnigmaFile(currentHome + "Enigma.enigma", metaData, key, clearText, encodedText);
             if (enigmaFile.createNewFile())
                 Log.getLogger().i(getClass().getName() + ".makeFiles", "EngimaFile wurde erfolgreich erzeugt!");
-            textFile = new TextFile(currentHome + "Text.txt", metaData, key, clearText, encodedText);
+            TextFile textFile = new TextFile(currentHome + "Text.txt", metaData, key, clearText, encodedText);
             if (textFile.createNewFile())
                 Log.getLogger().i(getClass().getName() + ".makeFiles", "TextFile wurde erfolgreich erzeugt!");
         } catch (IOException e) {
