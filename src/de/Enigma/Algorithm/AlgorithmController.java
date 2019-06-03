@@ -71,8 +71,10 @@ public class AlgorithmController {
             }
         }
         System.out.println(cryptText);
-        main.onFinished();
-        Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
+        if(main != null) {
+        	main.onFinished();
+            Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
+        }
     }
     
     public String getKey() {

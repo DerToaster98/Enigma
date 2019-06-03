@@ -453,9 +453,14 @@ public class GUI {
         if (FILE_CHOOSER.getSelectedFile() != null) {
             File enigmaFile = FILE_CHOOSER.getSelectedFile();
             System.out.println(enigmaFile.getName());
-            //TODO
-            //handle chosen file
-            //setText: TEXT in TF_TEXT , KEY in TF_KEY
+            TF_TEXT.setShowingHint(false);
+            if (RDBTN_ENCRYPT.isSelected())
+                TF_TEXT.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "clearText"));
+            else TF_TEXT.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "encodedText"));
+            TF_KEY.setShowingHint(false);
+            TF_KEY.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "key"));
+            TF_KEY.setForeground(Color.BLACK);
+            TF_TEXT.setForeground(Color.BLACK);
         }
 
         Log.getLogger().i(getClass().getName() + ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
