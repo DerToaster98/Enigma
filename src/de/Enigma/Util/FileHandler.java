@@ -1,10 +1,12 @@
 package de.Enigma.Util;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonReader;
 import de.Enigma.Core.Log;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.lang.management.GarbageCollectorMXBean;
 import java.net.URLDecoder;
 
 public class FileHandler {
@@ -91,6 +93,19 @@ public class FileHandler {
             Log.getLogger().e(getClass().getName() + ".makeFiles", "Error während der Erzeugung der Output Files!");
         }
 
+    }
+
+    public String inputFromFile (File f, String key){
+        Gson gson = new Gson();
+        JsonReader jr = null;
+        try {
+            jr = new JsonReader(new FileReader(f));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        JsonObject jO = gson.fromJson(jr, JsonObject.class);
+
+        return jO.get(key).getAsString();
     }
 
     public void setClearText(String clearText) {
