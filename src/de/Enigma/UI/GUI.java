@@ -419,10 +419,10 @@ public class GUI {
 
             if (RDBTN_ENCRYPT.isSelected()) {
                 PROGRESSBAR.setString("Verschlüsselung läuft...");
-                FileHandler.getFileHandler().setTypeMetaData("Verschlüsselung");
+                FileHandler.getFileHandler().setMetaData(0, "Verschlüsselung");
             } else {
                 PROGRESSBAR.setString("Entschlüsselung läuft...");
-                FileHandler.getFileHandler().setTypeMetaData("Entschlüsselung");
+                FileHandler.getFileHandler().setMetaData(0, "Entschlüsselung");
             }
 
             main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected());
