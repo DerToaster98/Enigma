@@ -71,6 +71,7 @@ public class Algorithm {
         for (int i = 3; i < parts.length; i++) {
             buchstaben = buchstaben.concat(parts[i]+" ");
         }
+        if (buchstaben.equals(" ")) buchstaben = " keine";
 
         FileHandler.getFileHandler().setMetaData(1, "Umkehrwalze: " + parts[0]);
         FileHandler.getFileHandler().setMetaData(2, "1. Walze: " + walzen[0] + " - Startposition: " + position[0]);

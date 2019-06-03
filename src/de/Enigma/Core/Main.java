@@ -36,8 +36,8 @@ public class Main {
     }
 
     /**
-     * @param text Der zu ver/entschlüsselnde Text
-     * @param key  Der Schlüssel, mit dem gearbeitet wird
+     * @param text          Der zu ver/entschlüsselnde Text
+     * @param key           Der Schlüssel, mit dem gearbeitet wird
      * @param chbx_selected Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
@@ -46,7 +46,7 @@ public class Main {
         startingTime = System.currentTimeMillis();
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + startingTime);
 
-        if (chbx_selected){
+        if (chbx_selected) {
             text = Util.prepareStringForReligma(text);
         }
         FileHandler.getFileHandler().setKey(key);
@@ -54,7 +54,6 @@ public class Main {
         FileHandler.getFileHandler().setClearText(text);
 
         new AlgorithmController(this, key).crypt(text);
-
 
     }
 
@@ -73,7 +72,7 @@ public class Main {
         long endTime = System.currentTimeMillis();
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess beendet um " + endTime);
         long processDuration = endTime - startingTime;
-        FileHandler.getFileHandler().setMetaData(6,processDuration +"ms");
+        FileHandler.getFileHandler().setMetaData(6, "Dauer: " + processDuration + "ms");
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozessdauer: " + processDuration);
 
         FileHandler.getFileHandler().makeFiles();
