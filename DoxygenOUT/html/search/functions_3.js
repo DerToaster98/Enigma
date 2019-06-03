@@ -2,6 +2,7 @@ var searchData=
 [
   ['e',['e',['../classde_1_1_enigma_1_1_core_1_1_log.html#a1a757951fc7263ff09bb9d52825acc67',1,'de::Enigma::Core::Log']]],
   ['ealphabet',['EAlphabet',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a53563139df6bbf6ed8e642018a1d6baf',1,'de::Enigma::Util::Enums::EAlphabet']]],
+  ['eextracharacters',['EExtraCharacters',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#a22a16a6930d8841b57b2930317222cb0',1,'de::Enigma::Util::Enums::EExtraCharacters']]],
   ['emillalphabet',['EMillAlphabet',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a758a01583486a28c58814f4b9655d8e2',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
   ['encrypt',['encrypt',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html#abf73078c3a282239deb76369616eec3d',1,'de::Enigma::Algorithm::Algorithm']]],
   ['encryptletter',['encryptLetter',['../classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a64f1ce01d395c838531db22c3dabff02',1,'de.Enigma.Algorithm.EnigmaConfig.encryptLetter()'],['../classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a6fa1e8607646e3fbb97bd9585c538f0e',1,'de.Enigma.Algorithm.Mill.encryptLetter()']]],
