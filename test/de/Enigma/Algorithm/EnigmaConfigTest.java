@@ -30,8 +30,19 @@ public class EnigmaConfigTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void encryptLetterWithPlugBoardTest() {
+		
+		String key = "A-124-TER-A;P";
+		EnigmaConfig conf = new EnigmaConfig(key);
+		char charA = 'A';
+		char charP = 'P';
+		char charZ = 'Z';
+		
+		assertEquals('P', conf.encryptLetterWithPlugBoard(charA));
+		assertEquals('A', conf.encryptLetterWithPlugBoard(charP));
+		assertEquals('Z', conf.encryptLetterWithPlugBoard(charZ));
+
+		
 	}
 
 }
