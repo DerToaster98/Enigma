@@ -33,5 +33,10 @@ public class MillTest {
 	public void test() {
 		fail("Not yet implemented");
 	}
+	
+	//Testbare szenarien:
+	//  - Walze rotieren
+    //  - Buchstaben verschlüsseln
+    //  - "Einstellen" der Walze am Anfang
 
 }
