@@ -311,10 +311,8 @@ public class Util {
 	public static String prepareStringForReligma(String originalText) {
 		String tmp = originalText.replaceAll(" ", "");
 		
-		tmp = tmp.replaceAll("SCH", "@");
 		tmp = tmp.replaceAll("CH", "Q");
 		tmp = tmp.replaceAll("CK", "Q");
-		tmp = tmp.replaceAll("@", "SCH");
 		
 		//in 5er gruppen gruppieren
 		String filteredString = "";
