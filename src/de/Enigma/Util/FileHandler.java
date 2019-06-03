@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.URLDecoder;
 
 /**
- * @author Nikolai
+ * @author Nikolai Klatt
  * @brief FileHandler, der die Funktionalitäten mit den Dateien inne hat
  * @details Realisiert als Singleton, das heißt nur eine Instanz pro Programminstanz.\n
  * Zugriff über getFileHandler() Methode von überall aus möglich.

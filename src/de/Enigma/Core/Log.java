@@ -3,7 +3,7 @@ package de.Enigma.Core;
 import de.Enigma.Util.FileHandler;
 
 /**
- * @author Nikolai
+ * @author Nikolai Klatt
  * @brief Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben
  * @details Realisiert als Singleton, das heißt nur eine Instanz pro Programminstanz.\n
  * Zugriff über getLogger() Methode von überall aus möglich.
