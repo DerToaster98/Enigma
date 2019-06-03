@@ -45,6 +45,7 @@ public class FileHandler {
      * @brief Methode, zum Erstellen eines Verzeichnisses für den aktuellen Prozess
      */
     public void createNewCurrentDirectory() {
+        //erstellt einen Neues Verzeichnis, das Datum und Zeit als Namen hat
         currentHome = HOME + "/[" + Util.getTimeString() + "]/";
         makeNewFolder(currentHome);
     }
@@ -71,7 +72,7 @@ public class FileHandler {
      * @brief Methode zum Erstellen eines Verzeichnisses im Verzeichnis, von dem die Anwendung gestartet wurde.
      */
     private String createPath() {
-
+        //Holt den String des Verzeichnisses, in welchem das Programm gestartet wurde
         String p = FileHandler.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 
         String path = null;

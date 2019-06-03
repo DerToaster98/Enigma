@@ -15,7 +15,7 @@ public class Log {
     //private CLogger cLogger = new CLogger();
 
     //private native Methode, die auf die .dll zugreift
-    private native String cLog(String source, String message);
+    //private native String cLog(String source, String message);
 
     /**
      * @brief Privater Konstruktor, zum Erzeugen eines Singelton Objektes

@@ -45,6 +45,7 @@ class TextFile extends File {
      */
     public void write(String desc, String text) {
 
+        //writer der in die Datei schreibt
         BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
@@ -60,6 +61,7 @@ class TextFile extends File {
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
+            //Error
             Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Textdatei!");
         }
     }

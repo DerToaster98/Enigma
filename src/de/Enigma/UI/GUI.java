@@ -77,6 +77,7 @@ public class GUI {
         main = m;
         initialize();
         FRM_ENIGMA_GUI.setVisible(true);
+        //Fokus auf den Button, damit der Hint in TextField angezeigt wird
         BTN_CREATE_KEY.requestFocus();
 
         Log.getLogger().i(getClass().getName() + ".initialize", "GUI initialisiert.");
@@ -111,7 +112,6 @@ public class GUI {
         FRM_ENIGMA_GUI.setResizable(false);
         FRM_ENIGMA_GUI.setBounds(SCREEN_WIDTH * 2, SCREEN_HEIGHT * 2, WINDOW_WIDTH, WINDOW_HEIGHT);
         FRM_ENIGMA_GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        FRM_ENIGMA_GUI.getContentPane().setLayout(null);
 
         Log.getLogger().i(getClass().getName() + ".initFrame", "Frame initialisiert");
     }
@@ -151,6 +151,7 @@ public class GUI {
     private void initTextfields() {
         //Der DocumentListener hört darauf, ob ein Zeichen in das 'Text' und 'Schlüssel' Textfield eingegeben wurde, das soll sicherstellen,
         //dass keine Ver- / Entschlüsselung ohne Text oder Schlüssel angefangen werden kann.
+
         TF_TEXT.setBounds(COMPONENT_DISTANCE * 6 + 10, COMPONENT_DISTANCE, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
         TF_TEXT.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -173,6 +174,7 @@ public class GUI {
         addComponent(TF_TEXT);
 
         TF_KEY.setBounds(COMPONENT_DISTANCE * 6 + 10, 80, WINDOW_WIDTH - 460, COMPONENT_HEIGHT);
+        //Zeigt einen Tooltip, damit man sieht, was  die einzelnen Elemente des Schlüssels bedeuten
         TF_KEY.setToolTipText("<html>U-AAA-XXX-X1;Y1-X2;Y2-X3;Y3-X4;Y4-X5;Y5-X6;Y6-X7;Y7-X8;Y8-X9;Y9-X10;Y10<br>" +
                 "U:     Umkehrwalze - Erlaubter Input: A,B,C<br>" +
                 "AAA:   Walzenordnung - Erlaubter Input: 1,2,3,4,5<br>" +
@@ -339,7 +341,7 @@ public class GUI {
         SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH - 50, 3);
 
         addComponent(SEPARATOR);
-        //BackGround image
+        //Hintergrundbild
         BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.png")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
         BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -416,6 +418,7 @@ public class GUI {
      * - Startet die ProgressBar\n
      */
     private void btnOkClicked() {
+        //duale  Funktion des O K / Again Buttons
         if (BTN_START.getText().equals("O K")) {
             setGUIElementsEnabled(false);
             PROGRESSBAR.setIndeterminate(true);
@@ -450,21 +453,21 @@ public class GUI {
      * und der Nutzer so eine frühere Ver- bzw. Entschlüsselung wiederholen kann.
      */
     private void btnChooseFileClicked() {
-        System.out.println("File chooser button clicked");
         FILE_CHOOSER.showOpenDialog(FRM_ENIGMA_GUI);
         //prüft, ob eine Datei ausgewählt wurde
         //falls nicht wird sie auch nicht behandelt
         if (FILE_CHOOSER.getSelectedFile() != null) {
             File enigmaFile = FILE_CHOOSER.getSelectedFile();
-            System.out.println(enigmaFile.getName());
+            //setzt den TEXT
             TF_TEXT.setShowingHint(false);
+            TF_TEXT.setForeground(Color.BLACK);
             if (RDBTN_ENCRYPT.isSelected())
                 TF_TEXT.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "clearText"));
             else TF_TEXT.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "encodedText"));
+            //setzt den KEY
             TF_KEY.setShowingHint(false);
             TF_KEY.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "key"));
             TF_KEY.setForeground(Color.BLACK);
-            TF_TEXT.setForeground(Color.BLACK);
         }
 
         Log.getLogger().i(getClass().getName() + ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
