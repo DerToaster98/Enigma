@@ -3,6 +3,7 @@ package de.Enigma.Algorithm;
 
 import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EMill;
+import de.Enigma.Util.FileHandler;
 
 /**
  * @author Lisa Binkert
@@ -14,7 +15,6 @@ public class Algorithm {
     private AlgorithmController controller;
     @SuppressWarnings("unused")
 	private String key;
-    private String[] metaData = new String[6];
 
 
     public Algorithm(AlgorithmController controller) {
@@ -30,7 +30,7 @@ public class Algorithm {
      * @return
      * @brief Ver-/Entschlüssel einen Buchstaben
      */
-    protected char encrypt(char letter) {
+    public char encrypt(char letter) {
     	char origLetter = letter;
     	Log.getLogger().i(getClass().getName() +".encrypt", "Encrypting char " + origLetter + "...");
         letter = conf.encryptLetterWithPlugBoard(letter);
@@ -62,7 +62,7 @@ public class Algorithm {
     /**
      * @brief Übergibt metaData an FileHandler()
      */
-    protected void createMetaData() {
+    public void createMetaData() {
         String key = controller.getKey();
         String[] parts = key.split("-");
         char[] walzen = parts[1].toCharArray();
@@ -72,12 +72,11 @@ public class Algorithm {
             buchstaben = buchstaben.concat(parts[i]+" ");
         }
 
-        metaData[1] = "Umkehrwalze: " + parts[0];
-        metaData[2] = "1. Walze: " + walzen[0] + " Startposition: " + position[0];
-        metaData[3] = "2. Walze: " + walzen[1] + " Startposition: " + position[1];
-        metaData[4] = "3. Walze: " + walzen[2] + " Startposition: " + position[2];
-        metaData[5] = "Vertauschte Buchstaben:" + buchstaben;
-        //FileHandler.getFileHandler().setMetaData(metaData);
+        FileHandler.getFileHandler().setMetaData(1, "Umkehrwalze: " + parts[0]);
+        FileHandler.getFileHandler().setMetaData(2, "1. Walze: " + walzen[0] + " - Startposition: " + position[0]);
+        FileHandler.getFileHandler().setMetaData(3, "2. Walze: " + walzen[1] + " - Startposition: " + position[1]);
+        FileHandler.getFileHandler().setMetaData(4,"3. Walze: " + walzen[2] + " - Startposition: " + position[2]);
+        FileHandler.getFileHandler().setMetaData(5, "Vertauschte Buchstaben:" + buchstaben);
     }
 
 

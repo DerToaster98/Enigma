@@ -13,6 +13,7 @@ import de.Enigma.Util.Util;
 public class Main {
 
     private GUI window;
+    private long startingTime;
 
     private Main() {
         Log.getLogger();
@@ -42,17 +43,18 @@ public class Main {
      */
     public void btnOkClicked(String text, String key, boolean chbx_selected) {
         //String newKey = key.toUpperCase();
+        startingTime = System.currentTimeMillis();
+        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + startingTime);
+
         if (chbx_selected){
             text = Util.prepareStringForReligma(text);
         }
         FileHandler.getFileHandler().setKey(key);
+
         FileHandler.getFileHandler().setClearText(text);
 
-        long starting_Time = System.currentTimeMillis();
         new AlgorithmController(this, key, text);
         
-
-        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + starting_Time);
     }
 
     /**
@@ -67,6 +69,12 @@ public class Main {
      * @details Die Routine soll die Dateien erstellen lassen und die GUI benachrichtigen
      */
     public void onFinished() {
+        long endTime = System.currentTimeMillis();
+        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess beendet um " + endTime);
+        long processDuration = endTime - startingTime;
+        FileHandler.getFileHandler().setMetaData(6,processDuration +"ms");
+        Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozessdauer: " + processDuration);
+
         FileHandler.getFileHandler().makeFiles();
         window.onFinished();
     }

@@ -6,7 +6,6 @@ import com.google.gson.stream.JsonReader;
 import de.Enigma.Core.Log;
 
 import java.io.*;
-import java.lang.management.GarbageCollectorMXBean;
 import java.net.URLDecoder;
 
 public class FileHandler {
@@ -19,7 +18,7 @@ public class FileHandler {
     private String key;
     private String encodedText = "missingNo";
     private String clearText;
-    private String[] metaData = new String[6];
+    private String[] metaData = new String[7];
     //metaData[0] -> Typ
 
 
@@ -95,7 +94,7 @@ public class FileHandler {
 
     }
 
-    public String inputFromFile (File f, String key){
+    public String inputFromFile(File f, String key) {
         Gson gson = new Gson();
         JsonReader jr = null;
         try {
@@ -116,12 +115,13 @@ public class FileHandler {
         this.encodedText = "";
     }
 
-    public void setTypeMetaData(String type) {
-        metaData[0] = type;
+    public void setMetaData(int index, String type) {
+        metaData[index] = type;
     }
 
     public void setKey(String key) {
         this.key = key;
+        Log.getLogger().i(Log.class.getName() + ".setKey", "Gesetzter Schlüssel: " + key);
     }
 
     public String getHOME() {
