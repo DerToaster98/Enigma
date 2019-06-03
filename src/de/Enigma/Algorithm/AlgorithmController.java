@@ -8,7 +8,6 @@ import de.Enigma.Util.Util;
 public class AlgorithmController {
 
     @SuppressWarnings("unused")
-	private String text;
     private String key;
     private EnigmaConfig eConfig;
     private Algorithm algorithm;
@@ -21,7 +20,7 @@ public class AlgorithmController {
      * @brief Die Klasse steuert die Ver- und Entschlüsselung.
      * @author Lisa Binkert
      */
-    public AlgorithmController(Main m, String key, String txt) {
+    public AlgorithmController(Main m, String key) {
         // TODO Auto-generated constructor stub
         main = m;
         this.key = key;
@@ -33,10 +32,9 @@ public class AlgorithmController {
             Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert!");
 
         }
-        //FileHandler.getFileHandler().setKey(key);
+        FileHandler.getFileHandler().setKey(key);
         eConfig = new EnigmaConfig(key);
         algorithm = new Algorithm(this);
-        crypt(txt);
 
     }
 
@@ -46,7 +44,7 @@ public class AlgorithmController {
      * @brief Ver- und Entschlüsselt den Text
      * @author Lisa Binkert
      */
-    private void crypt(String txt) {
+    public void crypt(String txt) {
         //txt in char array umwandeln
         String cryptText = "";
         char[] c = Util.createCharArray(txt);
@@ -71,6 +69,7 @@ public class AlgorithmController {
             }
         }
         System.out.println(cryptText);
+        algorithm.createMetaData();
         if(main != null) {
         	main.onFinished();
             Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");

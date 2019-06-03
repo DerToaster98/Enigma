@@ -53,8 +53,9 @@ public class Main {
 
         FileHandler.getFileHandler().setClearText(text);
 
-        new AlgorithmController(this, key, text);
-        
+        new AlgorithmController(this, key).crypt(text);
+
+
     }
 
     /**
