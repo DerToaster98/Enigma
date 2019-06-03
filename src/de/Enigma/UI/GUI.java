@@ -432,7 +432,7 @@ public class GUI {
                 FileHandler.getFileHandler().setMetaData(0, "Typ: Entschlüsselung");
             }
 
-            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected());
+            main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected(), RDBTN_DECRYPT.isSelected());
 
         } else {
             //ermöglicht es durch einen Klick, in das Verzeichnis mit den Dateien zu gelangen
