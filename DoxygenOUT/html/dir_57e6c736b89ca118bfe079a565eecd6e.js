@@ -6,6 +6,7 @@ var dir_57e6c736b89ca118bfe079a565eecd6e =
     [ "Enums.java", "_enums_8java.html", [
       [ "Enums", "classde_1_1_enigma_1_1_util_1_1_enums.html", [
         [ "EAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet" ],
+        [ "EExtraCharacters", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters" ],
         [ "EMill", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill" ],
         [ "EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet" ],
         [ "EMode", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode" ]
@@ -13,7 +14,8 @@ var dir_57e6c736b89ca118bfe079a565eecd6e =
       [ "EMode", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode" ],
       [ "EAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet" ],
       [ "EMill", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill" ],
-      [ "EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet" ]
+      [ "EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet" ],
+      [ "EExtraCharacters", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters" ]
     ] ],
     [ "FileHandler.java", "_file_handler_8java.html", [
       [ "FileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html", "classde_1_1_enigma_1_1_util_1_1_file_handler" ]

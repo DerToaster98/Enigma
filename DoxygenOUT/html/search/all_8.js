@@ -7,6 +7,7 @@ var searchData=
   ['index',['index',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a4a0222cdd569a109172f6145fd787111',1,'de::Enigma::Util::Enums::EAlphabet']]],
   ['initbackground',['initBackGround',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a4667460cbce014e8c505f777a26ce161',1,'de::Enigma::UI::GUI']]],
   ['initbuttons',['initButtons',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a1a8b0d9235dfd1c926c6bdf66909310b',1,'de::Enigma::UI::GUI']]],
+  ['initcheckbox',['initCheckBox',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a2dc1708614b72c1c99ea51243be4856b',1,'de::Enigma::UI::GUI']]],
   ['initfilechooser',['initFileChooser',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#aa6c4568f2ef9f870cb94fed78e7d9e70',1,'de::Enigma::UI::GUI']]],
   ['initframe',['initFrame',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a71233b59d7fa130d0e92180c24a5d4ba',1,'de::Enigma::UI::GUI']]],
   ['initgui',['initGUI',['../classde_1_1_enigma_1_1_core_1_1_main.html#af16526d4a889e604d51402e0acdaf1b9',1,'de::Enigma::Core::Main']]],
@@ -16,6 +17,8 @@ var searchData=
   ['initradiobuttons',['initRadioButtons',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a1e3e13d68485e665839ac4214be0fe77',1,'de::Enigma::UI::GUI']]],
   ['inittextarea',['initTextArea',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ab14dbf1d6115c8d98304adf55ab0a9bc',1,'de::Enigma::UI::GUI']]],
   ['inittextfields',['initTextfields',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a285ef2fda2fa3d6a270b11dc74be2e7b',1,'de::Enigma::UI::GUI']]],
+  ['inputfromfile',['inputFromFile',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#ad053a9c39b00bdab8db2aa606a02e9e8',1,'de::Enigma::Util::FileHandler']]],
+  ['isextracharacter',['isExtraCharacter',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#ade3186f380a64297b228e55c56f44f36',1,'de::Enigma::Util::Enums::EExtraCharacters']]],
   ['iskeyvalid',['isKeyValid',['../classde_1_1_enigma_1_1_util_1_1_util.html#a67f5daf51894c74dd2d4dabe80f7100e',1,'de::Enigma::Util::Util']]],
   ['isshowinghint',['isShowingHint',['../classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#a42d9dadfd144e55d99fa91e593832be1',1,'de::Enigma::UI::HintTextField']]],
   ['iv',['IV',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#aeca0f5a2e979e7845ac07915e3c00bd6',1,'de::Enigma::Util::Enums::EMillAlphabet']]]

@@ -3,6 +3,7 @@ var hierarchy =
     [ "de.Enigma.Algorithm.Algorithm", "classde_1_1_enigma_1_1_algorithm_1_1_algorithm.html", null ],
     [ "de.Enigma.Algorithm.AlgorithmController", "classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html", null ],
     [ "de.Enigma.Util.Enums.EAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html", null ],
+    [ "de.Enigma.Util.Enums.EExtraCharacters", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html", null ],
     [ "de.Enigma.Util.Enums.EMill", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html", null ],
     [ "de.Enigma.Util.Enums.EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html", null ],
     [ "de.Enigma.Util.Enums.EMode", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode.html", null ],

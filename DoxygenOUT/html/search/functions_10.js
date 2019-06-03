@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['util',['Util',['../classde_1_1_enigma_1_1_util_1_1_util.html#adae06110e7775350305c639c014b21b2',1,'de::Enigma::Util::Util']]]
+  ['textfile',['TextFile',['../classde_1_1_enigma_1_1_util_1_1_text_file.html#ac74917f9abb599596e989c4717c94fca',1,'de::Enigma::Util::TextFile']]]
 ];

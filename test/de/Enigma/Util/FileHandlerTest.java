@@ -33,16 +33,10 @@ public class FileHandlerTest {
 			currVal = (String) encodedTextField.get(FileHandler.getFileHandler());
 			assertEquals("", currVal);
 			
-			FileHandler.getFileHandler().appendChar('H');
-			FileHandler.getFileHandler().appendChar('A');
-			FileHandler.getFileHandler().appendChar('L');
-			FileHandler.getFileHandler().appendChar('L');
-			FileHandler.getFileHandler().appendChar('O');
-			FileHandler.getFileHandler().appendChar(' ');
-			FileHandler.getFileHandler().appendChar('W');
-			FileHandler.getFileHandler().appendChar('E');
-			FileHandler.getFileHandler().appendChar('L');
-			FileHandler.getFileHandler().appendChar('T');
+			char[] helloWorldChars = new char[] {'H','A','L','L','O',' ','W','E','L','T'};
+			for(char c : helloWorldChars) {
+				FileHandler.getFileHandler().appendChar(c);
+			}
 			
 			currVal = (String) encodedTextField.get(FileHandler.getFileHandler());
 			assertEquals("HALLO WELT", currVal);
