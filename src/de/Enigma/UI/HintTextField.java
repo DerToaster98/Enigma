@@ -37,10 +37,12 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     HintTextField(final String name, final String hint, final Font font) {
         super(hint);
+        //setzt die generellen Eigenschaften des Textfeldes
         this.hint = hint;
         this.showingHint = true;
         super.setName(name);
         super.setFont(font);
+        //deaktiviert copy/paste
         super.setTransferHandler(null);
         super.addFocusListener(this);
         super.addKeyListener(this);
@@ -55,6 +57,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void focusGained(FocusEvent e) {
+        //deaktiviert den Hint
         if (this.getText().isEmpty()) {
             super.setText("");
             setForeground(Color.BLACK);
@@ -69,6 +72,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void focusLost(FocusEvent e) {
+        //reaktiviert den Hint
         if (this.getText().isEmpty()) {
             setHint();
             showingHint = true;
@@ -79,6 +83,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      * @brief Methode, die den Hint setzt
      */
     void setHint() {
+        //setzt den Hint und alle damit verbundenen Eigenschaften
         super.setText(hint);
         setForeground(Color.GRAY);
         showingHint = true;
@@ -100,6 +105,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         if (!checkValidInput(e) || (this.getName().equals("KEY") && this.getText().length() >= 49)) {
+            //Zeichen wird verworfen
             e.consume();
         } else {
             e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
@@ -118,6 +124,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
             int c = this.getText().length();
             String txt = this.getText();
             switch (c) {
+                //an diesen Stellen soll ein "-" in den Key gesetzt werden
                 case 1:
                 case 5:
                 case 9:
@@ -132,6 +139,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
                 case 45:
                     txt += "-";
                     break;
+                //an diesen Stellen soll ein ";" in den Key gesetzt werden
                 case 11:
                 case 15:
                 case 19:
@@ -155,6 +163,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     @Override
     public void keyReleased(KeyEvent e) {
+        //EMPTY
     }
 
     /**
@@ -163,10 +172,12 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
      */
     private boolean checkValidInput(KeyEvent e) {
         char c = Character.toUpperCase(e.getKeyChar());
+        //Buchstaben
         for (Enums.EAlphabet eAlphabet : Enums.EAlphabet.values()) {
             if (c == eAlphabet.getAsChar())
                 return true;
         }
+        //Sonderzeichen
         if (this.getName().equals("TEXT")) {
             return c == ' ' || c == '.' || c == ',' || c == '?' || c == '!';
         } else return c == '1' || c == '2' || c == '3' || c == '4' || c == '5';

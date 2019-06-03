@@ -50,6 +50,7 @@ class EnigmaFile extends File {
         try {
             writer = new JsonWriter(new FileWriter(this));
 
+            //einzelnes JsonObjekt, das alle Daten enthält
             writer.beginObject();
             writeValueToObject(writer, "metaData", metaData);
             writeValueToObject(writer, "key", key);
@@ -72,6 +73,7 @@ class EnigmaFile extends File {
      * @brief Methode, um einem Json Objekt ein Value hinzuzufügen
      */
     private void writeValueToObject(JsonWriter writer, String name, String value) throws IOException {
+        //schreibt einen neuen Value
         writer.name(name);
         writer.value(value);
     }

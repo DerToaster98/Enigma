@@ -44,12 +44,12 @@ public class Main {
      * @param chbx_selected - Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
-    public void btnOkClicked(String text, String key, boolean chbx_selected) {
+    public void btnOkClicked(String text, String key, boolean chbx_selected, boolean decrypt) {
 
         startingTime = System.currentTimeMillis();
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + startingTime);
 
-        if (chbx_selected) {
+        if (chbx_selected && !decrypt) {
             text = Util.prepareStringForReligma(text);
         }
         FileHandler.getFileHandler().setKey(key);

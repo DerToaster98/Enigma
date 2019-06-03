@@ -30,6 +30,7 @@ class LogFile extends File {
      */
     public void write(String key, String text) {
 
+        //writer zum Schreiben in die Datei
         BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
@@ -39,6 +40,7 @@ class LogFile extends File {
         } catch (IOException e) {
             e.printStackTrace();
             //ERROR WEGEN LOGFILES
+            //nicht logbar, da er sonst in einer Endlosschleife resultiert
         }
     }
 }
