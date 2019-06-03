@@ -19,7 +19,6 @@ import java.awt.event.KeyListener;
  * - '.' ',' '!' '?' ' '\n
  * Der erlaubte Input für KEY ist:\n
  * - A-Z\n
- * - '-' ';'\n
  * - 1-5\n
  */
 class HintTextField extends JTextField implements FocusListener, KeyListener {
