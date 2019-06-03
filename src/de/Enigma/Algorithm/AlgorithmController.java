@@ -7,7 +7,6 @@ import de.Enigma.Util.Util;
 
 public class AlgorithmController {
 
-    @SuppressWarnings("unused")
     private String key;
     private EnigmaConfig eConfig;
     private Algorithm algorithm;
