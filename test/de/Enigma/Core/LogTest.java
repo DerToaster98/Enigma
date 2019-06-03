@@ -30,8 +30,11 @@ public class LogTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void checkLoggerInstantiation() {
+		Object loggerObj = Log.getLogger();
+		
+		assertNotNull(Log.getLogger());
+		assertTrue(loggerObj instanceof Log);
 	}
 
 }

@@ -4,8 +4,6 @@
 package de.Enigma.Util;
 
 import static org.junit.Assert.*;
-//import src.de.Enigma.Util.FileHandler;
-import de.Enigma.Util.Util;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -24,5 +22,12 @@ public class FileHandlerTest {
 
 	}
 
+	@Test
+	public void checkFileHandlerInstantiation() {
+		Object fileHandlerObj = FileHandler.getFileHandler();
+		
+		assertNotNull(FileHandler.getFileHandler());
+		assertTrue(fileHandlerObj instanceof FileHandler);
+	}
 
 }
