@@ -14,7 +14,7 @@ import de.Enigma.Util.Enums.EExtraCharacters;
 import de.Enigma.Util.Enums.EMillAlphabet;
 
 /**
- * @author Admin
+ * @author Oliver Seiler
  *
  */
 public class EnumsTest {

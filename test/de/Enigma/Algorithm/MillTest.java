@@ -13,7 +13,7 @@ import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMillAlphabet;
 
 /**
- * @author Admin
+ * @author Oliver Seiler
  *
  */
 public class MillTest {

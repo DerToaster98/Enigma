@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 import org.junit.Test;
 
 /**
- * @author Nikolai Klatt
+ * @author Oliver Seiler
  *
  */
 public class FileHandlerTest {

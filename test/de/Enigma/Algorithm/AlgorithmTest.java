@@ -10,7 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * @author Admin
+ * @author Lisa Binkert & Oliver Seiler
  *
  */
 public class AlgorithmTest {
