@@ -30,6 +30,16 @@ public class UtilTest {
 	}
 
 	@Test
+	public void prepareStringForReligmaTest() {
+		String text = "Nachricht, Bobdus? Jucken Schokolade, -Schlange. Hackfleisch!";
+		String ergebnis = "NAQRI QTXBO BDUSX JUQEN SQOKO LADEX XSQLA NGEXH AQFLE ISQX";
+		
+		assertEquals(ergebnis, Util.prepareStringForReligma(text.toUpperCase()));
+		
+		
+	}
+	
+	@Test
 	public void getIndexOfCharInAlphabetTest() {
 		
 		char[] alphabet = new char[] {'A','B','C','D'};
