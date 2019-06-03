@@ -325,8 +325,13 @@ public class Util {
 					filteredString += EExtraCharacters.SPACE.getAssignedChar();
 				}
 				filteredString += c;
-				counter++;
+			} else if(c != EExtraCharacters.SPACE.getAssignedChar()) {
+				if(counter % 5 == 0 && counter > 0) {
+					filteredString += EExtraCharacters.SPACE.getAssignedChar();
+				}
+				filteredString += 'X';
 			}
+			counter++;
 		}
 		
 		return filteredString;
