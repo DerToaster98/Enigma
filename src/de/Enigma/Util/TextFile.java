@@ -11,19 +11,22 @@ class TextFile extends File {
 
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 2386034996542721472L;
+     *
+     */
+    private static final long serialVersionUID = 2386034996542721472L;
 
-	TextFile(String pathname, String[] metaData, String key, String clearText, String encodedText) {
+    TextFile(String pathname, String[] metaData, String key, String clearText, String encodedText) {
         super(pathname);
 
 
         write("Key:", key);
         write("Klartext: ", clearText);
         if (metaData[0].equals("Verschlüsselung"))
-        write("Verschlüsselter Text: ", encodedText);
+            write("Verschlüsselter Text: ", encodedText);
         else write("Entschlüsselter Text: ", encodedText);
+        for (String s : metaData) {
+            write(null, s);
+        }
     }
 
     public void write(String desc, String text) {
@@ -32,8 +35,11 @@ class TextFile extends File {
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
             writer.write("***************************************************************************************");
-            writer.newLine();
-            writer.write(desc);
+
+            if (desc != null){
+                writer.newLine();
+                writer.write(desc);
+            }
             writer.newLine();
             writer.write(text);
             writer.newLine();
