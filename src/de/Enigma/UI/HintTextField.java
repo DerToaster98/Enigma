@@ -24,14 +24,14 @@ import java.awt.event.KeyListener;
  */
 class HintTextField extends JTextField implements FocusListener, KeyListener {
 
-	private static final long serialVersionUID = -5418099739080562425L;
-	private final String hint;
+    private static final long serialVersionUID = -5418099739080562425L;
+    private final String hint;
     private boolean showingHint;
 
     /**
-     * @param name Ojektname der zur Unterscheidung dienen soll
-     * @param hint Text der angezeigt werden soll, wenn im TextField nichts steht
-     * @param font Schriftart, die gesetzt werden soll
+     * @param name - Ojektname der zur Unterscheidung dienen soll
+     * @param hint - Text der angezeigt werden soll, wenn im TextField nichts steht
+     * @param font - Schriftart, die gesetzt werden soll
      * @brief Konstruktor die ein HintTextField erzeugt
      * @details Der Konstruktor setzt alle Parameter für die Objekte.
      * @see javax.swing.JTextField
@@ -50,7 +50,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param e Event Parameter
+     * @param e - Event Parameter
      * @brief Methode des FocusListeners
      * @details Wird aufgerufen, wenn das TextField fokusiert wird, das heißt, wenn der Curser zum schreiben im Feld ist.
      */
@@ -64,7 +64,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param e Event Parameter
+     * @param e - Event Parameter
      * @brief Methode des FocusListeners
      * @details Wird aufgerufen, wenn das TextField den Fokus verliert.
      */
@@ -94,24 +94,24 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param e KeyEvent Parameter
+     * @param e - KeyEvent Parameter
      * @brief Methode des KeyListeners
      * @details Wird aufgerufen, wenn ein Buchstabe oder Zeichen eingegeben wird. Wenn das Zeichen nicht erlaubt ist, wird es verworfen.
      */
     @Override
     public void keyTyped(KeyEvent e) {
         if (!checkValidInput(e) || (this.getName().equals("KEY") && this.getText().length() >= 49)) {
-        	e.consume();
+            e.consume();
         } else {
-        	e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
+            e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
         }
-            
+
     }
 
     /**
-     * @param e KeyEvent Parameter
+     * @param e - KeyEvent Parameter
      * @brief Methode des KeyListeners
-     * @details nicht benötigt
+     * @details Setzt die Sonderzeichen im Key TextField, sofern manuell getippt wird.
      */
     @Override
     public void keyPressed(KeyEvent e) {
@@ -150,7 +150,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param e KeyEvent Parameter
+     * @param e - KeyEvent Parameter
      * @brief Methode des KeyListeners
      * @details nicht benötigt
      */
@@ -159,12 +159,11 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param e KeyEvent Parameter
+     * @param e - KeyEvent Parameter
      * @brief Methode, die checkt, ob ein Zeichen erlaubt ist, oder nicht
      */
     private boolean checkValidInput(KeyEvent e) {
         char c = Character.toUpperCase(e.getKeyChar());
-    	//char c = e.getKeyChar();
         for (Enums.EAlphabet eAlphabet : Enums.EAlphabet.values()) {
             if (c == eAlphabet.getAsChar())
                 return true;
@@ -175,7 +174,7 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param showingHint Gibt Aussage darüber, ob der Hint angezeigt werden soll, oder nicht
+     * @param showingHint - Gibt Aussage darüber, ob der Hint angezeigt werden soll, oder nicht
      * @brief Methode, die showingHint setzt
      */
     void setShowingHint(boolean showingHint) {

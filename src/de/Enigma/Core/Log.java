@@ -50,8 +50,8 @@ public class Log {
 
 
     /**
-     * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
-     * @param warning           Warning Nachricht, die vom Logger geloggt werden soll
+     * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
+     * @param warning           - Warning Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von <b>Warning-Logs</b>
      * @details Erstellt über die .dll einen Warning-Log der über potentiell gefährliche Vorgänge innerhalb der Anwendung informieren soll.\n
      * Darunter zählen:\n
@@ -68,8 +68,8 @@ public class Log {
     }
 
     /**
-     * @param class_Method_Name Name der Klasse und Methode von der der Aufruf erfolgt ist
-     * @param error             Error Nachricht, die vom Logger geloggt werden soll
+     * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
+     * @param error             - Error Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von <b>Error-Logs</b>
      * @details Erstellt über die .dll einen Error-Log der über kritische Fehler innerhalb der Anwendung informieren soll.\n
      * Darunter zählen:\n
@@ -84,12 +84,12 @@ public class Log {
     }
 
     /**
-     * @brief Methode zum Erzeugenlassen der Logfile, sobald sie benötigt wird
+     * @brief Methode zum Erzeugen lassen der Logfile, sobald sie benötigt wird
      */
     private void checkLogFile() {
         if (!FileHandler.getFileHandler().logFileexists())
-             FileHandler.getFileHandler().createNewCurrentDirectory();
-            FileHandler.getFileHandler().makeLogFile();
+            FileHandler.getFileHandler().createNewCurrentDirectory();
+        FileHandler.getFileHandler().makeLogFile();
     }
 
     /**

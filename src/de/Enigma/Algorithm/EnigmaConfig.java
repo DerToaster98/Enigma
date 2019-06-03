@@ -84,7 +84,7 @@ public class EnigmaConfig {
         if (!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {
             toEncrypt = this.letterChanger.get(character).charValue();
         }
-        Log.getLogger().i(getClass().getName() +".encryptLetterWithPlugBoard", "Replaced letter " + letter + " with " + toEncrypt);
+        Log.getLogger().i(getClass().getName() + ".encryptLetterWithPlugBoard", "Replaced letter " + letter + " with " + toEncrypt);
         return toEncrypt;
     }
 
@@ -98,12 +98,12 @@ public class EnigmaConfig {
         if (first != null && first.shouldRotateNeighborMill()) {
             Mill second = getMill(EMill.SECOND_MILL);
             if (second != null) {
-            	Log.getLogger().i(getClass().getName() + ".checkMills", "Rotating second Mill");
+                Log.getLogger().i(getClass().getName() + ".checkMills", "Rotating second Mill");
                 second.rotateMill();
                 if (second.shouldRotateNeighborMill()) {
                     Mill third = getMill(EMill.FIRST_MILL);
                     if (third != null) {
-                    	Log.getLogger().i(getClass().getName() + ".checkMills", "Rotating third Mill");
+                        Log.getLogger().i(getClass().getName() + ".checkMills", "Rotating third Mill");
                         third.rotateMill();
                     }
                 }
@@ -139,7 +139,7 @@ public class EnigmaConfig {
      * @brief Diese Methode findet heraus, mit welchem Alphabet die vorherige Verschlüsselung stattgefunden hat.
      */
     @SuppressWarnings("unused")
-	private char[] getPreviousAlphabet(EMill currentMill, boolean wasInReturnMill) {
+    private char[] getPreviousAlphabet(EMill currentMill, boolean wasInReturnMill) {
         switch (currentMill) {
             case FIRST_MILL:
                 if (wasInReturnMill) {

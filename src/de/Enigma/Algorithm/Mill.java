@@ -51,22 +51,22 @@ public class Mill {
     }
 
     /**
-     * @param c           der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
-     * @param oldAlphabet Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde
+     * @param c               der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
+     * @param oldAlphabet     Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde
      * @param wasInReturnMill Gibt an, ob die Walze von vorne oder von hitnen durchlaufen wurde
      * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben.
      * @brief Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.
      * @details Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, char[] oldAlphabet, boolean wasInReturnMill) {
-    	Log.getLogger().i(getClass().getName() +".encryptLetter", "Encrypting letter " + c + " with mill alphabet...");
+        Log.getLogger().i(getClass().getName() + ".encryptLetter", "Encrypting letter " + c + " with mill alphabet...");
 
         int posOfC = Util.getIndexOfCharInAlphabet(c, wasInReturnMill ? this.alphabet.clone() : oldAlphabet);
-        
+
         if (posOfC >= 0) {
-        	char cryptedChar = wasInReturnMill ? EAlphabet.getAlphabet().clone()[posOfC] : this.getAlphabet()[posOfC];
-        	Log.getLogger().i(getClass().getName() +".encryptLetter", "encrypted letter " +c + " to " + cryptedChar);
-        	Log.getLogger().i("", "");
+            char cryptedChar = wasInReturnMill ? EAlphabet.getAlphabet().clone()[posOfC] : this.getAlphabet()[posOfC];
+            Log.getLogger().i(getClass().getName() + ".encryptLetter", "encrypted letter " + c + " to " + cryptedChar);
+            Log.getLogger().i("", "");
             return cryptedChar;
         }
         //DONE: log.w oder log.e

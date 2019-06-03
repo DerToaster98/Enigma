@@ -68,7 +68,7 @@ public class GUI {
 
 
     /**
-     * @param m Assoziation mit der Main, dadurch kann die GUI Methoden der Main aufrufen
+     * @param m - Assoziation mit der Main, dadurch kann die GUI Methoden der Main aufrufen
      * @brief Konstruktor der GUI
      * @details Der Konstruktor der GUI initialisiert alle Elemente der GUI
      * @see de.Enigma.Core.Main
@@ -245,7 +245,12 @@ public class GUI {
         Log.getLogger().i(getClass().getName() + ".initButtons", "Buttons initialisiert");
     }
 
-
+    /**
+     * @brief Methode, die die Checkbox baut
+     * @details Die CheckBox dient dazu, die Textverarbeitung wie bei der echten Enigma ausführen zu lassen.\n
+     * Komponenten:\n
+     * - CHBX_REAL_ENIGMA:  CheckBox\n
+     */
     private void initCheckBox() {
         CHBX_REAL_ENIGMA.setBounds(WINDOW_WIDTH - 300, 140, 270, COMPONENT_HEIGHT);
         CHBX_REAL_ENIGMA.setContentAreaFilled(false);
@@ -416,7 +421,6 @@ public class GUI {
             PROGRESSBAR.setIndeterminate(true);
             PROGRESSBAR.setStringPainted(true);
 
-
             if (RDBTN_ENCRYPT.isSelected()) {
                 PROGRESSBAR.setString("Verschlüsselung läuft...");
                 FileHandler.getFileHandler().setMetaData(0, "Typ: Verschlüsselung");
@@ -428,7 +432,7 @@ public class GUI {
             main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected());
 
         } else {
-            //ermöglicht es durch einen Klick in das Verzeichnis mit den Dateien zu gelangen!
+            //ermöglicht es durch einen Klick, in das Verzeichnis mit den Dateien zu gelangen
             try {
                 Desktop.getDesktop().open(new File(FileHandler.getFileHandler().getCurrentHome()));
             } catch (IOException e) {

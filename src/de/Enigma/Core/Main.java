@@ -15,13 +15,16 @@ public class Main {
     private GUI window;
     private long startingTime;
 
+    /**
+     * @brief Privater Main Konstruktor
+     */
     private Main() {
         Log.getLogger();
         initGUI();
     }
 
     /**
-     * @param args Verschiedene (nicht verwendete) Argumente, welche dem Programm beim Start mitgegeben werden können
+     * @param args - Verschiedene (nicht verwendete) Argumente, welche dem Programm beim Start mitgegeben werden können
      * @brief "Startmethode" des Programms
      */
     public static void main(String[] args) {
@@ -36,13 +39,13 @@ public class Main {
     }
 
     /**
-     * @param text          Der zu ver/entschlüsselnde Text
-     * @param key           Der Schlüssel, mit dem gearbeitet wird
-     * @param chbx_selected Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
+     * @param text          - Der zu ver/entschlüsselnde Text
+     * @param key           - Der Schlüssel, mit dem gearbeitet wird
+     * @param chbx_selected - Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key, boolean chbx_selected) {
-        //String newKey = key.toUpperCase();
+
         startingTime = System.currentTimeMillis();
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + startingTime);
 
@@ -54,13 +57,6 @@ public class Main {
         FileHandler.getFileHandler().setClearText(text);
 
         new AlgorithmController(this, key).crypt(text);
-
-    }
-
-    /**
-     * @brief Wird aufgerufen, wenn der Button, welcher den laufen Ver/Entschlüsselungsvorgang abbricht, geklickt wird
-     */
-    public void btnCancelClicked() {
 
     }
 

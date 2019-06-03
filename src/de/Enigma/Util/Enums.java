@@ -234,7 +234,7 @@ public class Enums {
         /**
          * @brief Repräsentiert die Walze I der Enigma I
          */
-    	 //	    		   1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
+        //	    		   1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
         I("1", new char[]{'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J'}, 'X'),
         /**
          * @brief Repräsentiert die Walze II der Enigma I
@@ -327,46 +327,50 @@ public class Enums {
                     return EMillAlphabet.IV;
                 case "5":
                     return EMillAlphabet.V;
-                case "A": case "a":
+                case "A":
+                case "a":
                     return EMillAlphabet.UKW_A;
-                case "B": case "b":
+                case "B":
+                case "b":
                     return EMillAlphabet.UKW_B;
-                case "C": case "c":
+                case "C":
+                case "c":
                     return EMillAlphabet.UKW_C;
                 default:
                     return null;
             }
         }
     }
-    
+
     public enum EExtraCharacters {
-    	COMMA(','),
-    	SEMICOLON(';'),
-    	FULL_STOP('.'),
-    	MINUS('-'),
-    	SPACE(' '),
-    	EXCLAMATION_MARK('!'),
-    	QUESTION_MARK('?'),
-    	AT('@'),;
-    	
-    	private char assignedChar;
-    	
-    	EExtraCharacters(char character) {
-    		this.assignedChar = character;
-		}
-    	
-    	public char getAssignedChar() {
-    		return this.assignedChar;
-    	}
-    	
-    	public static boolean isExtraCharacter(char c) {
-    		for(EExtraCharacters chara : values()) {
-    			if(chara.getAssignedChar() == c) {
-    				return true;
-    			}
-    		}
-    		return false;
-    	}
+        COMMA(','),
+        SEMICOLON(';'),
+        FULL_STOP('.'),
+        MINUS('-'),
+        SPACE(' '),
+        EXCLAMATION_MARK('!'),
+        QUESTION_MARK('?'),
+        AT('@'),
+        ;
+
+        private char assignedChar;
+
+        EExtraCharacters(char character) {
+            this.assignedChar = character;
+        }
+
+        public char getAssignedChar() {
+            return this.assignedChar;
+        }
+
+        public static boolean isExtraCharacter(char c) {
+            for (EExtraCharacters chara : values()) {
+                if (chara.getAssignedChar() == c) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 }

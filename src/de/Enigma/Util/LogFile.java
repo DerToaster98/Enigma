@@ -1,28 +1,33 @@
 package de.Enigma.Util;
 
-import de.Enigma.Core.Log;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * @author Nikolai Klatt
+ * @brief Klasse, um eine Log Datei zu erzeugen
+ * @details Die Log Datei wird benötigt, um die Vorgänge im System nachvollziehen zu können.
+ */
 class LogFile extends File {
 
-    /**
-     *
-     */
+
     private static final long serialVersionUID = -7409210531157611910L;
 
+    /**
+     * @param pathname - Wo und unter welchem Namen die Datei erstellt werden soll.
+     * @brief Package Private Konstruktor der LogFile
+     */
     LogFile(String pathname) {
         super(pathname);
-        writeImmediateMetaData();
     }
 
-    private void writeImmediateMetaData() {
-
-    }
-
+    /**
+     * @param key  - Typ des Logs -> INFO,WARNING,ERROR
+     * @param text - Log Nachricht
+     * @brief Methode zum schreiben von Logs in die Log Datei
+     */
     public void write(String key, String text) {
 
         BufferedWriter writer;
@@ -33,8 +38,7 @@ class LogFile extends File {
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Logdatei!");
-
+            //ERROR WEGEN LOGFILES
         }
     }
 }
