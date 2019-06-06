@@ -11,15 +11,13 @@ import de.Enigma.Util.FileHandler;
  */
 public class Algorithm {
     private EnigmaConfig conf;
-    private AlgorithmController controller;
 
     /**
      * @brief Konstruktor des Algorithmus
      * @param controller - Instanz des AlgorithmControllers, welche die Steuerung übernimmt
      */
-    public Algorithm(AlgorithmController controller) {
-        this.controller = controller;
-        conf = controller.getEnigmaConfig();
+    public Algorithm(EnigmaConfig eConf) {
+        conf = eConf;
 
 
     }
@@ -50,7 +48,7 @@ public class Algorithm {
         conf.checkMills();
 
         Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypted char " + origLetter);
-        Log.getLogger().i("", "");
+        Log.getLogger().i("", "BLANK_LINE");
         Log.getLogger().i(getClass().getName() + ".encrypt", origLetter + " -> " + letter);
         Log.getLogger().i("", "LINE");
         //Buchstabe zurückgeben
@@ -62,7 +60,7 @@ public class Algorithm {
      * @brief Erstellt die Metadaten des Vorgangs und übergibt diese an den FileHandler
      */
     public void createMetaData() {
-        String key = controller.getKey();
+        String key = FileHandler.getFileHandler().getKey();
         String[] parts = key.split("-");
         char[] walzen = parts[1].toCharArray();
         char[] position = parts[2].toCharArray();

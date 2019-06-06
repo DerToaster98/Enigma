@@ -8,7 +8,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMillAlphabet;
 
 /**
@@ -50,14 +49,14 @@ public class MillTest {
 		
 		Mill millTest = new Mill('?', EMillAlphabet.I);
 		
-		char encryptedNormal = millTest.encryptLetter(inputChar, EAlphabet.getAlphabet(), false);
+		char encryptedNormal = millTest.encryptLetter(inputChar, false);
 		
 		assertEquals(expectedOutputChar, encryptedNormal);
 		
 		expectedOutputChar = 'A';
 		inputChar = 'E';
 		
-		char encryptedReverse = millTest.encryptLetter(inputChar, EAlphabet.getAlphabet(), true);
+		char encryptedReverse = millTest.encryptLetter(inputChar, true);
 		
 		assertEquals(expectedOutputChar, encryptedReverse);
 	}

@@ -20,13 +20,7 @@ public class AlgorithmTest {
 		char inputChar= 'A';
 		String key = "A-123-AAA";
 		
-		AlgorithmController controller = null;
-		try {
-			controller = new AlgorithmController(null, key);
-		} catch(NullPointerException npe) {
-			//Muss gecatcht und gecancelt werden weil wir sonst jedes mal die Main und den dazugehörigen Rattenschwanz istanziieren müssen
-		}
-		Algorithm algo = new Algorithm(controller);
+		Algorithm algo = new Algorithm(new EnigmaConfig(key));
 		
 		assertEquals('O', algo.encrypt(inputChar));
 		

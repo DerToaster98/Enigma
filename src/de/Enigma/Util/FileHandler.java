@@ -214,6 +214,10 @@ public class FileHandler {
             return false;
         }
     }
+    
+    public String getKey() {
+    	return this.key;
+    }
 
 
     /**

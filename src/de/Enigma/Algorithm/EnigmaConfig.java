@@ -1,11 +1,10 @@
 package de.Enigma.Algorithm;
 
+import java.util.HashMap;
+
 import de.Enigma.Core.Log;
-import de.Enigma.Util.Enums.EAlphabet;
 import de.Enigma.Util.Enums.EMill;
 import de.Enigma.Util.Enums.EMillAlphabet;
-
-import java.util.HashMap;
 
 /**
  * @author Oliver Seiler
@@ -65,7 +64,7 @@ public class EnigmaConfig {
      * @brief Methode, welche für die eigentliche "Veschlüsselung" verantworlich ist. Diese verschlüsselt einzelne Buchstaben
      */
     public char encryptLetter(char letter, EMill mill, boolean wasInReturnMill) {
-        letter = getMill(mill).encryptLetter(letter, EAlphabet.getAlphabet(), wasInReturnMill);
+        letter = getMill(mill).encryptLetter(letter, wasInReturnMill);
 
         // Wenn der Buchstabe bereits in der UKW "war" und jetzt die erste, bzw. letzte Walze durchlaufen hat -> dritte Walze um ein sechsundzwanzigstel weiterdrehen...
         // Jetzt in Algorithm

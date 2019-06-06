@@ -10,7 +10,6 @@ import de.Enigma.Util.Util;
 **/
 public class AlgorithmController {
 
-    private String key;
     private EnigmaConfig eConfig;
     private Algorithm algorithm;
     private Main main;
@@ -21,9 +20,9 @@ public class AlgorithmController {
      * @param m - Instanz der Main, wird verwendet um das Ende des Vorgangs bekannt zu geben
      * @param key - Der Schlüssel, welcher übergeben wird um die Walzen und das Steckbrett zu konfigurieren
      **/
-    public AlgorithmController(Main m, String key) {
+    public AlgorithmController(Main m, String kii) {
         main = m;
-        this.key = key;
+        String key = kii;
 
         while (!Util.isKeyValid(key)) {
             //Schlüssel neu generieren
@@ -34,7 +33,7 @@ public class AlgorithmController {
         }
         FileHandler.getFileHandler().setKey(key);
         eConfig = new EnigmaConfig(key);
-        algorithm = new Algorithm(this);
+        algorithm = new Algorithm(eConfig);
 
     }
 
@@ -67,26 +66,12 @@ public class AlgorithmController {
                 cryptText = cryptText.concat(String.valueOf(letter));
             }
         }
-        System.out.println(cryptText);
+        Log.getLogger().i(getClass().getName() +".crypt", txt + " -> " + cryptText);
         algorithm.createMetaData();
         if(main != null) {
         	main.onFinished();
             Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt");
         }
-    }
-    /**
-     * @brief Methode, um an den momentan verwendeten Schlüssel zu kommen
-     * @return Liefert den verwendeten Schlüssel zurück
-     */
-    public String getKey() {
-        return key;
-    }
-    /**
-     * @brief Methode, um an verwendete Instanz der EnigmaConfig zu gelangen
-     * @return Liefert die aktuell verwendete Instanz der EnigmaConfig zurück
-     */
-    EnigmaConfig getEnigmaConfig() {
-        return eConfig;
     }
 
 }
