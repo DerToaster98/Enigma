@@ -24,17 +24,16 @@ class LogFile extends File {
     }
 
     /**
-     * @param key  - Typ des Logs -> INFO,WARNING,ERROR
      * @param text - Log Nachricht
      * @brief Methode zum schreiben von Logs in die Log Datei
      */
-    public void write(String key, String text) {
+    public void write(String text) {
 
         //writer zum Schreiben in die Datei
         BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(this, true));
-            writer.write(key + " " + text);
+            writer.write(text);
             writer.newLine();
             writer.close();
         } catch (IOException e) {

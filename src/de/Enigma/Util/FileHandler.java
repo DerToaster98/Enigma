@@ -60,11 +60,10 @@ public class FileHandler {
 
     /**
      * @param text - Log Nachricht
-     * @param key  - Typ des Logs
      * @brief Methode zum Schreiben eines Logs in die LogFile
      */
-    public void writeLog(String text, String key) {
-        logFile.write(key, text);
+    public void writeLog(String text) {
+        logFile.write(text);
     }
 
     /**
