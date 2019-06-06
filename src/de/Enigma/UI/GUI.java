@@ -39,7 +39,8 @@ public class GUI {
     private final JFrame FRM_ENIGMA_GUI = new JFrame("Enigma V2");
 
     private final Image BACKGROUND_IMG = new ImageIcon(GUI.class.getResource("/res/bg_enigma.png")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH);
-
+    private final ImageIcon FRAME_ICON = new ImageIcon(GUI.class.getResource("/res/icon.png"));
+    
     private final HintTextField TF_TEXT = new HintTextField("TEXT", "Zu ver- / entschlüsselnden Text eingeben", FONT);
     private final HintTextField TF_KEY = new HintTextField("KEY", "U-AAA-XXX-X1;Y1-X2;Y2-X3;Y3-X4;Y4-X5;Y5-X6;Y6-X7;Y7-X8;Y8-X9;Y9-X10;Y10", FONT);
 
@@ -346,6 +347,9 @@ public class GUI {
         SEPARATOR.setBounds(COMPONENT_DISTANCE, 240, WINDOW_WIDTH - 50, 3);
 
         addComponent(SEPARATOR);
+        //Icon
+        FRM_ENIGMA_GUI.setIconImage(FRAME_ICON.getImage());
+        
         //Hintergrundbild
         BACKGROUND.setIcon(new ImageIcon(BACKGROUND_IMG));
         BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
