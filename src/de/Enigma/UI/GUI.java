@@ -437,7 +437,6 @@ public class GUI {
                 PROGRESSBAR.setString("Entschlüsselung läuft...");
                 FileHandler.getFileHandler().setMetaData(0, "Typ: Entschlüsselung");
             }
-
             main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected(), RDBTN_DECRYPT.isSelected());
 
         } else {
@@ -505,6 +504,8 @@ public class GUI {
         TF_KEY.setEnabled(enabled);
         BTN_START.setEnabled(enabled);
         BTN_CHOOSE_FILE.setEnabled(enabled);
+        BTN_CREATE_KEY.setEnabled(enabled);
+        CHBX_REAL_ENIGMA.setEnabled(enabled);
         RDBTN_ENCRYPT.setEnabled(enabled);
         RDBTN_DECRYPT.setEnabled(enabled);
 
