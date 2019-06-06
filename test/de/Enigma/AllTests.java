@@ -12,6 +12,8 @@ import de.Enigma.Util.EnumsTest;
 import de.Enigma.Util.FileHandlerTest;
 import de.Enigma.Util.UtilTest;
 
+
+//Diese Klasse führt alle Tests nacheinander aus -> macht testen einfacher, da man nur diesen Test hier ausführen muss
 @RunWith(Suite.class)
 @SuiteClasses(
 		{

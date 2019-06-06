@@ -126,13 +126,13 @@ public class GUI {
      */
     private void initLabels() {
         LBL_TEXT.setFont(FONT);
-        LBL_TEXT.setForeground(Color.BLACK);
+        LBL_TEXT.setForeground(Color.WHITE);
         LBL_TEXT.setBounds(COMPONENT_DISTANCE, COMPONENT_DISTANCE, 100, COMPONENT_HEIGHT);
 
         addComponent(LBL_TEXT);
 
         LBL_KEY.setFont(FONT);
-        LBL_KEY.setForeground(Color.BLACK);
+        LBL_KEY.setForeground(Color.WHITE);
         LBL_KEY.setBounds(COMPONENT_DISTANCE, 80, 100, COMPONENT_HEIGHT);
 
         addComponent(LBL_KEY);
@@ -257,6 +257,7 @@ public class GUI {
         CHBX_REAL_ENIGMA.setBounds(WINDOW_WIDTH - 300, 140, 270, COMPONENT_HEIGHT);
         CHBX_REAL_ENIGMA.setContentAreaFilled(false);
         CHBX_REAL_ENIGMA.setFont(FONT);
+        CHBX_REAL_ENIGMA.setForeground(Color.WHITE);
 
         addComponent(CHBX_REAL_ENIGMA);
     }
@@ -275,6 +276,7 @@ public class GUI {
         RDBTN_ENCRYPT.setFont(FONT);
         RDBTN_ENCRYPT.setContentAreaFilled(false);
         RDBTN_ENCRYPT.setSelected(true);
+        RDBTN_ENCRYPT.setForeground(Color.WHITE);
         RDBTN_ENCRYPT.setBounds(COMPONENT_DISTANCE, 140, WINDOW_WIDTH / 2, COMPONENT_HEIGHT);
 
         BUTTON_GROUP.add(RDBTN_ENCRYPT);
@@ -284,6 +286,7 @@ public class GUI {
         //Decrypt RdBtn
         RDBTN_DECRYPT.setForeground(SystemColor.textText);
         RDBTN_DECRYPT.setFont(FONT);
+        RDBTN_DECRYPT.setForeground(Color.WHITE);
         RDBTN_DECRYPT.setBounds(COMPONENT_DISTANCE, 180, WINDOW_WIDTH / 2, COMPONENT_HEIGHT);
         RDBTN_DECRYPT.setContentAreaFilled(false);
 
@@ -342,7 +345,7 @@ public class GUI {
 
         addComponent(SEPARATOR);
         //Hintergrundbild
-        BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg.png")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
+        BACKGROUND.setIcon(new ImageIcon(new ImageIcon(GUI.class.getResource("/res/bg_enigma.png")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH)));
         BACKGROUND.setBounds(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         addComponent(BACKGROUND);
