@@ -14,7 +14,6 @@ public class AlgorithmController {
     private Algorithm algorithm;
     private Main main;
 
-
     /**
      * @param m   - Instanz der Main, wird verwendet um das Ende des Vorgangs bekannt zu geben
      * @param kii - Der Schlüssel, welcher übergeben wird um die Walzen und das Steckbrett zu konfigurieren
@@ -79,5 +78,3 @@ public class AlgorithmController {
     }
 
 }
-
-

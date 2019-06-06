@@ -19,7 +19,6 @@ public class EnigmaConfig {
     private Mill[] mills = new Mill[]{null, null, null};
     private Mill reverseMill;
 
-
     /**
      * @param key - Schlüssel, welcher für die Einstellung der Walzen und des Steckbretts nötig ist
      * @brief Konstruktor, welcher die Instanzen der Walzen und das Steckbrett anhand des Schlüssels erzeugt

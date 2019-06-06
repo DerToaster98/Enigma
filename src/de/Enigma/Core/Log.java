@@ -13,6 +13,7 @@ public class Log {
 
     //private Logger Instanz
     private static Log logger;
+    private boolean loggingDiasbled = false;
 
     /**
      * @brief Privater Konstruktor, zum Erzeugen eines Singelton Objektes
@@ -23,7 +24,22 @@ public class Log {
     private Log() {
         FileHandler.getFileHandler();
     }
+
     //@formatter:off
+
+    /**
+     * @return gibt das logger Singelton Objekt zurück
+     * @brief Methode zum Erstellen des Singelton Logger-Objektes
+     * @details Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
+     * Das stellt sicher, dass es nur einen Logger gibt und dieser von allen Objekten von überall aus genutzt werden kann.
+     */
+    public static Log getLogger() {
+        if (logger == null) {
+            logger = new Log();
+            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt");
+        }
+        return logger;
+    }
 
     /**
      * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
@@ -42,13 +58,15 @@ public class Log {
      */
     //@formatter:on
     public void i(String class_Method_Name, String info) {
-        checkLogFile();
-        if (!class_Method_Name.equals("")) {
-            String log = Util.resolveLogString(class_Method_Name, info, "INFO");
-            FileHandler.getFileHandler().writeLog(log + ".");
-        } else if (info.equals("BLANK_LINE")) FileHandler.getFileHandler().writeLog("");
-        else if (info.equals("LINE"))
-            FileHandler.getFileHandler().writeLog("--------------------------------------------------------------------------------------------------------------------------");
+        if (!loggingDiasbled) {
+            checkLogFile();
+            if (!class_Method_Name.equals("")) {
+                String log = Util.resolveLogString(class_Method_Name, info, "INFO");
+                FileHandler.getFileHandler().writeLog(log + ".");
+            } else if (info.equals("BLANK_LINE")) FileHandler.getFileHandler().writeLog("");
+            else if (info.equals("LINE"))
+                FileHandler.getFileHandler().writeLog("--------------------------------------------------------------------------------------------------------------------------");
+        }
     }
 
     /**
@@ -65,9 +83,11 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w(getClass().getName()+ ".methodName", "warning");
      */
     public void w(String class_Method_Name, String warning) {
-        checkLogFile();
-        String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
-        FileHandler.getFileHandler().writeLog(log + "!");
+        if (!loggingDiasbled) {
+            checkLogFile();
+            String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
+            FileHandler.getFileHandler().writeLog(log + "!");
+        }
     }
 
     /**
@@ -82,9 +102,11 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e(getClass().getName()+ ".methodName", "warning");
      */
     public void e(String class_Method_Name, String error) {
-        checkLogFile();
-        String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
-        FileHandler.getFileHandler().writeLog(log + "!");
+        if (!loggingDiasbled) {
+            checkLogFile();
+            String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
+            FileHandler.getFileHandler().writeLog(log + "!");
+        }
     }
 
     /**
@@ -97,17 +119,10 @@ public class Log {
     }
 
     /**
-     * @return gibt das logger Singelton Objekt zurück
-     * @brief Methode zum Erstellen des Singelton Logger-Objektes
-     * @details Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
-     * Das stellt sicher, dass es nur einen Logger gibt und dieser von allen Objekten von überall aus genutzt werden kann.
+     * @param isLoggingDisabled - Zeigt, ob das Logging deaktiviert werden soll
+     * @brief Methode, die das Logging deaktivieren kann
      */
-    public static Log getLogger() {
-        if (logger == null) {
-            logger = new Log();
-            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt");
-        }
-        return logger;
+    public void setLoggingDisabled(boolean isLoggingDisabled) {
+        loggingDiasbled = isLoggingDisabled;
     }
-
 }

@@ -186,18 +186,18 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @param showingHint - Gibt Aussage darüber, ob der Hint angezeigt werden soll, oder nicht
-     * @brief Methode, die showingHint setzt
-     */
-    void setShowingHint(boolean showingHint) {
-        this.showingHint = showingHint;
-    }
-
-    /**
      * @return Gibt Aussage darüber, ob der Hint angezeigt wird, oder nicht
      * @brief Methode, die showingHint zurückgibt
      */
     boolean isShowingHint() {
         return showingHint;
+    }
+
+    /**
+     * @param showingHint - Gibt Aussage darüber, ob der Hint angezeigt werden soll, oder nicht
+     * @brief Methode, die showingHint setzt
+     */
+    void setShowingHint(boolean showingHint) {
+        this.showingHint = showingHint;
     }
 }

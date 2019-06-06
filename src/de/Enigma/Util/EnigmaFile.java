@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 /**
  * @author Nikolai Klatt
  * @brief Klasse, um eine Enigma Datei zu erzeugen
