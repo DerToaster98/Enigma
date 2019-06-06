@@ -15,6 +15,7 @@ public class Main {
     private GUI window;
     private long startingTime;
 
+
     /**
      * @brief Privater Main Konstruktor
      */
@@ -34,16 +35,16 @@ public class Main {
     /**
      * @param text          - Der zu ver/entschlüsselnde Text
      * @param key           - Der Schlüssel, mit dem gearbeitet wird
-     * @param chbx_selected - Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
+     * @param realEnigma - Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
      * @param decrypt       - Gibt an, ob ver- oder entschlüsselt werden soll
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
-    public void btnOkClicked(String text, String key, boolean chbx_selected, boolean decrypt) {
+    public void btnOkClicked(String text, String key, boolean realEnigma, boolean decrypt) {
         text = text.toUpperCase();
         startingTime = System.currentTimeMillis();
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + startingTime);
 
-        if (chbx_selected && !decrypt) {
+        if (realEnigma && !decrypt) {
             text = Util.prepareStringForReligma(text);
         }
         FileHandler.getFileHandler().setKey(key);

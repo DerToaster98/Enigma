@@ -55,6 +55,7 @@ public class GUI {
     private final JButton BTN_CREATE_KEY = new JButton("Schlüssel erzeugen");
 
     private final JCheckBox CHBX_REAL_ENIGMA = new JCheckBox("Simuliere echte Enigma");
+    private final JCheckBox CHBX_TOGGLE_LOGGING = new JCheckBox("Logging deaktivieren");
 
     private final ButtonGroup BUTTON_GROUP = new ButtonGroup();
     private final JRadioButton RDBTN_DECRYPT = new JRadioButton("Entschlüsseln");
@@ -95,7 +96,7 @@ public class GUI {
         initLabels();
         initTextfields();
         initButtons();
-        initCheckBox();
+        initCheckBoxes();
         initRadioButtons();
         initProgressBar();
         initTextArea();
@@ -255,13 +256,20 @@ public class GUI {
      * Komponenten:\n
      * - CHBX_REAL_ENIGMA:  CheckBox\n
      */
-    private void initCheckBox() {
+    private void initCheckBoxes() {
         CHBX_REAL_ENIGMA.setBounds(WINDOW_WIDTH - 300, 140, 270, COMPONENT_HEIGHT);
         CHBX_REAL_ENIGMA.setContentAreaFilled(false);
         CHBX_REAL_ENIGMA.setFont(FONT);
         CHBX_REAL_ENIGMA.setForeground(Color.WHITE);
 
         addComponent(CHBX_REAL_ENIGMA);
+
+        CHBX_TOGGLE_LOGGING.setBounds(WINDOW_WIDTH - 300, 180, 270, COMPONENT_HEIGHT);
+        CHBX_TOGGLE_LOGGING.setContentAreaFilled(false);
+        CHBX_TOGGLE_LOGGING.setFont(FONT);
+        CHBX_TOGGLE_LOGGING.setForeground(Color.WHITE);
+
+        addComponent(CHBX_TOGGLE_LOGGING);
     }
 
     /**
@@ -413,6 +421,7 @@ public class GUI {
         }
         BTN_CANCEL.setText("Cancel");
         BTN_START.setText("O K");
+        Log.getLogger().setLoggingDisabled(false);
         setGUIElementsEnabled(true);
         TF_TEXT.setText("");
         TF_KEY.setText("");
@@ -458,6 +467,11 @@ public class GUI {
             } else {
                 PROGRESSBAR.setString("Entschlüsselung läuft...");
                 FileHandler.getFileHandler().setMetaData(0, "Typ: Entschlüsselung");
+            }
+            //kann das Logging ausschalten
+            if (CHBX_TOGGLE_LOGGING.isSelected()){
+                Log.getLogger().w(getClass().getName()+".setLoggingDisabled","LOGGING WURDE DEAKTIVIERT - ES WERDEN KEINE WEITEREN LOGS GESCHRIEBEN");
+                Log.getLogger().setLoggingDisabled(CHBX_TOGGLE_LOGGING.isSelected());
             }
             main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected(), RDBTN_DECRYPT.isSelected());
 

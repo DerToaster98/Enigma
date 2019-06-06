@@ -13,6 +13,7 @@ public class Log {
 
     //private Logger Instanz
     private static Log logger;
+    private boolean loggingDiasbled = false;
 
     /**
      * @brief Privater Konstruktor, zum Erzeugen eines Singelton Objektes
@@ -23,6 +24,7 @@ public class Log {
     private Log() {
         FileHandler.getFileHandler();
     }
+
     //@formatter:off
 
     /**
@@ -42,13 +44,15 @@ public class Log {
      */
     //@formatter:on
     public void i(String class_Method_Name, String info) {
-        checkLogFile();
-        if (!class_Method_Name.equals("")) {
-            String log = Util.resolveLogString(class_Method_Name, info, "INFO");
-            FileHandler.getFileHandler().writeLog(log + ".");
-        } else if (info.equals("BLANK_LINE")) FileHandler.getFileHandler().writeLog("");
-        else if (info.equals("LINE"))
-            FileHandler.getFileHandler().writeLog("--------------------------------------------------------------------------------------------------------------------------");
+        if (!loggingDiasbled) {
+            checkLogFile();
+            if (!class_Method_Name.equals("")) {
+                String log = Util.resolveLogString(class_Method_Name, info, "INFO");
+                FileHandler.getFileHandler().writeLog(log + ".");
+            } else if (info.equals("BLANK_LINE")) FileHandler.getFileHandler().writeLog("");
+            else if (info.equals("LINE"))
+                FileHandler.getFileHandler().writeLog("--------------------------------------------------------------------------------------------------------------------------");
+        }
     }
 
     /**
@@ -65,9 +69,11 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().w(getClass().getName()+ ".methodName", "warning");
      */
     public void w(String class_Method_Name, String warning) {
-        checkLogFile();
-        String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
-        FileHandler.getFileHandler().writeLog(log + "!");
+        if (!loggingDiasbled) {
+            checkLogFile();
+            String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
+            FileHandler.getFileHandler().writeLog(log + "!");
+        }
     }
 
     /**
@@ -82,9 +88,11 @@ public class Log {
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().e(getClass().getName()+ ".methodName", "warning");
      */
     public void e(String class_Method_Name, String error) {
-        checkLogFile();
-        String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
-        FileHandler.getFileHandler().writeLog(log + "!");
+        if (!loggingDiasbled) {
+            checkLogFile();
+            String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
+            FileHandler.getFileHandler().writeLog(log + "!");
+        }
     }
 
     /**
@@ -110,4 +118,11 @@ public class Log {
         return logger;
     }
 
+    /**
+     * @param isLoggingDisabled - Zeigt, ob das Logging deaktiviert werden soll
+     * @brief Methode, die das Logging deaktivieren kann
+     */
+    public void setLoggingDisabled(boolean isLoggingDisabled) {
+        loggingDiasbled = isLoggingDisabled;
+    }
 }
