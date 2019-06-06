@@ -33,7 +33,7 @@ public class Mill {
                 rotateMill();
             }
         }
-        Log.getLogger().i(getClass().getName() +".Mill", "Objekt erstellt");
+        Log.getLogger().i(getClass().getName() + ".Mill", "Objekt erstellt");
     }
 
     /**
@@ -59,9 +59,9 @@ public class Mill {
      * @brief Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, boolean wasInReturnMill) {
-    	//Wenn der Buchstabe noch nicht in der UKW war: Index des Buchstaben aus dem ORIGINAL Alphabet holen und in eigenem Alphabet Buchstaben bei diesem Index zurückgeben
-    	//Wenn der Bustabe bereits in der UKW war: Index des Buchstaben im EIGENEN Alphabet holen und in original Alphabet Buchstaben an Index zurückgeben
-    	
+        //Wenn der Buchstabe noch nicht in der UKW war: Index des Buchstaben aus dem ORIGINAL Alphabet holen und in eigenem Alphabet Buchstaben bei diesem Index zurückgeben
+        //Wenn der Bustabe bereits in der UKW war: Index des Buchstaben im EIGENEN Alphabet holen und in original Alphabet Buchstaben an Index zurückgeben
+
         int posOfC = Util.getIndexOfCharInAlphabet(c, wasInReturnMill ? this.alphabet.clone() : EAlphabet.getAlphabet());
 
         if (posOfC >= 0) {

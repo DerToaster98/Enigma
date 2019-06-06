@@ -147,7 +147,7 @@ public class FileHandler {
             jr = new JsonReader(new FileReader(f));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            Log.getLogger().e(getClass().getName() +".inputFromFile", "Fehler beim Lesen der .enigma Datei " + f.getAbsolutePath());
+            Log.getLogger().e(getClass().getName() + ".inputFromFile", "Fehler beim Lesen der .enigma Datei " + f.getAbsolutePath());
         }
         JsonObject jO = gson.fromJson(jr, JsonObject.class);
 
@@ -214,9 +214,13 @@ public class FileHandler {
             return false;
         }
     }
-    
+
+    /**
+     * @brief Methode zum zurückgeben des momentanen Keys
+     * @return momentaner Key
+     */
     public String getKey() {
-    	return this.key;
+        return this.key;
     }
 
 

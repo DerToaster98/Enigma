@@ -13,8 +13,8 @@ public class Algorithm {
     private EnigmaConfig conf;
 
     /**
-     * @brief Konstruktor des Algorithmus
      * @param controller - Instanz des AlgorithmControllers, welche die Steuerung übernimmt
+     * @brief Konstruktor des Algorithmus
      */
     public Algorithm(EnigmaConfig eConf) {
         conf = eConf;

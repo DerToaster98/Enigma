@@ -218,7 +218,7 @@ public class Util {
             }
         }
 
-        Log.getLogger().w(Util.class.getName()+"isKeyValid","Steckbretteingabe ist ungültig");
+        Log.getLogger().w(Util.class.getName() + "isKeyValid", "Steckbretteingabe ist ungültig");
         return false;
     }
 
@@ -273,7 +273,7 @@ public class Util {
         if (c.length == 3) {
             return inAlphabetKey(c[0], false) && inAlphabetKey(c[1], false) && inAlphabetKey(c[2], false);
         }
-        Log.getLogger().w(Util.class.getName()+"isKeyValid","Walzenpositionen im Schüssek ungültig");
+        Log.getLogger().w(Util.class.getName() + "isKeyValid", "Walzenpositionen im Schüssek ungültig");
         return false;
     }
 
@@ -305,8 +305,8 @@ public class Util {
             }
             return true;
         }
-        
-        Log.getLogger().w(Util.class.getName()+"isKeyValid","Walzenangaben im Schlüssel sind ungültig");
+
+        Log.getLogger().w(Util.class.getName() + "isKeyValid", "Walzenangaben im Schlüssel sind ungültig");
         return false;
     }
 
@@ -318,23 +318,23 @@ public class Util {
      * @author Lisa Binkert
      */
     private static boolean checkUKW(String u) {
-    	if(u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C")) {
-    		return true;
-    	}
-    	Log.getLogger().w(Util.class.getName()+"isKeyValid","Umkehrwalzenangaben im Schlüssel sind ungültig");
+        if (u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C")) {
+            return true;
+        }
+        Log.getLogger().w(Util.class.getName() + "isKeyValid", "Umkehrwalzenangaben im Schlüssel sind ungültig");
         return false;
     }
 
-    
+
     public static void resetPlugBoardList() {
         Util.plugboard = null;
         Util.plugboard = new ArrayList<>();
     }
 
     /**
-     * @author Oliver Seiler
      * @param originalText - Der originale Text, der verschlüsselt werden soll
      * @return Liefert den bearbeiteten Text zurück
+     * @author Oliver Seiler
      * @brief Methode, welche einen Text auf die Verschlüsselung vorbereitet
      * @details Sämtliche 'CH' und 'CK' werden durch ein 'Q' ersetzt und der Text wird in 5er Gruppen unterteilt
      */

@@ -24,19 +24,20 @@ public class Log {
         FileHandler.getFileHandler();
     }
     //@formatter:off
+
     /**
      * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
-     * @param info - Info Nachricht, die vom Logger geloggt werden soll
+     * @param info              - Info Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von <b>Info-Logs</b>
      * @details Erstellt über die .dll einen Info-Log der über Vorgänge innerhalb der Anwendung informieren soll.\n
      * Darunter zählen:\n
-     *  - generelle Infos über die Programmroutinen, wie zum Beispiel:\n
-     *      - Routine gestartet\n
-     *      - Routine erfolgreich beendet\n
-     *      - Routine startet Subroutine\n
-     *      - ...\n
-     *  - Infos zu Programmabläufen\n
-     *  - ...\n
+     * - generelle Infos über die Programmroutinen, wie zum Beispiel:\n
+     * - Routine gestartet\n
+     * - Routine erfolgreich beendet\n
+     * - Routine startet Subroutine\n
+     * - ...\n
+     * - Infos zu Programmabläufen\n
+     * - ...\n
      * Der Aufruf erfolgt immer über die static getLogger() Methode: Log.getLogger().i(getClass().getName()+ ".methodName", "warning");
      */
     //@formatter:on

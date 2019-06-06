@@ -5,8 +5,6 @@ import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
 
-import javax.swing.*;
-
 /**
  * @author Alle
  * @brief Dies ist die Hauptklasse und "Instanz" des Programms
@@ -37,11 +35,11 @@ public class Main {
      * @param text          - Der zu ver/entschlüsselnde Text
      * @param key           - Der Schlüssel, mit dem gearbeitet wird
      * @param chbx_selected - Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll
-     * @param decrypt - Gibt an, ob ver- oder entschlüsselt werden soll
+     * @param decrypt       - Gibt an, ob ver- oder entschlüsselt werden soll
      * @brief Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird
      */
     public void btnOkClicked(String text, String key, boolean chbx_selected, boolean decrypt) {
-
+        text = text.toUpperCase();
         startingTime = System.currentTimeMillis();
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "Prozess gestartet um " + startingTime);
 
@@ -51,13 +49,30 @@ public class Main {
         FileHandler.getFileHandler().setKey(key);
 
         FileHandler.getFileHandler().setClearText(text);
+
+        // setzt den Maximalen Wert der ProgressBar in Abhängigkeit des Textes
+        window.setProgressBarMax(text.length());
+
         startProcessing(this, text, key);
-
-
     }
 
+    /**
+     * @param m    - Main Instanz
+     * @param text - zu ver- oder entschlüsselnder Text
+     * @param key  - benutzter Schlüssel
+     * @brief Methode, die den Algorithmus in einem neuen Thread startet
+     */
     private void startProcessing(Main m, String text, String key) {
-        SwingUtilities.invokeLater(() -> new AlgorithmController(m, key).crypt(text));
+        Thread t = new Thread(() -> new AlgorithmController(m, key).crypt(text));
+        t.start();
+    }
+
+    /**
+     * @param currVal - zu setzender Wert
+     * @brief Methode zum updaten der ProgressBar
+     */
+    public void updateProgressBar(int currVal) {
+        window.updateProgressBar(currVal);
     }
 
     /**

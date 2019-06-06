@@ -325,7 +325,6 @@ public class Enums {
     }
 
     /**
-     * 
      * @author Oliver Seiler
      * @brief Enumeration, welche den Zweck hat, bestimmte Sonderzeichen zu identifizieren
      */
@@ -342,25 +341,25 @@ public class Enums {
         private char assignedChar;
 
         /**
-         * @brief Konstruktor der Enumeration
          * @param character - Der char des Sonderzeichens
+         * @brief Konstruktor der Enumeration
          */
         EExtraCharacters(char character) {
             this.assignedChar = character;
         }
 
         /**
-         * @brief Methode, um an den dem Sonderzeichen zugewiesenen char zu gelangen
          * @return Liefert den char des Sonderzeichens zurück
+         * @brief Methode, um an den dem Sonderzeichen zugewiesenen char zu gelangen
          */
         public char getAssignedChar() {
             return this.assignedChar;
         }
 
         /**
-         * @brief Methode um zu überprüfen, ob es sich bei einem char um ein Sonderzeichen handelt
          * @param c - Zeichen welches überprüft werden soll
          * @return Liefert zurück, ob der char ein Sonderzeichen ist (true: char ist ein Sonderzeichen)
+         * @brief Methode um zu überprüfen, ob es sich bei einem char um ein Sonderzeichen handelt
          */
         public static boolean isExtraCharacter(char c) {
             for (EExtraCharacters chara : values()) {

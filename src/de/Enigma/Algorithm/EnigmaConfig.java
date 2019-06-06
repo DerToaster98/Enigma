@@ -1,10 +1,10 @@
 package de.Enigma.Algorithm;
 
-import java.util.HashMap;
-
 import de.Enigma.Core.Log;
 import de.Enigma.Util.Enums.EMill;
 import de.Enigma.Util.Enums.EMillAlphabet;
+
+import java.util.HashMap;
 
 /**
  * @author Oliver Seiler
@@ -21,8 +21,8 @@ public class EnigmaConfig {
 
 
     /**
-     * @brief Konstruktor, welcher die Instanzen der Walzen und das Steckbrett anhand des Schlüssels erzeugt
      * @param key - Schlüssel, welcher für die Einstellung der Walzen und des Steckbretts nötig ist
+     * @brief Konstruktor, welcher die Instanzen der Walzen und das Steckbrett anhand des Schlüssels erzeugt
      */
     public EnigmaConfig(String key) {
         this.key = key;

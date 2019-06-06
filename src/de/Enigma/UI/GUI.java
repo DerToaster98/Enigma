@@ -37,7 +37,7 @@ public class GUI {
 
     //GUI elemente
     private final JFrame FRM_ENIGMA_GUI = new JFrame("Enigma V2");
-    
+
     private final Image BACKGROUND_IMG = new ImageIcon(GUI.class.getResource("/res/bg_enigma.png")).getImage().getScaledInstance(WINDOW_WIDTH, WINDOW_HEIGHT, Image.SCALE_SMOOTH);
 
     private final HintTextField TF_TEXT = new HintTextField("TEXT", "Zu ver- / entschlüsselnden Text eingeben", FONT);
@@ -368,11 +368,35 @@ public class GUI {
     }
 
     /**
-     * @brief HelperMethode, die das Hinzufügen einer Komponente in das Frame erleichtert
      * @param component - Komponente, welche hinzugefügt werden soll
+     * @brief HelperMethode, die das Hinzufügen einer Komponente in das Frame erleichtert
      */
     private void addComponent(Component component) {
         FRM_ENIGMA_GUI.getContentPane().add(component);
+    }
+
+    /**
+     * @param currVal - zu setzender Wert
+     * @brief Methode zum Updaten der ProgressBar
+     * @details Realisiert durch ein Runnable, das den Main Thread nicht behindert.
+     */
+    public void updateProgressBar(int currVal) {
+        SwingUtilities.invokeLater(() -> {
+            PROGRESSBAR.setValue(currVal);
+            if (RDBTN_ENCRYPT.isSelected()) {
+                PROGRESSBAR.setString("Verschlüsselung läuft: " + currVal + "/" + PROGRESSBAR.getMaximum());
+            } else {
+                PROGRESSBAR.setString("Entschlüsselung läuft: " + currVal + "/" + PROGRESSBAR.getMaximum());
+            }
+        });
+    }
+
+    /**
+     * @param maxVal - maximaler Wert der ProgressBar
+     * @brief Methode zum Setzen des maximalen Werts der ProgressBar
+     */
+    public void setProgressBarMax(int maxVal) {
+        PROGRESSBAR.setMaximum(maxVal);
     }
 
     /**
@@ -397,7 +421,6 @@ public class GUI {
         RDBTN_ENCRYPT.setSelected(true);
         RDBTN_DECRYPT.setSelected(false);
         BTN_START.setEnabled(false);
-        PROGRESSBAR.setIndeterminate(false);
         PROGRESSBAR.setValue(0);
         PROGRESSBAR.setString("");
 
@@ -427,7 +450,6 @@ public class GUI {
         //duale  Funktion des O K / Again Buttons
         if (BTN_START.getText().equals("O K")) {
             setGUIElementsEnabled(false);
-            PROGRESSBAR.setIndeterminate(true);
             PROGRESSBAR.setStringPainted(true);
 
             if (RDBTN_ENCRYPT.isSelected()) {
@@ -486,7 +508,7 @@ public class GUI {
         if (RDBTN_ENCRYPT.isSelected()) PROGRESSBAR.setString("Verschlüsselung abgeschlossen");
         else PROGRESSBAR.setString("Entschlüsselung abgeschlossen");
         PROGRESSBAR.setIndeterminate(false);
-        PROGRESSBAR.setValue(100);
+        PROGRESSBAR.setValue(PROGRESSBAR.getMaximum());
         BTN_CANCEL.setText("Again");
         BTN_START.setEnabled(true);
         BTN_START.setText("Datei Anzeigen");
@@ -495,8 +517,8 @@ public class GUI {
     }
 
     /**
-     * @brief Methode, die die GUI Elemente deaktiviert
      * @param enabled - Ob die Komponenten aktiviert oder deaktiviert werden sollen
+     * @brief Methode, die die GUI Elemente deaktiviert
      * @details Es werden nur die Elemente deaktiviert, die der Nutzer während des Prozesses nicht verändern können soll.
      */
     private void setGUIElementsEnabled(boolean enabled) {

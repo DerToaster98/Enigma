@@ -90,8 +90,8 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
     }
 
     /**
-     * @brief Methode, die den Text zurückgibt
      * @return Liefert den eingegebenen Text zurück
+     * @brief Methode, die den Text zurückgibt
      */
     @Override
     public String getText() {
@@ -169,8 +169,8 @@ class HintTextField extends JTextField implements FocusListener, KeyListener {
 
     /**
      * @param e - KeyEvent Parameter
-     * @brief Methode, die checkt, ob ein Zeichen erlaubt ist, oder nicht
      * @return Gibt zurück, ob der Input gültig ist
+     * @brief Methode, die checkt, ob ein Zeichen erlaubt ist, oder nicht
      */
     private boolean checkValidInput(KeyEvent e) {
         char c = Character.toUpperCase(e.getKeyChar());
