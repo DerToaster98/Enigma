@@ -122,14 +122,15 @@ Statische Paketfunktionen</h2></td></tr>
 <tr class="memitem:aa07ea22e3618085863dc6b883daf2238"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#aa07ea22e3618085863dc6b883daf2238">getTimeString</a> ()</td></tr>
 <tr class="memdesc:aa07ea22e3618085863dc6b883daf2238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Erzeugen eines Date String.  <a href="#aa07ea22e3618085863dc6b883daf2238">Mehr ...</a><br /></td></tr>
 <tr class="separator:aa07ea22e3618085863dc6b883daf2238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8412620e7719dc1717e449fea1ee46"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#a8c8412620e7719dc1717e449fea1ee46">getTimeStringMillis</a> ()</td></tr>
-<tr class="separator:a8c8412620e7719dc1717e449fea1ee46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cfff2bfb536aa0f78296fa64039ae4"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#af7cfff2bfb536aa0f78296fa64039ae4">resolvetoJSON</a> (String[] s)</td></tr>
 <tr class="memdesc:af7cfff2bfb536aa0f78296fa64039ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Konvertieren eines Strings zu einem JSON String.  <a href="#af7cfff2bfb536aa0f78296fa64039ae4">Mehr ...</a><br /></td></tr>
 <tr class="separator:af7cfff2bfb536aa0f78296fa64039ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Private, statische Methoden</h2></td></tr>
+<tr class="memitem:a8c8412620e7719dc1717e449fea1ee46"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#a8c8412620e7719dc1717e449fea1ee46">getTimeStringMillis</a> ()</td></tr>
+<tr class="memdesc:a8c8412620e7719dc1717e449fea1ee46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Erzeugen eines Date String mit Millisekunden.  <a href="#a8c8412620e7719dc1717e449fea1ee46">Mehr ...</a><br /></td></tr>
+<tr class="separator:a8c8412620e7719dc1717e449fea1ee46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051e3cb961244e23aa6d1b4467df0d27"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_util.html#a051e3cb961244e23aa6d1b4467df0d27">checkLetterKey</a> (String txt)</td></tr>
 <tr class="memdesc:a051e3cb961244e23aa6d1b4467df0d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überprüft die Steckbretteingaben (vierter Teil bis Ende von Key)  <a href="#a051e3cb961244e23aa6d1b4467df0d27">Mehr ...</a><br /></td></tr>
 <tr class="separator:a051e3cb961244e23aa6d1b4467df0d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -334,6 +335,7 @@ Statische, private Attribute</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>Gibt das erzeugte char-Array zurück </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Lisa Binkert </dd></dl>
 
 </div>
 </div>
@@ -380,7 +382,7 @@ Statische, private Attribute</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>Liefert den Index des gescuhten Buchstabens im Alphabet zurück; -1, wenn das Alphabet den Buchstaben nicht enthält</dd></dl>
-<p>Liefert position eines buchstaben in einem alphabet zurück !!von 0 bis 25!! Wenn &lt;0: nicht im Alphabet </p>
+<p>Liefert position eines buchstaben in einem alphabet zurück !!von 0 bis 25!! Wenn &lt;0: nicht im Alphabet </p><dl class="section author"><dt>Autor</dt><dd>Oliver Seiler </dd></dl>
 
 </div>
 </div>
@@ -409,6 +411,7 @@ Statische, private Attribute</h2></td></tr>
 
 <p>Erzeugt einen zufälligen Schlüssel. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Liefert einen zufälligen Schlüssel zurück </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Oliver Seiler </dd></dl>
 
 </div>
 </div>
@@ -437,7 +440,7 @@ Statische, private Attribute</h2></td></tr>
 
 <p>Methode zum Erzeugen eines Date String. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>String der das Datum enthält. Format: 2016-11-16 12.08.43</dd></dl>
-<p>Dieser String soll als Ordnername für die Dateien, die vom <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html" title="FileHandler, der die Funktionalitäten mit den Dateien inne hat. ">FileHandler</a> erzeugt werden genutzt werden. </p>
+<p>Dieser String soll als Ordnername für die Dateien, die vom <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html" title="FileHandler, der die Funktionalitäten mit den Dateien inne hat. ">FileHandler</a> erzeugt werden genutzt werden. </p><dl class="section author"><dt>Autor</dt><dd>Nikolai Klatt </dd></dl>
 
 </div>
 </div>
@@ -459,10 +462,14 @@ Statische, private Attribute</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Methode zum Erzeugen eines Date String mit Millisekunden. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>String der das Datum enthält. Format: 2016-11-16 12.08.43.123</dd></dl>
+<p>Dieser String soll als Log-Timestamp </p><dl class="section author"><dt>Autor</dt><dd>Nikolai Klatt </dd></dl>
 
 </div>
 </div>
@@ -701,6 +708,7 @@ Statische, private Attribute</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>Richtig formatierter Log-String </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Nikolai Klatt </dd></dl>
 
 </div>
 </div>
@@ -736,6 +744,7 @@ Statische, private Attribute</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>JSON String </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Nikolai Klatt </dd></dl>
 
 </div>
 </div>
