@@ -1,9 +1,7 @@
 var enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet =
 [
     [ "EAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a53563139df6bbf6ed8e642018a1d6baf", null ],
-    [ "getAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#aebee015859ad2b6090c8ccf06fcdcd28", null ],
     [ "getAsChar", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#ab8be59c4d6bb5263147572911f75c5c5", null ],
-    [ "getFromIndex", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#ace27f61bd32f821d82345654b3b45bf8", null ],
     [ "getIndex", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a9e9983168faaf9bb24090c3870ebbfa4", null ],
     [ "A", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#aadc37deda02b68e773b3679972c4ec87", null ],
     [ "B", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#a4d00ed4b20b441ae95186a6a5ab152aa", null ],

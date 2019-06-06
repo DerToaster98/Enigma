@@ -12,6 +12,5 @@ var classde_1_1_enigma_1_1_u_i_1_1_hint_text_field =
     [ "setHint", "classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#abc98f78850c235d6b526da3bcbebda51", null ],
     [ "setShowingHint", "classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#afaa325026b47b581e9c5df17a53e2b10", null ],
     [ "hint", "classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#ac0dd0c44ba858774261c214e6529defa", null ],
-    [ "serialVersionUID", "classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#a8c95b21acfc83114ef195aa83a6ee30f", null ],
     [ "showingHint", "classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#a187cee2b48b82ea1d72f524e3a25b5b5", null ]
 ];

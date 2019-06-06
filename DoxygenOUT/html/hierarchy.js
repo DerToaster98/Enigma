@@ -6,7 +6,6 @@ var hierarchy =
     [ "de.Enigma.Util.Enums.EExtraCharacters", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html", null ],
     [ "de.Enigma.Util.Enums.EMill", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill.html", null ],
     [ "de.Enigma.Util.Enums.EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html", null ],
-    [ "de.Enigma.Util.Enums.EMode", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mode.html", null ],
     [ "de.Enigma.Algorithm.EnigmaConfig", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html", null ],
     [ "de.Enigma.Util.Enums", "classde_1_1_enigma_1_1_util_1_1_enums.html", null ],
     [ "de.Enigma.Util.FileHandler", "classde_1_1_enigma_1_1_util_1_1_file_handler.html", null ],

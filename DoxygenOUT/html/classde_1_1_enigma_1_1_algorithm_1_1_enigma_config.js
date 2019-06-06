@@ -6,7 +6,6 @@ var classde_1_1_enigma_1_1_algorithm_1_1_enigma_config =
     [ "encryptLetterWithPlugBoard", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#ac54dbdb475c2a4c69c0a02f1a09843f8", null ],
     [ "getKey", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#acf5ee30095ca4cb60ea28b4c04991fd4", null ],
     [ "getMill", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a4ef61a1e8c9052a2c9757dd8aba3f2a6", null ],
-    [ "getPreviousAlphabet", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#afe7e1d4690600930be2c033ac50240df", null ],
     [ "key", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a834f412111b86a8445c16b0e5c7ec83e", null ],
     [ "letterChanger", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a079f858d642eb31fc426108b24bd3cd7", null ],
     [ "mills", "classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#ab90f8404b088c513f4bba20e03d9a453", null ],

@@ -367,6 +367,7 @@ public class GUI {
 
     /**
      * @brief HelperMethode, die das Hinzufügen einer Komponente in das Frame erleichtert
+     * @param component - Komponente, welche hinzugefügt werden soll
      */
     private void addComponent(Component component) {
         FRM_ENIGMA_GUI.getContentPane().add(component);
@@ -494,6 +495,7 @@ public class GUI {
 
     /**
      * @brief Methode, die die GUI Elemente deaktiviert
+     * @param enabled - Ob die Komponenten aktiviert oder deaktiviert werden sollen
      * @details Es werden nur die Elemente deaktiviert, die der Nutzer während des Prozesses nicht verändern können soll.
      */
     private void setGUIElementsEnabled(boolean enabled) {

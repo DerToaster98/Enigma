@@ -96,9 +96,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a10614d152abcf22409499bd10e9c9681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a10614d152abcf22409499bd10e9c9681">btnOkClicked</a> (String text, String key, boolean chbx_selected)</td></tr>
-<tr class="memdesc:a10614d152abcf22409499bd10e9c9681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird.  <a href="#a10614d152abcf22409499bd10e9c9681">Mehr ...</a><br /></td></tr>
-<tr class="separator:a10614d152abcf22409499bd10e9c9681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ff2a3a9d4ac00fea081b2cec48153c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#aa5ff2a3a9d4ac00fea081b2cec48153c">btnOkClicked</a> (String text, String key, boolean chbx_selected, boolean decrypt)</td></tr>
+<tr class="memdesc:aa5ff2a3a9d4ac00fea081b2cec48153c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird.  <a href="#aa5ff2a3a9d4ac00fea081b2cec48153c">Mehr ...</a><br /></td></tr>
+<tr class="separator:aa5ff2a3a9d4ac00fea081b2cec48153c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93767098d207088b4b24aa747f748452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452">onFinished</a> ()</td></tr>
 <tr class="memdesc:a93767098d207088b4b24aa747f748452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt.  <a href="#a93767098d207088b4b24aa747f748452">Mehr ...</a><br /></td></tr>
 <tr class="separator:a93767098d207088b4b24aa747f748452"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,8 +158,8 @@ Private Attribute</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="a10614d152abcf22409499bd10e9c9681"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10614d152abcf22409499bd10e9c9681">&#9670;&nbsp;</a></span>btnOkClicked()</h2>
+<a id="aa5ff2a3a9d4ac00fea081b2cec48153c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ff2a3a9d4ac00fea081b2cec48153c">&#9670;&nbsp;</a></span>btnOkClicked()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +180,13 @@ Private Attribute</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>chbx_selected</em>&#160;</td>
+          <td class="paramname"><em>chbx_selected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>decrypt</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -196,6 +202,7 @@ Private Attribute</h2></td></tr>
     <tr><td class="paramname">text</td><td>- Der zu ver/entschlüsselnde Text </td></tr>
     <tr><td class="paramname">key</td><td>- Der Schlüssel, mit dem gearbeitet wird </td></tr>
     <tr><td class="paramname">chbx_selected</td><td>- Zeigt an, ob der Text wie bei der echten <a class="el" href="namespacede_1_1_enigma.html">Enigma</a> behandelt werden soll </td></tr>
+    <tr><td class="paramname">decrypt</td><td>- Gibt an, ob ver- oder entschlüsselt werden soll </td></tr>
   </table>
   </dd>
 </dl>

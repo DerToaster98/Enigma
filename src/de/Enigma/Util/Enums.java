@@ -6,24 +6,6 @@ package de.Enigma.Util;
  */
 public class Enums {
 
-    //enum EMode;
-
-    /**
-     * @author Oliver Seiler
-     * @brief Benutzt für die Übergabe des gewählten Modus der Enigma
-     */
-    public enum EMode {
-        /**
-         * @brief Modus zum Entschlüsseln
-         */
-        ENCRYPT,
-        /**
-         * @brief Modus zum Verschlüsseln
-         */
-        DECRYPT,
-        ;
-    }
-
     //enum EAlphabet;
 
     /**
@@ -141,8 +123,8 @@ public class Enums {
         private int index;
 
         /**
-         * @param c Der Buchstabe an sich
-         * @param i Die Position dieses Buchstabens im Alphabet
+         * @param c - Der Buchstabe an sich
+         * @param i - Die Position dieses Buchstabens im Alphabet
          * @brief Eintrag des normalen Alphabets, enthält den 'char' Wert und die Position des Eintrags im Alphabet
          */
         EAlphabet(char c, int i) {
@@ -167,7 +149,7 @@ public class Enums {
         }
 
         /**
-         * @param i Repräsentiert die Position (0-25) im Alphabet
+         * @param i - Repräsentiert die Position (0-25) im Alphabet
          * @return Gibt den Buchstaben an Position i im normalen Alphabet aus
          * @brief Liefert den passenden Eintrag für die gewünschte Position im Alphabet
          */
@@ -275,9 +257,9 @@ public class Enums {
         private char turnMarker;
 
         /**
-         * @param millID     Repräsentiert den "Identifier" der Walze (z.B.: I,II,A,....)
-         * @param millPhabet Repräsentiert das Alphabet, welches die Walze verwendet
-         * @param turnMarker Repräsentiert die Stelle, an der die Übertragskerbe steht
+         * @param millID     - Repräsentiert den "Identifier" der Walze (z.B.: I,II,A,....)
+         * @param millPhabet - Repräsentiert das Alphabet, welches die Walze verwendet
+         * @param turnMarker - Repräsentiert die Stelle, an der die Übertragskerbe steht
          * @brief Repräsentiert die "Eigenschaften" einer Walze der Enigma I
          */
         EMillAlphabet(String millID, char[] millPhabet, char turnMarker) {
@@ -311,7 +293,7 @@ public class Enums {
         }
 
         /**
-         * @param id Die ID der Walze
+         * @param id - Die ID der Walze
          * @return Liefert die zur ID gehörende Walzeneinstellung zurück
          * @brief Methode, um Walzeneinstellung aus ihrer ID zu bekommen
          */
@@ -342,6 +324,11 @@ public class Enums {
         }
     }
 
+    /**
+     * 
+     * @author Oliver Seiler
+     * @brief Enumeration, welche den Zweck hat, bestimmte Sonderzeichen zu identifizieren
+     */
     public enum EExtraCharacters {
         COMMA(','),
         SEMICOLON(';'),
@@ -355,14 +342,27 @@ public class Enums {
 
         private char assignedChar;
 
+        /**
+         * @brief Konstruktor der Enumeration
+         * @param character - Der char des Sonderzeichens
+         */
         EExtraCharacters(char character) {
             this.assignedChar = character;
         }
 
+        /**
+         * @brief Methode, um an den dem Sonderzeichen zugewiesenen char zu gelangen
+         * @return Liefert den char des Sonderzeichens zurück
+         */
         public char getAssignedChar() {
             return this.assignedChar;
         }
 
+        /**
+         * @brief Methode um zu überprüfen, ob es sich bei einem char um ein Sonderzeichen handelt
+         * @param c - Zeichen welches überprüft werden soll
+         * @return Liefert zurück, ob der char ein Sonderzeichen ist (true: char ist ein Sonderzeichen)
+         */
         public static boolean isExtraCharacter(char c) {
             for (EExtraCharacters chara : values()) {
                 if (chara.getAssignedChar() == c) {

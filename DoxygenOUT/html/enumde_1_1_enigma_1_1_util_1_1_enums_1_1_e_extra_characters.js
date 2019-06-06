@@ -2,7 +2,6 @@ var enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters =
 [
     [ "EExtraCharacters", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#a22a16a6930d8841b57b2930317222cb0", null ],
     [ "getAssignedChar", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#a6aa0fc9ed0ce5a7f3a1049bed22b9cc3", null ],
-    [ "isExtraCharacter", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#ade3186f380a64297b228e55c56f44f36", null ],
     [ "assignedChar", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#ab8f9f5fd6d05d726e78fe2543ba181c5", null ],
     [ "AT", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#ae15070364800ca15c9feb62a98dbe46e", null ],
     [ "COMMA", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#a910915e0e2d606a92fdf62815e78de13", null ],

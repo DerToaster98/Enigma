@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m',['M',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#aa05876adf2d8e6764a39678b3768a6fa',1,'de::Enigma::Util::Enums::EAlphabet']]],
-  ['main',['Main',['../classde_1_1_enigma_1_1_core_1_1_main.html',1,'de.Enigma.Core.Main'],['../classde_1_1_enigma_1_1_core_1_1_main.html#ab9f86cc62d7b17d8a9e877f2aff50293',1,'de.Enigma.Core.Main.Main()'],['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html#a34c40755b3285ed8949567e742ee268f',1,'de.Enigma.Algorithm.AlgorithmController.main()'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a51bb5015d7beafaef25375c7dd7526b0',1,'de.Enigma.UI.GUI.main()'],['../classde_1_1_enigma_1_1_core_1_1_main.html#a4559f91709b046a087e2a20cce660464',1,'de.Enigma.Core.Main.main()']]],
+  ['main',['Main',['../classde_1_1_enigma_1_1_core_1_1_main.html',1,'de.Enigma.Core.Main'],['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html#a34c40755b3285ed8949567e742ee268f',1,'de.Enigma.Algorithm.AlgorithmController.main()'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a51bb5015d7beafaef25375c7dd7526b0',1,'de.Enigma.UI.GUI.main()'],['../classde_1_1_enigma_1_1_core_1_1_main.html#a4559f91709b046a087e2a20cce660464',1,'de.Enigma.Core.Main.main(String[] args)'],['../classde_1_1_enigma_1_1_core_1_1_main.html#ab9f86cc62d7b17d8a9e877f2aff50293',1,'de.Enigma.Core.Main.Main()']]],
   ['main_2ejava',['Main.java',['../_main_8java.html',1,'']]],
   ['makefiles',['makeFiles',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8b36933dce9fcc1d9103fcb7f7f598ff',1,'de::Enigma::Util::FileHandler']]],
   ['makelogfile',['makeLogFile',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#aa42ba993bf4c4e4dba3d19ee8ab26eef',1,'de::Enigma::Util::FileHandler']]],

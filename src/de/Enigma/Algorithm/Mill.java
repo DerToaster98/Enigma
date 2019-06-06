@@ -18,9 +18,9 @@ public class Mill {
 
 
     /**
-     * @param startPos Der Buchstabe, welcher über den Schlüssel als Start Buchstabe angegeben wird
-     * @param alphabet Das Alphabet, welches die Walze nutzt
-     * @brief Walzenklasse, übergeben wird das zugehörige Alphabet und die Startstellung
+     * @param startPos - Der Buchstabe, welcher über den Schlüssel als Start Buchstabe angegeben wird
+     * @param alphabet - Das Alphabet, welches die Walze nutzt
+     * @brief Konstruktur der Walzenklasse, übergeben wird das zugehörige Alphabet und die Startstellung
      */
     public Mill(char startPos, EMillAlphabet alphabet) {
         this.alphabet = alphabet.getAlphabet();
@@ -51,12 +51,12 @@ public class Mill {
     }
 
     /**
-     * @param c               der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
-     * @param oldAlphabet     Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde
-     * @param wasInReturnMill Gibt an, ob die Walze von vorne oder von hitnen durchlaufen wurde
-     * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben.
-     * @brief Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze.
-     * @details Methode, um einen Buchstaben zu ersetzen
+     * @param c               - Der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll
+     * @param oldAlphabet     - Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde
+     * @param wasInReturnMill - Gibt an, ob die Walze von vorne oder von hitnen durchlaufen wurde
+     * @return Gibt den verschlüsselten/ersetzten Buchstaben zurück. Wenn es hier Fehler gab, wird ein "?" zurückgegeben
+     * @details Diese Methode ersetzt einen Buchstaben durch seinen Wert auf der Walze
+     * @brief Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, char[] oldAlphabet, boolean wasInReturnMill) {
         Log.getLogger().i(getClass().getName() + ".encryptLetter", "Encrypting letter " + c + " with mill alphabet...");
@@ -85,7 +85,7 @@ public class Mill {
 
     /**
      * @return Liefert das "Alphabet" der Walze zurück -> das Alphabet, welches das normale Alphabet ersetzt
-     * @brief Liefert das "Alphabet" dieser Walze zurück.
+     * @brief Liefert das "Alphabet" dieser Walze zurück
      */
     public char[] getAlphabet() {
         return alphabet;

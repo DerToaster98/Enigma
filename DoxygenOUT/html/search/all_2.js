@@ -11,7 +11,6 @@ var searchData=
   ['checkukw',['checkUKW',['../classde_1_1_enigma_1_1_util_1_1_util.html#a9ef815ed55bc08383e761780e55df2c7',1,'de::Enigma::Util::Util']]],
   ['checkvalidinput',['checkValidInput',['../classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#ad240a77c839fb9d9354b5056273cd6e9',1,'de::Enigma::UI::HintTextField']]],
   ['cleartext',['clearText',['../classde_1_1_enigma_1_1_util_1_1_enigma_file.html#a4d6e692e02df5b5ff534df755ce3be0a',1,'de.Enigma.Util.EnigmaFile.clearText()'],['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#a14f25e412fe621bead62a927b1ab5853',1,'de.Enigma.Util.FileHandler.clearText()']]],
-  ['clog',['cLog',['../classde_1_1_enigma_1_1_core_1_1_log.html#a2204ff66a1a00a009ec61ba44d878e7b',1,'de::Enigma::Core::Log']]],
   ['comma',['COMMA',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#a910915e0e2d606a92fdf62815e78de13',1,'de::Enigma::Util::Enums::EExtraCharacters']]],
   ['component_5fdistance',['COMPONENT_DISTANCE',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ab39d6d14348cb5fa7176347e01cb85f6',1,'de::Enigma::UI::GUI']]],
   ['component_5fheight',['COMPONENT_HEIGHT',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a952b715e83fa9808d754f178992e7022',1,'de::Enigma::UI::GUI']]],

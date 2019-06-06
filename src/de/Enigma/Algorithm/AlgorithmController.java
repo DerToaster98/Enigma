@@ -4,7 +4,10 @@ import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
-
+/**
+* @brief Die Klasse steuert die Ver- und Entschlüsselung.
+* @author Lisa Binkert
+**/
 public class AlgorithmController {
 
     private String key;
@@ -14,13 +17,11 @@ public class AlgorithmController {
 
 
     /**
-     * 
-     * @param key
-     * @brief Die Klasse steuert die Ver- und Entschlüsselung.
-     * @author Lisa Binkert
-     */
+     * @brief Konstruktor des AlgorithmControllers, EnigmaConfig und Algorithm Instanz werden hier direkt mit erzeugt
+     * @param m - Instanz der Main, wird verwendet um das Ende des Vorgangs bekannt zu geben
+     * @param key - Der Schlüssel, welcher übergeben wird um die Walzen und das Steckbrett zu konfigurieren
+     **/
     public AlgorithmController(Main m, String key) {
-        // TODO Auto-generated constructor stub
         main = m;
         this.key = key;
 
@@ -38,10 +39,9 @@ public class AlgorithmController {
     }
 
     /**
-     * @param txt Text der ver- oder entschlüsselt werden soll
-     * @return
+     * @param txt - Text der ver- oder entschlüsselt werden soll
      * @brief Ver- und Entschlüsselt den Text
-     * @author Lisa Binkert
+     * @details Ver-/entschlüsselt den Text und übergibt die einzelnen Zeichen an den FileHandler
      */
     public void crypt(String txt) {
         //txt in char array umwandeln
@@ -74,17 +74,19 @@ public class AlgorithmController {
             Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
         }
     }
-    
+    /**
+     * @brief Methode, um an den momentan verwendeten Schlüssel zu kommen
+     * @return Liefert den verwendeten Schlüssel zurück
+     */
     public String getKey() {
         return key;
     }
-
+    /**
+     * @brief Methode, um an verwendete Instanz der EnigmaConfig zu gelangen
+     * @return Liefert die aktuell verwendete Instanz der EnigmaConfig zurück
+     */
     EnigmaConfig getEnigmaConfig() {
         return eConfig;
-    }
-
-    AlgorithmController getController() {
-        return this;
     }
 
 }

@@ -2,7 +2,6 @@ var enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet =
 [
     [ "EMillAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a758a01583486a28c58814f4b9655d8e2", null ],
     [ "getAlphabet", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a42738303dfbfa63d512306b1102a93cf", null ],
-    [ "getByID", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a7162214f197d3d611a171f6ba7299e16", null ],
     [ "getMillID", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a69675608ee623ace1204f2cd46483034", null ],
     [ "getTurnMarker", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58", null ],
     [ "I", "enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#af8844c7143464e031fe91ae2f65f3fef", null ],

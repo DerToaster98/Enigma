@@ -19,7 +19,7 @@ import java.util.Random;
 public class Util {
 
     /**
-     * @param message Der String, welcher in ein char-Array umgewandelt werden soll.
+     * @param message - Der String, welcher in ein char-Array umgewandelt werden soll.
      * @return Gibt das erzeugte char-Array zurück
      * @brief Methode, welche Strings, in char-Arrays umwandeln kann
      */
@@ -29,13 +29,13 @@ public class Util {
     }
 
     /**
-     * @param c        Buchstabe, von welchem der Index gesucht werden soll
-     * @param alphabet Alphabet, in dem nach dem Buchstaben gesucht werden soll
+     * @param c        - Buchstabe, von welchem der Index gesucht werden soll
+     * @param alphabet - Alphabet, in dem nach dem Buchstaben gesucht werden soll
      * @return Liefert den Index des gescuhten Buchstabens im Alphabet zurück; -1,
      * wenn das Alphabet den Buchstaben nicht enthält
      * @brief Liefert die Position eines Buchstaben in einem gegebenen Alphabet
      * @details Liefert position eines buchstaben in einem alphabet zurück !!von 0
-     * bis 20!! Wenn -1: nicht im Alphabet
+     * bis 25!! Wenn <0: nicht im Alphabet
      */
     public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
         int index = 0;
@@ -174,18 +174,17 @@ public class Util {
                     for (int i = 3; i < parts.length; i++) {
 
                         if (!checkLetterKey(parts[i])) {
-
                             return false;
                         }
 
                     }
+                    Log.getLogger().i(Util.class + ".isKeyValid", "Key (" + keyA + ") ist gültig!");
                     return true;
                 }
             }
 
         }
         return false;
-
     }
 
     /**
@@ -314,6 +313,13 @@ public class Util {
         Util.plugboard = new ArrayList<>();
     }
 
+    /**
+     * @author Oliver Seiler
+     * @param originalText - Der originale Text, der verschlüsselt werden soll
+     * @return Liefert den bearbeiteten Text zurück
+     * @brief Methode, welche einen Text auf die Verschlüsselung vorbereitet
+     * @details Sämtliche 'CH' und 'CK' werden durch ein 'Q' ersetzt und der Text wird in 5er Gruppen unterteilt
+     */
     public static String prepareStringForReligma(String originalText) {
         String tmp = originalText.replaceAll(" ", "");
 

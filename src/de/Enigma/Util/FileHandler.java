@@ -134,7 +134,7 @@ public class FileHandler {
 
     /**
      * @param f   - Datei, aus der gelesen werden soll
-     * @param key Value, der gelesen werden soll
+     * @param key - Schlüssel des Wertes, der gelesen werden soll
      * @return Aus der Datei gelesener String-Wert
      * @brief Methode zum Einlesen aus einer Datei
      * @details Aus der Datei wird mit Hilfe des JsonReaders ein JsonObjekt gelesen,

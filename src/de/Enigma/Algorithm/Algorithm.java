@@ -12,12 +12,12 @@ import de.Enigma.Util.FileHandler;
 public class Algorithm {
     private EnigmaConfig conf;
     private AlgorithmController controller;
-    @SuppressWarnings("unused")
-    private String key;
 
-
+    /**
+     * @brief Konstruktor des Algorithmus
+     * @param controller - Instanz des AlgorithmControllers, welche die Steuerung übernimmt
+     */
     public Algorithm(AlgorithmController controller) {
-        // TODO Auto-generated constructor stub
         this.controller = controller;
         conf = controller.getEnigmaConfig();
 
@@ -25,8 +25,8 @@ public class Algorithm {
     }
 
     /**
-     * @param letter
-     * @return
+     * @param letter - Buchstabe, welcher verschlüsselt werden soll
+     * @return Gibt den verschlüsselten Buchstaben zurück, nachdem er das Steckbrett und alle Walzen und danach wieder das Steckbrett durchlaufen hat
      * @brief Ver-/Entschlüssel einen Buchstaben
      */
     public char encrypt(char letter) {
@@ -59,7 +59,7 @@ public class Algorithm {
 
 
     /**
-     * @brief Übergibt metaData an FileHandler()
+     * @brief Erstellt die Metadaten des Vorgangs und übergibt diese an den FileHandler
      */
     public void createMetaData() {
         String key = controller.getKey();

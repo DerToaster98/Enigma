@@ -5,7 +5,6 @@ var searchData=
   ['getaschar',['getAsChar',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_alphabet.html#ab8be59c4d6bb5263147572911f75c5c5',1,'de::Enigma::Util::Enums::EAlphabet']]],
   ['getassignedchar',['getAssignedChar',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_extra_characters.html#a6aa0fc9ed0ce5a7f3a1049bed22b9cc3',1,'de::Enigma::Util::Enums::EExtraCharacters']]],
   ['getbyid',['getByID',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a7162214f197d3d611a171f6ba7299e16',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['getcontroller',['getController',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html#a86e2b015f44a0f1c7301ba1bee274d78',1,'de::Enigma::Algorithm::AlgorithmController']]],
   ['getcurrenthome',['getCurrentHome',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#a0cb9d38f4ad7a7eeb7cad92e91ef5cb7',1,'de::Enigma::Util::FileHandler']]],
   ['getenigmaconfig',['getEnigmaConfig',['../classde_1_1_enigma_1_1_algorithm_1_1_algorithm_controller.html#a4d91d2ab019ea85574865683806f0a96',1,'de::Enigma::Algorithm::AlgorithmController']]],
   ['getfilehandler',['getFileHandler',['../classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8ea84d3f19d6851768c8295682af5137',1,'de::Enigma::Util::FileHandler']]],
@@ -18,9 +17,9 @@ var searchData=
   ['getmill',['getMill',['../classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#a4ef61a1e8c9052a2c9757dd8aba3f2a6',1,'de::Enigma::Algorithm::EnigmaConfig']]],
   ['getmillid',['getMillID',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a69675608ee623ace1204f2cd46483034',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
   ['getnewrandomkey',['getNewRandomKey',['../classde_1_1_enigma_1_1_util_1_1_util.html#abfc888442b9a20d1e32a8282fad92403',1,'de::Enigma::Util::Util']]],
-  ['getpreviousalphabet',['getPreviousAlphabet',['../classde_1_1_enigma_1_1_algorithm_1_1_enigma_config.html#afe7e1d4690600930be2c033ac50240df',1,'de::Enigma::Algorithm::EnigmaConfig']]],
   ['gettext',['getText',['../classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#a329ba94a920efcd175294ce228323242',1,'de::Enigma::UI::HintTextField']]],
   ['gettimestring',['getTimeString',['../classde_1_1_enigma_1_1_util_1_1_util.html#aa07ea22e3618085863dc6b883daf2238',1,'de::Enigma::Util::Util']]],
+  ['gettimestringmillis',['getTimeStringMillis',['../classde_1_1_enigma_1_1_util_1_1_util.html#a8c8412620e7719dc1717e449fea1ee46',1,'de::Enigma::Util::Util']]],
   ['getturnmarker',['getTurnMarker',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
   ['gui',['GUI',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html',1,'de.Enigma.UI.GUI'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ac98b39fcda7d523f32565a14ca1b8487',1,'de.Enigma.UI.GUI.GUI()']]],
   ['gui_2ejava',['GUI.java',['../_g_u_i_8java.html',1,'']]]

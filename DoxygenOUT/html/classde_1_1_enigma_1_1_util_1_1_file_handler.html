@@ -103,9 +103,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_util_1_1_file_h
 <tr class="memitem:a79a8f6db44470265e74f7b99c9894a14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html#a79a8f6db44470265e74f7b99c9894a14">appendChar</a> (char letter)</td></tr>
 <tr class="memdesc:a79a8f6db44470265e74f7b99c9894a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Anhängen eines Buchstabens an den encodedText.  <a href="#a79a8f6db44470265e74f7b99c9894a14">Mehr ...</a><br /></td></tr>
 <tr class="separator:a79a8f6db44470265e74f7b99c9894a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff9343da6ac950a98abda2529cd6568"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html#a5ff9343da6ac950a98abda2529cd6568">writeLog</a> (String text, String <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html#a539db2c86d7341b1cdd6de4603d6150f">key</a>)</td></tr>
-<tr class="memdesc:a5ff9343da6ac950a98abda2529cd6568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Schreiben eines Logs in die <a class="el" href="classde_1_1_enigma_1_1_util_1_1_log_file.html" title="Klasse, um eine Log Datei zu erzeugen. ">LogFile</a>.  <a href="#a5ff9343da6ac950a98abda2529cd6568">Mehr ...</a><br /></td></tr>
-<tr class="separator:a5ff9343da6ac950a98abda2529cd6568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8f0e2d8cca5b612c64ff8c0f0b9e2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html#abb8f0e2d8cca5b612c64ff8c0f0b9e2f">writeLog</a> (String text)</td></tr>
+<tr class="memdesc:abb8f0e2d8cca5b612c64ff8c0f0b9e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Schreiben eines Logs in die <a class="el" href="classde_1_1_enigma_1_1_util_1_1_log_file.html" title="Klasse, um eine Log Datei zu erzeugen. ">LogFile</a>.  <a href="#abb8f0e2d8cca5b612c64ff8c0f0b9e2f">Mehr ...</a><br /></td></tr>
+<tr class="separator:abb8f0e2d8cca5b612c64ff8c0f0b9e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa42ba993bf4c4e4dba3d19ee8ab26eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html#aa42ba993bf4c4e4dba3d19ee8ab26eef">makeLogFile</a> ()</td></tr>
 <tr class="memdesc:aa42ba993bf4c4e4dba3d19ee8ab26eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Erstellen der LogDatei.  <a href="#aa42ba993bf4c4e4dba3d19ee8ab26eef">Mehr ...</a><br /></td></tr>
 <tr class="separator:aa42ba993bf4c4e4dba3d19ee8ab26eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,7 +179,7 @@ Statische, private Attribute</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p><a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html" title="FileHandler, der die Funktionalitäten mit den Dateien inne hat. ">FileHandler</a>, der die Funktionalitäten mit den Dateien inne hat. </p>
-<dl class="section author"><dt>Autor</dt><dd>Nikolai</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Nikolai Klatt</dd></dl>
 <p>Realisiert als Singleton, das heißt nur eine Instanz pro Programminstanz.<br />
 Zugriff über <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8ea84d3f19d6851768c8295682af5137" title="Methode zum Erstellen des Singelton FileHandler-Objektes. ">getFileHandler()</a> Methode von überall aus möglich. </p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
@@ -383,7 +383,7 @@ Zugriff über <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.h
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>- Datei, aus der gelesen werden soll </td></tr>
-    <tr><td class="paramname">key</td><td>Value, der gelesen werden soll </td></tr>
+    <tr><td class="paramname">key</td><td>- Schlüssel des Wertes, der gelesen werden soll </td></tr>
   </table>
   </dd>
 </dl>
@@ -592,8 +592,8 @@ Zugriff über <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.h
 
 </div>
 </div>
-<a id="a5ff9343da6ac950a98abda2529cd6568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ff9343da6ac950a98abda2529cd6568">&#9670;&nbsp;</a></span>writeLog()</h2>
+<a id="abb8f0e2d8cca5b612c64ff8c0f0b9e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8f0e2d8cca5b612c64ff8c0f0b9e2f">&#9670;&nbsp;</a></span>writeLog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -602,18 +602,8 @@ Zugriff über <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.h
           <td class="memname">void de.Enigma.Util.FileHandler.writeLog </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>text</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>key</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -622,7 +612,6 @@ Zugriff über <a class="el" href="classde_1_1_enigma_1_1_util_1_1_file_handler.h
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>- Log Nachricht </td></tr>
-    <tr><td class="paramname">key</td><td>- Typ des Logs </td></tr>
   </table>
   </dd>
 </dl>
