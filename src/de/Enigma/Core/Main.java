@@ -5,6 +5,8 @@ import de.Enigma.UI.GUI;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
 
+import javax.swing.*;
+
 /**
  * @author Alle
  * @brief Dies ist die Hauptklasse und "Instanz" des Programms
@@ -49,9 +51,13 @@ public class Main {
         FileHandler.getFileHandler().setKey(key);
 
         FileHandler.getFileHandler().setClearText(text);
+        startProcessing(this, text, key);
 
-        new AlgorithmController(this, key).crypt(text);
 
+    }
+
+    private void startProcessing(Main m, String text, String key) {
+        SwingUtilities.invokeLater(() -> new AlgorithmController(m, key).crypt(text));
     }
 
     /**
