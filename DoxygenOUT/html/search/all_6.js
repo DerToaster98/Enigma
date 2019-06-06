@@ -19,8 +19,6 @@ var searchData=
   ['getnewrandomkey',['getNewRandomKey',['../classde_1_1_enigma_1_1_util_1_1_util.html#abfc888442b9a20d1e32a8282fad92403',1,'de::Enigma::Util::Util']]],
   ['gettext',['getText',['../classde_1_1_enigma_1_1_u_i_1_1_hint_text_field.html#a329ba94a920efcd175294ce228323242',1,'de::Enigma::UI::HintTextField']]],
   ['gettimestring',['getTimeString',['../classde_1_1_enigma_1_1_util_1_1_util.html#aa07ea22e3618085863dc6b883daf2238',1,'de::Enigma::Util::Util']]],
-  ['gettimestringmillis',['getTimeStringMillis',['../classde_1_1_enigma_1_1_util_1_1_util.html#a8c8412620e7719dc1717e449fea1ee46',1,'de::Enigma::Util::Util']]],
   ['getturnmarker',['getTurnMarker',['../enumde_1_1_enigma_1_1_util_1_1_enums_1_1_e_mill_alphabet.html#a0e912c02d1cc35b4ff6637674bcc7c58',1,'de::Enigma::Util::Enums::EMillAlphabet']]],
-  ['gui',['GUI',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html',1,'de.Enigma.UI.GUI'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ac98b39fcda7d523f32565a14ca1b8487',1,'de.Enigma.UI.GUI.GUI()']]],
-  ['gui_2ejava',['GUI.java',['../_g_u_i_8java.html',1,'']]]
+  ['gui',['GUI',['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html',1,'de.Enigma.UI.GUI'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#ac98b39fcda7d523f32565a14ca1b8487',1,'de.Enigma.UI.GUI.GUI()']]]
 ];

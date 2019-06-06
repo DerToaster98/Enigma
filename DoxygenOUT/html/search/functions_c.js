@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onfinished',['onFinished',['../classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452',1,'de.Enigma.Core.Main.onFinished()'],['../classde_1_1_enigma_1_1_u_i_1_1_g_u_i.html#a298bbca8a9e094757b7443530b181c37',1,'de.Enigma.UI.GUI.onFinished()']]]
+  ['preparestringforreligma',['prepareStringForReligma',['../classde_1_1_enigma_1_1_util_1_1_util.html#a5c72a066968a59466a965d7020bfa792',1,'de::Enigma::Util::Util']]]
 ];
