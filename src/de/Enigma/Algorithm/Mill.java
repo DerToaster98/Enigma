@@ -60,7 +60,7 @@ public class Mill {
      * @brief Methode, um einen Buchstaben zu ersetzen
      */
     public char encryptLetter(char c, char[] oldAlphabet, boolean wasInReturnMill) {
-        Log.getLogger().i(getClass().getName() + ".encryptLetter", "Encrypting letter " + c + " with mill alphabet..");
+        //Log.getLogger().i(getClass().getName() + ".encryptLetter", "Encrypting letter " + c + " with mill alphabet..");
 
         int posOfC = Util.getIndexOfCharInAlphabet(c, wasInReturnMill ? this.alphabet.clone() : oldAlphabet);
 
