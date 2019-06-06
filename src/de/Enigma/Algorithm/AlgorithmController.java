@@ -29,7 +29,7 @@ public class AlgorithmController {
             //Schlüssel neu generieren
             key = Util.getNewRandomKey();
             //message an Log.w
-            Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert!");
+            Log.getLogger().w(getClass().getName() + "checkKey", "Schlüssel wurde falsch eingegeben oder generiert -> neuer Schlüssel wird automatisch generiert");
 
         }
         FileHandler.getFileHandler().setKey(key);
@@ -71,7 +71,7 @@ public class AlgorithmController {
         algorithm.createMetaData();
         if(main != null) {
         	main.onFinished();
-            Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt.");
+            Log.getLogger().i(getClass().getName() + ".crypt", "Text wurde verschlüsselt");
         }
     }
     /**

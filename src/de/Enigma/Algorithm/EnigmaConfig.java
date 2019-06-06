@@ -127,7 +127,7 @@ public class EnigmaConfig {
             case THIRD_MILL:
                 return this.mills[2];
             default:
-                Log.getLogger().w(getClass().getName() + ".getMill", "Returning 'null' as requested mill, this should (and can) never happen!");
+                Log.getLogger().w(getClass().getName() + ".getMill", "Returning 'null' as requested mill, this should (and can) never happen");
                 return null;
         }
     }

@@ -20,7 +20,7 @@ public class Main {
      */
     private Main() {
         Log.getLogger();
-        initGUI();
+        window = new GUI(this);
     }
 
     /**
@@ -29,13 +29,6 @@ public class Main {
      */
     public static void main(String[] args) {
         new Main();
-    }
-
-    /**
-     * @brief Methode, die die GUI initialisiert
-     */
-    private void initGUI() {
-        window = new GUI(this);
     }
 
     /**

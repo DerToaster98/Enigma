@@ -94,9 +94,9 @@ public class FileHandler {
     private void makeNewFolder(String path) {
         if (!(new File(path).exists())) {
             if (!(new File(path).mkdir()))
-                Log.getLogger().w(getClass().getName() + ".makeNewFolder", "Verzeichnis " + path + " aufgrund eines Fehlers nicht angelegt!");
+                Log.getLogger().w(getClass().getName() + ".makeNewFolder", "Verzeichnis " + path + " aufgrund eines Fehlers nicht angelegt");
             else
-                Log.getLogger().i(getClass().getName() + ".makeNewFolder", "Verzeichnis " + path + " erfolgreich angelegt!");
+                Log.getLogger().i(getClass().getName() + ".makeNewFolder", "Verzeichnis " + path + " erfolgreich angelegt");
         }
     }
 
@@ -107,10 +107,10 @@ public class FileHandler {
         try {
             logFile = new LogFile(currentHome + "Logfile.log");
             if (logFile.createNewFile())
-                Log.getLogger().i(getClass().getName() + ".makeLogFile", "LogFile wurde erfolgreich erzeugt!");
+                Log.getLogger().i(getClass().getName() + ".makeLogFile", "LogFile wurde erfolgreich erzeugt");
         } catch (IOException e) {
             e.printStackTrace();
-            Log.getLogger().e(getClass().getName() + ".makeLogFile", "Error während der Erzeugung der LogFile!");
+            Log.getLogger().e(getClass().getName() + ".makeLogFile", "Error während der Erzeugung der LogFile");
         }
     }
 
@@ -121,13 +121,13 @@ public class FileHandler {
         try {
             EnigmaFile enigmaFile = new EnigmaFile(currentHome + "Enigma.enigma", metaData, key, clearText, encodedText);
             if (enigmaFile.createNewFile())
-                Log.getLogger().i(getClass().getName() + ".makeFiles", "EngimaFile wurde erfolgreich erzeugt!");
+                Log.getLogger().i(getClass().getName() + ".makeFiles", "EngimaFile wurde erfolgreich erzeugt");
             TextFile textFile = new TextFile(currentHome + "Text.txt", metaData, key, clearText, encodedText);
             if (textFile.createNewFile())
-                Log.getLogger().i(getClass().getName() + ".makeFiles", "TextFile wurde erfolgreich erzeugt!");
+                Log.getLogger().i(getClass().getName() + ".makeFiles", "TextFile wurde erfolgreich erzeugt");
         } catch (IOException e) {
             e.printStackTrace();
-            Log.getLogger().e(getClass().getName() + ".makeFiles", "Error während der Erzeugung der Output Files!");
+            Log.getLogger().e(getClass().getName() + ".makeFiles", "Error während der Erzeugung der Output Files");
         }
 
     }
@@ -147,6 +147,7 @@ public class FileHandler {
             jr = new JsonReader(new FileReader(f));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            Log.getLogger().e(getClass().getName() +".inputFromFile", "Fehler beim Lesen der .enigma Datei " + f.getAbsolutePath());
         }
         JsonObject jO = gson.fromJson(jr, JsonObject.class);
 

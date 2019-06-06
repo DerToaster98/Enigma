@@ -70,7 +70,7 @@ public class Mill {
             return cryptedChar;
         }
         //DONE: log.w oder log.e
-        Log.getLogger().e(getClass().getName() + ".encryptLetter", "Fatal: Failed to encrypt letter " + c + "! It seems that either the alphabet does not exist or the letter is not in the alphabet!");
+        Log.getLogger().e(getClass().getName() + ".encryptLetter", "Fatal: Failed to encrypt letter " + c + "! It seems that either the alphabet does not exist or the letter is not in the alphabet");
         return '?';
     }
 

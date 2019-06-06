@@ -189,7 +189,7 @@ public class Util {
                         }
 
                     }
-                    Log.getLogger().i(Util.class + ".isKeyValid", "Key (" + keyA + ") ist gültig!");
+                    Log.getLogger().i(Util.class + ".isKeyValid", "Key (" + keyA + ") ist gültig");
                     return true;
                 }
             }
@@ -370,7 +370,7 @@ public class Util {
         String log;
         String time = getTimeStringMillis();
 
-        log = "(" + time + ") - [" + type + "]: " + class_method_name + ":" + message + "!";
+        log = "(" + time + ") - [" + type + "]: " + class_method_name + ":" + message;
         return log;
     }
 }

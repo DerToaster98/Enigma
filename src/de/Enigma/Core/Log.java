@@ -63,7 +63,7 @@ public class Log {
     public void w(String class_Method_Name, String warning) {
         checkLogFile();
         String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
-        FileHandler.getFileHandler().writeLog(log);
+        FileHandler.getFileHandler().writeLog(log+"!");
     }
 
     /**
@@ -80,7 +80,7 @@ public class Log {
     public void e(String class_Method_Name, String error) {
         checkLogFile();
         String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
-        FileHandler.getFileHandler().writeLog(log);
+        FileHandler.getFileHandler().writeLog(log+"!");
     }
 
     /**
@@ -101,7 +101,7 @@ public class Log {
     public static Log getLogger() {
         if (logger == null) {
             logger = new Log();
-            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt!");
+            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt");
         }
         return logger;
     }

@@ -62,7 +62,7 @@ class TextFile extends File {
         } catch (IOException e) {
             e.printStackTrace();
             //Error
-            Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Textdatei!");
+            Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Textdatei");
         }
     }
 }

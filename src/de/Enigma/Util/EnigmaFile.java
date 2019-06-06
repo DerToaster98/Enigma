@@ -61,7 +61,7 @@ class EnigmaFile extends File {
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Enigmadatei!");
+            Log.getLogger().e(getClass().getName() + ".write", "Error während des Schreibens in die Enigmadatei");
         }
     }
 
