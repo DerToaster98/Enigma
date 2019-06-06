@@ -42,10 +42,13 @@ public class Log {
     //@formatter:on
     public void i(String class_Method_Name, String info) {
         checkLogFile();
-        String log = Util.resolveLogString(class_Method_Name, info, "INFO");
-        FileHandler.getFileHandler().writeLog(log);
+        if (!class_Method_Name.equals("")) {
+            String log = Util.resolveLogString(class_Method_Name, info, "INFO");
+            FileHandler.getFileHandler().writeLog(log + ".");
+        } else if (info.equals("BLANK_LINE")) FileHandler.getFileHandler().writeLog("");
+        else if (info.equals("LINE"))
+            FileHandler.getFileHandler().writeLog("--------------------------------------------------------------------------------------------------------------------------");
     }
-
 
     /**
      * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
@@ -63,7 +66,7 @@ public class Log {
     public void w(String class_Method_Name, String warning) {
         checkLogFile();
         String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
-        FileHandler.getFileHandler().writeLog(log+"!");
+        FileHandler.getFileHandler().writeLog(log + "!");
     }
 
     /**
@@ -80,7 +83,7 @@ public class Log {
     public void e(String class_Method_Name, String error) {
         checkLogFile();
         String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
-        FileHandler.getFileHandler().writeLog(log+"!");
+        FileHandler.getFileHandler().writeLog(log + "!");
     }
 
     /**
