@@ -120,7 +120,12 @@ public class Util {
         return dateFormat.format(new Date());
     }
 
-    static String getTimeStringMillis() {
+    /**
+     * @return String der das Datum enthält. Format: 2016-11-16 12.08.43.123
+     * @brief Methode zum Erzeugen eines Date String mit Millisekunden
+     * @details Dieser String soll als Log-Timestamp
+     */
+    private static String getTimeStringMillis() {
         //nicht logbar, da benötigt, um den Logger zu starten...
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss.SSS");
         return dateFormat.format(new Date());
