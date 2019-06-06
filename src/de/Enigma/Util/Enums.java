@@ -133,22 +133,6 @@ public class Enums {
         }
 
         /**
-         * @return Liefert den Index dieses Eintrags im Alphabet zurück
-         * @brief Liefert den Index dieses Eintrags im Alphabet zurück
-         */
-        public int getIndex() {
-            return this.index;
-        }
-
-        /**
-         * @return Liefert den char dieses Eintrags
-         * @brief Liefert den char dieses Eintrags
-         */
-        public char getAsChar() {
-            return this.character;
-        }
-
-        /**
          * @param i - Repräsentiert die Position (0-25) im Alphabet
          * @return Gibt den Buchstaben an Position i im normalen Alphabet aus
          * @brief Liefert den passenden Eintrag für die gewünschte Position im Alphabet
@@ -176,6 +160,22 @@ public class Enums {
             }
 
             return array;
+        }
+
+        /**
+         * @return Liefert den Index dieses Eintrags im Alphabet zurück
+         * @brief Liefert den Index dieses Eintrags im Alphabet zurück
+         */
+        public int getIndex() {
+            return this.index;
+        }
+
+        /**
+         * @return Liefert den char dieses Eintrags
+         * @brief Liefert den char dieses Eintrags
+         */
+        public char getAsChar() {
+            return this.character;
         }
     }
 
@@ -269,30 +269,6 @@ public class Enums {
         }
 
         /**
-         * @return Liefert den Buchstaben zurück, an welchem diese Walze ihre Übertragskerbe hat. Ist dieser '?', so ist diese Walze eine Umkehrwalze, welche keine Übertragskerbe besitzt
-         * @brief Liefert den Buchstaben zurück, an welchem für diese Walze die Übertragskerbe steht.
-         */
-        public char getTurnMarker() {
-            return this.turnMarker;
-        }
-
-        /**
-         * @return Liefert das verwendete Alphabet dieser Walze als char Array zurück
-         * @brief Liefert Alphabet der Walze zurück
-         */
-        public char[] getAlphabet() {
-            return this.millPhabet.clone();
-        }
-
-        /**
-         * @return Liefert die 'ID' dieser Walze zurück. 1-5: Walzen 1-5; A,B,C: Umkehrwalzen A,B,C
-         * @brief Liefert den Bezeichner dieser Walze zurück
-         */
-        public String getMillID() {
-            return this.millID;
-        }
-
-        /**
          * @param id - Die ID der Walze
          * @return Liefert die zur ID gehörende Walzeneinstellung zurück
          * @brief Methode, um Walzeneinstellung aus ihrer ID zu bekommen
@@ -322,6 +298,30 @@ public class Enums {
                     return null;
             }
         }
+
+        /**
+         * @return Liefert den Buchstaben zurück, an welchem diese Walze ihre Übertragskerbe hat. Ist dieser '?', so ist diese Walze eine Umkehrwalze, welche keine Übertragskerbe besitzt
+         * @brief Liefert den Buchstaben zurück, an welchem für diese Walze die Übertragskerbe steht.
+         */
+        public char getTurnMarker() {
+            return this.turnMarker;
+        }
+
+        /**
+         * @return Liefert das verwendete Alphabet dieser Walze als char Array zurück
+         * @brief Liefert Alphabet der Walze zurück
+         */
+        public char[] getAlphabet() {
+            return this.millPhabet.clone();
+        }
+
+        /**
+         * @return Liefert die 'ID' dieser Walze zurück. 1-5: Walzen 1-5; A,B,C: Umkehrwalzen A,B,C
+         * @brief Liefert den Bezeichner dieser Walze zurück
+         */
+        public String getMillID() {
+            return this.millID;
+        }
     }
 
     /**
@@ -349,14 +349,6 @@ public class Enums {
         }
 
         /**
-         * @return Liefert den char des Sonderzeichens zurück
-         * @brief Methode, um an den dem Sonderzeichen zugewiesenen char zu gelangen
-         */
-        public char getAssignedChar() {
-            return this.assignedChar;
-        }
-
-        /**
          * @param c - Zeichen welches überprüft werden soll
          * @return Liefert zurück, ob der char ein Sonderzeichen ist (true: char ist ein Sonderzeichen)
          * @brief Methode um zu überprüfen, ob es sich bei einem char um ein Sonderzeichen handelt
@@ -369,8 +361,14 @@ public class Enums {
             }
             return false;
         }
+
+        /**
+         * @return Liefert den char des Sonderzeichens zurück
+         * @brief Methode, um an den dem Sonderzeichen zugewiesenen char zu gelangen
+         */
+        public char getAssignedChar() {
+            return this.assignedChar;
+        }
     }
 
 }
-
- 

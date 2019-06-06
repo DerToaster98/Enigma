@@ -13,12 +13,11 @@ public class Algorithm {
     private EnigmaConfig conf;
 
     /**
-     * @param controller - Instanz des AlgorithmControllers, welche die Steuerung übernimmt
+     * @param eConf - Instanz der AlgorithmConfig
      * @brief Konstruktor des Algorithmus
      */
     public Algorithm(EnigmaConfig eConf) {
         conf = eConf;
-
 
     }
 
@@ -55,7 +54,6 @@ public class Algorithm {
         return letter;
     }
 
-
     /**
      * @brief Erstellt die Metadaten des Vorgangs und übergibt diese an den FileHandler
      */
@@ -76,6 +74,4 @@ public class Algorithm {
         FileHandler.getFileHandler().setMetaData(4, "3. Walze: " + walzen[2] + " - Startposition: " + position[2]);
         FileHandler.getFileHandler().setMetaData(5, "Vertauschte Buchstaben:" + buchstaben);
     }
-
-
 }

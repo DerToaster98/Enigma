@@ -17,14 +17,12 @@ import java.net.URLDecoder;
 public class FileHandler {
     // private FileHandler Instanz
     private static FileHandler fileHandler;
-
-    private final String HOME = createPath();
     private String currentHome;
-
     private String key;
     private String encodedText = "missingNo";
     private String clearText;
     private String[] metaData = new String[7];
+    private LogFile logFile;
     //metaData[0] -> Typ
     //metaData[1] -> UKW
     //metaData[2] -> 1.Walze
@@ -32,13 +30,25 @@ public class FileHandler {
     //metaData[4] -> 3.Walze
     //metaData[5] -> Steckbrett
     //metaData[6] -> Dauer
-
-    private LogFile logFile;
+    private final String HOME = createPath();
 
     /**
      * @brief privater FileHandler Konstruktor
      */
     private FileHandler() {
+    }
+
+    /**
+     * @return gibt das fileHandler Singelton Objekt zurück
+     * @brief Methode zum Erstellen des Singelton FileHandler-Objektes
+     * @details Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
+     * Das stellt sicher, dass es nur einen FileHandler gibt und dieser von allen Objekten von überall aus genutzt werden kann.
+     */
+    public static FileHandler getFileHandler() {
+        if (fileHandler == null) {
+            fileHandler = new FileHandler();
+        }
+        return fileHandler;
     }
 
     /**
@@ -129,7 +139,6 @@ public class FileHandler {
             e.printStackTrace();
             Log.getLogger().e(getClass().getName() + ".makeFiles", "Error während der Erzeugung der Output Files");
         }
-
     }
 
     /**
@@ -179,15 +188,6 @@ public class FileHandler {
     }
 
     /**
-     * @param key - Key, der gesetzt werden soll
-     * @brief Methode zum Setzen des Keys
-     */
-    public void setKey(String key) {
-        this.key = key;
-        Log.getLogger().i(Log.class.getName() + ".setKey", "Gesetzter Schlüssel: " + key);
-    }
-
-    /**
      * @return Verzeichnis
      * @brief Methode zum Zurückgeben des HOME Verzeichnisses
      */
@@ -216,25 +216,19 @@ public class FileHandler {
     }
 
     /**
-     * @brief Methode zum zurückgeben des momentanen Keys
      * @return momentaner Key
+     * @brief Methode zum zurückgeben des momentanen Keys
      */
     public String getKey() {
         return this.key;
     }
 
-
     /**
-     * @return gibt das fileHandler Singelton Objekt zurück
-     * @brief Methode zum Erstellen des Singelton FileHandler-Objektes
-     * @details Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
-     * Das stellt sicher, dass es nur einen FileHandler gibt und dieser von allen Objekten von überall aus genutzt werden kann.
+     * @param key - Key, der gesetzt werden soll
+     * @brief Methode zum Setzen des Keys
      */
-    public static FileHandler getFileHandler() {
-        if (fileHandler == null) {
-            fileHandler = new FileHandler();
-        }
-        return fileHandler;
+    public void setKey(String key) {
+        this.key = key;
+        Log.getLogger().i(Log.class.getName() + ".setKey", "Gesetzter Schlüssel: " + key);
     }
-
 }

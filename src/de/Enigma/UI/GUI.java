@@ -469,8 +469,8 @@ public class GUI {
                 FileHandler.getFileHandler().setMetaData(0, "Typ: Entschlüsselung");
             }
             //kann das Logging ausschalten
-            if (CHBX_TOGGLE_LOGGING.isSelected()){
-                Log.getLogger().w(getClass().getName()+".setLoggingDisabled","LOGGING WURDE DEAKTIVIERT - ES WERDEN KEINE WEITEREN LOGS GESCHRIEBEN");
+            if (CHBX_TOGGLE_LOGGING.isSelected()) {
+                Log.getLogger().w(getClass().getName() + ".setLoggingDisabled", "LOGGING WURDE DEAKTIVIERT - ES WERDEN KEINE WEITEREN LOGS GESCHRIEBEN");
                 Log.getLogger().setLoggingDisabled(CHBX_TOGGLE_LOGGING.isSelected());
             }
             main.btnOkClicked(TF_TEXT.getText(), TF_KEY.getText(), CHBX_REAL_ENIGMA.isSelected(), RDBTN_DECRYPT.isSelected());
@@ -484,7 +484,6 @@ public class GUI {
                 Log.getLogger().e(getClass().getName() + ".btnOkClicked", "Error während des Versuchs das Verzeichnis: " + FileHandler.getFileHandler().getHOME() + " zu öffnen");
             }
         }
-
         Log.getLogger().i(getClass().getName() + ".btnOkClicked", "BTN_START Clicked");
     }
 
@@ -510,7 +509,6 @@ public class GUI {
             TF_KEY.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "key"));
             TF_KEY.setForeground(Color.BLACK);
         }
-
         Log.getLogger().i(getClass().getName() + ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
     }
 
@@ -542,6 +540,7 @@ public class GUI {
         BTN_CHOOSE_FILE.setEnabled(enabled);
         BTN_CREATE_KEY.setEnabled(enabled);
         CHBX_REAL_ENIGMA.setEnabled(enabled);
+        CHBX_TOGGLE_LOGGING.setEnabled(enabled);
         RDBTN_ENCRYPT.setEnabled(enabled);
         RDBTN_DECRYPT.setEnabled(enabled);
 

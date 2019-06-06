@@ -28,6 +28,20 @@ public class Log {
     //@formatter:off
 
     /**
+     * @return gibt das logger Singelton Objekt zurück
+     * @brief Methode zum Erstellen des Singelton Logger-Objektes
+     * @details Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
+     * Das stellt sicher, dass es nur einen Logger gibt und dieser von allen Objekten von überall aus genutzt werden kann.
+     */
+    public static Log getLogger() {
+        if (logger == null) {
+            logger = new Log();
+            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt");
+        }
+        return logger;
+    }
+
+    /**
      * @param class_Method_Name - Name der Klasse und Methode von der der Aufruf erfolgt ist
      * @param info              - Info Nachricht, die vom Logger geloggt werden soll
      * @brief Methode zum Schreiben von <b>Info-Logs</b>
@@ -102,20 +116,6 @@ public class Log {
         if (!FileHandler.getFileHandler().logFileexists())
             FileHandler.getFileHandler().createNewCurrentDirectory();
         FileHandler.getFileHandler().makeLogFile();
-    }
-
-    /**
-     * @return gibt das logger Singelton Objekt zurück
-     * @brief Methode zum Erstellen des Singelton Logger-Objektes
-     * @details Erstellt ein Singleton Objekt, sobald die Instanz benötigt wird und gibt, falls das Objekt schon existiert das Objekt zurück.
-     * Das stellt sicher, dass es nur einen Logger gibt und dieser von allen Objekten von überall aus genutzt werden kann.
-     */
-    public static Log getLogger() {
-        if (logger == null) {
-            logger = new Log();
-            logger.i(Log.class.getName() + ".Logger", "Logger Instanz erzeugt");
-        }
-        return logger;
     }
 
     /**

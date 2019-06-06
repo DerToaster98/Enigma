@@ -18,6 +18,8 @@ import java.util.Random;
  */
 public class Util {
 
+    private static List<Character> plugboard = new ArrayList<Character>();
+
     /**
      * @param message - Der String, welcher in ein char-Array umgewandelt werden soll.
      * @return Gibt das erzeugte char-Array zurück
@@ -110,7 +112,6 @@ public class Util {
         return key;
     }
 
-
     /**
      * @return String der das Datum enthält. Format: 2016-11-16 12.08.43
      * @brief Methode zum Erzeugen eines Date String
@@ -146,8 +147,6 @@ public class Util {
         Gson gson = new Gson();
         return gson.toJson(s);
     }
-
-    private static List<Character> plugboard = new ArrayList<Character>();
 
     /**
      * @param keyA - Schlüssel, der geprüft werden soll
