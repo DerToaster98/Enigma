@@ -36,6 +36,7 @@ public class Util {
      * @brief Liefert die Position eines Buchstaben in einem gegebenen Alphabet
      * @details Liefert position eines buchstaben in einem alphabet zurück !!von 0
      * bis 25!! Wenn <0: nicht im Alphabet
+     * @author Oliver Seiler
      */
     public static int getIndexOfCharInAlphabet(char c, char[] alphabet) {
         int index = 0;
@@ -51,6 +52,7 @@ public class Util {
     /**
      * @return Liefert einen zufälligen Schlüssel zurück
      * @brief Erzeugt einen zufälligen Schlüssel
+     * @author Oliver Seiler
      */
     public static String getNewRandomKey() {
         char[] rmValues = new char[]{'A', 'B', 'C'};
@@ -113,6 +115,7 @@ public class Util {
      * @brief Methode zum Erzeugen eines Date String
      * @details Dieser String soll als Ordnername für die Dateien, die vom
      * FileHandler erzeugt werden genutzt werden.
+     * @author Nikolai Klatt
      */
     static String getTimeString() {
         //nicht logbar, da benötigt, um den Logger zu starten...
@@ -124,6 +127,7 @@ public class Util {
      * @return String der das Datum enthält. Format: 2016-11-16 12.08.43.123
      * @brief Methode zum Erzeugen eines Date String mit Millisekunden
      * @details Dieser String soll als Log-Timestamp
+     * @author Nikolai Klatt
      */
     private static String getTimeStringMillis() {
         //nicht logbar, da sonst eine Endlosschleife erzeugt würde...
@@ -135,6 +139,7 @@ public class Util {
      * @param s - Der zu konvertierende String
      * @return JSON String
      * @brief Methode zum Konvertieren eines Strings zu einem JSON String
+     * @author Nikolai Klatt
      */
     static String resolvetoJSON(String[] s) {
         Gson gson = new Gson();
@@ -225,7 +230,6 @@ public class Util {
      */
     private static boolean notInPlugboardKey(char c) {
         return !plugboard.contains(c);
-
     }
 
     /**
@@ -313,6 +317,7 @@ public class Util {
         return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
     }
 
+    
     public static void resetPlugBoardList() {
         Util.plugboard = null;
         Util.plugboard = new ArrayList<>();
@@ -358,6 +363,7 @@ public class Util {
      * @param type              - Typ des Logs
      * @return Richtig formatierter Log-String
      * @brief Methode zum Erstellen der Log-Strings
+     * @author Nikolai Klatt
      */
     public static String resolveLogString(String class_method_name, String message, String type) {
         String log;
