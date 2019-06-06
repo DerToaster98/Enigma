@@ -22,6 +22,7 @@ public class Util {
      * @param message - Der String, welcher in ein char-Array umgewandelt werden soll.
      * @return Gibt das erzeugte char-Array zurück
      * @brief Methode, welche Strings, in char-Arrays umwandeln kann
+     * @author Lisa Binkert
      */
     public static char[] createCharArray(String message) {
 
