@@ -218,6 +218,7 @@ public class Util {
             }
         }
 
+        Log.getLogger().w(Util.class.getName()+"isKeyValid","Steckbretteingabe ist ungültig");
         return false;
     }
 
@@ -272,7 +273,7 @@ public class Util {
         if (c.length == 3) {
             return inAlphabetKey(c[0], false) && inAlphabetKey(c[1], false) && inAlphabetKey(c[2], false);
         }
-
+        Log.getLogger().w(Util.class.getName()+"isKeyValid","Walzenpositionen im Schüssek ungültig");
         return false;
     }
 
@@ -304,6 +305,8 @@ public class Util {
             }
             return true;
         }
+        
+        Log.getLogger().w(Util.class.getName()+"isKeyValid","Walzenangaben im Schlüssel sind ungültig");
         return false;
     }
 
@@ -315,7 +318,11 @@ public class Util {
      * @author Lisa Binkert
      */
     private static boolean checkUKW(String u) {
-        return u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C");
+    	if(u.equalsIgnoreCase("A") || u.equalsIgnoreCase("B") || u.equalsIgnoreCase("C")) {
+    		return true;
+    	}
+    	Log.getLogger().w(Util.class.getName()+"isKeyValid","Umkehrwalzenangaben im Schlüssel sind ungültig");
+        return false;
     }
 
     
