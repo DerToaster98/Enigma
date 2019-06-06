@@ -126,7 +126,7 @@ public class Util {
      * @details Dieser String soll als Log-Timestamp
      */
     private static String getTimeStringMillis() {
-        //nicht logbar, da benötigt, um den Logger zu starten...
+        //nicht logbar, da sonst eine Endlosschleife erzeugt würde...
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss.SSS");
         return dateFormat.format(new Date());
     }
