@@ -17,8 +17,6 @@ import org.junit.Test;
  */
 public class FileHandlerTest {
 
-
-
 	@Test
 	public void testAppendChar() {
 		try {
