@@ -31,7 +31,7 @@ public class Algorithm {
      */
     public char encrypt(char letter) {
         char origLetter = letter;
-        Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypting char " + origLetter + "...");
+        Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypting char " + origLetter + "..");
         letter = conf.encryptLetterWithPlugBoard(letter);
         //erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
         // Funktioniert so!
@@ -52,7 +52,7 @@ public class Algorithm {
         Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypted char " + origLetter);
         Log.getLogger().i("", "");
         Log.getLogger().i(getClass().getName() + ".encrypt", origLetter + " -> " + letter);
-        Log.getLogger().i("", "-------------------------------------------------------------------------------");
+        Log.getLogger().i("", "LINE");
         //Buchstabe zurückgeben
         return letter;
     }

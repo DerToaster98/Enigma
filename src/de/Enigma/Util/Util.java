@@ -355,6 +355,7 @@ public class Util {
             counter++;
         }
 
+        Log.getLogger().i(Util.class.getName() + "preapreStringForReligma", "String für Verschlüsselung mit emulierter Enigma formatiert");
         return filteredString;
     }
 
