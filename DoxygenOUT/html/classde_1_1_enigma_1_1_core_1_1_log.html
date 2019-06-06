@@ -103,6 +103,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_log.ht
 <tr class="memitem:a1a757951fc7263ff09bb9d52825acc67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a1a757951fc7263ff09bb9d52825acc67">e</a> (String class_Method_Name, String error)</td></tr>
 <tr class="memdesc:a1a757951fc7263ff09bb9d52825acc67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum Schreiben von <b>Error-Logs</b>  <a href="#a1a757951fc7263ff09bb9d52825acc67">Mehr ...</a><br /></td></tr>
 <tr class="separator:a1a757951fc7263ff09bb9d52825acc67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e598f0c7af73041289fbc935b301cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a4e598f0c7af73041289fbc935b301cb7">setLoggingDisabled</a> (boolean isLoggingDisabled)</td></tr>
+<tr class="memdesc:a4e598f0c7af73041289fbc935b301cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, die das Logging deaktivieren kann.  <a href="#a4e598f0c7af73041289fbc935b301cb7">Mehr ...</a><br /></td></tr>
+<tr class="separator:a4e598f0c7af73041289fbc935b301cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Öffentliche, statische Methoden</h2></td></tr>
@@ -230,7 +233,7 @@ Der Aufruf erfolgt immer über die static <a class="el" href="classde_1_1_enigma
 Darunter zählen:<br />
 </p><ul>
 <li>generelle Infos über die Programmroutinen, wie zum Beispiel:<br />
-<ul>
+</li>
 <li>Routine gestartet<br />
 </li>
 <li>Routine erfolgreich beendet<br />
@@ -239,13 +242,37 @@ Darunter zählen:<br />
 </li>
 <li>...<br />
 </li>
-</ul>
-</li>
 <li>Infos zu Programmabläufen<br />
 </li>
 <li>...<br />
 Der Aufruf erfolgt immer über die static <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82" title="Methode zum Erstellen des Singelton Logger-Objektes. ">getLogger()</a> Methode: <a class="el" href="classde_1_1_enigma_1_1_core_1_1_log.html#a06d2a4076d1150b2743351602fbfbc82" title="Methode zum Erstellen des Singelton Logger-Objektes. ">Log.getLogger()</a>.i(getClass().getName()+ ".methodName", "warning"); </li>
 </ul>
+
+</div>
+</div>
+<a id="a4e598f0c7af73041289fbc935b301cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e598f0c7af73041289fbc935b301cb7">&#9670;&nbsp;</a></span>setLoggingDisabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void de.Enigma.Core.Log.setLoggingDisabled </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isLoggingDisabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Methode, die das Logging deaktivieren kann. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isLoggingDisabled</td><td>- Zeigt, ob das Logging deaktiviert werden soll </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

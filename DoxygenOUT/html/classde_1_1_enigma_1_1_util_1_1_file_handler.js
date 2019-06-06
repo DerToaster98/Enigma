@@ -4,6 +4,7 @@ var classde_1_1_enigma_1_1_util_1_1_file_handler =
     [ "createNewCurrentDirectory", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a224c207358f16458bc116eba97b666d1", null ],
     [ "getCurrentHome", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a0cb9d38f4ad7a7eeb7cad92e91ef5cb7", null ],
     [ "getHOME", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#ae1e8caea4db5445ef916bee31f948da9", null ],
+    [ "getKey", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#ac993398a659963f02b44872b26f85072", null ],
     [ "inputFromFile", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#ad053a9c39b00bdab8db2aa606a02e9e8", null ],
     [ "logFileexists", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#ae201e61437dd2b059576223e1e4f6735", null ],
     [ "makeFiles", "classde_1_1_enigma_1_1_util_1_1_file_handler.html#a8b36933dce9fcc1d9103fcb7f7f598ff", null ],

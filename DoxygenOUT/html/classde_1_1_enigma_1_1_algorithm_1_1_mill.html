@@ -99,9 +99,9 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 <tr class="memitem:ae84e4853d3e2d32451a85a6cc8c8591d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#ae84e4853d3e2d32451a85a6cc8c8591d">rotateMill</a> ()</td></tr>
 <tr class="memdesc:ae84e4853d3e2d32451a85a6cc8c8591d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode dreht die Walze um eine Position weiter.  <a href="#ae84e4853d3e2d32451a85a6cc8c8591d">Mehr ...</a><br /></td></tr>
 <tr class="separator:ae84e4853d3e2d32451a85a6cc8c8591d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fa1e8607646e3fbb97bd9585c538f0e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a6fa1e8607646e3fbb97bd9585c538f0e">encryptLetter</a> (char c, char[] oldAlphabet, boolean wasInReturnMill)</td></tr>
-<tr class="memdesc:a6fa1e8607646e3fbb97bd9585c538f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, um einen Buchstaben zu ersetzen.  <a href="#a6fa1e8607646e3fbb97bd9585c538f0e">Mehr ...</a><br /></td></tr>
-<tr class="separator:a6fa1e8607646e3fbb97bd9585c538f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a655c22b89127ca3c896fb1c358a6dda0"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#a655c22b89127ca3c896fb1c358a6dda0">encryptLetter</a> (char c, boolean wasInReturnMill)</td></tr>
+<tr class="memdesc:a655c22b89127ca3c896fb1c358a6dda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, um einen Buchstaben zu ersetzen.  <a href="#a655c22b89127ca3c896fb1c358a6dda0">Mehr ...</a><br /></td></tr>
+<tr class="separator:a655c22b89127ca3c896fb1c358a6dda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4280b579540485a67e742202682cbf"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_algorithm_1_1_mill.html#ade4280b579540485a67e742202682cbf">shouldRotateNeighborMill</a> ()</td></tr>
 <tr class="memdesc:ade4280b579540485a67e742202682cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Methode überprüft, ob die Nachbarwalze auch rotiert werden soll, also ob die Übertragskerbe überschritten wurde.  <a href="#ade4280b579540485a67e742202682cbf">Mehr ...</a><br /></td></tr>
 <tr class="separator:ade4280b579540485a67e742202682cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,8 +152,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="a6fa1e8607646e3fbb97bd9585c538f0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fa1e8607646e3fbb97bd9585c538f0e">&#9670;&nbsp;</a></span>encryptLetter()</h2>
+<a id="a655c22b89127ca3c896fb1c358a6dda0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a655c22b89127ca3c896fb1c358a6dda0">&#9670;&nbsp;</a></span>encryptLetter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,12 +163,6 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
           <td>(</td>
           <td class="paramtype">char&#160;</td>
           <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char []&#160;</td>
-          <td class="paramname"><em>oldAlphabet</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -188,7 +182,6 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_algorithm_1_1_m
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>- Der Buchstabe, welcher "verschlüssel", bzw. ersetzt werden soll </td></tr>
-    <tr><td class="paramname">oldAlphabet</td><td>- Das Alphabet, mit welchem der Buchstabe zuvor verschlüsselt wurde </td></tr>
     <tr><td class="paramname">wasInReturnMill</td><td>- Gibt an, ob die Walze von vorne oder von hitnen durchlaufen wurde </td></tr>
   </table>
   </dd>

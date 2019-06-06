@@ -1,5 +1,6 @@
 var classde_1_1_enigma_1_1_core_1_1_main =
 [
-    [ "btnOkClicked", "classde_1_1_enigma_1_1_core_1_1_main.html#aa5ff2a3a9d4ac00fea081b2cec48153c", null ],
-    [ "onFinished", "classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452", null ]
+    [ "btnOkClicked", "classde_1_1_enigma_1_1_core_1_1_main.html#afee1bbf33083b58766fe50a3a76e8648", null ],
+    [ "onFinished", "classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452", null ],
+    [ "updateProgressBar", "classde_1_1_enigma_1_1_core_1_1_main.html#a37c84ecb0c3ab561908d5ea5b029e58f", null ]
 ];

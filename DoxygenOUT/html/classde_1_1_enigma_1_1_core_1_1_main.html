@@ -94,9 +94,12 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:aa5ff2a3a9d4ac00fea081b2cec48153c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#aa5ff2a3a9d4ac00fea081b2cec48153c">btnOkClicked</a> (String text, String key, boolean chbx_selected, boolean decrypt)</td></tr>
-<tr class="memdesc:aa5ff2a3a9d4ac00fea081b2cec48153c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird.  <a href="#aa5ff2a3a9d4ac00fea081b2cec48153c">Mehr ...</a><br /></td></tr>
-<tr class="separator:aa5ff2a3a9d4ac00fea081b2cec48153c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee1bbf33083b58766fe50a3a76e8648"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#afee1bbf33083b58766fe50a3a76e8648">btnOkClicked</a> (String text, String key, boolean realEnigma, boolean decrypt)</td></tr>
+<tr class="memdesc:afee1bbf33083b58766fe50a3a76e8648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn der Button, welcher die Ver/Entschlüsselung anstößt, geklickt wird.  <a href="#afee1bbf33083b58766fe50a3a76e8648">Mehr ...</a><br /></td></tr>
+<tr class="separator:afee1bbf33083b58766fe50a3a76e8648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c84ecb0c3ab561908d5ea5b029e58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a37c84ecb0c3ab561908d5ea5b029e58f">updateProgressBar</a> (int currVal)</td></tr>
+<tr class="memdesc:a37c84ecb0c3ab561908d5ea5b029e58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode zum updaten der ProgressBar.  <a href="#a37c84ecb0c3ab561908d5ea5b029e58f">Mehr ...</a><br /></td></tr>
+<tr class="separator:a37c84ecb0c3ab561908d5ea5b029e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93767098d207088b4b24aa747f748452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classde_1_1_enigma_1_1_core_1_1_main.html#a93767098d207088b4b24aa747f748452">onFinished</a> ()</td></tr>
 <tr class="memdesc:a93767098d207088b4b24aa747f748452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt.  <a href="#a93767098d207088b4b24aa747f748452">Mehr ...</a><br /></td></tr>
 <tr class="separator:a93767098d207088b4b24aa747f748452"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,8 +115,8 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
 <dl class="section author"><dt>Autor</dt><dd>Alle</dd></dl>
 <p>Hier werden lediglich die Kern-Instanzen erzeugt und aufgerufen. Außerdem ist diese Klasse für die Kommunikation der einzelnen Kern-Instanzen untereinander essenziell. </p>
 </div><h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="aa5ff2a3a9d4ac00fea081b2cec48153c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5ff2a3a9d4ac00fea081b2cec48153c">&#9670;&nbsp;</a></span>btnOkClicked()</h2>
+<a id="afee1bbf33083b58766fe50a3a76e8648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee1bbf33083b58766fe50a3a76e8648">&#9670;&nbsp;</a></span>btnOkClicked()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,7 +137,7 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>chbx_selected</em>, </td>
+          <td class="paramname"><em>realEnigma</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -155,7 +158,7 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
   <table class="params">
     <tr><td class="paramname">text</td><td>- Der zu ver/entschlüsselnde Text </td></tr>
     <tr><td class="paramname">key</td><td>- Der Schlüssel, mit dem gearbeitet wird </td></tr>
-    <tr><td class="paramname">chbx_selected</td><td>- Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll </td></tr>
+    <tr><td class="paramname">realEnigma</td><td>- Zeigt an, ob der Text wie bei der echten Enigma behandelt werden soll </td></tr>
     <tr><td class="paramname">decrypt</td><td>- Gibt an, ob ver- oder entschlüsselt werden soll </td></tr>
   </table>
   </dd>
@@ -214,6 +217,32 @@ $(document).ready(function(){initNavTree('classde_1_1_enigma_1_1_core_1_1_main.h
 
 <p>Methode, die die Routine nachdem der Ver- bzw. Entschlüsselungsprozess erfolgreich beendet wurde ausführt. </p>
 <p>Die Routine soll die Dateien erstellen lassen und die GUI benachrichtigen </p>
+
+</div>
+</div>
+<a id="a37c84ecb0c3ab561908d5ea5b029e58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37c84ecb0c3ab561908d5ea5b029e58f">&#9670;&nbsp;</a></span>updateProgressBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void de.Enigma.Core.Main.updateProgressBar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>currVal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Methode zum updaten der ProgressBar. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currVal</td><td>- zu setzender Wert </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
