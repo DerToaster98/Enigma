@@ -1,10 +1,11 @@
 package de.Enigma.Core;
 
 import de.Enigma.Util.FileHandler;
+import de.Enigma.Util.Util;
 
 /**
  * @author Nikolai Klatt
- * @brief Logger Klasse die eine in C++ geschriebene .dll einbindet, um die Logs zu schreiben
+ * @brief Logger Klasse, um die Logs zu schreiben
  * @details Realisiert als Singleton, das heißt nur eine Instanz pro Programminstanz.\n
  * Zugriff über getLogger() Methode von überall aus möglich.
  */
@@ -12,10 +13,6 @@ public class Log {
 
     //private Logger Instanz
     private static Log logger;
-    //private CLogger cLogger = new CLogger();
-
-    //private native Methode, die auf die .dll zugreift
-    //private native String cLog(String source, String message);
 
     /**
      * @brief Privater Konstruktor, zum Erzeugen eines Singelton Objektes
@@ -45,7 +42,8 @@ public class Log {
     //@formatter:on
     public void i(String class_Method_Name, String info) {
         checkLogFile();
-        FileHandler.getFileHandler().writeLog(class_Method_Name + " " + info, "INFO: ");
+        String log = Util.resolveLogString(class_Method_Name, info, "INFO");
+        FileHandler.getFileHandler().writeLog(log);
     }
 
 
@@ -64,7 +62,8 @@ public class Log {
      */
     public void w(String class_Method_Name, String warning) {
         checkLogFile();
-        FileHandler.getFileHandler().writeLog(class_Method_Name + " " + warning, "WARNING: ");
+        String log = Util.resolveLogString(class_Method_Name, warning, "WARNING");
+        FileHandler.getFileHandler().writeLog(log);
     }
 
     /**
@@ -80,7 +79,8 @@ public class Log {
      */
     public void e(String class_Method_Name, String error) {
         checkLogFile();
-        FileHandler.getFileHandler().writeLog(class_Method_Name + " " + error, "ERROR: ");
+        String log = Util.resolveLogString(class_Method_Name, error, "ERROR");
+        FileHandler.getFileHandler().writeLog(log);
     }
 
     /**
