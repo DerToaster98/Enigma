@@ -1,6 +1,6 @@
 P R Ä S E N T A T I O N
 
-- Einleitung -> NoIdea
+- Einleitung -> Wer hat was gemacht?
 
 - Hauptteil: -> 3 Teile
 	Anfang: Konzeptionierung -> evtl UML Diagramm
@@ -15,6 +15,7 @@ P R Ä S E N T A T I O N
 			-> GUI fror ein -->Niggo, Olli
 			-> LogikFehler Walzen --> Olli
 			-> Schlüsselüberprüfung --> Lisa
+			-> Denkfehler bei Aufteilung (Ver/Entschlüsselungsteil)
 			-> oldKeyConflicts mit Logger --> Lisa, Niggo
 			-> Kreisverweis Logger & FileHandler --> Niggo
 		- Vorführen mit großem String (2-5K Zeichen)
