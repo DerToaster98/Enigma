@@ -24,6 +24,9 @@ public class AlgorithmTest {
 		
 		assertEquals('O', algo.encrypt(inputChar));
 		
+		algo = new Algorithm(new EnigmaConfig(key));
+		inputChar = 'O';
+		assertEquals('A', algo.encrypt(inputChar));
 		
 		
 		
