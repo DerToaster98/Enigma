@@ -17,6 +17,10 @@ public class UtilTest {
 
 	@Test
 	public void prepareStringForReligmaTest() {
+		//Überprüft ob ein String richtig formatiert wird
+		//Buchstaben in Großbuchstaben
+		//CK und CH werden zu Q; Satz- und Sonderzeichen werden zu X
+		//Gesamter Text wird in fünfer Gruppen zerteilt
 		String text = "Nachricht, Bobdus? Jucken Schokolade, -Schlange. Hackfleisch!";
 		String ergebnis = "NAQRI QTXBO BDUSX JUQEN SQOKO LADEX XSQLA NGEXH AQFLE ISQX";
 		
@@ -25,7 +29,7 @@ public class UtilTest {
 	
 	@Test
 	public void getIndexOfCharInAlphabetTest() {
-		
+		//Überprüft ob der Richtige Index eines chars in einem char-Array ausgegeben wird
 		char[] alphabet = new char[] {'A','B','C','D'};
 		
 		assertEquals(1, Util.getIndexOfCharInAlphabet('B', alphabet));
@@ -35,7 +39,7 @@ public class UtilTest {
 
 	@Test
 	public void isKeyValidTest() {
-		
+		//Überprüfung der Methode, die überprüft ob ein Schlüssel gültig ist
 		String key0 = "A-413-HRR-T;N-F;V-D;K-S;O-Q;P";
 		String key1 = "F-123-FJU-T;O-K;Q-B;M";//Falsche Umkehrwalze
 		String key2 = "A-512-FDE-Q;W-E;R-T;Z-U;I-O;P-A;S-D;F-G;H-J;K-L;Y-X;C-V;B";//zuviele vertauschte Buchstaben

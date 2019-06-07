@@ -19,6 +19,7 @@ public class FileHandlerTest {
 
 	@Test
 	public void testAppendChar() {
+		//Überprüft ob der String richtig  zusammengesetzt wird
 		try {
 			Field encodedTextField = FileHandler.class.getDeclaredField("encodedText");
 			
@@ -52,6 +53,7 @@ public class FileHandlerTest {
 
 	@Test
 	public void checkFileHandlerInstantiation() {
+		//Überprüft ob der FileHandler richtig instanziiert wird
 		Object fileHandlerObj = FileHandler.getFileHandler();
 		
 		assertNotNull(FileHandler.getFileHandler());

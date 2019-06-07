@@ -18,32 +18,33 @@ public class MillTest {
 
 	@Test
 	public void rotateMillTest() {
+		//Testet, ob die Walze sich richtig rotiert
+		//-> Der erste Buchstabe des Walzenalphabets ist nach der Rotation der letzte.
+		// Der zweite Buchstabe wird dabei zum ersten
 		Mill millTest = new Mill('?', EMillAlphabet.I);
 		
 		char origFirstChar = EMillAlphabet.I.getAlphabet()[0];
-		//System.out.println("Orig First: " + origFirstChar);
 		char newFirstChar = EMillAlphabet.I.getAlphabet()[1];
-		//System.out.println("Orig Last: " + newFirstChar);
 		
 		millTest.rotateMill();
 		
 		assertEquals(origFirstChar, millTest.getAlphabet()[millTest.getAlphabet().length -1]);
-		//System.out.println("New Last: " +millTest.getAlphabet()[millTest.getAlphabet().length -1]);
 		assertEquals(newFirstChar, millTest.getAlphabet()[0]);
-		//System.out.println("New First: " +millTest.getAlphabet()[0]);
-		
 	}
 	
 	@Test
 	public void testCreation() {
+		//Testet, ob die Walze sich richtig einstellt bei ihrer Erzeugung (Ob sie das richtige Alphabet übernimmt)
 		char[] origPhabet = EMillAlphabet.IV.getAlphabet();
 		Mill millTest = new Mill('?', EMillAlphabet.IV);
 		
 		assertTrue(areArraysEqual(origPhabet, millTest.getAlphabet()));
+		
 	}
 	
 	@Test
 	public void testEncryption() {
+		//Testet, ob die Walze die Buchstaben richtig ersetzt
 		char inputChar = 'A';
 		char expectedOutputChar = 'E';
 		

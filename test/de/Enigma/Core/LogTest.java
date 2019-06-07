@@ -16,6 +16,8 @@ public class LogTest {
 
 	@Test
 	public void checkLoggerInstantiation() {
+		//Überprüft, ob der Logger richtig instanziiert wird
+		//-> Ob überhaupt ein Objekt erstellt wurde und ob dieses auch eine Instanz von Log ist
 		Object loggerObj = Log.getLogger();
 		
 		assertNotNull(Log.getLogger());

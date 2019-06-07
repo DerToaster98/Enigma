@@ -22,18 +22,22 @@ public class EnumsTest {
 
 	@Test
 	public void eAlphabetGetFromIndexTest() {
+		//Überprüft, ob die Methode, welche den Index eines Buchstabens im Alphabet ermittelt, den rictigen Index ermittelt
+		//->Überprüft, ob ein Buchstabe an der richtigen Stelle des Alphabets steht
 		assertEquals(EAlphabet.E, EAlphabet.getFromIndex(4));
 		assertNull(EAlphabet.getFromIndex(26));
 	}
 	
 	@Test
 	public void eExtraCharacterIsExtraCharacterTest() {
+		//Überprüft eine Methode die überprüft ob es sich um ein Sonderzeichen von EExtraCharacter handelt
 		assertTrue(EExtraCharacters.isExtraCharacter('?'));
 		assertFalse(EExtraCharacters.isExtraCharacter('A'));
 	}
 	
 	@Test
 	public void eMillAlphabetGetByIDTest() {
+		//Überpüft ob man anhand der ID die Richtige Konfiguration für die Walzen erhält.
 		assertEquals(EMillAlphabet.I, EMillAlphabet.getByID("1"));
 		assertEquals(EMillAlphabet.II, EMillAlphabet.getByID("2"));
 		assertEquals(EMillAlphabet.III, EMillAlphabet.getByID("3"));
@@ -49,6 +53,8 @@ public class EnumsTest {
 	
 	@Test
 	public void eMillAlphabetGetTurnMarkerTest() {
+		//Überprüft ab man die Richtige Übertragskerbe für die einzelnen Walzen erhält
+		//die Umkehrwalzen haben ein '?' als Übertragskerbe, da diese eigentlich enthalten, da sie sich nicht rotiern
 		assertEquals('X', EMillAlphabet.I.getTurnMarker());
 		assertEquals('S', EMillAlphabet.II.getTurnMarker());
 		assertEquals('M', EMillAlphabet.III.getTurnMarker());
