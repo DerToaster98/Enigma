@@ -425,6 +425,7 @@ public class GUI {
         }
         BTN_CANCEL.setText("Cancel");
         BTN_START.setText("O K");
+        main.cancelThread();
         Log.getLogger().setLoggingDisabled(false);
         setGUIElementsEnabled(true);
         TF_TEXT.setText("");

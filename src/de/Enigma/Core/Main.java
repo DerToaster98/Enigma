@@ -14,6 +14,7 @@ public class Main {
 
     private GUI window;
     private long startingTime;
+    private Thread t = null;
 
     /**
      * @brief Privater Main Konstruktor
@@ -62,7 +63,7 @@ public class Main {
      * @brief Methode, die den Algorithmus in einem neuen Thread startet
      */
     private void startProcessing(Main m, String text, String key) {
-        Thread t = new Thread(() -> new AlgorithmController(m, key).crypt(text));
+        t = new Thread(() -> new AlgorithmController(m, key).crypt(text));
         t.start();
     }
 
@@ -87,5 +88,15 @@ public class Main {
 
         FileHandler.getFileHandler().makeFiles();
         window.onFinished();
+    }
+
+    /**
+     * @brief Methode, um den Thread zu unterbrechen
+     */
+    public void cancelThread() {
+        if (t != null && t.isAlive()) {
+            t.interrupt();
+            t = null;
+        }
     }
 }
