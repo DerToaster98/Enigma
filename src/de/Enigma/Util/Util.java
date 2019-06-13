@@ -176,14 +176,18 @@ public class Util {
     public static boolean isKeyValid(String keyA) {
         String key = keyA.toUpperCase();
         String[] parts = key.split("-");
+        if(parts.length <= 13) {
+        	
         if (checkUKW(parts[0])) {
             //TODO Loggen, welcher teil des schlüssels falsch ist
             if (checkMillsKey(parts[1])) {
                 if (checkPositionKey(parts[2])) {
 
                     for (int i = 3; i < parts.length; i++) {
-
+                    	
+                    	
                         if (!checkLetterKey(parts[i])) {
+                        	resetPlugBoardList();
                             return false;
                         }
 
@@ -194,6 +198,8 @@ public class Util {
             }
 
         }
+        }
+        resetPlugBoardList();
         return false;
     }
 
@@ -290,6 +296,9 @@ public class Util {
         char[] millArray = txt.toCharArray();
         if (millArray.length == 3) {
             for (char mill : millArray) {
+            	if( Integer.parseInt(String.valueOf(mill)) > 5 ){
+            		return false;
+            	}
                 for (int i = 1; i <= 5; i++) {
                     char[] x = String.valueOf(i).toCharArray();
                     if (mill == x[0]) {
@@ -306,6 +315,7 @@ public class Util {
         }
 
         Log.getLogger().w(Util.class.getName() + "isKeyValid", "Walzenangaben im Schlüssel sind ungültig");
+        
         return false;
     }
 

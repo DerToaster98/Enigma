@@ -50,7 +50,7 @@ public class UtilTest {
 		String key5 = "A-512-FUU-R;O-P;Q-T;R"; //Falsche Steckbretteingabe
 		String key6 = "A-712-NBV-L;O"; //Falsche Walzeneingabe(Zahl>5)
 		
-		assertTrue(Util.isKeyValid(key0));
+		
 		
 		assertFalse(Util.isKeyValid(key1));
 		assertFalse(Util.isKeyValid(key2));
@@ -58,6 +58,9 @@ public class UtilTest {
 		assertFalse(Util.isKeyValid(key4));
 		assertFalse(Util.isKeyValid(key5));
 		assertFalse(Util.isKeyValid(key6));
+		
+		assertTrue(Util.isKeyValid(key0));
+		
 	}
 	
 	
