@@ -511,7 +511,9 @@ public class GUI {
             else TF_TEXT.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "encodedText"));
             //setzt den KEY
             TF_KEY.setShowingHint(false);
-            TF_KEY.setText(FileHandler.getFileHandler().inputFromFile(enigmaFile, "key"));
+            String key = FileHandler.getFileHandler().inputFromFile(enigmaFile, "key");
+
+            TF_KEY.setText(Util.isKeyValid(key)? key : Util.getNewRandomKey());
             TF_KEY.setForeground(Color.BLACK);
         }
         Log.getLogger().i(getClass().getName() + ".btnChooseFileClicked", "BTN_CHOOSE_FILE Clicked");
