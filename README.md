@@ -4,7 +4,9 @@ Programmierprojekt 2. Semester TIT18
 
 Beteiligte: Lisa Binkert, Nikolai Klatt, Oliver Seiler
 
-TODO Liste: https://trello.com/b/nBEYiAI4/enigma-programmieren
+# Kompilieren
+
+Das Projekt muss unter Eclipse als Projekt importiert/geöffnet werden, bzw. als FileSystem importiert werden. Anschließend muss die Gson Bibliothek (im Github unter libs/) als Library eingebunden werden. Danach Unter Eclipse das Projekt als Runnable Jar File exportieren (Main-Klasse ist Main)
 
 # Beschreibung
 
