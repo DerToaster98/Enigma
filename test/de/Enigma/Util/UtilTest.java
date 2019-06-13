@@ -23,8 +23,10 @@ public class UtilTest {
 		//Gesamter Text wird in fünfer Gruppen zerteilt
 		String text = "Nachricht, Bobdus? Jucken Schokolade, -Schlange. Hackfleisch!";
 		String ergebnis = "NAQRI QTXBO BDUSX JUQEN SQOKO LADEX XSQLA NGEXH AQFLE ISQX";
+						  
+		String whatDidIt = Util.prepareStringForReligma(text.toUpperCase());
 		
-		assertEquals(ergebnis, Util.prepareStringForReligma(text.toUpperCase()));
+		assertEquals(ergebnis, whatDidIt);
 	}
 	
 	@Test

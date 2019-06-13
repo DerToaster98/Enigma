@@ -63,7 +63,7 @@ public class AlgorithmController {
                 cryptText = cryptText.concat(String.valueOf(value));
             } else {
                 // Buchstabe mit verschlüsseln
-                Log.getLogger().i(getClass().getName() + ".crypt", "Encrypting letter " + value);
+                Log.getLogger().i(getClass().getName() + ".crypt", "Encrypting letter <" + value + ">");
                 letter = algorithm.encrypt(value);
                 // Buchstabe an FileHandler
                 FileHandler.getFileHandler().appendChar(letter);

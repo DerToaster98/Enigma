@@ -344,30 +344,20 @@ public class Util {
         tmp = tmp.replaceAll("CK", "Q");
 
         for(EExtraCharacters eechara : EExtraCharacters.values()) {
-        	tmp = tmp.replaceAll(String.valueOf(eechara.getAssignedChar()), "X");
+        	tmp = tmp.replace(eechara.getAssignedChar(), 'X');
         }
         
         //in 5er gruppen gruppieren
         String filteredString = "";
-        //int counter = 0;
-        for (int counter = 0; counter < tmp.length(); counter++) {
-            /*if (!EExtraCharacters.isExtraCharacter(c)) {
-                if (counter % 5 == 0 && counter > 0) {
-                    filteredString += EExtraCharacters.SPACE.getAssignedChar();
-                }
-                filteredString += c;
-            } else if (c != EExtraCharacters.SPACE.getAssignedChar()) {
-                if (counter % 5 == 0 && counter > 0) {
-                    filteredString += EExtraCharacters.SPACE.getAssignedChar();
-                }
-                filteredString += 'X';
-            }
-            counter++;*/
-        	if(counter %5 == 0) {
+        int counter = 0;
+        for (char c : tmp.toCharArray()) {
+        	if(counter %5 == 0 && counter > 0) {
         		filteredString += EExtraCharacters.SPACE.getAssignedChar();
         	}
+        	filteredString += c;
+        	counter++;
         }
-
+        
         Log.getLogger().i(Util.class.getName() + "preapreStringForReligma", "String für Verschlüsselung mit emulierter Enigma formatiert");
         return filteredString;
     }

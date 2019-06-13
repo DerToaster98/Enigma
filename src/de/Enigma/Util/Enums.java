@@ -334,9 +334,8 @@ public class Enums {
         FULL_STOP('.'),
         MINUS('-'),
         SPACE(' '),
-        EXCLAMATION_MARK('!'),
         QUESTION_MARK('?'),
-        ;
+        EXCLAMATION_MARK('!'),;
 
         private char assignedChar;
 
