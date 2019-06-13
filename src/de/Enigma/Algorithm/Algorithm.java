@@ -28,7 +28,7 @@ public class Algorithm {
      */
     public char encrypt(char letter) {
         char origLetter = letter;
-        Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypting char " + origLetter + "..");
+        Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypting char <" + origLetter + "> ..");
         letter = conf.encryptLetterWithPlugBoard(letter);
         //erste Walze -> zweite Walze -> dritte Walze -> Umkehrwalze
         // Funktioniert so!
@@ -46,9 +46,9 @@ public class Algorithm {
         conf.getMill(EMill.THIRD_MILL).rotateMill();
         conf.checkMills();
 
-        Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypted char " + origLetter);
+        Log.getLogger().i(getClass().getName() + ".encrypt", "Encrypted char <" + origLetter + ">");
         Log.getLogger().i("", "BLANK_LINE");
-        Log.getLogger().i(getClass().getName() + ".encrypt", origLetter + " -> " + letter);
+        Log.getLogger().i(getClass().getName() + ".encrypt <", origLetter + "> -> <" + letter + ">");
         Log.getLogger().i("", "LINE");
         //Buchstabe zurückgeben
         return letter;

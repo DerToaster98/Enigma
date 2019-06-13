@@ -343,11 +343,15 @@ public class Util {
         tmp = tmp.replaceAll("CH", "Q");
         tmp = tmp.replaceAll("CK", "Q");
 
+        for(EExtraCharacters eechara : EExtraCharacters.values()) {
+        	tmp = tmp.replaceAll(String.valueOf(eechara.getAssignedChar()), "X");
+        }
+        
         //in 5er gruppen gruppieren
         String filteredString = "";
-        int counter = 0;
-        for (char c : tmp.toCharArray()) {
-            if (!EExtraCharacters.isExtraCharacter(c)) {
+        //int counter = 0;
+        for (int counter = 0; counter < tmp.length(); counter++) {
+            /*if (!EExtraCharacters.isExtraCharacter(c)) {
                 if (counter % 5 == 0 && counter > 0) {
                     filteredString += EExtraCharacters.SPACE.getAssignedChar();
                 }
@@ -358,7 +362,10 @@ public class Util {
                 }
                 filteredString += 'X';
             }
-            counter++;
+            counter++;*/
+        	if(counter %5 == 0) {
+        		filteredString += EExtraCharacters.SPACE.getAssignedChar();
+        	}
         }
 
         Log.getLogger().i(Util.class.getName() + "preapreStringForReligma", "String für Verschlüsselung mit emulierter Enigma formatiert");

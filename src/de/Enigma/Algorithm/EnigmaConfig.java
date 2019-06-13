@@ -82,7 +82,7 @@ public class EnigmaConfig {
         if (!this.letterChanger.isEmpty() && this.letterChanger.containsKey(character)) {
             toEncrypt = this.letterChanger.get(character).charValue();
         }
-        Log.getLogger().i(getClass().getName() + ".encryptLetterWithPlugBoard", "Replaced letter " + letter + " with " + toEncrypt);
+        Log.getLogger().i(getClass().getName() + ".encryptLetterWithPlugBoard", "Replaced letter <" + letter + "> with <" + toEncrypt + ">");
         return toEncrypt;
     }
 
