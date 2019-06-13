@@ -4,6 +4,7 @@ import de.Enigma.Core.Log;
 import de.Enigma.Core.Main;
 import de.Enigma.Util.FileHandler;
 import de.Enigma.Util.Util;
+import de.Enigma.Util.Enums.EExtraCharacters;
 
 /**
  * @author Lisa Binkert
@@ -56,7 +57,7 @@ public class AlgorithmController {
 
             main.updateProgressBar(i + 1);
 
-            if (value == ' ' || value == '.' || value == ',' || value == '?' || value == '!') {
+            if (EExtraCharacters.isExtraCharacter(value)) {
                 //Nicht zu verschlüsselnde Zeichen an FileHandler
                 FileHandler.getFileHandler().appendChar(value);
                 cryptText = cryptText.concat(String.valueOf(value));
