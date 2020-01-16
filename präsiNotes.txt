@@ -1,15 +1,18 @@
-P R Ä S E N T A T I O N
+﻿P R Ä S E N T A T I O N
 
 - Einleitung -> Wer hat was gemacht?
 
 - Hauptteil: -> 3 Teile
-	Anfang: Konzeptionierung -> evtl UML Diagramm
+	Anfang: 
+		- Konzeptionierung -> evtl UML Diagramm
+		
 	Mitte:
 		- Aufbau des Programms an sich -> Programmablauf und Handhabung
 		- "Niggos BackEnd Teil"
-		- Grobteil -> Lisa (5er Gruppen, Kommunikation Main, Algo, AlgoC, Util-KeyValidMethoden)
+		- Grobteil -> Lisa (5er Gruppen, Algo, AlgoC, Util-KeyValidMethoden)
 		- Details -> Olli (Walzenverschlüsselung & Steckbrett, Keygeneration, Walzendrehen (Walzen allg.))
 		- Niko & Olli -> GUI (CalcThread, LoadingBar, InterComm Main & GUI, Niggo: HintTextField)
+		- Vorführen mit großem String (2-5K Zeichen)
 	Ende:
 		- Probleme bei Entwicklung:
 			-> GUI fror ein -->Niggo, Olli
@@ -18,7 +21,6 @@ P R Ä S E N T A T I O N
 			-> Denkfehler bei Aufteilung (Ver/Entschlüsselungsteil)
 			-> oldKeyConflicts mit Logger --> Lisa, Niggo
 			-> Kreisverweis Logger & FileHandler --> Niggo
-		- Vorführen mit großem String (2-5K Zeichen)
 
 - Ende: -> Fragen & Kleines Fazit zur Zusammenarbeit und zum Projekt selbst
 		
